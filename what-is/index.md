@@ -75,7 +75,7 @@ In InDesign, text is flowed into *frames* on the page.
 SILE also uses the concept of frames to determine where text should appear on the page, and so it’s possible to use SILE to generate page layouts which are more flexible and more complex than that afforded by TeX.
 
 Another thing which people use InDesign for is to turn structured data in XML format–catalogues, directories and the like–into print. 
-The way you do this in InDesign is to declare what styling should apply to each XML element, and as the data is read in, InDesign formats the content according to the rules that you have declared.\supereject
+The way you do this in InDesign is to declare what styling should apply to each XML element, and as the data is read in, InDesign formats the content according to the rules that you have declared.
 
 You can do exactly the same thing in SILE, except you have a lot more control over how the XML elements get styled, because you can run any SILE command you like for a given element, including calling out to Lua code to style a piece of XML. 
 Since SILE is a command-line filter, armed with appropriate styling instructions you can go from an XML file to a PDF in one shot. 

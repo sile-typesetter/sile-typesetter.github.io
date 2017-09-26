@@ -4,8 +4,8 @@ title: SILE Examples
 ---
 
 <ul>
-  <a href="/examples/global.html">Global Scripts</a><br>
-  <a href="/examples/packages.html">Packages</a>
+  <a href="{{ site.baseurl }}/examples/global.html">Global Scripts</a><br>
+  <a href="{{ site.baseurl }}/examples/packages.html">Packages</a>
 </ul>
 
 <table class="examples">
@@ -15,7 +15,7 @@ title: SILE Examples
     </a>
     <br/>
     <span class="title">{{example.title}}</span><br/>
-    (<a href="https://raw.githubusercontent.com/simoncozens/sile/master/examples/{{example.source}}">source</a>) 
-    (<a href="https://raw.githubusercontent.com/simoncozens/sile/master/examples/{{example.fn}}.pdf">PDF</a>)
+    (<a *href="https://raw.githubusercontent.com/simoncozens/sile/master/examples/{{example.source}}">source</a>)
+    (<a* href="https://raw.githubusercontent.com/simoncozens/sile/master/examples/{{example.fn}}.pdf">PDF</a>)
 {% endtablerow %}
 </table>

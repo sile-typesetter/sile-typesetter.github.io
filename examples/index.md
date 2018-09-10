@@ -15,7 +15,7 @@ title: SILE Examples
     </a>
     <br/>
     <span class="title">{{example.title}}</span><br/>
-    (<a *href="https://raw.githubusercontent.com/simoncozens/sile/master/examples/{{example.source}}">source</a>)
-    (<a* href="https://raw.githubusercontent.com/simoncozens/sile/master/examples/{{example.fn}}.pdf">PDF</a>)
+    (<a href="https://raw.githubusercontent.com/simoncozens/sile/master/examples/{{example.source}}">source</a>)
+    (<a href="https://raw.githubusercontent.com/simoncozens/sile/master/examples/{{example.fn}}.pdf">PDF</a>)
 {% endtablerow %}
 </table>

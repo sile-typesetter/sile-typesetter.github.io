@@ -46,6 +46,10 @@ global:
     fn: global-scripts/uyghur
     source: global-scripts/uyghur.sil
     title: Uyghur hyphenation
+  -
+    fn: global-scripts/armenian
+    source: global-scripts/armenian.sil
+    title: Armenian hyphenation
 packages:
   -
     fn: packages/bibtex

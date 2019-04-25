@@ -1,6 +1,7 @@
 ---
 post_author: Caleb Maclennan
 post_gravatar: 884de4eab23098275f1541e41e3899af
+published: false
 ---
 Development on SILE has continued with more [contributors][contributors] than ever before. Here is a visualization of the development history. SILE [0.9.3][0.9.3] was released on 2015-10-09 which starts about 2:29 in the video; everything after that is work going into the next release.
 

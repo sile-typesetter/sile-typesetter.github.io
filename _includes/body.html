@@ -3,7 +3,7 @@
       <h1 class="title">{{ page.title }}</h1>
       <div class="meta">
         {{ if page.date }}
-          <span class="date">{{ page.date | date_to_string }}</span>
+          <span class="date"><a href="{{ page.url }}">{{ page.date | date_to_string }}</a></span>
         {{ end }}
         {{ if page.post_author }}
           — <span class="author">{{ page.post_author }}</span>

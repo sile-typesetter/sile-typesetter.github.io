@@ -6,7 +6,8 @@ kramdown:
 baseurl: ""
 paginate: 5
 paginate_path: "blog/page:num"
-gems:
-  - jekyll-paginate
 plugins:
+  - jekyll-paginate
   - jekyll-feed
+  - jekyll-mentions
+permalink: /:categories/:year/:month/:slug

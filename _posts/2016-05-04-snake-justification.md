@@ -13,7 +13,7 @@ Naturally, SILE implements support for snake-based justification methods. You wi
 
 (or XML equivalent) to your document to turn on this justification strategy. You can see the result in [`examples/snakes.pdf`](https://github.com/simoncozens/sile/blob/snakes/examples/snakes.pdf), and it looks like this:
 
-![snakes](images/snakes.png)
+![snakes](/images/snakes.png)
 
 Because SILE is an extremely flexible typesetting engine, this took less than 20 lines of Lua code to implement.
 

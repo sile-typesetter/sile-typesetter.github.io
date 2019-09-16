@@ -7,5 +7,5 @@ Development on SILE has continued with more [contributors][contributors] than ev
 
 <video width="768" height="432" preload="metadata" controls="" poster="{{ site.baseurl }}/images/gource.png"><source src="{{ site.baseurl }}/images/gource.webm" type="video/webm; codecs=vp8,vorbis" /><source src="https://media.githubusercontent.com/media/alerque/sile/gh-pages/images/gource.webm" type="video/webm; codecs=vp8,vorbis" /></video>
 
-[contributors]: https://github.com/simoncozens/sile/graphs/contributors
-[0.9.3]: https://github.com/simoncozens/sile/releases/tag/v0.9.3
+[contributors]: https://github.com/sile-typesetter/sile/graphs/contributors
+[0.9.3]: https://github.com/sile-typesetter/sile/releases/tag/v0.9.3

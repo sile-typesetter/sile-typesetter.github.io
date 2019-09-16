@@ -11,7 +11,7 @@ Naturally, SILE implements support for snake-based justification methods. You wi
 
     \script[src=packages/snakes]
 
-(or XML equivalent) to your document to turn on this justification strategy. You can see the result in [`examples/snakes.pdf`](https://github.com/simoncozens/sile/blob/snakes/examples/snakes.pdf), and it looks like this:
+(or XML equivalent) to your document to turn on this justification strategy. You can see the result in [`examples/snakes.pdf`](https://github.com/sile-typesetter/sile/blob/snakes/examples/snakes.pdf), and it looks like this:
 
 ![snakes](/images/snakes.png)
 
@@ -20,4 +20,4 @@ Because SILE is an extremely flexible typesetting engine, this took less than 20
 We have been doing lots of other SILE development too, but snakes are fun.
 
 [xkcd]: http://www.xkcd.com/
-[feature branch]: https://github.com/simoncozens/sile/tree/snakes
+[feature branch]: https://github.com/sile-typesetter/sile/tree/snakes

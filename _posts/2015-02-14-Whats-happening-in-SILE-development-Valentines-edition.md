@@ -14,7 +14,7 @@ Here are a few interesting things that have been going on lately. If you are int
 
 * Simon gave a [talk][] to the FOSDEM conference explaining SILE's development and design philosophy. We'll post the video as soon as it's available.
 
-[repository]: https://github.com/simoncozens/sile/commits/master
+[repository]: https://github.com/sile-typesetter/sile/commits/master
 [talk]: https://fosdem.org/2015/schedule/event/introducing_sile/
-[bug]: https://github.com/simoncozens/sile/commit/b966a0634d295fe3bc4484744ab4deb8594f701a
-[OpenType features]: https://github.com/simoncozens/sile/blob/master/examples/ligature.sil
+[bug]: https://github.com/sile-typesetter/sile/commit/b966a0634d295fe3bc4484744ab4deb8594f701a
+[OpenType features]: https://github.com/sile-typesetter/sile/blob/master/examples/ligature.sil

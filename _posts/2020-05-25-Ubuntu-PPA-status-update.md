@@ -20,4 +20,4 @@ It would be possible to support other currently supported [Ubuntu releases][code
   [v0.10.4]: /2020/04/sile-0-10-4-is-released
   [PPA]: https://launchpad.net/~sile-typesetter/+archive/ubuntu/sile
   [codenames]: https://wiki.ubuntu.com/Releases
-  [newissue]: https://github.com/sile-typesetter/sile/issue/new
+  [newissue]: https://github.com/sile-typesetter/sile/issues/new

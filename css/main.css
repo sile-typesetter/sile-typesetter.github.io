@@ -157,11 +157,10 @@ img.cover-photo {
 
 .post a,
 #about a {
-  border-bottom: 1px solid #8085C1;
 }
 
 .post a:hover {
-  border: none;
+  border-bottom: 1px solid #8085C1;
 }
 
 /* standard */

@@ -21,6 +21,8 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Raleway', sans-serif;
+  margin-top: 1em;
+  margin-bottom: .6em;
 }
 
 a {
@@ -63,7 +65,7 @@ a:hover {
 }
 
 #home {
-  margin: 10px;
+  margin: 2em;
 }
 
 #home video {
@@ -133,16 +135,26 @@ img.cover-photo {
   margin-top: 3em;
 }
 
+.info-container .meta {
+  font-style: Italic;
+}
+
 .title {
   color: #4a4a4a;
   margin-bottom: 0.2em;
   font-size: 1.4em;
 }
 
+.post {
+  line-height: 3.5ex;
+}
+
 .post h2 {
   font-size: 1.1em;
-  margin-top: 1em;
-  margin-bottom: .6em;
+}
+
+.post h3 {
+  font-size: 1em;
 }
 
 .post a,
@@ -159,11 +171,12 @@ img.cover-photo {
   font-family: 'Fira Code', monospace;
   border: 1px solid #ddd;
   background-color: #eef;
-  padding: 0 .4em;
+  padding: 0 1ex;
+  margin-bottom: 1em;
 }
 
 .post p {
-  margin-bottom: 1.45em;
+  margin-bottom: 1em;
   text-align: justify;
 }
 

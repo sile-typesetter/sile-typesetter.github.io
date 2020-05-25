@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400;1,600&family=Fira+Code&family=Raleway:wght@400;600&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -11,10 +13,14 @@ html, body {
 body {
   color: #4a4a4a;
   background-color: #fafbfc;
-  font-family: 'Raleway', Arial, sans-serif;
+  font-family: 'Crimson Pro', serif;
   font-weight: 400;
   font-size: 1.15em;
   line-height: 1.2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Raleway', sans-serif;
 }
 
 a {
@@ -43,6 +49,7 @@ a:hover {
 }
 
 #sidebar {
+  font-family: 'Raleway', sans-serif;
   position: fixed;
   bottom: 0;
   top: 0;
@@ -149,13 +156,13 @@ img.cover-photo {
 
 /* standard */
 .post pre {
+  font-family: 'Fira Code', monospace;
   border: 1px solid #ddd;
   background-color: #eef;
   padding: 0 .4em;
 }
 
 .post p {
-  font-family: 'Source Sans Pro', Arial, sans-serif;
   margin-bottom: 1.45em;
   text-align: justify;
 }
@@ -218,7 +225,6 @@ img.cover-photo {
 
 .post-date {
   color: #8a8a8a;
-  font-family: Monaco, "Courier New", monospace;
   font-weight: 600;
   font-size: 0.65em;
   display: block;

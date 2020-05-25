@@ -197,12 +197,12 @@ img.cover-photo {
   background-color: #333;
 }
 
-#sidebar ul {
-  padding: 2em 0 1em 1em;
+#sidebar > ul {
+  padding: 1em;
 }
 
 #sidebar ul li {
-  padding-top: .5ex;
+  margin: 1ex 0 1ex .5em;
 }
 
 #sidebar li a {

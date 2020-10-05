@@ -1,6 +1,6 @@
 basic:
   - {fn: "simple", source: "simple.sil", title: "Basic typesetting" }
-  - {fn: "test", source: "test.sil", title: "A Story" }
+  - {fn: "book", source: "book.sil", title: "A Story" }
 global:
   -
     fn: global-scripts/i18n

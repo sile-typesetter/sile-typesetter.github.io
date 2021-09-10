@@ -20,6 +20,11 @@ jobs:
         with:
           ruby-version: 3.0
 
+      - name: Render example PDFs
+        uses: sile-typesetter/sile@v0
+        run: |
+          find examples -name '*.sil' -execdir sile {} \;
+
       - name: Build Jekyll bits
         uses: limjh16/jekyll-action-ts@v2
         with:

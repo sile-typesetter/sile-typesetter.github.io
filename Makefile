@@ -6,6 +6,7 @@ site: jekyll
 .PHONY: clean
 clean:
 	rm -rf public/**
+	rm -f examples/**.pdf
 
 public:
 	mkdir -p $@

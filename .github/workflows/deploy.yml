@@ -15,10 +15,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Setup Jekyll
+        run: |
+          docker pull jekyll/builder:latest
+
       - name: Build the site
         run: |
           export JEKYLL="docker run -v "$(pwd)":/srv/jekyll jekyll/builder:latest jekyll"
-          make public
+          make site
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

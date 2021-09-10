@@ -1,5 +1,15 @@
 JEKYLL ?= jekyll
 
-.PHONY: public
+.PHONY: site
+site: jekyll
+
+.PHONY: clean
+clean:
+	rm -rf public/**
+
 public:
-	$(JEKYLL) build -d $@
+	mkdir -p $@
+
+.PHONY: jekyll
+jekyll: | public
+	$(JEKYLL) build -d public

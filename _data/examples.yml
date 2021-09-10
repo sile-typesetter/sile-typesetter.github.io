@@ -1,93 +1,75 @@
 basic:
-  - {fn: "simple", source: "simple.sil", title: "Basic typesetting" }
-  - {fn: "book", source: "book.sil", title: "A Story" }
+  - fn: simple
+    source: simple.sil
+    title: Basic typesetting
+  - fn: book
+    source: book.sil
+    title: A Story
 global:
-  -
-    fn: global-scripts/i18n
+  - fn: global-scripts/i18n
     source: global-scripts/i18n.sil
     title: A variety of scripts working together
-  -
-    fn: global-scripts/arabic
+  - fn: global-scripts/arabic
     source: global-scripts/arabic.sil
     title: Support for RTL scripts like Arabic, with mixed directionality and language-specific variants
-  -
-    fn: global-scripts/japanese
+  - fn: global-scripts/japanese
     source: global-scripts/japanese.sil
     title: Vertical Japanese with Ruby and inline Latin
-  -
-    fn: global-scripts/mongolian
+  - fn: global-scripts/mongolian
     source: global-scripts/mongolian.sil
     title: Mongolian - top to bottom, left to right
-  -
-    fn: global-scripts/triglot
+  - fn: global-scripts/triglot
     source: global-scripts/triglot.sil
     title: A triglot layout - Greek, English and Japanese
-  -
-    fn: global-scripts/heart-sutra
+  - fn: global-scripts/heart-sutra
     source: global-scripts/heart-sutra.sil
     title: Tibetan pecha-style layout
-  -
-    fn: global-scripts/boustrophedon
+  - fn: global-scripts/boustrophedon
     source: global-scripts/boustrophedon.sil
     title: Boustrophedon (ox-turning) layout
-  -
-    fn: global-scripts/burmese
+  - fn: global-scripts/burmese
     source: global-scripts/burmese.sil
     title: Burmese
-  -
-    fn: global-scripts/javanese
+  - fn: global-scripts/javanese
     source: global-scripts/javanese.sil
     title: Javanese with Graphite stacked vowels
-  -
-    fn: global-scripts/thai-udhr
+  - fn: global-scripts/thai-udhr
     source: global-scripts/thai-udhr.sil
     title: Thai
-  -
-    fn: global-scripts/uyghur
+  - fn: global-scripts/uyghur
     source: global-scripts/uyghur.sil
     title: Uyghur hyphenation
-  -
-    fn: global-scripts/armenian
+  - fn: global-scripts/armenian
     source: global-scripts/armenian.sil
     title: Armenian hyphenation
 packages:
-  -
-    fn: packages/bibtex
+  - fn: packages/bibtex
     source: packages/bibtex.sil
     title: BibTeX bibliography support
-  -
-    fn: packages/chordmode
+  - fn: packages/chordmode
     source: packages/chordmode.sil
     title: Chord mode
-  -
-    fn: packages/frametricks
+  - fn: packages/frametricks
     source: packages/frametricks.sil
     title: Columns and drop caps with frametricks
-  -
-    fn: packages/gutenberg
+  - fn: packages/gutenberg
     source: packages/gutenberg.sil
     title: Gutenberg - justification alternates
-  -
-    fn: packages/hyperlink
+  - fn: packages/hyperlink
     source: packages/hyperlink.sil
     title: hyperlink
-  -
-    fn: packages/ligature
+  - fn: packages/ligature
     source: packages/ligature.sil
     title: OpenType features and ligatures
-  -
-    fn: packages/parallel
+  - fn: packages/parallel
     source: packages/parallel.sil
     title: Parallel layout
-  -
-    fn: packages/pullquote
+  - fn: packages/pullquote
     source: packages/pullquote.sil
     title: pullquote package
-  -
-    fn: packages/rotate
+  - fn: packages/rotate
     source: packages/rotate.sil
     title: rotate package
-  -
-    fn: packages/rule
+  - fn: packages/rule
     source: packages/rule.sil
     title: rule package

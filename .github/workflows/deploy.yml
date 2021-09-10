@@ -15,9 +15,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      # https://github.com/jekyll/jekyll/issues/7591
       - name: Setup Jekyll
         run: |
           docker pull jekyll/builder:latest
+          mkdir .jekyll-cache
 
       - name: Build the site
         run: |

@@ -1,7 +1,5 @@
-JEKYLL := bundle exec jekyll
-
 .PHONY: site
-site: jekyll
+site: jekyll examples
 
 .PHONY: clean
 clean:
@@ -22,9 +20,8 @@ $(EXAMPLEPDFS): public/%.pdf: %.sil
 	sile $< -o $@
 
 .PHONY: jekyll
-jekyll: examples | public
-	$(JEKYLL) build --incremental
-	rsync -av _site/ public/
+jekyll: | public
+	jekyll build --incremental -d public
 
 public/CNAME: | public
 	echo sile-typesetter.org > $@

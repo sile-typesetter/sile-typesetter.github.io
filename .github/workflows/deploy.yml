@@ -11,33 +11,20 @@ jobs:
     runs-on: ubuntu-20.04
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
+    container:
+      image: docker://nixos/nix
     steps:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Setup ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: 3.0
-
-      - name: Render example PDFs
-        uses: sile-typesetter/sile@v0
+      - name: Setup build dependencies
         run: |
-          find examples -name '*.sil' -execdir sile {} \;
+          nix-channel --add https://nixos.org/channels/nixpkgs-unstable
+          nix-channel --update
 
-      - name: Build Jekyll bits
-        uses: limjh16/jekyll-action-ts@v2
-        with:
-          enable_cache: true
-
-      - name: Build the site
+      - name: Generate static site
         run: |
-          make site JEKYLL=:
-
-      - name: Inject CNAME
-        if: ${{ github.repository == 'sile-typesetter/sile-typesetter.github.io' }}
-        run: |
-          make public/CNAME
+          nix-shell --run make
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

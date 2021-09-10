@@ -10,4 +10,6 @@ plugins:
   - jekyll-paginate
   - jekyll-feed
   - jekyll-mentions
+exclude:
+  - public
 permalink: /:categories/:year/:month/:slug

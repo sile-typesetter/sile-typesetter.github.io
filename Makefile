@@ -1,4 +1,4 @@
-JEKYLL := docker run -v "$(PWD)":/srv/jekyll jekyll/builder:latest jekyll
+JEKYLL := bundle exec jekyll
 
 .PHONY: site
 site: jekyll

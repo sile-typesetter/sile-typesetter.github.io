@@ -24,6 +24,11 @@ jobs:
           export JEKYLL="docker run -v "$(pwd)":/srv/jekyll jekyll/builder:latest jekyll"
           make site
 
+      - name: Inject CNAME
+        if: ${{ github.repository == 'sile-typesetter/sile-typesetter.github.io' }}
+        run: |
+          make public/CNAME
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/master' }}

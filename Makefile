@@ -13,3 +13,6 @@ public:
 .PHONY: jekyll
 jekyll: | public
 	$(JEKYLL) build -d public
+
+public/CNAME: | public
+	echo sile-typesetter.org > $@

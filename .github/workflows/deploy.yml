@@ -15,15 +15,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      # https://github.com/jekyll/jekyll/issues/7591
+        # Official Jekyll images are foobared: https://github.com/jekyll/jekyll/issues/7591
       - name: Setup Jekyll
         run: |
-          docker pull jekyll/builder:latest
-          mkdir .jekyll-cache
+          docker pull bretfisher/jekyll
 
       - name: Build the site
         run: |
-          export JEKYLL="docker run -v "$(pwd)":/srv/jekyll jekyll/builder:latest jekyll"
+          export JEKYLL="docker run -v "$(pwd)":/site bretfisher/jekyll"
           make site
 
       - name: Inject CNAME

@@ -12,4 +12,5 @@ plugins:
   - jekyll-mentions
 exclude:
   - public
+  - '*.toc'
 permalink: /:categories/:year/:month/:slug

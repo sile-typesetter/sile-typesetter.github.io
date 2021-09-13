@@ -9,9 +9,9 @@ clean:
 public:
 	mkdir -p $@
 
-EXAMPLESRCS := $(wildcard examples/*.sil)
-EXAMPLEPDFS := $(addprefix public/,$(addsuffix .pdf,$(basename $(EXAMPLESRCS))))
-EXAMPLEPNGS := $(addsuffix .png,$(basename $(EXAMPLEPDFS)))
+EXAMPLES := $(shell yq -r '.[][].fn' _data/examples.yml)
+EXAMPLEPDFS := $(addprefix public/examples/,$(addsuffix .pdf,$(EXAMPLES)))
+EXAMPLEPNGS := $(addprefix public/examples/,$(addsuffix .png,$(EXAMPLES)))
 
 .PHONY: examples
 examples: $(EXAMPLEPDFS) $(EXAMPLEPNGS)

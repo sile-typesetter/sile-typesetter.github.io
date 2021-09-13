@@ -6,41 +6,41 @@ basic:
     source: book.sil
     title: A Story
 global:
-  - fn: global-scripts/i18n
-    source: global-scripts/i18n.sil
+  - fn: i18n
+    source: i18n.sil
     title: A variety of scripts working together
-  - fn: global-scripts/arabic
-    source: global-scripts/arabic.sil
+  - fn: arabic
+    source: arabic.sil
     title: Support for RTL scripts like Arabic, with mixed directionality and language-specific variants
-  - fn: global-scripts/japanese
-    source: global-scripts/japanese.sil
+  - fn: japanese
+    source: japanese.sil
     title: Vertical Japanese with Ruby and inline Latin
-  - fn: global-scripts/mongolian
-    source: global-scripts/mongolian.sil
+  - fn: mongolian
+    source: mongolian.sil
     title: Mongolian - top to bottom, left to right
-  - fn: global-scripts/triglot
-    source: global-scripts/triglot.sil
+  - fn: triglot
+    source: triglot.sil
     title: A triglot layout - Greek, English and Japanese
-  - fn: global-scripts/heart-sutra
-    source: global-scripts/heart-sutra.sil
+  - fn: heart-sutra
+    source: heart-sutra.sil
     title: Tibetan pecha-style layout
-  - fn: global-scripts/boustrophedon
-    source: global-scripts/boustrophedon.sil
+  - fn: boustrophedon
+    source: boustrophedon.sil
     title: Boustrophedon (ox-turning) layout
-  - fn: global-scripts/burmese
-    source: global-scripts/burmese.sil
+  - fn: burmese
+    source: burmese.sil
     title: Burmese
-  - fn: global-scripts/javanese
-    source: global-scripts/javanese.sil
+  - fn: javanese
+    source: javanese.sil
     title: Javanese with Graphite stacked vowels
-  - fn: global-scripts/thai-udhr
-    source: global-scripts/thai-udhr.sil
+  - fn: thai-udhr
+    source: thai-udhr.sil
     title: Thai
-  - fn: global-scripts/uyghur
-    source: global-scripts/uyghur.sil
+  - fn: uyghur
+    source: uyghur.sil
     title: Uyghur hyphenation
-  - fn: global-scripts/armenian
-    source: global-scripts/armenian.sil
+  - fn: armenian
+    source: armenian.sil
     title: Armenian hyphenation
 packages:
   - fn: packages/bibtex

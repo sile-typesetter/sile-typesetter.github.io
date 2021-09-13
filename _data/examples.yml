@@ -43,33 +43,33 @@ global:
     source: armenian.sil
     title: Armenian hyphenation
 packages:
-  - fn: packages/bibtex
-    source: packages/bibtex.sil
+  - fn: bibtex
+    source: bibtex.sil
     title: BibTeX bibliography support
-  - fn: packages/chordmode
-    source: packages/chordmode.sil
+  - fn: chordmode
+    source: chordmode.sil
     title: Chord mode
-  - fn: packages/frametricks
-    source: packages/frametricks.sil
+  - fn: frametricks
+    source: frametricks.sil
     title: Columns and drop caps with frametricks
-  - fn: packages/gutenberg
-    source: packages/gutenberg.sil
+  - fn: gutenberg
+    source: gutenberg.sil
     title: Gutenberg - justification alternates
-  - fn: packages/hyperlink
-    source: packages/hyperlink.sil
+  - fn: hyperlink
+    source: hyperlink.sil
     title: hyperlink
-  - fn: packages/ligature
-    source: packages/ligature.sil
+  - fn: ligature
+    source: ligature.sil
     title: OpenType features and ligatures
-  - fn: packages/parallel
-    source: packages/parallel.sil
+  - fn: parallel
+    source: parallel.sil
     title: Parallel layout
-  - fn: packages/pullquote
-    source: packages/pullquote.sil
+  - fn: pullquote
+    source: pullquote.sil
     title: pullquote package
-  - fn: packages/rotate
-    source: packages/rotate.sil
+  - fn: rotate
+    source: rotate.sil
     title: rotate package
-  - fn: packages/rule
-    source: packages/rule.sil
+  - fn: rule
+    source: rule.sil
     title: rule package

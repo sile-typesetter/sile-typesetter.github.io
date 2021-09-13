@@ -5,11 +5,11 @@
 \script[src=packages/rules]%
 \define[command=lig-ll]{\color[color=red]{\unichar{U+F4F9}}}%
 \define[command=nolig-fi]{f{}i}
-\define[command=ll]{\alt{{ll}{\lig-ll}}}
-\define[command=fi]{\alt{{fi}{\nolig-fi}}}
+\define[command=ll]{\alternative{{ll}{\lig-ll}}}
+\define[command=fi]{\alternative{{fi}{\nolig-fi}}}
 \define[command=nil]{}
-\define[command=and]{\alt{{and}{&}}}
-\define[command=ospace]{\alt{{\nil}{\glue[width=0.16667em]}}}
+\define[command=and]{\alternative{{and}{&}}}
+\define[command=ospace]{\alternative{{\nil}{\glue[width=0.16667em]}}}
 \font[family=EB Garamond,size=11pt]%
 
 \par

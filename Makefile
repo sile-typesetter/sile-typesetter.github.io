@@ -9,15 +9,19 @@ clean:
 public:
 	mkdir -p $@
 
-EXAMPLESILS := $(wildcard examples/*.sil)
-EXAMPLEPDFS := $(addprefix public/,$(addsuffix .pdf,$(basename $(EXAMPLESILS))))
+EXAMPLESRCS := $(wildcard examples/*.sil)
+EXAMPLEPDFS := $(addprefix public/,$(addsuffix .pdf,$(basename $(EXAMPLESRCS))))
+EXAMPLEPNGS := $(addsuffix .png,$(basename $(EXAMPLEPDFS)))
 
 .PHONY: examples
-examples: $(EXAMPLEPDFS)
+examples: $(EXAMPLEPDFS) $(EXAMPLEPNGS)
 
 $(EXAMPLEPDFS): public/%.pdf: %.sil
 	mkdir -p $(dir $@)
 	sile $< -o $@
+
+$(EXAMPLEPNGS): %.png: %.pdf
+	magick $<[0] -background white -density 300 -quality 90 -colorspace RGB -flatten $@
 
 .PHONY: jekyll
 jekyll: | public

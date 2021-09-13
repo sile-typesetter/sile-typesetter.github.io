@@ -3,11 +3,6 @@ layout: static
 title: SILE Examples
 ---
 
-<ul>
-  <a href="{{ site.baseurl }}/examples/global.html">Global Scripts</a><br>
-  <a href="{{ site.baseurl }}/examples/packages.html">Packages</a>
-</ul>
-
 <table class="examples">
 {% tablerow example in site.data.examples.basic cols:3%}
     <a href="https://raw.githubusercontent.com/sile-typesetter/sile/master/examples/{{example.fn}}.png">

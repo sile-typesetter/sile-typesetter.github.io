@@ -6,11 +6,12 @@ kramdown:
 baseurl: ""
 paginate: 5
 paginate_path: "blog/page:num"
-plugins:
+gems:
   - jekyll-paginate
   - jekyll-feed
   - jekyll-mentions
 exclude:
-  - public
   - '*.toc'
+  - public
+  - vendor
 permalink: /:categories/:year/:month/:slug

@@ -1,0 +1,30 @@
+\begin[papersize=6in x 9in, class=book]{document}
+\script[src=packages/lorem]
+\script[src=packages/color]
+\script[src=packages/dropcaps]
+\set[parameter=document.parskip, value=0.5ex]
+
+\define[command=loremx]{\lorem[words=29]}
+\define[command=loremxx]{\lorem[words=60]}
+\define[command=markx]{\color[color=red]{\process}}
+\define[command=smallcapx]{\font[features=+smcp]{\process}}
+
+This a normal paragraph: \loremx
+
+\dropcaps[lines=2, letter=T]{\smallcapx{his paragraph} has a decent initial (drop cap),
+using the default document font; \loremxx.\footnote{You didn’t expect more than that here, with such a font choice, right?}}
+
+\dropcaps[lines=3, letter=T, family=Acorn Initials]{\smallcapx{his paragraph}, provided you have the Acorn Initials font,
+has a much better initial; \loremxx.}
+
+\dropcaps[lines=4, letter=H, family=Zallman Caps]{\smallcapx{ere is a nice initial}, provided you have the Zallman Caps front;
+\loremxx.\footnote{\loremx.}}
+
+\dropcaps[lines=4, letter=T, joined=true, family=Zallman Caps]{\smallcapx{his paragraph} shows, in the same font, the
+joining option that you can use when the initial belongs to the first word in a sentence. In old-style typography,
+this was often preferred to the bare rectangular box most modern word-processing software render.
+With SILE, the choice is all yours!\footnote{\loremx.}}
+
+Let’s continue with a normal paragraph, \loremx.
+
+\end{document}

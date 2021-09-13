@@ -21,10 +21,20 @@ jobs:
         run: |
           nix-channel --add https://nixos.org/channels/nixpkgs-unstable
           nix-channel --update
+          nix-shell --run true
 
-      - name: Generate static site
+      - name: Generate example pdfs
         run: |
-          nix-shell --run make
+          nix-shell --run 'make examples'
+
+      - name: Run Jekyll
+        run: |
+          nix-shell --run 'make jekyll'
+
+      - name: Inject CNAME
+        if: ${{ github.repository == 'sile-typesetter/sile-typesetter.github.io' }}
+        run: |
+          make public/CNAME
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

@@ -16,6 +16,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Cache example fonts
+        uses: actions/cache@v2
+        with:
+          path: |
+            .fonts
+            .sources
+          key: fonts-${{ hashFiles('Makefile-fonts') }}
+
       - name: Install Nix
         uses: cachix/install-nix-action@v13
         with:

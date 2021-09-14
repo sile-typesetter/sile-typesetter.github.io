@@ -1,5 +1,5 @@
 with import <nixpkgs> {};
 mkShell {
   inputsFrom = [ rubyPackages.github-pages ];
-  nativeBuildInputs = [ bash gentium ghostscript gnumake imagemagick sile yq ];
+  nativeBuildInputs = [ bash cacert curl ghostscript gnumake imagemagick libarachive sile yq ];
 }

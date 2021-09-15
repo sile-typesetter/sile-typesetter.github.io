@@ -27,6 +27,7 @@ EXAMFONTFILES += NotoSansSinhala-Regular.ttf
 EXAMFONTFILES += NotoSansTamil-Regular.ttf
 EXAMFONTFILES += NotoSerifCJK-Regular.ttc
 EXAMFONTFILES += mnglwhiteotf.ttf
+EXAMFONTFILES += Quivira.otf
 
 notobase = $(shell sed -e 's/-.*//' <<< $(notdir $1))
 
@@ -43,6 +44,9 @@ notobase = $(shell sed -e 's/-.*//' <<< $(notdir $1))
 
 .fonts/Noto%.ttc: | .fonts
 	curl -fsSL https://github.com/googlefonts/noto-cjk/raw/NotoSansV2.001/$(notdir $@) -o $@
+
+.fonts/Quivira.otf: | .fonts
+	curl -fsSL http://www.quivira-font.com/files/$(notdir $@) -o $@
 
 # Tell  make how to download font file bundles (when not downloadable individually)
 

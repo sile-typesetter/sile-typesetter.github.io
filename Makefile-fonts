@@ -15,19 +15,23 @@ EXAMFONTFILES += Amiri-Regular.ttf
 EXAMFONTFILES += DejaVuSansCondensed-Bold.ttf DejaVuSans-Bold.ttf DejaVuSans-Oblique.ttf
 EXAMFONTFILES += LibertinusSerif-Regular.otf
 EXAMFONTFILES += Miama.otf
-EXAMFONTFILES += NotoNaskhArabic-Regular.ttf
+EXAMFONTFILES += NotoSans-Regular.ttf
+EXAMFONTFILES += NotoSansArabic-Regular.ttf
 EXAMFONTFILES += NotoSansArmenian-Regular.ttf
 EXAMFONTFILES += NotoSansBengali-Regular.ttf
+EXAMFONTFILES += NotoSansCJK-Regular.ttc
 EXAMFONTFILES += NotoSansCanadianAboriginal-Regular.ttf
 EXAMFONTFILES += NotoSansDevanagari-Regular.ttf
+EXAMFONTFILES += NotoSansGeorgian-Regular.ttf
+EXAMFONTFILES += NotoSansHebrew-Regular.ttf
 EXAMFONTFILES += NotoSansKhmer-Regular.ttf
 EXAMFONTFILES += NotoSansMalayalam-Regular.ttf
-EXAMFONTFILES += NotoSansSinhala-Regular.ttf
+EXAMFONTFILES += NotoSansMyanmar-Regular.ttf
 EXAMFONTFILES += NotoSansSinhala-Regular.ttf
 EXAMFONTFILES += NotoSansTamil-Regular.ttf
-EXAMFONTFILES += NotoSerifCJK-Regular.ttc
-EXAMFONTFILES += mnglwhiteotf.ttf
+EXAMFONTFILES += NotoSansThai-Regular.ttf
 EXAMFONTFILES += Quivira.otf
+EXAMFONTFILES += mnglwhiteotf.ttf
 
 notobase = $(shell sed -e 's/-.*//' <<< $(notdir $1))
 

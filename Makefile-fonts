@@ -40,6 +40,7 @@ EXAMFONTFILES += ScheherazadeNew-Regular.ttf
 EXAMFONTFILES += TuladhaJejeg_gr.ttf
 EXAMFONTFILES += hiragino-maru-gothic-pron-w4.otf
 EXAMFONTFILES += mnglwhiteotf.ttf
+EXAMFONTFILES += newathu5_5.ttf
 
 notobase = $(shell sed -e 's/-.*//' <<< $(notdir $1))
 
@@ -89,6 +90,9 @@ notobase = $(shell sed -e 's/-.*//' <<< $(notdir $1))
 .sources/Miama.zip: | .sources
 	curl -fsSL https://www.fontsquirrel.com/fonts/download/$(notdir $@) -o $@
 
+.sources/NAU5_005.zip: | .sources
+	curl -fsSL https://classicalstudies.org/sites/default/files/userfiles/files/$(notdir $@) -o $@
+
 .sources/Padauk-5.000.zip: | .sources
 	curl -fsSL https://software.sil.org/downloads/r/padauk/$(notdir $@) -o $@
 
@@ -133,6 +137,10 @@ notobase = $(shell sed -e 's/-.*//' <<< $(notdir $1))
 
 .fonts/Miama%: .sources/Miama.zip | .fonts
 	bsdtar -x -f $< -C $(dir $@) $(notdir $@)
+	touch $@
+
+.fonts/newathu5_5.ttf: .sources/NAU5_005.zip | .fonts
+	bsdtar -x -f $< -C $(dir $@) --strip-components 1 $(basename $(<F))/$(notdir $@)
 	touch $@
 
 .fonts/Padauk%: .sources/Padauk-5.000.zip | .fonts

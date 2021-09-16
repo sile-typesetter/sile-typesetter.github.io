@@ -16,6 +16,7 @@ EXAMFONTFILES += Cardo104s.ttf
 EXAMFONTFILES += DejaVuSansCondensed-Bold.ttf DejaVuSans-Bold.ttf DejaVuSans-Oblique.ttf
 EXAMFONTFILES += EBGaramond-Regular.ttf
 EXAMFONTFILES += Jomolhari-alpha3c-0605331.ttf
+EXAMFONTFILES += Junicode.ttf
 EXAMFONTFILES += LibertinusSerif-Regular.otf
 EXAMFONTFILES += Miama.otf
 EXAMFONTFILES += NotoSans-Regular.ttf
@@ -77,6 +78,9 @@ notobase = $(shell sed -e 's/-.*//' <<< $(notdir $1))
 .sources/Jomolhari-alpha003.zip: | .sources
 	curl -fsSL https://collab.its.virginia.edu/access/content/group/26a34146-33a6-48ce-001e-f16ce7908a6a/Tibetan%20fonts/Tibetan%20Unicode%20Fonts/$(notdir $@) -o $@
 
+.sources/junicode-1.002.zip: | .sources
+	curl -fsSL https://netix.dl.sourceforge.net/project/junicode/junicode/junicode-1.002/$(notdir $@) -o $@
+
 .sources/Libertinus-%.tar.xz: | .sources
 	curl -fsSL https://github.com/alerque/libertinus/releases/download/v$*/$(notdir $@) -o $@
 
@@ -108,6 +112,10 @@ notobase = $(shell sed -e 's/-.*//' <<< $(notdir $1))
 	touch $@
 
 .fonts/Jomolhari-alpha3c-0605331.ttf: .sources/Jomolhari-alpha003.zip | .fonts
+	bsdtar -x -f $< -C $(dir $@) $(notdir $@)
+	touch $@
+
+.fonts/Junicode%: .sources/junicode-1.002.zip | .fonts
 	bsdtar -x -f $< -C $(dir $@) $(notdir $@)
 	touch $@
 

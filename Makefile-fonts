@@ -36,6 +36,7 @@ EXAMFONTFILES += NotoSansTamil-Regular.ttf
 EXAMFONTFILES += NotoSansThai-Regular.ttf
 EXAMFONTFILES += Quivira.otf
 EXAMFONTFILES += ScheherazadeNew-Regular.ttf
+EXAMFONTFILES += TuladhaJejeg_gr.ttf
 EXAMFONTFILES += hiragino-maru-gothic-pron-w4.otf
 EXAMFONTFILES += mnglwhiteotf.ttf
 
@@ -90,6 +91,9 @@ notobase = $(shell sed -e 's/-.*//' <<< $(notdir $1))
 .sources/ScheherazadeNew-3.200.zip: | .sources
 	curl -fsSL https://software.sil.org/downloads/r/scheherazade/$(notdir $@) -o $@
 
+.sources/TuladhaJejegGr_2.01.zip: | .sources
+	curl -fsSL https://sites.google.com/site/jawaunicode/$(notdir $@) -o $@
+
 # Tell make how to extract individual files from bundles
 
 .fonts/Cardo%: .sources/cardo104.zip | .fonts
@@ -129,4 +133,8 @@ notobase = $(shell sed -e 's/-.*//' <<< $(notdir $1))
 
 .fonts/ScheherazadeNew%: .sources/ScheherazadeNew-3.200.zip | .fonts
 	bsdtar -x -f $< -C $(dir $@) --strip-components 1 $(basename $(<F))/$(notdir $@)
+	touch $@
+
+.fonts/TuladhaJejeg%: .sources/TuladhaJejegGr_2.01.zip | .fonts
+	bsdtar -x -f $< -C $(dir $@) $(notdir $@)
 	touch $@

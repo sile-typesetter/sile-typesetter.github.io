@@ -2,7 +2,7 @@
 \script[src=packages/rules]
 \script[src=packages/color]
 \define[command=left:font]{\font[family=Cardo,size=10pt,language=el]}
-\define[command=middle:font]{\font[family=Gentium,size=10pt,language=en]}
+\define[command=middle:font]{\font[family=Gentium Plus,size=10pt,language=en]}
 \define[command=right:font]{\font[family=Hiragino Mincho Pro,size=10pt,language=ja]}
 \define[command=bible:verse-number]{\raise[height=3pt]{\font[size=9pt]{\process}}}
 \set[parameter=document.lineskip,value=1ex]

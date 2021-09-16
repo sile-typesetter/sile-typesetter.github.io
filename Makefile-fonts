@@ -32,6 +32,7 @@ EXAMFONTFILES += NotoSansSinhala-Regular.ttf
 EXAMFONTFILES += NotoSansTamil-Regular.ttf
 EXAMFONTFILES += NotoSansThai-Regular.ttf
 EXAMFONTFILES += Quivira.otf
+EXAMFONTFILES += hiragino-maru-gothic-pron-w4.otf
 EXAMFONTFILES += mnglwhiteotf.ttf
 
 notobase = $(shell sed -e 's/-.*//' <<< $(notdir $1))
@@ -64,6 +65,9 @@ notobase = $(shell sed -e 's/-.*//' <<< $(notdir $1))
 .sources/GentiumPlus-5.000.zip: | .sources
 	curl -fsSL https://software.sil.org/downloads/r/gentium/$(notdir $@) -o $@
 
+.sources/hiragino-maru-gothic-pron-w4-maisfontes.c0b0.zip: | .sources
+	curl -fsSL https://cdn1.maisfontes.com/temp/$(notdir $@) -o $@
+
 .sources/Libertinus-%.tar.xz: | .sources
 	curl -fsSL https://github.com/alerque/libertinus/releases/download/v$*/$(notdir $@) -o $@
 
@@ -81,6 +85,10 @@ notobase = $(shell sed -e 's/-.*//' <<< $(notdir $1))
 
 .fonts/GentiumPlus%: .sources/GentiumPlus-5.000.zip | .fonts
 	bsdtar -x -f $< -C $(dir $@) --strip-components 1 $(basename $(<F))/$(notdir $@)
+	touch $@
+
+.fonts/hiragino-maru-gothic-pron-w4.otf: .sources/hiragino-maru-gothic-pron-w4-maisfontes.c0b0.zip | .fonts
+	bsdtar -x -f $< -C $(dir $@) $(notdir $@)
 	touch $@
 
 .fonts/Libertinus%: .sources/Libertinus-7.020.tar.xz | .fonts

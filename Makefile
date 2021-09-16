@@ -4,6 +4,7 @@
 .DELETE_ON_ERROR:
 
 .SHELLFLAGS += -e
+MAKEFLAGS += -j$(nproc)
 
 .PHONY: site
 site: jekyll examples
@@ -19,6 +20,7 @@ public:
 EXAMPLES := $(shell yq -r '.[][].fn' _data/examples.yml)
 EXAMPLEPDFS := $(addprefix public/examples/,$(addsuffix .pdf,$(EXAMPLES)))
 EXAMPLEPNGS := $(addprefix public/examples/,$(addsuffix .png,$(EXAMPLES)))
+EXAMPLETHBS := $(addprefix public/examples/,$(addsuffix -thumb.png,$(EXAMPLES)))
 
 LOCALTESTFONTS := FONTCONFIG_FILE=$(PWD)/fontconfig.conf
 SILEFLAGS ?= -d versions -f fontconfig
@@ -38,7 +40,7 @@ define runsile =
 endef
 
 .PHONY: examples
-examples: $(EXAMPLEPDFS) $(EXAMPLEPNGS)
+examples: $(EXAMPLEPDFS) $(EXAMPLEPNGS) $(EXAMPLETHBS)
 
 include Makefile-fonts
 
@@ -47,7 +49,10 @@ $(EXAMPLEPDFS): public/%.pdf: %.sil $(addprefix .fonts/,$(EXAMFONTFILES))
 	$(runsile)
 
 $(EXAMPLEPNGS): %.png: %.pdf
-	magick $<[0] -background white -density 300 -quality 90 -colorspace RGB -flatten $@
+	magick -density 300 $<[0] -background white -quality 95 -sharpen 0x1.0 -colorspace RGB -flatten $@
+
+$(EXAMPLETHBS): %-thumb.png: %.pdf
+	magick -density 72 $<[0] -background white -quality 95 -sharpen 0x1.0 -colorspace RGB -flatten $@
 
 .PHONY: jekyll
 jekyll: | public

@@ -12,6 +12,7 @@ DEFSFONTFILES  = GentiumPlus-R.ttf GentiumPlus-I.ttf
 
 EXAMFONTFILES  = $(DEFSFONTFILES)
 EXAMFONTFILES += Amiri-Regular.ttf
+EXAMFONTFILES += Cardo104s.ttf
 EXAMFONTFILES += DejaVuSansCondensed-Bold.ttf DejaVuSans-Bold.ttf DejaVuSans-Oblique.ttf
 EXAMFONTFILES += LibertinusSerif-Regular.otf
 EXAMFONTFILES += Miama.otf
@@ -54,6 +55,9 @@ notobase = $(shell sed -e 's/-.*//' <<< $(notdir $1))
 
 # Tell  make how to download font file bundles (when not downloadable individually)
 
+.sources/cardo104.zip: | .sources
+	curl -fsSL https://scholarsfonts.net/$(notdir $@) -o $@
+
 .sources/dejavu-fonts-ttf-2.37.tar.bz2: | .sources
 	curl -fsSL https://github.com/dejavu-fonts/dejavu-fonts/releases/download/version_2_37/$(notdir $@) -o $@
 
@@ -67,6 +71,9 @@ notobase = $(shell sed -e 's/-.*//' <<< $(notdir $1))
 	curl -fsSL https://www.fontsquirrel.com/fonts/download/$(notdir $@) -o $@
 
 # Tell make how to extract individual files from bundles
+
+.fonts/Cardo%: .sources/cardo104.zip | .fonts
+	bsdtar -x -f $< -C $(dir $@) $(notdir $@)
 
 .fonts/DejaVu%: .sources/dejavu-fonts-ttf-2.37.tar.bz2 | .fonts
 	bsdtar -x -f $< -C $(dir $@) --strip-components 2 $(basename $(basename $(<F)))/ttf/$(notdir $@)

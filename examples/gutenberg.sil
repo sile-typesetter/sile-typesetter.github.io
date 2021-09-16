@@ -1,3 +1,4 @@
+% TODO https://github.com/sile-typesetter/sile/issues/1227
 \begin[class=plain,papersize=130mm x 100mm]{document}\nofolios
 \script[src=packages/gutenberg]
 \script[src=packages/unichar]

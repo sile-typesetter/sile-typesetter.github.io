@@ -1,3 +1,4 @@
+% TODO https://github.com/sile-typesetter/sile/issues/1225
 \begin[class=triglot,papersize=a5]{document}
 \nofolios
 \script[src=packages/rules]

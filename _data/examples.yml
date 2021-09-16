@@ -12,12 +12,13 @@ global:
   - fn: arabic
     source: arabic.sil
     title: Support for RTL scripts like Arabic, with mixed directionality and language-specific variants
-  # - fn: japanese
-  #   source: japanese.sil
-  #   title: Vertical Japanese with Ruby and inline Latin
+  - fn: japanese
+    source: japanese.sil
+    title: Vertical Japanese with Ruby and inline Latin
   - fn: mongolian
     source: mongolian.sil
     title: Mongolian - top to bottom, left to right
+  # TODO https://github.com/sile-typesetter/sile/issues/1225
   # - fn: triglot
   #   source: triglot.sil
   #   title: A triglot layout - Greek, English and Japanese
@@ -36,6 +37,7 @@ global:
   - fn: thai-udhr
     source: thai-udhr.sil
     title: Thai
+  # TODO https://github.com/sile-typesetter/sile/issues/1228
   # - fn: uyghur
   #   source: uyghur.sil
   #   title: Uyghur hyphenation
@@ -52,6 +54,7 @@ packages:
   - fn: frametricks
     source: frametricks.sil
     title: Columns and drop caps with frametricks
+  # TODO https://github.com/sile-typesetter/sile/issues/1227
   # - fn: gutenberg
   #   source: gutenberg.sil
   #   title: Gutenberg - justification alternates

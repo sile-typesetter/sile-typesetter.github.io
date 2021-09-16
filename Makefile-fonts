@@ -14,6 +14,7 @@ EXAMFONTFILES  = $(DEFSFONTFILES)
 EXAMFONTFILES += Amiri-Regular.ttf
 EXAMFONTFILES += Cardo104s.ttf
 EXAMFONTFILES += DejaVuSansCondensed-Bold.ttf DejaVuSans-Bold.ttf DejaVuSans-Oblique.ttf
+EXAMFONTFILES += EBGaramond-Regular.ttf
 EXAMFONTFILES += Jomolhari-alpha3c-0605331.ttf
 EXAMFONTFILES += LibertinusSerif-Regular.otf
 EXAMFONTFILES += Miama.otf
@@ -64,6 +65,9 @@ notobase = $(shell sed -e 's/-.*//' <<< $(notdir $1))
 .sources/dejavu-fonts-ttf-2.37.tar.bz2: | .sources
 	curl -fsSL https://github.com/dejavu-fonts/dejavu-fonts/releases/download/version_2_37/$(notdir $@) -o $@
 
+.sources/EB_Garamond.zip: | .sources
+	curl -fsSL https://fonts.google.com/download?family=EB%20Garamond -o $@
+
 .sources/GentiumPlus-5.000.zip: | .sources
 	curl -fsSL https://software.sil.org/downloads/r/gentium/$(notdir $@) -o $@
 
@@ -89,6 +93,10 @@ notobase = $(shell sed -e 's/-.*//' <<< $(notdir $1))
 
 .fonts/DejaVu%: .sources/dejavu-fonts-ttf-2.37.tar.bz2 | .fonts
 	bsdtar -x -f $< -C $(dir $@) --strip-components 2 $(basename $(basename $(<F)))/ttf/$(notdir $@)
+	touch $@
+
+.fonts/EBGaramond-%: .sources/EB_Garamond.zip | .fonts
+	bsdtar -x -f $< -C $(dir $@) --strip-components 1 static/$(notdir $@)
 	touch $@
 
 .fonts/GentiumPlus%: .sources/GentiumPlus-5.000.zip | .fonts

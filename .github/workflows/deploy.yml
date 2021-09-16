@@ -11,28 +11,40 @@ jobs:
     runs-on: ubuntu-20.04
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
+
     steps:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Setup ruby
-        uses: ruby/setup-ruby@v1
+      - name: Cache example fonts
+        uses: actions/cache@v2
         with:
-          ruby-version: 3.0
+          path: |
+            .fonts
+            .sources
+          key: fonts-${{ hashFiles('Makefile-fonts') }}
 
-      - name: Build Jekyll bits
-        uses: limjh16/jekyll-action-ts@v2
+      - name: Install Nix
+        uses: cachix/install-nix-action@v13
         with:
-          enable_cache: true
+          nix_path: nixpkgs=channel:nixos-unstable
 
-      - name: Build the site
+      - name: Install project dependencies
         run: |
-          make site JEKYLL=:
+          nix-shell --run true
+
+      - name: Generate example artifacts
+        run: |
+          nix-shell --run 'make examples'
+
+      - name: Generate static site pages
+        run: |
+          nix-shell --run 'make jekyll'
 
       - name: Inject CNAME
         if: ${{ github.repository == 'sile-typesetter/sile-typesetter.github.io' }}
         run: |
-          make public/CNAME
+          nix-shell --run 'make public/CNAME'
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

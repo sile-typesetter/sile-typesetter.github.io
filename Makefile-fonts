@@ -34,6 +34,7 @@ EXAMFONTFILES += NotoSansMyanmar-Regular.ttf
 EXAMFONTFILES += NotoSansSinhala-Regular.ttf
 EXAMFONTFILES += NotoSansTamil-Regular.ttf
 EXAMFONTFILES += NotoSansThai-Regular.ttf
+EXAMFONTFILES += Padauk-Regular.ttf
 EXAMFONTFILES += Quivira.otf
 EXAMFONTFILES += ScheherazadeNew-Regular.ttf
 EXAMFONTFILES += TuladhaJejeg_gr.ttf
@@ -88,6 +89,9 @@ notobase = $(shell sed -e 's/-.*//' <<< $(notdir $1))
 .sources/Miama.zip: | .sources
 	curl -fsSL https://www.fontsquirrel.com/fonts/download/$(notdir $@) -o $@
 
+.sources/Padauk-5.000.zip: | .sources
+	curl -fsSL https://software.sil.org/downloads/r/padauk/$(notdir $@) -o $@
+
 .sources/ScheherazadeNew-3.200.zip: | .sources
 	curl -fsSL https://software.sil.org/downloads/r/scheherazade/$(notdir $@) -o $@
 
@@ -129,6 +133,10 @@ notobase = $(shell sed -e 's/-.*//' <<< $(notdir $1))
 
 .fonts/Miama%: .sources/Miama.zip | .fonts
 	bsdtar -x -f $< -C $(dir $@) $(notdir $@)
+	touch $@
+
+.fonts/Padauk%: .sources/Padauk-5.000.zip | .fonts
+	bsdtar -x -f $< -C $(dir $@) --strip-components 1 $(basename $(<F))/$(notdir $@)
 	touch $@
 
 .fonts/ScheherazadeNew%: .sources/ScheherazadeNew-3.200.zip | .fonts

@@ -3,8 +3,7 @@
 \script[src=packages/linespacing]
 \set[parameter=linespacing.method,value=fixed]
 \set[parameter=linespacing.fixed.baselinedistance,value=1.5em]
-\set[parameter=document.letterspaceglue, value=0pt plus 5pt]
-
+\set[parameter=document.letterspaceglue,value=0pt plus 5pt]
 ปฏิญญาสากลว่าด้วยสิทธิมนุษยชน
 
 คำปรารภ
@@ -184,7 +183,4 @@
 ข้อ 30
 
 ไม่มีบทใด ในปฏิญญานี้ที่จะอนุมานว่าให้สิทธิใด ๆ แก่รัฐ หมู่คน หรือบุคคล ในอันที่จะดำเนินกิจกรรมใด ๆ หรือปฏิบัติการใด ๆ อันมุ่งต่อการทำลายสิทธิและอิสรภาพ ดังกำหนดไว้ ณ ที่นี้
-
-
-
 \end{document}

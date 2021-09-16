@@ -1,11 +1,12 @@
-\begin[papersize=110mm x 110mm]{document}\nofolios%
-\script[src=packages/linespacing]%
+\begin[papersize=a5]{document}
+\nofolios
+\font[family=Noto Sans,size=16.3pt]
+\script[src=packages/linespacing]
 \set[parameter=linespacing.method,value=fixed]
-\set[parameter=linespacing.fixed.baselinedistance,value=1.5em]
+\set[parameter=linespacing.fixed.baselinedistance,value=1.6em]
 \define[command=myquad]{\glue[width=1.2em plus 1.2em minus 1.2em]}
 \set[parameter=linebreak.hyphenPenalty,value=3000]
 \set[parameter=linebreak.tolerance,value=1000]
-\font[family=Noto Sans,size=12pt]
 My hovercraft is full of eels. \myquad
 \font[family=Noto Sans Arabic,language=ar]{حَوّامتي مُمْتِلئة بِأَنْقَلَيْسون} \myquad
 \font[family=Noto Sans Armenian,language=hy]{Իմ սաւառնակս օձաձկներով լեցուն է}: \myquad

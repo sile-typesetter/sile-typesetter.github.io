@@ -1,4 +1,5 @@
-\begin[papersize=a5]{document}\nofolios
+\begin[papersize=a5]{document}
+\nofolios
 \script[src=packages/pullquote]
 \font[family=Libertinus Serif,size=12pt]
 \set[parameter=document.parskip,value=12pt]

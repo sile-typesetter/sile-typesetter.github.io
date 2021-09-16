@@ -1,4 +1,5 @@
-\begin[class=triglot,papersize=a5]{document}\nofolios
+\begin[class=triglot,papersize=a5]{document}
+\nofolios
 \script[src=packages/rules]
 \script[src=packages/color]
 \define[command=left:font]{\font[family=Cardo,size=10pt,language=el]}
@@ -36,7 +37,7 @@
 \right  あなたがたも、以前このようなことの中にいたときには、それに従って歩んでいました。\par
 \sync
 \left \bible:verse-number{8} νυνὶ δὲ ἀπόθεσθε καὶ ὑμεῖς τὰ πάντα, ὀργήν, θυμόν, κακίαν, βλασφημίαν, αἰσχρολογίαν ἐκ τοῦ στόματος ὑμῶν·\par
-\middle  But now, put off all such things as anger, rage, malice, slander, abusive language from your mouth. \par 
+\middle  But now, put off all such things as anger, rage, malice, slander, abusive language from your mouth. \par
 \right 今は、そのすべてを、すなわち、怒り、憤り、悪意、そしり、口から出る恥ずべき言葉を捨てなさい。\par
 \sync
 \end{document}

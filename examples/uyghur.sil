@@ -7,21 +7,21 @@
 \script[src=packages/frametricks]
 \showframe
 \font[family=Amiri,size=20pt,language=ar]
+\bigskip
 
-\bigskip :Without Uyghur support\bigskip
+:Without Uyghur support
+\bigskip
 
 \noindent{}شى جىنپىڭ گۇما ناھىيەسىدىكى يەر تەۋرىگەن رايوندا ئەسلىگە كەلتۈرۈش خى
 زمىتى توغرىسىدا مۇھىم يوليورۇق بەردى
 شىمالىي ئاتلانتىك ئەھتى تەشكىلاتىغا ئەزا دۆلەتلەر بىرلەشمە مانېۋىر ئۆتكۈزدى ئۈرۈمدىكى يۇقىرى تېمپېراتۇرىلىق ھاۋارايى «ۋاقتىنچە» ئاياغلاشتى
+\bigskip
 
+:With Uyghur support
+\bigskip
 
-
-\bigskip :With Uyghur support\bigskip
 \font[language=ug]
-
 \noindent{}شى جىنپىڭ گۇما ناھىيەسىدىكى يەر تەۋرىگەن رايوندا ئەسلىگە كەلتۈرۈش خى
 زمىتى توغرىسىدا مۇھىم يوليورۇق بەردى
 شىمالىي ئاتلانتىك ئەھتى تەشكىلاتىغا ئەزا دۆلەتلەر بىرلەشمە مانېۋىر ئۆتكۈزدى ئۈرۈمدىكى يۇقىرى تېمپېراتۇرىلىق ھاۋارايى «ۋاقتىنچە» ئاياغلاشتى
-
-
 \end{document}

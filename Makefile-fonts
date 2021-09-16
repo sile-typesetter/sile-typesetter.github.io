@@ -38,7 +38,6 @@ EXAMFONTFILES += Padauk-Regular.ttf
 EXAMFONTFILES += Quivira.otf
 EXAMFONTFILES += ScheherazadeNew-Regular.ttf
 EXAMFONTFILES += TuladhaJejeg_gr.ttf
-EXAMFONTFILES += hiragino-maru-gothic-pron-w4.otf
 EXAMFONTFILES += mnglwhiteotf.ttf
 EXAMFONTFILES += newathu5_5.ttf
 
@@ -74,9 +73,6 @@ notobase = $(shell sed -e 's/-.*//' <<< $(notdir $1))
 
 .sources/GentiumPlus-5.000.zip: | .sources
 	curl -fsSL https://software.sil.org/downloads/r/gentium/$(notdir $@) -o $@
-
-.sources/hiragino-maru-gothic-pron-w4-maisfontes.c0b0.zip: | .sources
-	curl -fsSL https://cdn1.maisfontes.com/temp/$(notdir $@) -o $@
 
 .sources/Jomolhari-alpha003.zip: | .sources
 	curl -fsSL https://collab.its.virginia.edu/access/content/group/26a34146-33a6-48ce-001e-f16ce7908a6a/Tibetan%20fonts/Tibetan%20Unicode%20Fonts/$(notdir $@) -o $@
@@ -117,10 +113,6 @@ notobase = $(shell sed -e 's/-.*//' <<< $(notdir $1))
 
 .fonts/GentiumPlus%: .sources/GentiumPlus-5.000.zip | .fonts
 	bsdtar -x -f $< -C $(dir $@) --strip-components 1 $(basename $(<F))/$(notdir $@)
-	touch $@
-
-.fonts/hiragino-maru-gothic-pron-w4.otf: .sources/hiragino-maru-gothic-pron-w4-maisfontes.c0b0.zip | .fonts
-	bsdtar -x -f $< -C $(dir $@) $(notdir $@)
 	touch $@
 
 .fonts/Jomolhari-alpha3c-0605331.ttf: .sources/Jomolhari-alpha003.zip | .fonts

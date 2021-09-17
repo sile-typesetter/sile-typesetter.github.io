@@ -1,6 +1,6 @@
 \begin[papersize=a5]{document}
 \nofolios
-\language[main=ar]
+\language[main=hy]
 \begin[first-content-frame=narrow]{pagetemplate}
 \frame[id=narrow,left=left(content),top=top(content),bottom=bottom(content),width=width(content)/2.5,next=narrow2]
 \frame[id=narrow2,left=left(content)+width(content)/2,top=top(content),bottom=bottom(content),width=width(content)/2.5]

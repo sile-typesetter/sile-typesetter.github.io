@@ -4,7 +4,6 @@
 .DELETE_ON_ERROR:
 
 .SHELLFLAGS += -e
-MAKEFLAGS += -j$(nproc)
 
 .PHONY: site
 site: jekyll examples

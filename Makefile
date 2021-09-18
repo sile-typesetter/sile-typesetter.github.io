@@ -21,6 +21,9 @@ EXAMPLEPDFS := $(addprefix public/examples/,$(addsuffix .pdf,$(EXAMPLES)))
 EXAMPLEPNGS := $(addprefix public/examples/,$(addsuffix .png,$(EXAMPLES)))
 EXAMPLETHBS := $(addprefix public/examples/,$(addsuffix -thumb.png,$(EXAMPLES)))
 
+DEVELEXAMPLES := $(shell yq -r '.[][] | select(.devel == true) | .fn' _data/examples.yml)
+DEVELEXAMPLEPDFS := $(addprefix public/examples/,$(addsuffix .pdf,$(DEVELEXAMPLES)))
+
 LOCALTESTFONTS := FONTCONFIG_FILE=$(PWD)/fontconfig.conf
 SILEFLAGS ?= -d versions -f fontconfig
 
@@ -28,7 +31,7 @@ SILEFLAGS ?= -d versions -f fontconfig
 # garantee the TOC is up to date, simplify when #230 is fixed.
 hastoc = [[ -f $(patsubst public/%,%,$(subst .pdf,.toc,$@)) ]] && echo true || echo false
 pages = pdfinfo $@ | awk '$$1 == "Pages:" {print $$2}' || echo 0
-silepass = $(LOCALTESTFONTS) sile $(SILEFLAGS) $< -o $@ && pg0=$${pg} pg=$$($(pages))
+silepass = $(LOCALTESTFONTS) $(SILE) $(SILEFLAGS) $< -o $@ && pg0=$${pg} pg=$$($(pages))
 define runsile =
 	pg0=$$($(pages)) hadtoc=$$($(hastoc))
 	$(silepass)
@@ -42,6 +45,9 @@ endef
 examples: $(EXAMPLEPDFS) $(EXAMPLEPNGS) $(EXAMPLETHBS)
 
 include Makefile-fonts
+
+SILE ?= sile
+$(DEVELEXAMPLEPDFS): SILE = nix run github:sile-typesetter/sile --
 
 $(EXAMPLEPDFS): public/%.pdf: %.sil $(addprefix .fonts/,$(EXAMFONTFILES))
 	mkdir -p $(dir $@)

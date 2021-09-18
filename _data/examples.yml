@@ -42,6 +42,7 @@ global:
   #   source: uyghur.sil
   #   title: Uyghur hyphenation
   - fn: armenian
+    devel: true
     source: armenian.sil
     title: Armenian hyphenation
 packages:

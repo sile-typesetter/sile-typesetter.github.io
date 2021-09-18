@@ -1,11 +1,14 @@
 \begin[papersize=a5]{document}
 \nofolios
-\language[main=ar]
 \begin[first-content-frame=narrow]{pagetemplate}
-\frame[id=narrow,left=left(content),top=top(content),bottom=bottom(content),width=width(content)/2.5,next=narrow2]
-\frame[id=narrow2,left=left(content)+width(content)/2,top=top(content),bottom=bottom(content),width=width(content)/2.5]
+\frame[id=narrow,left=left(content),top=top(content),bottom=bottom(content),width=width(content)/3,next=narrow2]
+\frame[id=narrow2,left=left(content)+width(content)/2,top=top(content),bottom=bottom(content),width=width(content)/3]
 \end{pagetemplate}
-\font[family=Quivira]
+\language[main=hy]
+\script[src=packages/font-fallback]
+\font[family=Noto Serif Armenian,size=9pt]
+\font:add-fallback[family=Noto Serif]
+\set[parameter=document.baselineskip,value=2.7ex]
 Նկատի առնելով, որ մարդկային ընտանիքի բոլոր անդամներին ներհատուկ արժանապատվության եւ հավասար ու անօտարելի իրավունքների ճանաչումն աշխարհում ազատության, արդարության եւ խաղաղության հիմքն է,
 նկատի առնելով, որ մարդու իրավունքների անտեսումն ու դրանց նկատմամբ արհամարհանքը հանգեցրել են մարդկության խիղճը վրդովող բարբարոսական գործողությունների, եւ որպես մարդկության վեհ նպատակ հռչակված է այնպիսի աշխարհի ստեղծումը, որտեղ մարդիկ կվայելեն խոսքի եւ համոզմունքի ազատություն եւ զերծ կլինեն վախից ու կարիքից,
 նկատի առնելով, որ կարեւոր է իրավական պետության կողմից մարդու իրավունքների պաշտպանությունը, որպեսզի մարդը հարկադրված չլինի դիմելու բռնակալության ու ճնշման դեմ ապստամբության՝ որպես վերջին միջոցի,

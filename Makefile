@@ -16,13 +16,14 @@ clean:
 public:
 	mkdir -p $@
 
-EXAMPLES := $(shell yq -r '.[][].fn' _data/examples.yml)
+EXAMPLES := $(shell yq -r '.[][] | select(.devel != true) | .fn' _data/examples.yml)
 EXAMPLEPDFS := $(addprefix public/examples/,$(addsuffix .pdf,$(EXAMPLES)))
-EXAMPLEPNGS := $(addprefix public/examples/,$(addsuffix .png,$(EXAMPLES)))
-EXAMPLETHBS := $(addprefix public/examples/,$(addsuffix -thumb.png,$(EXAMPLES)))
 
 DEVELEXAMPLES := $(shell yq -r '.[][] | select(.devel == true) | .fn' _data/examples.yml)
 DEVELEXAMPLEPDFS := $(addprefix public/examples/,$(addsuffix .pdf,$(DEVELEXAMPLES)))
+
+EXAMPLEPNGS := $(addprefix public/examples/,$(addsuffix .png,$(EXAMPLES) $(DEVELEXAMPLES)))
+EXAMPLETHBS := $(addprefix public/examples/,$(addsuffix -thumb.png,$(EXAMPLES) $(DEVELEXAMPLES)))
 
 LOCALTESTFONTS := FONTCONFIG_FILE=$(PWD)/fontconfig.conf
 SILEFLAGS ?= -d versions -f fontconfig
@@ -42,14 +43,14 @@ define runsile =
 endef
 
 .PHONY: examples
-examples: $(EXAMPLEPDFS) $(EXAMPLEPNGS) $(EXAMPLETHBS)
+examples: $(EXAMPLEPDFS) $(DEVELEXAMPLEPDFS) $(EXAMPLEPNGS) $(EXAMPLETHBS)
 
 include Makefile-fonts
 
-SILE ?= sile
-$(DEVELEXAMPLEPDFS): SILE = nix run github:sile-typesetter/sile --
+$(EXAMPLEPDFS): SILE ?= sile
+$(DEVELEXAMPLEPDFS): SILE ?= nix run github:sile-typesetter/sile --
 
-$(EXAMPLEPDFS): public/%.pdf: %.sil $(addprefix .fonts/,$(EXAMFONTFILES))
+$(EXAMPLEPDFS) $(DEVELEXAMPLEPDFS): public/%.pdf: %.sil $(addprefix .fonts/,$(EXAMFONTFILES))
 	mkdir -p $(dir $@)
 	$(runsile)
 

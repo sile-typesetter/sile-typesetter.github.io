@@ -246,7 +246,21 @@ img.cover-photo {
 }
 
 /* Examples */
-.examples { text-align: center; }
-.examples td { padding: 30px 30px 30px 30px; }
-.examples img { width:200px; border:1px solid blue; }
-.examples .title { font-size:10pt; line-height: 90%; }
+.examples {
+  text-align: center;
+}
+.examples td a:hover {
+  border-bottom: none;
+}
+.examples td {
+  padding: 30px;
+  vertical-align: top;
+}
+.examples img {
+  width: 200px;
+  box-shadow: 0 0.2rem 0.25rem rgba(0, 0, 0, 0.2);
+}
+.examples .title {
+  font-size:10pt;
+  line-height: 90%;
+}

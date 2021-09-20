@@ -1,0 +1,147 @@
+.fonts: fontconfig.conf
+	[ -h .fonts ] || mkdir -p $@
+
+.sources:
+	[ -h .sources ] || mkdir -p $@
+
+# Don't let make delete things we had to download
+.PRECIOUS: .fonts/% .sources/%
+
+# List of font files we _actually need_
+DEFSFONTFILES  = GentiumPlus-R.ttf GentiumPlus-I.ttf
+
+EXAMFONTFILES  = $(DEFSFONTFILES)
+EXAMFONTFILES += Amiri-Regular.ttf
+EXAMFONTFILES += Cardo104s.ttf
+EXAMFONTFILES += DejaVuSansCondensed-Bold.ttf DejaVuSans-Bold.ttf DejaVuSans-Oblique.ttf
+EXAMFONTFILES += EBGaramond-Regular.ttf
+EXAMFONTFILES += Jomolhari-alpha3c-0605331.ttf
+EXAMFONTFILES += Junicode.ttf
+EXAMFONTFILES += LibertinusSerif-Regular.otf
+EXAMFONTFILES += Miama.otf
+EXAMFONTFILES += NotoSans-Regular.ttf
+EXAMFONTFILES += NotoSansArabic-Regular.ttf
+EXAMFONTFILES += NotoSansArmenian-Regular.ttf
+EXAMFONTFILES += NotoSansBengali-Regular.ttf
+EXAMFONTFILES += NotoSansCJK-Regular.ttc
+EXAMFONTFILES += NotoSansCanadianAboriginal-Regular.ttf
+EXAMFONTFILES += NotoSansDevanagari-Regular.ttf
+EXAMFONTFILES += NotoSansGeorgian-Regular.ttf
+EXAMFONTFILES += NotoSansHebrew-Regular.ttf
+EXAMFONTFILES += NotoSansKhmer-Regular.ttf
+EXAMFONTFILES += NotoSansMalayalam-Regular.ttf
+EXAMFONTFILES += NotoSansMyanmar-Regular.ttf
+EXAMFONTFILES += NotoSansSinhala-Regular.ttf
+EXAMFONTFILES += NotoSansTamil-Regular.ttf
+EXAMFONTFILES += NotoSansThai-Regular.ttf
+EXAMFONTFILES += NotoSerif-Regular.ttf
+EXAMFONTFILES += NotoSerifArmenian-Regular.ttf
+EXAMFONTFILES += NotoSerifCJK-Regular.ttc
+EXAMFONTFILES += Padauk-Regular.ttf
+EXAMFONTFILES += ScheherazadeNew-Regular.ttf
+EXAMFONTFILES += TuladhaJejeg_gr.ttf
+EXAMFONTFILES += mnglwhiteotf.ttf
+EXAMFONTFILES += newathu5_5.ttf
+
+notobase = $(shell sed -e 's/-.*//' <<< $(notdir $1))
+
+# Tell make how to download individual font files directly (when available)
+
+.fonts/Amiri%: | .fonts
+	curl -fsSL https://github.com/alif-type/amiri/raw/0.113/$(notdir $@) -o $@
+
+.fonts/mngl%.ttf: | .fonts
+	curl -fsSL http://mongolfont.com/jAlmas/cms/documents/mongolfont/font/$(notdir $@) -o $@
+
+.fonts/Noto%.ttf: | .fonts
+	curl -fsSL https://github.com/googlefonts/noto-fonts/raw/v20201206-phase3/hinted/ttf/$(call notobase,$@)/$(notdir $@) -o $@
+
+.fonts/Noto%.ttc: | .fonts
+	curl -fsSL https://github.com/googlefonts/noto-cjk/raw/NotoSansV2.001/$(notdir $@) -o $@
+
+# Tell  make how to download font file bundles (when not downloadable individually)
+
+.sources/cardo104.zip: | .sources
+	curl -fsSL https://scholarsfonts.net/$(notdir $@) -o $@
+
+.sources/dejavu-fonts-ttf-2.37.tar.bz2: | .sources
+	curl -fsSL https://github.com/dejavu-fonts/dejavu-fonts/releases/download/version_2_37/$(notdir $@) -o $@
+
+.sources/EB_Garamond.zip: | .sources
+	curl -fsSL https://fonts.google.com/download?family=EB%20Garamond -o $@
+
+.sources/GentiumPlus-5.000.zip: | .sources
+	curl -fsSL https://software.sil.org/downloads/r/gentium/$(notdir $@) -o $@
+
+.sources/Jomolhari-alpha003.zip: | .sources
+	curl -fsSL https://collab.its.virginia.edu/access/content/group/26a34146-33a6-48ce-001e-f16ce7908a6a/Tibetan%20fonts/Tibetan%20Unicode%20Fonts/$(notdir $@) -o $@
+
+.sources/junicode-1.002.zip: | .sources
+	curl -fsSL https://netix.dl.sourceforge.net/project/junicode/junicode/junicode-1.002/$(notdir $@) -o $@
+
+.sources/Libertinus-%.tar.xz: | .sources
+	curl -fsSL https://github.com/alerque/libertinus/releases/download/v$*/$(notdir $@) -o $@
+
+.sources/Miama.zip: | .sources
+	curl -fsSL https://www.fontsquirrel.com/fonts/download/$(notdir $@) -o $@
+
+.sources/NAU5_005.zip: | .sources
+	curl -fsSL https://classicalstudies.org/sites/default/files/userfiles/files/$(notdir $@) -o $@
+
+.sources/Padauk-5.000.zip: | .sources
+	curl -fsSL https://software.sil.org/downloads/r/padauk/$(notdir $@) -o $@
+
+.sources/ScheherazadeNew-3.200.zip: | .sources
+	curl -fsSL https://software.sil.org/downloads/r/scheherazade/$(notdir $@) -o $@
+
+.sources/TuladhaJejegGr_2.01.zip: | .sources
+	curl -fsSL https://sites.google.com/site/jawaunicode/$(notdir $@) -o $@
+
+# Tell make how to extract individual files from bundles
+
+.fonts/Cardo%: .sources/cardo104.zip | .fonts
+	bsdtar -x -f $< -C $(dir $@) $(notdir $@)
+
+.fonts/DejaVu%: .sources/dejavu-fonts-ttf-2.37.tar.bz2 | .fonts
+	bsdtar -x -f $< -C $(dir $@) --strip-components 2 $(basename $(basename $(<F)))/ttf/$(notdir $@)
+	touch $@
+
+.fonts/EBGaramond-%: .sources/EB_Garamond.zip | .fonts
+	bsdtar -x -f $< -C $(dir $@) --strip-components 1 static/$(notdir $@)
+	touch $@
+
+.fonts/GentiumPlus%: .sources/GentiumPlus-5.000.zip | .fonts
+	bsdtar -x -f $< -C $(dir $@) --strip-components 1 $(basename $(<F))/$(notdir $@)
+	touch $@
+
+.fonts/Jomolhari-alpha3c-0605331.ttf: .sources/Jomolhari-alpha003.zip | .fonts
+	bsdtar -x -f $< -C $(dir $@) $(notdir $@)
+	touch $@
+
+.fonts/Junicode%: .sources/junicode-1.002.zip | .fonts
+	bsdtar -x -f $< -C $(dir $@) $(notdir $@)
+	touch $@
+
+.fonts/Libertinus%: .sources/Libertinus-7.020.tar.xz | .fonts
+	bsdtar -x -f $< -C $(dir $@) --strip-components 3 $(basename $(basename $(<F)))/static/OTF/$(notdir $@)
+	touch $@
+
+.fonts/Miama%: .sources/Miama.zip | .fonts
+	bsdtar -x -f $< -C $(dir $@) $(notdir $@)
+	touch $@
+
+.fonts/newathu5_5.ttf: .sources/NAU5_005.zip | .fonts
+	bsdtar -x -f $< -C $(dir $@) --strip-components 1 $(basename $(<F))/$(notdir $@)
+	touch $@
+
+.fonts/Padauk%: .sources/Padauk-5.000.zip | .fonts
+	bsdtar -x -f $< -C $(dir $@) --strip-components 1 $(basename $(<F))/$(notdir $@)
+	touch $@
+
+.fonts/ScheherazadeNew%: .sources/ScheherazadeNew-3.200.zip | .fonts
+	bsdtar -x -f $< -C $(dir $@) --strip-components 1 $(basename $(<F))/$(notdir $@)
+	touch $@
+
+.fonts/TuladhaJejeg%: .sources/TuladhaJejegGr_2.01.zip | .fonts
+	bsdtar -x -f $< -C $(dir $@) $(notdir $@)
+	touch $@

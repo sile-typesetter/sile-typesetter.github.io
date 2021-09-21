@@ -59,6 +59,10 @@ public/%.pdf: %.xml $(addprefix .fonts/,$(EXAMFONTFILES))
 	mkdir -p $(dir $@)
 	$(runsile)
 
+public/%.pdf: %.lua $(addprefix .fonts/,$(EXAMFONTFILES))
+	mkdir -p $(dir $@)
+	lua $< $@
+
 $(EXAMPLEPNGS): %.png: %.pdf
 	magick -density 300 $<[0] -background white -quality 95 -sharpen 0x1.0 -colorspace RGB -flatten $@
 

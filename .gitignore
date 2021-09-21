@@ -1,1 +1,9 @@
 _site/*
+public/*
+examples/*.toc
+vendor/*
+.bundle/*
+.fonts/*
+.sources/*
+.jekyll-*
+tags

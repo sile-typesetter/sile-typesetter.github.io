@@ -49,8 +49,13 @@ include Makefile-fonts
 
 $(EXAMPLEPDFS): SILE ?= sile
 $(DEVELEXAMPLEPDFS): SILE ?= nix run github:sile-typesetter/sile --
+public/examples/docbook.pdf: SILEFLAGS += -I docbook.sil
 
-$(EXAMPLEPDFS) $(DEVELEXAMPLEPDFS): public/%.pdf: %.sil $(addprefix .fonts/,$(EXAMFONTFILES))
+public/%.pdf: %.sil $(addprefix .fonts/,$(EXAMFONTFILES))
+	mkdir -p $(dir $@)
+	$(runsile)
+
+public/%.pdf: %.xml $(addprefix .fonts/,$(EXAMFONTFILES))
 	mkdir -p $(dir $@)
 	$(runsile)
 

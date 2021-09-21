@@ -5,6 +5,9 @@ basic:
   - fn: book
     source: book.sil
     title: A Story
+  - fn: inputfilter
+    source: inputfilter.sil
+    title: Input filters
 global:
   - fn: i18n
     source: i18n.sil

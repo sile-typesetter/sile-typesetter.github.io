@@ -29,6 +29,14 @@ This is an easy way to test run the latest Git HEAD version at any time from alm
 One you have flake support enabled, just run `nix run github:sile-typesetter/sile -- <sile orguments>`.
 This website use this to regenerate some of the examples in the gallery.
 
+As major a new feature as the math package is, at the end of the day the major version bump is on account of a breaking change elsewhere.
+Previous to this release, the font used for footnotes was the SILE default unless specifically set.
+And setting changes were relative to the SILE default.
+This behaviour was workable, but usually came as a surprise to most users.
+With this release, footnote font setting default to being relative to the current document font.
+The font family, size, leading, and all other aspects of footnotes are still configurable with the same tools as before.
+But this is a breaking change because those settings are now relative to a different base which might cause many documents to need updating.
+
 <!-- Insert sile-0.12.0.md -->
 
   [release]: https://github.com/sile-typesetter/sile/releases/tag/v0.12.0

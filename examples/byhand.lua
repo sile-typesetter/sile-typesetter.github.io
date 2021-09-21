@@ -1,13 +1,34 @@
-package.path = (os.getenv("SILE_PATH") and
-os.getenv("SILE_PATH").."/?.lua" or "") .. ';?.lua;/usr/local/share/sile/?.lua;/usr/local/share/sile/lua-libraries/?.lua;/usr/local/share/sile/lua-libraries/?/init.lua;lua-libraries/?.lua;lua-libraries/?/init.lua;' .. package.path
-package.cpath = package.cpath .. ";core/?.so;/usr/local/lib/sile/?.so;"
-require("core/sile")
+#!/usr/bin/env lua
+
+local datadir = os.getenv("SILE_PATH") or "/usr/share/sile"
+local libdir = os.getenv("SILE_LIB_PATH") or os.getenv("SILE_PATH") or "/usr/lib"
+
+package.path = datadir .. "/?.lua;" ..
+  datadir .. "/lua-libraries/?.lua;" ..
+  datadir .. "/lua-libraries/?/init.lua;" ..
+  package.path
+
+package.cpath = libdir .. "/?.so;" ..
+  libdir .. "/sile/?.so;" ..
+  libdir .. "/sile/core/?.so;" ..
+  package.cpath
+
+SILE = require("core/sile")
+
+SILE.version = "foo"
+SILE.full_version = "foo_bar"
+SILE.outputFilename = _G.arg[1]
+
 SILE.init()
-SILE.outputFilename="byhand.pdf"
-local plain = require("classes/plain", "classes")
-plain.options.papersize("a4")
-SILE.documentState.documentClass = plain;
-local ff = plain:init()
-SILE.typesetter:init(ff)
+
+local class = SILE.require("plain", "classes")
+class.options.papersize("a5")
+SILE.documentState.documentClass = class;
+
+local initialFrame = class:init()
+SILE.typesetter:init(initialFrame)
+
+SILE.call("font", { family = "Libertinus Serif", size = "14pt" })
 SILE.typesetter:typeset("To Sherlock Holmes she is always the woman. I have seldom heard him mention her under any other name. In his eyes she eclipses and predominates the whole of her sex.")
-plain:finish()
+
+class:finish()

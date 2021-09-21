@@ -31,10 +31,10 @@ This website use this to regenerate some of the examples in the gallery.
 
 As major a new feature as the math package is, at the end of the day the major version bump is on account of a breaking change elsewhere.
 Previous to this release, the font used for footnotes was the SILE default unless specifically set.
-And setting changes were relative to the SILE default.
-This behaviour was workable, but usually came as a surprise to most users.
-With this release, footnote font setting default to being relative to the current document font.
-The font family, size, leading, and all other aspects of footnotes are still configurable with the same tools as before.
+Setting changes were relative to the SILE default rather than the document default.
+This behavior was workable, but usually came as a surprise to most users.
+With this release, footnote and folio frame font settings default to being relative to the current document font.
+The font family, size, leading, and all other aspects of footnotes and folios are still configurable with the same tools as before.
 But this is a breaking change because those settings are now relative to a different base which might cause many documents to need updating.
 
 ### ⚠ BREAKING CHANGES

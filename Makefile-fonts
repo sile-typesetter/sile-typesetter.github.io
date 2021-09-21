@@ -101,6 +101,7 @@ notobase = $(shell sed -e 's/-.*//' <<< $(notdir $1))
 
 .fonts/Cardo%: .sources/cardo104.zip | .fonts
 	bsdtar -x -f $< -C $(dir $@) $(notdir $@)
+	touch $@
 
 .fonts/DejaVu%: .sources/dejavu-fonts-ttf-2.37.tar.bz2 | .fonts
 	bsdtar -x -f $< -C $(dir $@) --strip-components 2 $(basename $(basename $(<F)))/ttf/$(notdir $@)

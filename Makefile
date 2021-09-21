@@ -54,6 +54,10 @@ $(EXAMPLEPDFS) $(DEVELEXAMPLEPDFS): public/%.pdf: %.sil $(addprefix .fonts/,$(EX
 	mkdir -p $(dir $@)
 	$(runsile)
 
+$(EXAMPLEPDFS) $(DEVELEXAMPLEPDFS): public/%.pdf: %.xml $(addprefix .fonts/,$(EXAMFONTFILES))
+	mkdir -p $(dir $@)
+	$(runsile)
+
 $(EXAMPLEPNGS): %.png: %.pdf
 	magick -density 300 $<[0] -background white -quality 95 -sharpen 0x1.0 -colorspace RGB -flatten $@
 

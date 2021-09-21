@@ -14,4 +14,8 @@ exclude:
   - '*.toc'
   - public
   - vendor
+  - Makefile*
+  - tags
+  - fontconfig.conf
+  - '*.nix'
 permalink: /:categories/:year/:month/:slug

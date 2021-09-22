@@ -8,9 +8,9 @@ basic:
   - fn: inputfilter
     source: inputfilter.sil
     title: Input filters
-  - fn: byhand
-    source: byhand.lua
-    title: Generate a PDF from a Lua script
+  # - fn: byhand
+  #   source: byhand.lua
+  #   title: Generate a PDF from a Lua script
 global:
   - fn: i18n
     source: i18n.sil

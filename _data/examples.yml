@@ -71,6 +71,10 @@ packages:
   - fn: ligature
     source: ligature.sil
     title: OpenType features and ligatures
+  - fn: math
+    devel: true
+    source: math.sil
+    title: Math
   - fn: parallel
     source: parallel.sil
     title: Parallel layout

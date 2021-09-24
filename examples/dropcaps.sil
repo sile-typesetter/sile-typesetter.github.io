@@ -1,30 +1,24 @@
-\begin[papersize=6in x 9in, class=book]{document}
+\begin[papersize=a5,class=book]{document}
+\nofolios
 \script[src=packages/lorem]
-\script[src=packages/color]
 \script[src=packages/dropcaps]
-\set[parameter=document.parskip, value=0.5ex]
+\set[parameter=document.parskip,value=4ex]
 
-\define[command=loremx]{\lorem[words=29]}
-\define[command=loremxx]{\lorem[words=60]}
-\define[command=markx]{\color[color=red]{\process}}
-\define[command=smallcapx]{\font[features=+smcp]{\process}}
+This a normal paragraph: \lorem[words=18]
 
-This a normal paragraph: \loremx
+\dropcap[lines=2,initial=T]{\font[features=+smcp]{his paragraph} has a pretty plain initial (drop cap),
+using the default document font:
+\lorem[words=26].\footnote{You didn’t expect more than that here, with such a font choice, right?}}
 
-\dropcaps[lines=2, letter=T]{\smallcapx{his paragraph} has a decent initial (drop cap),
-using the default document font; \loremxx.\footnote{You didn’t expect more than that here, with such a font choice, right?}}
+\dropcap[lines=3,initial=T,family=Acorn Initials]{\font[features=+smcp]{his paragraph},
+provided you have the Acorn Initials font, has a much better initial: \lorem[words=44].}
 
-\dropcaps[lines=3, letter=T, family=Acorn Initials]{\smallcapx{his paragraph}, provided you have the Acorn Initials font,
-has a much better initial; \loremxx.}
+\dropcap[lines=4,initial=H,family=Zallman Caps]{\font[features=+smcp]{ere is an even nicer initial},
+provided you have the Zallman Caps font: \lorem[words=56].}
 
-\dropcaps[lines=4, letter=H, family=Zallman Caps]{\smallcapx{ere is a nice initial}, provided you have the Zallman Caps front;
-\loremxx.\footnote{\loremx.}}
-
-\dropcaps[lines=4, letter=T, joined=true, family=Zallman Caps]{\smallcapx{his paragraph} shows, in the same font, the
-joining option that you can use when the initial belongs to the first word in a sentence. In old-style typography,
-this was often preferred to the bare rectangular box most modern word-processing software render.
-With SILE, the choice is all yours!\footnote{\loremx.}}
-
-Let’s continue with a normal paragraph, \loremx.
-
+\dropcap[lines=4,initial=T,joined=true,family=Zallman Caps]{{his paragraph} shows the effect of the joining option that you can use when the initial belongs to the first word in a sentence.
+The first line of text will be flush against the drop cap.
+Each additional line spanned with be indented with an extra space.
+In old-style typography, this was often preferred to the bare rectangular box most modern word-processing software render.
+With SILE, the choice is all yours!}
 \end{document}

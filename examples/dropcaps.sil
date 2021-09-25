@@ -6,19 +6,19 @@
 
 This a normal paragraph: \lorem[words=18]
 
-\dropcap[lines=2,initial=T]{\font[features=+smcp]{his paragraph} has a pretty plain initial (drop cap),
+\dropcap[lines=2]{T}his paragraph has a pretty plain initial (drop cap),
 using the default document font:
-\lorem[words=26].\footnote{You didn’t expect more than that here, with such a font choice, right?}}
+\lorem[words=26].\footnote{You didn’t expect more than that here, with such a font choice, right?}
 
-\dropcap[lines=3,initial=T,family=Acorn Initials]{\font[features=+smcp]{his paragraph},
-provided you have the Acorn Initials font, has a much better initial: \lorem[words=44].}
+\dropcap[lines=3,family=Acorn Initials]{T}\font[features=+smcp]{his paragraph},
+provided you have the Acorn Initials font, has a much better initial: \lorem[words=44].
 
-\dropcap[lines=4,initial=H,family=Zallman Caps]{\font[features=+smcp]{ere is an even nicer initial},
-provided you have the Zallman Caps font: \lorem[words=56].}
+\dropcap[lines=4,family=Zallman Caps]{H}\font[features=+smcp]{ere is an even nicer initial},
+provided you have the Zallman Caps font: \lorem[words=56].
 
-\dropcap[lines=4,initial=T,joined=true,family=Zallman Caps]{{his paragraph} shows the effect of the joining option that you can use when the initial belongs to the first word in a sentence.
+\dropcap[lines=4,joined=true,family=Zallman Caps]{T}his paragraph shows the effect of the joining option that you can use when the initial belongs to the first word in a sentence.
 The first line of text will be flush against the drop cap.
 Each additional line spanned with be indented with an extra space.
 In old-style typography, this was often preferred to the bare rectangular box most modern word-processing software render.
-With SILE, the choice is all yours!}
+With SILE, the choice is all yours!
 \end{document}

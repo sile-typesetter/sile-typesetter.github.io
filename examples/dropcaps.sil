@@ -10,18 +10,18 @@ This a normal paragraph: \lorem[words=18]
 using the default document font:
 \lorem[words=26].\footnote{You didn’t expect more than that here, with such a font choice, right?}
 
-\dropcap[lines=3,family=Acorn Initials]{T}\font[features=+smcp]{his paragraph},
-provided you have the Acorn Initials font, has a much better initial: \lorem[words=44].
+\dropcap[lines=3,shift=-2pt,raise=-2pt,size=5em,family=Acorn Initials]{T}\font[features=+smcp]{his paragraph},
+provided you have the Acorn Initials font, has a much better initial. The size of glyphs in Acorn tends to run a a little big, but we have exagerated this example by specifying a size ourselves. We've also tweaked the location left and down by 2pt.
 
 \dropcap[lines=4,family=Zallman Caps]{H}\font[features=+smcp]{ere is an even nicer initial},
 provided you have the Zallman Caps font: \lorem[words=56].
 
-\dropcap[lines=4,joined=true,family=Zallman Caps]{T}his paragraph shows the effect of the joining option that you can use when the initial belongs to the first word in a sentence.
+\dropcap[lines=4,join=true,family=Zallman Caps,raise=-1pt]{T}his paragraph shows the effect of the joining option that you can use when the initial belongs to the first word in a sentence.
 The first line of text will be flush against the drop cap.
 Each additional line spanned with be indented with an extra space.
 In old-style typography, this was often preferred to the bare rectangular box most modern word-processing software render.
 With SILE, the choice is all yours!
 
 \language[main=tr]
-\dropcap[lines=2,style=Italic,joined=true]{2.} gösterebileceğimiz nokta, dropcap fonksiyonun birden fazlı karakter içerebilmesi. İşte su paragrafın başında bulunduğu gibi belki bazı metinde nokta da içerecek olması yararlı olur.
+\dropcap[lines=2,style=Italic,join=true]{2.} gösterebileceğimiz nokta, dropcap fonksiyonun birden fazlı karakter içerebilmesi. İşte su paragrafın başında bulunduğu gibi bazı metinde nokta da dahil olması gerekebilir. Ayrıcı \em{Italic} stil kullanıldı.
 \end{document}

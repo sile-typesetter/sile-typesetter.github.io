@@ -13,11 +13,11 @@ his paragraph has a much fancier initial provided by the Acorn Initials font.
 The size of glyphs in Acorn tends to run a a little big, but we have exagerated this example by specifying a size.
 We've also tweaked the location down and to the left ever so slightly from where it would have naturally been.
 
-\dropcap[lines=3,family=Zallman Caps]{H}%
+\dropcap[lines=3,family=Zallman Caps,scale=0.7]{H}%
 \font[features=+smcp]{ere is an even bigger initial}, this time provided by the Zallman Caps font.
-Additionally we have typeset the first clause after the dropcap in smallcaps, a very traditional treatment.
-Of course the treatment is optional and not directly related to the dropcaps feature.
-This is just a demonstration of how they could work in a real context.
+Since Zallman is a bit larger than our body font, we've scaled it down by a factor of .7.
+Additionally we typeset the first clause after the dropcap in smallcaps.
+This traditional treatment is not related to the dropcaps feature, we just wanted to demonstrate how it could work in a real context.
 
 \dropcap[lines=4,join=true,family=Zallman Caps,standoff=1.5spc]{T}%
 his paragraph shows the effect of the joining option that you can use when the initial belongs to the first word in a sentence.

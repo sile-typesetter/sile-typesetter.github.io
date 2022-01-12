@@ -9,7 +9,6 @@ basic:
     source: inputfilter.sil
     title: Input filters
   - fn: parshape
-    devel: true
     source: parshape.sil
     title: Dynamically comoputed paragraph shapes
   # - fn: byhand
@@ -52,7 +51,6 @@ global:
   #   source: uyghur.sil
   #   title: Uyghur hyphenation
   - fn: armenian
-    devel: true
     source: armenian.sil
     title: Armenian hyphenation
 packages:
@@ -76,7 +74,6 @@ packages:
     source: ligature.sil
     title: OpenType features and ligatures
   - fn: math
-    devel: true
     source: math.sil
     title: Math
   - fn: parallel

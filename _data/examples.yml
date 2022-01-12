@@ -8,6 +8,10 @@ basic:
   - fn: inputfilter
     source: inputfilter.sil
     title: Input filters
+  - fn: parshape
+    devel: true
+    source: parshape.sil
+    title: Dynamically comoputed paragraph shapes
   # - fn: byhand
   #   source: byhand.lua
   #   title: Generate a PDF from a Lua script

@@ -37,7 +37,7 @@ jobs:
         run: |
           nix-shell --run true
           nix-shell --run 'sile --version'
-          nix run github:sile-typesetter/sile -- --version
+          # nix run github:sile-typesetter/sile -- --version
 
       - name: Generate example artifacts
         run: |

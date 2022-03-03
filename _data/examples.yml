@@ -61,7 +61,6 @@ packages:
     source: chordmode.sil
     title: Chord mode
   - fn: dropcaps
-    devel: true
     source: dropcaps.sil
     title: Dropcaps
   - fn: frametricks

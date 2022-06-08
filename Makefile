@@ -47,8 +47,10 @@ examples: $(EXAMPLEPDFS) $(DEVELEXAMPLEPDFS) $(EXAMPLEPNGS) $(EXAMPLETHBS)
 
 include Makefile-fonts
 
+HASH := \#
+
 $(EXAMPLEPDFS): SILE ?= sile
-$(DEVELEXAMPLEPDFS): SILE ?= nix run github:sile-typesetter/sile --
+$(DEVELEXAMPLEPDFS): SILE ?= nix run github:sile-typesetter/sile$(HASH)sile --
 public/examples/docbook.pdf: SILEFLAGS += -I docbook.sil
 
 public/%.pdf: %.sil $(addprefix .fonts/,$(EXAMFONTFILES))

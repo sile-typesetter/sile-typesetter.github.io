@@ -14,7 +14,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Cache example fonts
         uses: actions/cache@v2
@@ -25,19 +25,19 @@ jobs:
           key: fonts-${{ hashFiles('Makefile-fonts') }}
 
       - name: Install Nix
-        uses: cachix/install-nix-action@v14
+        uses: cachix/install-nix-action@v15
         with:
-          install_url: https://nixos-nix-install-tests.cachix.org/serve/i6laym9jw3wg9mw6ncyrk6gjx4l34vvx/install
-          install_options: '--tarball-url-prefix https://nixos-nix-install-tests.cachix.org/serve'
-          nix_path: nixpkgs=channel:nixos-unstable
+          nix_path: nixpkgs=channel:nixpkgs-unstable
           extra_nix_config: |
             experimental-features = nix-command flakes
+            access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
 
       - name: Install project dependencies
         run: |
+          nix-channel --update
           nix-shell --run true
           nix-shell --run 'sile --version'
-          nix run github:sile-typesetter/sile -- --version
+          nix run github:sile-typesetter/sile#sile -- --version
 
       - name: Generate example artifacts
         run: |

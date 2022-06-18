@@ -32,6 +32,7 @@ global:
   #   source: triglot.sil
   #   title: A triglot layout - Greek, English and Japanese
   - fn: heart-sutra
+    devel: true
     source: heart-sutra.sil
     title: Tibetan pecha-style layout
   - fn: boustrophedon

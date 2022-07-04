@@ -1,4 +1,5 @@
 +++
+aliases = ["2015/06/sile-is-now-in-homebrew"]
 title = "SILE Is Now In Homebrew"
 
 [extra]

@@ -1,4 +1,5 @@
 +++
+aliases = ["examples/packages.html"]
 template = "static.html"
 title = "SILE Examples - Packages"
 +++

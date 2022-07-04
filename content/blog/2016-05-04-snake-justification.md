@@ -1,4 +1,5 @@
 +++
+aliases = ["2016/05/snake-justification"]
 title = "Snake Justification"
 
 [extra]

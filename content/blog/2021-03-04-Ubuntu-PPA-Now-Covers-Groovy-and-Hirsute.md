@@ -1,4 +1,5 @@
 +++
+aliases = ["2021/03/ubuntu-ppa-now-covers-groovy-and-hirsute"]
 title = "Ubuntu PPA Now Covers Groovy and Hirsute"
 
 [extra]

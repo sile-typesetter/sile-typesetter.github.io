@@ -1,4 +1,5 @@
 +++
+aliases = ["2020/05/ubuntu-ppa-status-update"]
 title = "Ubuntu PPA Status Update"
 
 [extra]

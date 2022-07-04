@@ -1,4 +1,5 @@
 +++
+aliases = ["examples/global.html"]
 template = "static.html"
 title = "SILE Examples - Global Scripts"
 +++

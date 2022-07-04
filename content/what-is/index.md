@@ -1,5 +1,5 @@
 ---
-layout: static
+template: static.html
 title: What is SILE?
 ---
 

@@ -1,6 +1,8 @@
 ---
-post_author: Simon Cozens
-post_gravatar: 11cdaff4c6f9b290db40f69d3b20caf1
+title: Snake Justification
+extra:
+  post_author: Simon Cozens
+  post_gravatar: 11cdaff4c6f9b290db40f69d3b20caf1
 ---
 
 The ever-excellent [xkcd][] has produced a table of full-width justification strategies:

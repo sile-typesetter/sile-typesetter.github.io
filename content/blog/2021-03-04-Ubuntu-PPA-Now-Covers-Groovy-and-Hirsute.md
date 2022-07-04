@@ -1,7 +1,8 @@
 ---
 title: Ubuntu PPA Now Covers Groovy and Hirsute
-post_author: Caleb Maclennan
-post_gravatar: 11cdaff4c6f9b290db40f69d3b20caf1
+extra:
+  post_author: Caleb Maclennan
+  post_gravatar: 11cdaff4c6f9b290db40f69d3b20caf1
 ---
 Our “official” Ubuntu [PPA][] with prebuilt SILE packages –including all the dependencies missing from the base Ubuntu package set– fell a little bit behind last month. In fact it never got updated with the SILE [v0.10.14][] release. It has been revived and is now up to date with [v0.10.15][] packages.
 

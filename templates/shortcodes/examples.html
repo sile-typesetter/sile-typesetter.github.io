@@ -1,0 +1,23 @@
+{% set example_type = type | default(value="basic") -%}
+{% set examples = load_data(path="/data/examples.toml") -%}
+{% set examples = examples[example_type] -%}
+{% set len = examples | length -%}
+<table class="examples">
+{% for row in range(end=len, step_by=cols) %}
+<tr class="row{{ loop.index }}">
+{% for col in range(start=row, end=row + cols) %}
+{% if col > len - 1 %}{% break %}{% endif %}
+{% set example = examples[col] %}
+  <td class="col{{ col + 1 }}">
+    <a href="{{ example.fn }}.png">
+      <img src="{{ example.fn }}-thumb.png">
+    </a>
+    <br/>
+    <span class="title">{{ example.title }}</span><br/>
+    (<a href="{{ example.source }}">source</a>)
+    (<a href="{{ example.fn }}.pdf">PDF</a>)
+  </td>
+{% endfor %}
+</tr>
+{% endfor %}
+</table>

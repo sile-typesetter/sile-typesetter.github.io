@@ -1,7 +1,7 @@
----
-template: static.html
-title: What is SILE?
----
++++
+template = "static.html"
+title = "What is SILE?"
++++
 
 SILE is a typesetting system. 
 Its job is to produce beautiful printed documents. 

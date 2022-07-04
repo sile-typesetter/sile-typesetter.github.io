@@ -1,9 +1,10 @@
----
-title: Ubuntu PPA Status Update
-extra:
-  post_author: Caleb Maclennan
-  post_gravatar: 11cdaff4c6f9b290db40f69d3b20caf1
----
++++
+title = "Ubuntu PPA Status Update"
+
+[extra]
+post_author = "Caleb Maclennan"
+post_gravatar = "11cdaff4c6f9b290db40f69d3b20caf1"
++++
 
 Beginning with the release of SILE [v0.10.2][] we started building native packages for Ubuntu and distributing them in an official [PPA][]. Initially, builds were only available for Ubuntu 18.04 (Bionic Beaver). Packages for SILE [v0.10.4][] are now available for Ubuntu 20.04 (Focal Fossa) as well.
 

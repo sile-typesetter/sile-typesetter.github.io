@@ -9,13 +9,13 @@
 {% if col > len - 1 %}{% break %}{% endif %}
 {% set example = examples[col] %}
   <td class="col{{ col + 1 }}">
-    <a href="{{ example.fn }}.png">
-      <img src="{{ example.fn }}-thumb.png">
+    <a href="/examples/{{ example.fn }}.png">
+      <img src="/examples/{{ example.fn }}-thumb.png">
     </a>
     <br/>
     <span class="title">{{ example.title }}</span><br/>
-    (<a href="{{ example.source }}">source</a>)
-    (<a href="{{ example.fn }}.pdf">PDF</a>)
+    (<a href="/examples/{{ example.source }}">source</a>)
+    (<a href="/examples/{{ example.fn }}.pdf">PDF</a>)
   </td>
 {% endfor %}
 </tr>

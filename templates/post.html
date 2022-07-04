@@ -1,4 +1,5 @@
----
-layout: default
----
-{% include post.html %}
+{% extends "default.html" %}
+
+{% block content %}
+{% include "partials/post.html" %}
+{% endblock content %}

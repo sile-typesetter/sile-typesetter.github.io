@@ -1,36 +1,36 @@
----
-layout: default
-title: Home
----
+{% extends "default.html" %}
 
+{% block content %}
 <div id="content">
 <div id="home">
-{% include head.html %}
-{% for page in paginator.posts %}
-    {% include body.html %}
+{% include "partials/head.html" %}
+{% for page in paginator.pages %}
+    {% include "partials/body.html" %}
 {% endfor %}
+
 <div class="pagination">
-  {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
+  {% if paginator.previous %}
+    <a href="{{ paginator.previous }}">&laquo; Prev</a>
   {% else %}
     <span>&laquo; Prev</span>
   {% endif %}
 
-  {% for page in (1..paginator.total_pages) %}
-    {% if page == paginator.page %}
+  {% for page in range(start=1, end=paginator.number_pagers + 1) %}
+    {% if page == paginator.current_index %}
       <em>{{ page }}</em>
-    {% elsif page == 1 %}
-      <a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+    {% elif page == 1 %}
+      <a href="{{ paginator.first | safe }}">{{ page }}</a>
     {% else %}
-      <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+      <a href="{{ paginator.base_url | safe }}{{ page ~ '/' }}">{{ page }}</a>
     {% endif %}
   {% endfor %}
 
-  {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
+  {% if paginator.next %}
+    <a href="{{ paginator.next }}">Next &raquo;</a>
   {% else %}
     <span>Next &raquo;</span>
   {% endif %}
 </div>
 </div>
 </div>
+{% endblock content %}

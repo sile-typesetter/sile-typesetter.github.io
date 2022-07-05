@@ -163,14 +163,6 @@ img.cover-photo {
   border-bottom: 1px solid #8085C1;
 }
 
-/* standard */
-.post pre {
-  border: 1px solid #ddd;
-  background-color: #eef;
-  padding: 1ex 2ex;
-  margin-bottom: 1em;
-}
-
 .post p {
   margin-bottom: 1em;
 }
@@ -182,28 +174,6 @@ img.cover-photo {
 .post ul, .post ol {
   margin-left: 2.35em;
   margin-bottom: 1.25em;
-}
-
-.post code {
-  font-family: 'Hack', monospace;
-  font-size: 0.8em;
-  border: 1px solid #ddd;
-  background-color: #eef;
-}
-
-.post pre code {
-  border: none;
-}
-
-/* terminal */
-.post pre.terminal {
-  border: 1px solid #000;
-  background-color: #333;
-  color: #FFF;
-}
-
-.post pre.terminal code {
-  background-color: #333;
 }
 
 #sidebar > ul {
@@ -263,4 +233,31 @@ img.cover-photo {
 .examples .title {
   font-size:10pt;
   line-height: 90%;
+}
+
+/* Code blocks */
+pre {
+  padding: 1rem;
+  overflow: auto;
+}
+
+pre[data-linenos] {
+  padding: 1rem 0;
+}
+
+pre table td {
+  padding: 0;
+}
+
+pre table td:nth-of-type(1) {
+  text-align: center;
+  user-select: none;
+}
+pre mark {
+  display: block;
+  background-color: rgba(254, 252, 232, 0.9);
+}
+pre table {
+  width: 100%;
+  border-collapse: collapse;
 }

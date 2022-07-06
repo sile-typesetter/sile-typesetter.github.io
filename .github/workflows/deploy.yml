@@ -45,7 +45,7 @@ jobs:
 
       - name: Generate static site pages
         run: |
-          nix-shell --run 'make jekyll'
+          nix-shell --run 'make public'
 
       - name: Inject CNAME
         if: ${{ github.repository == 'sile-typesetter/sile-typesetter.github.io' }}

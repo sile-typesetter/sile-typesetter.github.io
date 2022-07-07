@@ -1,6 +1,7 @@
 +++
 aliases = ["2016/05/snake-justification"]
 title = "Snake Justification"
+date = "2016-05-04"
 
 [extra]
 post_author = "Simon Cozens"

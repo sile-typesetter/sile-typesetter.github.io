@@ -1,6 +1,7 @@
 +++
 draft = true
 title = "Visualizing Development Progress"
+date = "2016-03-14"
 
 [extra]
 post_author = "Caleb Maclennan"

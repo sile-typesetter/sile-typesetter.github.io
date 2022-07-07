@@ -1,6 +1,7 @@
 +++
 aliases = ["2014/09/whats-happening-in-sile-development"]
 title = "What’s Happening In SILE Development"
+date = "2014-09-24"
 
 [extra]
 post_author = "Simon Cozens"

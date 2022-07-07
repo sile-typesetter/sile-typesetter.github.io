@@ -1,6 +1,7 @@
 +++
 aliases = ["2015/06/sile-is-now-in-homebrew"]
 title = "SILE Is Now In Homebrew"
+date = "2015-06-26"
 
 [extra]
 post_author = "Simon Cozens"

@@ -1,6 +1,7 @@
 +++
 aliases = ["2020/05/ubuntu-ppa-status-update"]
 title = "Ubuntu PPA Status Update"
+date = "2020-05-25"
 
 [extra]
 post_author = "Caleb Maclennan"

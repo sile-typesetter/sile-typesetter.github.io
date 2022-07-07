@@ -17,7 +17,7 @@ sudo apt-get update
 sudo apt-get install sile
 ```
 
-It would be possible to support other currently supported [Ubuntu releases][codenames] including older LTS releases 14.04 (Trusty Tahir) and 16.04 (Xenias Xerus) and the most recent interim release 19.10 (Eoan Ermine) if there is a demand. I don't personally use any of these and –as the LTS versions are now quite old (with two more recent LTS series supported) and the interim release is immanently being marked as end-of-life in just two months– I figured there might not be any need to go to the trouble. If you have a use case for any of these please feel free to request builds in a [new issue report][newissue].
+It would be possible to support other currently supported [Ubuntu releases][codenames] including older LTS releases 14.04 (Trusty Tahir) and 16.04 (Xenias Xerus) and the most recent interim release 19.10 (Eoan Ermine) if there is a demand. I don’t personally use any of these and –as the LTS versions are now quite old (with two more recent LTS series supported) and the interim release is immanently being marked as end-of-life in just two months– I figured there might not be any need to go to the trouble. If you have a use case for any of these please feel free to request builds in a [new issue report][newissue].
 
   [v0.10.2]: /2020/02/sile-0-10-2-is-released
   [v0.10.4]: /2020/04/sile-0-10-4-is-released

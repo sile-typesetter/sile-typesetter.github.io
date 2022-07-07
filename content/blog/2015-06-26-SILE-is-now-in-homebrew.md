@@ -12,6 +12,6 @@ For users on OS X, SILE has been added to the [homebrew][] package manager. This
 
 * Install homebrew from the [web site][homebrew]
 * Run `brew install sile`
-* You're done
+* You’re done
 
 [homebrew]: https://brew.sh

@@ -1,6 +1,6 @@
 +++
 aliases = ["2015/02/whats-happening-in-sile-development-valentines-edition"]
-title = "What's Happening In SILE Development Valentines Edition"
+title = "What’s Happening In SILE Development Valentines Edition"
 
 [extra]
 post_author = "Simon Cozens"
@@ -13,11 +13,11 @@ Here are a few interesting things that have been going on lately. If you are int
 
 * A subtle but pernicious [bug][] in the line-breaking engine has been fixed! This only manifested itself when centering paragraphs. Previously, centered paragraphs would fill from the final line upwards, leaving a few orphaned words on the first line. Now, it correctly fills from the first line down.
 
-* Support has been added for compiling with older versions of autotools, libpng and so on; if you couldn't get SILE to compile before, you should now.
+* Support has been added for compiling with older versions of autotools, libpng and so on; if you couldn’t get SILE to compile before, you should now.
 
 * SILE originally supported Lua version 5.1, but after adding compatibility for 5.2, main development broke 5.1. 5.1 compatibility has been restored, so SILE now works on both versions.
 
-* Simon gave a [talk][] to the FOSDEM conference explaining SILE's development and design philosophy. We'll post the video as soon as it's available.
+* Simon gave a [talk][] to the FOSDEM conference explaining SILE’s development and design philosophy. We’ll post the video as soon as it’s available.
 
 [repository]: https://github.com/sile-typesetter/sile/commits/master
 [talk]: https://fosdem.org/2015/schedule/event/introducing_sile/

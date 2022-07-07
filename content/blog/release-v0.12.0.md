@@ -25,7 +25,7 @@ On a conceptual level the math support is based on [MathML][] and relies on Open
 The input notation may be MathML (either directly using the native XML syntax or using an 1-to-1 equivalent SILE syntax) or an alternative math shorthand similar to the math notation used by TeX.
 See section 5.29.5 in the [v0.12.0 manual][manual] for detailed documentation on the new math package.
 Examples are given for various formulas and syntax options.
-A math example has also been added to the [packages example gallery](/examples/packages.html) on this website.
+A math example has also been added to the [packages example gallery](@/examples/packages.md) on this website.
 
 Additionally Didier Willis contributed several new features and fixes including much more control over Table of Contents, styling options for PDF links, correct French punctuation treatment, and more.
 

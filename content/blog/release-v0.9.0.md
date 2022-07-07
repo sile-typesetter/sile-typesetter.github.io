@@ -67,9 +67,9 @@ Please report bugs and send patches and pull requests at the [github repository]
 
 SILE is distributed under the [MIT licence][5].
 
-[1]: https://sile-typesetter.org/
+[1]: @/_index.md
 [2]: https://github.com/sile-typesetter/sile/releases
-[3]: https://raw.githubusercontent.com/sile-typesetter/sile/master/documentation/sile.pdf
+[3]: /manual/sile-0.9.0.pdf
 [4]: https://github.com/sile-typesetter/sile
 [5]: https://choosealicense.com/licenses/mit/
 [roadmap]: https://github.com/sile-typesetter/sile/blob/master/ROADMAP

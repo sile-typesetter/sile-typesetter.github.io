@@ -24,8 +24,8 @@ The two latest distros Groovy and Hirsute should support Lua 5.4 as well. If you
 
 Lastly if anybody knows their way around Launchpad and Ubuntu package devoplement and is interested in helping automate and maintain the packaging, we’re willing to accept help. Maintaining packaging for distros we don’t use personally is quite a bit of mental overhead.
 
-  [v0.10.14]: /2021/02/sile-0-10-14-is-released
-  [v0.10.15]: /2021/03/sile-0-10-15-is-released
+  [v0.10.14]: @/blog/release-v0.10.14.md
+  [v0.10.15]: @/blog/release-v0.10.15.md
   [PPA]: https://launchpad.net/~sile-typesetter/+archive/ubuntu/sile
   [codenames]: https://wiki.ubuntu.com/Releases
   [newissue]: https://github.com/sile-typesetter/sile/issues/new

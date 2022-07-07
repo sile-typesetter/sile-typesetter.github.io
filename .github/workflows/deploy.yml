@@ -24,6 +24,13 @@ jobs:
             .sources
           key: fonts-${{ hashFiles('Makefile-fonts') }}
 
+      - name: Cache example artifacts
+        uses: actions/cache@v2
+        with:
+          path: |
+            static/examples
+          key: examples-${{ hashFiles('Makefile', 'data/examples.toml', 'content/examples/*.sil', 'content/examples/*.xml', 'content/examples/*.lua') }}
+
       - name: Install Nix
         uses: cachix/install-nix-action@v15
         with:

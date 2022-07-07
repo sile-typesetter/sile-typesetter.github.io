@@ -1,8 +1,7 @@
 \begin[papersize=a5]{document}
 \nofolios
-\script[src=packages/bidi]
 \script[src=packages/frametricks]
-\font[family=Scheherazade New,size=12pt,language=ar,script=Arab]
+\font[family=LateefGR,size=16pt,language=ar,script=Arab]
 \set[parameter=current.parindent,value=0]
 \set[parameter=document.parindent,value=0]
 \thisframeRTL

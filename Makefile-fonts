@@ -18,6 +18,7 @@ EXAMFONTFILES += DejaVuSansCondensed-Bold.ttf DejaVuSans-Bold.ttf DejaVuSans-Obl
 EXAMFONTFILES += EBGaramond-Regular.ttf
 EXAMFONTFILES += Jomolhari-alpha3c-0605331.ttf
 EXAMFONTFILES += Junicode.ttf
+EXAMFONTFILES += LateefGR-Regular.ttf
 EXAMFONTFILES += LibertinusMath-Regular.otf
 EXAMFONTFILES += LibertinusSerif-Regular.otf LibertinusSerif-Bold.otf
 EXAMFONTFILES += Miama.otf
@@ -40,7 +41,6 @@ EXAMFONTFILES += NotoSerif-Regular.ttf
 EXAMFONTFILES += NotoSerifArmenian-Regular.ttf
 EXAMFONTFILES += NotoSerifCJK-Regular.ttc
 EXAMFONTFILES += Padauk-Regular.ttf
-EXAMFONTFILES += ScheherazadeNew-Regular.ttf
 EXAMFONTFILES += TuladhaJejeg_gr.ttf
 EXAMFONTFILES += ZallmanCaps.ttf
 EXAMFONTFILES += mnglwhiteotf.ttf
@@ -85,6 +85,9 @@ notobase = $(shell sed -e 's/-.*//' <<< $(notdir $1))
 .sources/junicode-1.002.zip: | .sources
 	curl -fsSL https://netix.dl.sourceforge.net/project/junicode/junicode/junicode-1.002/$(notdir $@) -o $@
 
+.sources/LateefGR-1.200.zip: | .sources
+	curl -fsSL https://software.sil.org/downloads/r/lateef/$(notdir $@) -o $@
+
 .sources/Libertinus-%.tar.xz: | .sources
 	curl -fsSL https://github.com/alerque/libertinus/releases/download/v$*/$(notdir $@) -o $@
 
@@ -96,9 +99,6 @@ notobase = $(shell sed -e 's/-.*//' <<< $(notdir $1))
 
 .sources/Padauk-5.000.zip: | .sources
 	curl -fsSL https://software.sil.org/downloads/r/padauk/$(notdir $@) -o $@
-
-.sources/ScheherazadeNew-3.200.zip: | .sources
-	curl -fsSL https://software.sil.org/downloads/r/scheherazade/$(notdir $@) -o $@
 
 .sources/TuladhaJejegGr_2.01.zip: | .sources
 	curl -fsSL https://sites.google.com/site/jawaunicode/$(notdir $@) -o $@
@@ -134,6 +134,10 @@ notobase = $(shell sed -e 's/-.*//' <<< $(notdir $1))
 
 .fonts/Junicode%: .sources/junicode-1.002.zip | .fonts
 	bsdtar -x -f $< -C $(dir $@) $(notdir $@)
+	touch $@
+
+.fonts/LateefGR%: .sources/LateefGR-1.200.zip | .fonts
+	bsdtar -x -f $< -C $(dir $@) --strip-components 1 $(basename $(<F))/$(notdir $@)
 	touch $@
 
 .fonts/Libertinus%: .sources/Libertinus-7.020.tar.xz | .fonts

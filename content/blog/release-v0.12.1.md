@@ -16,8 +16,11 @@ See the included [CHANGELOG.md][changelog] or review the [commit history][commit
 The first minor release in the v0.12.x series brings several new features relevant to paragraph shaping.
 Didier Willis has fleshed out the linebreak mechanism with full parity of LaTeX's settings including `hangingIndent` and `parShape`.
 Having fully featured paragraph-wise hanging indent settings enabled a new package, dropcaps, to provide much more robust dropcap functionality than the previous floating frame mechanism we used for this.
-(Note the dropcap package documentation did not make it in the manual, see the example on the website for usage.)
+(Note the dropcap package documentation did not make it in the manual at release time, see the example on the website or the manual from a newer release for usage.)
 Additionally the paragraph shape callback function can now be used to create fancy paragraph shapes using any geometry you can specify or calculate.
+
+{{ example(fn="dropcaps") }}
+{{ example(fn="parshape") }}
 
 Bugfixes in this release cover several issues with French language, PDF metadata encoding, color fonts, book class headers, and more.
 

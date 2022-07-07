@@ -27,6 +27,8 @@ See section 5.29.5 in the [v0.12.0 manual][manual] for detailed documentation on
 Examples are given for various formulas and syntax options.
 A math example has also been added to the [packages example gallery](@/examples/packages.md) on this website.
 
+{{ example(fn="math") }}
+
 Additionally Didier Willis contributed several new features and fixes including much more control over Table of Contents, styling options for PDF links, correct French punctuation treatment, and more.
 
 Thanks to the contributions of Doron Behar, as of this release SILE is usable as a [Nix Flake][flake] (in addition to the usual Nix package).

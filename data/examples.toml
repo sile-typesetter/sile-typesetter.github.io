@@ -1,0 +1,156 @@
+[[basic]]
+fn = "simple"
+source = "simple.sil"
+title = "Basic typesetting"
+
+[[basic]]
+fn = "book"
+source = "book.sil"
+title = "A Story"
+
+[[basic]]
+fn = "inputfilter"
+source = "inputfilter.sil"
+title = "Input filters"
+
+[[basic]]
+fn = "parshape"
+source = "parshape.sil"
+title = "Dynamically computed paragraph shapes"
+
+[[basic]]
+fn = "snakes"
+source = "snakes.sil"
+title = "Snake Justification"
+
+# [[basic]]
+# fn = "byhand"
+# source = "byhand.lua"
+# title = "Generate a PDF from a Lua script"
+
+[[global]]
+fn = "i18n"
+source = "i18n.sil"
+title = "A variety of scripts working together"
+
+[[global]]
+fn = "arabic"
+source = "arabic.sil"
+title = "Support for RTL scripts like Arabic, with mixed directionality and language-specific variants"
+
+[[global]]
+fn = "japanese"
+source = "japanese.sil"
+title = "Vertical Japanese with Ruby and inline Latin"
+
+[[global]]
+fn = "mongolian"
+source = "mongolian.sil"
+title = "Mongolian - top to bottom, left to right"
+
+# TODO https://github.com/sile-typesetter/sile/issues/1225
+# [[global]]
+# fn = "triglot"
+# source = "triglot.sil"
+# title = "A triglot layout - Greek, English and Japanese"
+
+[[global]]
+fn = "heart-sutra"
+devel = true
+source = "heart-sutra.sil"
+title = "Tibetan pecha-style layout"
+
+[[global]]
+fn = "boustrophedon"
+source = "boustrophedon.sil"
+title = "Boustrophedon (ox-turning) layout"
+
+[[global]]
+fn = "burmese"
+source = "burmese.sil"
+title = "Burmese"
+
+[[global]]
+fn = "javanese"
+source = "javanese.sil"
+title = "Javanese with Graphite stacked vowels"
+
+[[global]]
+fn = "thai-udhr"
+source = "thai-udhr.sil"
+title = "Thai"
+
+# TODO https://github.com/sile-typesetter/sile/issues/1228
+# [[global]]
+# fn = "uyghur"
+# source = "uyghur.sil"
+# title = "Uyghur hyphenation"
+
+[[global]]
+fn = "armenian"
+source = "armenian.sil"
+title = "Armenian hyphenation"
+
+[[packages]]
+fn = "bibtex"
+devel = true
+source = "bibtex.sil"
+title = "BibTeX bibliography support"
+
+[[packages]]
+fn = "chordmode"
+source = "chordmode.sil"
+title = "Chord mode"
+
+[[packages]]
+fn = "dropcaps"
+devel = true
+source = "dropcaps.sil"
+title = "Dropcaps"
+
+[[packages]]
+fn = "frametricks"
+source = "frametricks.sil"
+title = "Columns and drop caps with frametricks"
+
+# TODO https://github.com/sile-typesetter/sile/issues/1227
+# [[packages]]
+# fn = "gutenberg"
+# source = "gutenberg.sil"
+# title = "Gutenberg - justification alternates"
+
+[[packages]]
+fn = "hyperlink"
+source = "hyperlink.sil"
+title = "hyperlink"
+
+[[packages]]
+fn = "ligature"
+source = "ligature.sil"
+title = "OpenType features and ligatures"
+
+[[packages]]
+fn = "math"
+source = "math.sil"
+title = "Math"
+
+[[packages]]
+fn = "parallel"
+devel = true
+source = "parallel.sil"
+title = "Parallel layout"
+
+[[packages]]
+fn = "pullquote"
+source = "pullquote.sil"
+title = "pullquote package"
+
+[[packages]]
+fn = "rotate"
+source = "rotate.sil"
+title = "rotate package"
+
+[[packages]]
+fn = "rule"
+source = "rule.sil"
+title = "rule package"

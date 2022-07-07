@@ -5,32 +5,32 @@
 
 .SHELLFLAGS += -e
 
-.PHONY: site
-site: jekyll examples
+.PHONY: public
+public: zola
 
 .PHONY: clean
 clean:
 	rm -rf public/**
 	rm -f examples/**.pdf
 
-public:
-	mkdir -p $@
+# Works in our deploy because Make is 4.3+ run by Nix
+MAKEFLAGS += --jobs $(shell nproc)
 
-EXAMPLES := $(shell yq -r '.[][] | select(.devel != true) | .fn' _data/examples.yml)
-EXAMPLEPDFS := $(addprefix public/examples/,$(addsuffix .pdf,$(EXAMPLES)))
+EXAMPLES := $(shell tomlq -r '.[][] | select(.devel != true) | .fn' data/examples.toml)
+EXAMPLEPDFS := $(addprefix static/examples/,$(addsuffix .pdf,$(EXAMPLES)))
 
-DEVELEXAMPLES := $(shell yq -r '.[][] | select(.devel == true) | .fn' _data/examples.yml)
-DEVELEXAMPLEPDFS := $(addprefix public/examples/,$(addsuffix .pdf,$(DEVELEXAMPLES)))
+DEVELEXAMPLES := $(shell tomlq -r '.[][] | select(.devel == true) | .fn' data/examples.toml)
+DEVELEXAMPLEPDFS := $(addprefix static/examples/,$(addsuffix .pdf,$(DEVELEXAMPLES)))
 
-EXAMPLEPNGS := $(addprefix public/examples/,$(addsuffix .png,$(EXAMPLES) $(DEVELEXAMPLES)))
-EXAMPLETHBS := $(addprefix public/examples/,$(addsuffix -thumb.png,$(EXAMPLES) $(DEVELEXAMPLES)))
+EXAMPLEPNGS := $(addprefix static/examples/,$(addsuffix .png,$(EXAMPLES) $(DEVELEXAMPLES)))
+EXAMPLETHBS := $(addprefix static/examples/,$(addsuffix -thumb.png,$(EXAMPLES) $(DEVELEXAMPLES)))
 
 LOCALTESTFONTS := FONTCONFIG_FILE=$(PWD)/fontconfig.conf
 SILEFLAGS ?= -d versions -f fontconfig
 
 # This is a monkey patch to figure out how many passes we have to to to
 # garantee the TOC is up to date, simplify when #230 is fixed.
-hastoc = [[ -f $(patsubst public/%,%,$(subst .pdf,.toc,$@)) ]] && echo true || echo false
+hastoc = [[ -f $(patsubst static/%,%,$(subst .pdf,.toc,$@)) ]] && echo true || echo false
 pages = pdfinfo $@ | awk '$$1 == "Pages:" {print $$2}' || echo 0
 silepass = $(LOCALTESTFONTS) $(SILE) $(SILEFLAGS) $< -o $@ && pg0=$${pg} pg=$$($(pages))
 define runsile =
@@ -45,23 +45,27 @@ endef
 .PHONY: examples
 examples: $(EXAMPLEPDFS) $(DEVELEXAMPLEPDFS) $(EXAMPLEPNGS) $(EXAMPLETHBS)
 
+.PHONY: static
+static: examples
+
 include Makefile-fonts
 
 HASH := \#
 
 $(EXAMPLEPDFS): SILE ?= sile
 $(DEVELEXAMPLEPDFS): SILE ?= nix run github:sile-typesetter/sile$(HASH)sile --
-public/examples/docbook.pdf: SILEFLAGS += -I docbook.sil
 
-public/%.pdf: %.sil $(addprefix .fonts/,$(EXAMFONTFILES))
+static/examples/docbook.pdf: SILEFLAGS += -I docbook.sil
+
+static/%.pdf: content/%.sil $(addprefix .fonts/,$(EXAMFONTFILES))
 	mkdir -p $(dir $@)
 	$(runsile)
 
-public/%.pdf: %.xml $(addprefix .fonts/,$(EXAMFONTFILES))
+static/%.pdf: content/%.xml $(addprefix .fonts/,$(EXAMFONTFILES))
 	mkdir -p $(dir $@)
 	$(runsile)
 
-public/%.pdf: %.lua $(addprefix .fonts/,$(EXAMFONTFILES))
+static/%.pdf: content/%.lua $(addprefix .fonts/,$(EXAMFONTFILES))
 	mkdir -p $(dir $@)
 	lua $< $@
 
@@ -71,9 +75,9 @@ $(EXAMPLEPNGS): %.png: %.pdf
 $(EXAMPLETHBS): %-thumb.png: %.pdf
 	magick -density 72 $<[0] -background white -quality 95 -sharpen 0x1.0 -colorspace RGB -flatten $@
 
-.PHONY: jekyll
-jekyll: | public
-	jekyll build --incremental -d public
+.PHONY: zola
+zola: static
+	zola build
 
-public/CNAME: | public
+public/CNAME:
 	echo sile-typesetter.org > $@

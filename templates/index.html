@@ -1,0 +1,36 @@
+{% extends "default.html" %}
+
+{% block content %}
+<div id="content">
+<div id="home">
+{% include "partials/head.html" %}
+{% for page in paginator.pages %}
+    {% include "partials/body.html" %}
+{% endfor %}
+
+<div class="pagination">
+  {% if paginator.previous %}
+    <a href="{{ paginator.previous }}">&laquo; Prev</a>
+  {% else %}
+    <span>&laquo; Prev</span>
+  {% endif %}
+
+  {% for page in range(start=1, end=paginator.number_pagers + 1) %}
+    {% if page == paginator.current_index %}
+      <em>{{ page }}</em>
+    {% elif page == 1 %}
+      <a href="{{ paginator.first | safe }}">{{ page }}</a>
+    {% else %}
+      <a href="{{ paginator.base_url | safe }}{{ page ~ '/' }}">{{ page }}</a>
+    {% endif %}
+  {% endfor %}
+
+  {% if paginator.next %}
+    <a href="{{ paginator.next }}">Next &raquo;</a>
+  {% else %}
+    <span>Next &raquo;</span>
+  {% endif %}
+</div>
+</div>
+</div>
+{% endblock content %}

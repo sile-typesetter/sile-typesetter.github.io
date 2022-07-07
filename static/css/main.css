@@ -176,6 +176,10 @@ img.cover-photo {
   margin-bottom: 1.25em;
 }
 
+.post p img {
+  max-width: 100%;
+}
+
 #sidebar > ul {
   padding: 1em;
 }

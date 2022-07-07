@@ -18,6 +18,11 @@ fn = "parshape"
 source = "parshape.sil"
 title = "Dynamically computed paragraph shapes"
 
+[[basic]]
+fn = "snakes"
+source = "snakes.sil"
+title = "Snake Justification"
+
 # [[basic]]
 # fn = "byhand"
 # source = "byhand.lua"

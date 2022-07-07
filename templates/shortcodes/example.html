@@ -1,0 +1,16 @@
+{% set examples = load_data(path="/data/examples.toml") -%}
+{% for group, _ in examples -%}
+{% for example in examples[group] -%}
+{% if example.fn != fn %}{% continue %}{% endif %}
+{%- set_global example = example -%}
+{%- endfor %}
+{%- endfor %}
+<div class="example">
+  <a href="/examples/{{ example.fn }}.png">
+    <img src="/examples/{{ example.fn }}-thumb.png">
+  </a>
+  <br/>
+  <span class="title">{{ example.title }}</span><br/>
+  (<a href="/examples/{{ example.source }}">source</a>)
+  (<a href="/examples/{{ example.fn }}.pdf">PDF</a>)
+</div>

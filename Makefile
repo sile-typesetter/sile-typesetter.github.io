@@ -13,6 +13,9 @@ clean:
 	rm -rf public/**
 	rm -f examples/**.pdf
 
+# Works in our deploy because Make is 4.3+ run by Nix
+MAKEFLAGS += --jobs $(shell nproc)
+
 EXAMPLES := $(shell tomlq -r '.[][] | select(.devel != true) | .fn' data/examples.toml)
 EXAMPLEPDFS := $(addprefix static/examples/,$(addsuffix .pdf,$(EXAMPLES)))
 

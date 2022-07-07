@@ -1,4 +1,5 @@
 +++
+aliases = [ "what-is" ]
 template = "static.html"
 title = "What is SILE?"
 +++

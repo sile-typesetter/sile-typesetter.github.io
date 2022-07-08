@@ -11,13 +11,16 @@
 DEFSFONTFILES  = GentiumPlus-R.ttf GentiumPlus-I.ttf
 
 EXAMFONTFILES  = $(DEFSFONTFILES)
+EXAMFONTFILES += AcornInitials.ttf
 EXAMFONTFILES += Amiri-Regular.ttf
 EXAMFONTFILES += Cardo104s.ttf
 EXAMFONTFILES += DejaVuSansCondensed-Bold.ttf DejaVuSans-Bold.ttf DejaVuSans-Oblique.ttf
 EXAMFONTFILES += EBGaramond-Regular.ttf
 EXAMFONTFILES += Jomolhari-alpha3c-0605331.ttf
 EXAMFONTFILES += Junicode.ttf
-EXAMFONTFILES += LibertinusSerif-Regular.otf
+EXAMFONTFILES += LateefGR-Regular.ttf
+EXAMFONTFILES += LibertinusMath-Regular.otf
+EXAMFONTFILES += LibertinusSerif-Regular.otf LibertinusSerif-Bold.otf
 EXAMFONTFILES += Miama.otf
 EXAMFONTFILES += NotoSans-Regular.ttf
 EXAMFONTFILES += NotoSansArabic-Regular.ttf
@@ -38,8 +41,8 @@ EXAMFONTFILES += NotoSerif-Regular.ttf
 EXAMFONTFILES += NotoSerifArmenian-Regular.ttf
 EXAMFONTFILES += NotoSerifCJK-Regular.ttc
 EXAMFONTFILES += Padauk-Regular.ttf
-EXAMFONTFILES += ScheherazadeNew-Regular.ttf
 EXAMFONTFILES += TuladhaJejeg_gr.ttf
+EXAMFONTFILES += ZallmanCaps.ttf
 EXAMFONTFILES += mnglwhiteotf.ttf
 EXAMFONTFILES += newathu5_5.ttf
 
@@ -61,6 +64,9 @@ notobase = $(shell sed -e 's/-.*//' <<< $(notdir $1))
 
 # Tell  make how to download font file bundles (when not downloadable individually)
 
+.sources/acorn-initials.zip: | .sources
+	curl -fsSL https://www.1001fonts.com/download/$(notdir $@) -o $@
+
 .sources/cardo104.zip: | .sources
 	curl -fsSL https://scholarsfonts.net/$(notdir $@) -o $@
 
@@ -79,6 +85,9 @@ notobase = $(shell sed -e 's/-.*//' <<< $(notdir $1))
 .sources/junicode-1.002.zip: | .sources
 	curl -fsSL https://netix.dl.sourceforge.net/project/junicode/junicode/junicode-1.002/$(notdir $@) -o $@
 
+.sources/LateefGR-1.200.zip: | .sources
+	curl -fsSL https://software.sil.org/downloads/r/lateef/$(notdir $@) -o $@
+
 .sources/Libertinus-%.tar.xz: | .sources
 	curl -fsSL https://github.com/alerque/libertinus/releases/download/v$*/$(notdir $@) -o $@
 
@@ -91,13 +100,17 @@ notobase = $(shell sed -e 's/-.*//' <<< $(notdir $1))
 .sources/Padauk-5.000.zip: | .sources
 	curl -fsSL https://software.sil.org/downloads/r/padauk/$(notdir $@) -o $@
 
-.sources/ScheherazadeNew-3.200.zip: | .sources
-	curl -fsSL https://software.sil.org/downloads/r/scheherazade/$(notdir $@) -o $@
-
 .sources/TuladhaJejegGr_2.01.zip: | .sources
 	curl -fsSL https://sites.google.com/site/jawaunicode/$(notdir $@) -o $@
 
+.sources/zallman-caps.zip: | .sources
+	curl -fsSL https://www.1001fonts.com/download/$(notdir $@) -o $@
+
 # Tell make how to extract individual files from bundles
+
+.fonts/AcornInitials.ttf: .sources/acorn-initials.zip | .fonts
+	bsdtar -x -f $< -C $(dir $@) $(notdir $@)
+	touch $@
 
 .fonts/Cardo%: .sources/cardo104.zip | .fonts
 	bsdtar -x -f $< -C $(dir $@) $(notdir $@)
@@ -123,6 +136,10 @@ notobase = $(shell sed -e 's/-.*//' <<< $(notdir $1))
 	bsdtar -x -f $< -C $(dir $@) $(notdir $@)
 	touch $@
 
+.fonts/LateefGR%: .sources/LateefGR-1.200.zip | .fonts
+	bsdtar -x -f $< -C $(dir $@) --strip-components 1 $(basename $(<F))/$(notdir $@)
+	touch $@
+
 .fonts/Libertinus%: .sources/Libertinus-7.020.tar.xz | .fonts
 	bsdtar -x -f $< -C $(dir $@) --strip-components 3 $(basename $(basename $(<F)))/static/OTF/$(notdir $@)
 	touch $@
@@ -144,5 +161,9 @@ notobase = $(shell sed -e 's/-.*//' <<< $(notdir $1))
 	touch $@
 
 .fonts/TuladhaJejeg%: .sources/TuladhaJejegGr_2.01.zip | .fonts
+	bsdtar -x -f $< -C $(dir $@) $(notdir $@)
+	touch $@
+
+.fonts/ZallmanCaps.ttf: .sources/zallman-caps.zip | .fonts
 	bsdtar -x -f $< -C $(dir $@) $(notdir $@)
 	touch $@

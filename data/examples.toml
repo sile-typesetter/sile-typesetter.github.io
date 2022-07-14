@@ -109,7 +109,13 @@ source = "dropcaps.sil"
 title = "Dropcaps"
 
 [[packages]]
+fn = "framebox"
+source = "framebox.sil"
+title = "Do Boxes Rock"
+
+[[packages]]
 fn = "frametricks"
+devel = true
 source = "frametricks.sil"
 title = "Columns and drop caps with frametricks"
 
@@ -154,3 +160,9 @@ title = "rotate package"
 fn = "rule"
 source = "rule.sil"
 title = "rule package"
+
+[[packages]]
+fn = "ptable"
+devel = true
+source = "ptable.sil"
+title = "A Tale of Tables"

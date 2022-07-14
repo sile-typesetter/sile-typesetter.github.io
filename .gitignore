@@ -4,3 +4,4 @@ static/examples
 .fonts/*
 .sources/*
 tags
+feed.xml

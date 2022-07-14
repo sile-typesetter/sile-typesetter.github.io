@@ -130,6 +130,11 @@ source = "ligature.sil"
 title = "OpenType features and ligatures"
 
 [[packages]]
+fn = "lists"
+source = "lists.sil"
+title = "The Enumerated Nation"
+
+[[packages]]
 fn = "math"
 source = "math.sil"
 title = "Math"

@@ -12,8 +12,8 @@ See the included [CHANGELOG.md][changelog] or review the [commit history][commit
 
 ### Summary of Improvements
 
-The upcoming v0.14.0 is chock full of changes (hopefully all for the better!) and but several small issues have cropped up and there isn't any point in inconveniencing existing users with bugs we're fixed while we work on new features.
-This should fix up some issues with includes including activating exported functions and not getting blocked when both directories and files of the same name exist.
+The upcoming v0.14.0 is chock full of changes (hopefully all for the better!) but several small issues have cropped up in the v0.13.x series and there doesn't seem to be any point in inconveniencing existing users with bugs we've already fixed while we work on new features.
+This should fix up some issues with includes not activating exported functions and getting blocked when both directories and files of the same name exist.
 The Nix Flake will now work with the new Nix 2.10.x releases.
 
 Additionally [Didier Willis](http://github.com/Omikhleia) contributed some fixups and features to the Bibtex package to make it much more usable.

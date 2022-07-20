@@ -55,7 +55,7 @@ HASH := \#
 $(EXAMPLEPDFS): SILE ?= sile
 $(DEVELEXAMPLEPDFS): SILE ?= nix run github:sile-typesetter/sile$(HASH)sile --
 
-static/examples/docbook.pdf: SILEFLAGS += -I docbook.sil
+static/examples/docbook.pdf: SILEFLAGS += -c docbook
 
 static/%.pdf: content/%.sil $(addprefix .fonts/,$(EXAMFONTFILES))
 	mkdir -p $(dir $@)

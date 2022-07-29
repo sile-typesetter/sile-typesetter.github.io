@@ -9,6 +9,12 @@ source = "book.sil"
 title = "A Story"
 
 [[basic]]
+fn = "docbook"
+devel = true
+source = "docbook.xml"
+title = "Docbook XML input"
+
+[[basic]]
 fn = "inputfilter"
 source = "inputfilter.sil"
 title = "Input filters"

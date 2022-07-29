@@ -2,6 +2,7 @@
 aliases = [ "what-is" ]
 template = "static.html"
 title = "What is SILE?"
+date = "1970-01-01"
 +++
 
 SILE is a typesetting system.

@@ -51,6 +51,7 @@ title = "Vertical Japanese with Ruby and inline Latin"
 
 [[global]]
 fn = "mongolian"
+devel = true
 source = "mongolian.sil"
 title = "Mongolian - top to bottom, left to right"
 

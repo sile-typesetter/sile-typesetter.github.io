@@ -16,12 +16,12 @@ EXAMFONTFILES += Amiri-Regular.ttf
 EXAMFONTFILES += Cardo104s.ttf
 EXAMFONTFILES += DejaVuSansCondensed-Bold.ttf DejaVuSans-Bold.ttf DejaVuSans-Oblique.ttf
 EXAMFONTFILES += EBGaramond-Regular.ttf
+EXAMFONTFILES += Estonia-Regular.ttf
 EXAMFONTFILES += Jomolhari-alpha3c-0605331.ttf
 EXAMFONTFILES += Junicode.ttf
 EXAMFONTFILES += LateefGR-Regular.ttf
 EXAMFONTFILES += LibertinusMath-Regular.otf
 EXAMFONTFILES += LibertinusSerif-Regular.otf LibertinusSerif-Bold.otf
-EXAMFONTFILES += Miama.otf
 EXAMFONTFILES += NotoSans-Regular.ttf
 EXAMFONTFILES += NotoSansArabic-Regular.ttf
 EXAMFONTFILES += NotoSansArmenian-Regular.ttf
@@ -76,6 +76,9 @@ notobase = $(shell sed -e 's/-.*//' <<< $(notdir $1))
 .sources/EB_Garamond.zip: | .sources
 	curl -fsSL https://fonts.google.com/download?family=EB%20Garamond -o $@
 
+.sources/Estonia.zip: | .sources
+	curl -fsSL https://fonts.google.com/download?family=Estonia -o $@
+
 .sources/GentiumPlus-5.000.zip: | .sources
 	curl -fsSL https://software.sil.org/downloads/r/gentium/$(notdir $@) -o $@
 
@@ -90,9 +93,6 @@ notobase = $(shell sed -e 's/-.*//' <<< $(notdir $1))
 
 .sources/Libertinus-%.tar.xz: | .sources
 	curl -fsSL https://github.com/alerque/libertinus/releases/download/v$*/$(notdir $@) -o $@
-
-.sources/Miama.zip: | .sources
-	curl -fsSL https://www.fontsquirrel.com/fonts/download/$(basename $(notdir $@)) -o $@
 
 .sources/NAU5_005.zip: | .sources
 	curl -fsSL https://classicalstudies.org/sites/default/files/userfiles/files/$(notdir $@) -o $@
@@ -124,6 +124,10 @@ notobase = $(shell sed -e 's/-.*//' <<< $(notdir $1))
 	bsdtar -x -f $< -C $(dir $@) --strip-components 1 static/$(notdir $@)
 	touch $@
 
+.fonts/Estonia-%: .sources/Estonia.zip | .fonts
+	bsdtar -x -f $< -C $(dir $@) $(notdir $@)
+	touch $@
+
 .fonts/GentiumPlus%: .sources/GentiumPlus-5.000.zip | .fonts
 	bsdtar -x -f $< -C $(dir $@) --strip-components 1 $(basename $(<F))/$(notdir $@)
 	touch $@
@@ -142,10 +146,6 @@ notobase = $(shell sed -e 's/-.*//' <<< $(notdir $1))
 
 .fonts/Libertinus%: .sources/Libertinus-7.020.tar.xz | .fonts
 	bsdtar -x -f $< -C $(dir $@) --strip-components 3 $(basename $(basename $(<F)))/static/OTF/$(notdir $@)
-	touch $@
-
-.fonts/Miama%: .sources/Miama.zip | .fonts
-	bsdtar -x -f $< -C $(dir $@) $(notdir $@)
 	touch $@
 
 .fonts/newathu5_5.ttf: .sources/NAU5_005.zip | .fonts

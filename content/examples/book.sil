@@ -13,11 +13,15 @@ end)
 
 SILE.registerCommand("handletter", function (options, content)
   SILE.settings:temporarily(function ()
-    SILE.settings:set("document.lskip", "3em")
-    SILE.settings:set("document.rskip", "3em")
+    SILE.settings:set("document.lskip", "1.5em")
+    SILE.settings:set("document.rskip", SILE.length("1.5em", "99999em"))
     SILE.call("pagebreak")
     SILE.call("noindent")
-    SILE.call("font", { family = "Miama" }, function ()
+    SILE.call("font", { family = "Estonia", size = "1.3em" }, function ()
+      SILE.settings:set("document.language", "und")
+      SILE.settings:set("document.spaceskip", "1spc")
+      SILE.settings:set("shaper.variablespaces", false)
+      SILE.settings:set("document.baselineskip", "0")
       SILE.process(content)
       SILE.call("nofoliothispage")
     end)
@@ -41,7 +45,7 @@ SILE.registerCommand("titlepage", function (options, content)
     end)
     SILE.call("vfill")
     SILE.call("vfill")
-    SILE.call("font", { family = "Miama", size = "8%pw" }, { "Arthur Conan Doyle" })
+    SILE.call("font", { family = "Estonia", size = "8%pw" }, { "Arthur Conan Doyle" })
   end)
   SILE.call("eject")
 end)
@@ -50,7 +54,7 @@ end)
 \language[main=en]
 \titlepage
 \tableofcontents
-\right-running-head{\rightalign{\font[family=Miama]{Arthur Conan Doyle}}}
+\right-running-head{\rightalign{\font[family=Estonia]{Arthur Conan Doyle}}}
 \chapter{A Scandal In Bohemia}
 
 To Sherlock Holmes she is always \em{the} woman.\footnote{Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.} I have seldom heard him mention her under any other name. In his eyes she eclipses and predominates the whole of her sex. It was not that he felt any emotion akin to love for Irene Adler. All emotions, and that one particularly, were abhorrent to his cold, precise but admirably balanced mind. He was, I take it, the most perfect reasoning and observing machine that the world has seen, but as a lover he would have placed himself in a false position.\footnote{Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.} He never spoke of the softer passions, save with a gibe and a sneer. They were admirable things for the observer — excellent for drawing the veil from men’s motives and actions. But for the trained reasoner to admit such intrusions into his own delicate and finely adjusted temperament was to introduce a distracting factor which might throw a doubt upon all his mental results. Grit in a sensitive instrument, or a crack in one of his own high-power lenses, would not be more disturbing than a strong emotion in a nature such as his. And yet there was but one woman to him, and that woman was the late Irene Adler, of dubious and questionable memory.

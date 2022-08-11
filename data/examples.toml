@@ -10,7 +10,6 @@ title = "A Story"
 
 [[basic]]
 fn = "docbook"
-devel = true
 source = "docbook.xml"
 title = "Docbook XML input"
 
@@ -51,7 +50,6 @@ title = "Vertical Japanese with Ruby and inline Latin"
 
 [[global]]
 fn = "mongolian"
-devel = true
 source = "mongolian.sil"
 title = "Mongolian - top to bottom, left to right"
 
@@ -63,7 +61,6 @@ title = "Mongolian - top to bottom, left to right"
 
 [[global]]
 fn = "heart-sutra"
-devel = true
 source = "heart-sutra.sil"
 title = "Tibetan pecha-style layout"
 
@@ -100,7 +97,6 @@ title = "Armenian hyphenation"
 
 [[packages]]
 fn = "bibtex"
-devel = true
 source = "bibtex.sil"
 title = "BibTeX bibliography support"
 
@@ -111,7 +107,6 @@ title = "Chord mode"
 
 [[packages]]
 fn = "dropcaps"
-devel = true
 source = "dropcaps.sil"
 title = "Dropcaps"
 
@@ -148,7 +143,6 @@ title = "Math"
 
 [[packages]]
 fn = "parallel"
-devel = true
 source = "parallel.sil"
 title = "Parallel layout"
 

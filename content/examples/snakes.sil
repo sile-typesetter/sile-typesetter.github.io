@@ -3,6 +3,8 @@
 \script[src=packages/url]
 \begin{script}
 local snakeGlue = SILE.nodefactory.glue()
+local snake = "snake.png"
+local snakeimg = SILE.resolveFile(snake)
 snakeGlue.width = SILE.length("0pt plus 100000pt")
 function snakeGlue:outputYourself (typesetter, line)
   local scaledWidth = self.width.length
@@ -12,7 +14,7 @@ function snakeGlue:outputYourself (typesetter, line)
     scaledWidth = scaledWidth + self.width.stretch * line.ratio
   end
   if scaledWidth <= 12 then return end
-  SILE.outputter:drawImage(SILE.masterDir .. "snake.png", typesetter.frame.state.cursorX, typesetter.frame.state.cursorY - 12, scaledWidth, 12);
+  SILE.outputter:drawImage(snakeimg, typesetter.frame.state.cursorX, typesetter.frame.state.cursorY - 12, scaledWidth, 12);
   typesetter.frame:advanceWritingDirection(scaledWidth)
 end
 SILE.settings:set("typesetter.parfillskip", SILE.nodefactory.glue())

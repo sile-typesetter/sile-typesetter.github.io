@@ -16,7 +16,7 @@ We're just squishing bugs today and making the manual a little neater.
 Working with STDIN streams should be a bit more robust now as the content type detection isn't so picky about whitespace and isn't so prone to false positive detections.
 Document file restrictions have been relaxed a little too allowing comments and whitespace before the leading document tag.
 Package developers should have a little bit easier time with in the event their package is loaded twice.
-Also a number of small typesetting issues in the user manual were cleaned up by [Didier Willis](https://github.com/Omikhleia)
+Also a number of small typesetting issues in the user manual were cleaned up by [Didier Willis](https://github.com/Omikhleia).
 
 
 ### Bug Fixes

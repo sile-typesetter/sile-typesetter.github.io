@@ -10,7 +10,6 @@ title = "A Story"
 
 [[basic]]
 fn = "docbook"
-devel = true
 source = "docbook.xml"
 title = "Docbook XML input"
 

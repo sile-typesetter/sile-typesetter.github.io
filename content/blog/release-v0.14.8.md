@@ -17,7 +17,7 @@ If you have extra cake in storage just waiting for something worth celebrating, 
 This contribution was supported by a bounty grant from the [MFEK Foundation][mfekf].
 Many thanks to both Khaled and [Fredrick Brennan](https://github.com/ctrlcctrlv) for making this possible.
 
-Enabling this significant step forward requires the font subsetter support introduced in HarfBuzz 6.
+Enabling this significant step forward requires the font instancing support introduced in HarfBuzz 6 (part of the `harfbuzz-subset` library).
 This is a new default minimum requirement for SILE.
 At the time of writing this is relatively new, although many platforms [already have updates available][hbversions].
 It is possible to build against older HarfBuzz versions by using the configuration option `--disable-font-variations`.

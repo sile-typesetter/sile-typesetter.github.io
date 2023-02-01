@@ -31,7 +31,12 @@ title = "Snake Justification"
 # [[basic]]
 # fn = "byhand"
 # source = "byhand.lua"
-# title = "Generate a PDF from a Lua script"
+# title = "Generate a PDF from a Lua script loading SILE as a library"
+
+# [[basic]]
+# fn = "luainput"
+# source = "luainput.lua"
+# title = "Generate a PDF from a Lua script using the SILE cli"
 
 [[global]]
 fn = "i18n"

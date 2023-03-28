@@ -58,11 +58,10 @@ fn = "mongolian"
 source = "mongolian.sil"
 title = "Mongolian - top to bottom, left to right"
 
-# TODO https://github.com/sile-typesetter/sile/issues/1225
-# [[global]]
-# fn = "triglot"
-# source = "triglot.sil"
-# title = "A triglot layout - Greek, English and Japanese"
+[[global]]
+fn = "triglot"
+source = "triglot.sil"
+title = "A triglot layout - Greek, English and Japanese"
 
 [[global]]
 fn = "heart-sutra"

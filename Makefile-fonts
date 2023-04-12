@@ -41,7 +41,7 @@ EXAMFONTFILES += NotoSerif-Regular.ttf
 EXAMFONTFILES += NotoSerifArmenian-Regular.ttf
 EXAMFONTFILES += NotoSerifCJK-Regular.ttc
 EXAMFONTFILES += Padauk-Regular.ttf
-EXAMFONTFILES += TuladhaJejeg_gr.ttf
+EXAMFONTFILES += TuladhaJejegOT-Regular.otf
 EXAMFONTFILES += ZallmanCaps.ttf
 EXAMFONTFILES += mnglwhiteotf.ttf
 EXAMFONTFILES += newathu5_5.ttf
@@ -100,8 +100,8 @@ notobase = $(shell sed -e 's/-.*//' <<< $(notdir $1))
 .sources/Padauk-5.000.zip: | .sources
 	curl -fsSL https://software.sil.org/downloads/r/padauk/$(notdir $@) -o $@
 
-.sources/TuladhaJejegGr_2.01.zip: | .sources
-	curl -fsSL https://sites.google.com/site/jawaunicode/$(notdir $@) -o $@
+.sources/Tuladha-Jejeg-OT-%.zip: | .sources
+	curl -fsSL https://github.com/akufadhl/Tuladha-Jejeg-OT/releases/download/v$*/$(notdir $@) -o $@
 
 .sources/zallman-caps.zip: | .sources
 	curl -fsSL https://www.1001fonts.com/download/$(notdir $@) -o $@
@@ -160,8 +160,8 @@ notobase = $(shell sed -e 's/-.*//' <<< $(notdir $1))
 	bsdtar -x -f $< -C $(dir $@) --strip-components 1 $(basename $(<F))/$(notdir $@)
 	touch $@
 
-.fonts/TuladhaJejeg%: .sources/TuladhaJejegGr_2.01.zip | .fonts
-	bsdtar -x -f $< -C $(dir $@) $(notdir $@)
+.fonts/Tuladha%: .sources/Tuladha-Jejeg-OT-0.05.zip | .fonts
+	bsdtar -x -f $< -C $(dir $@) --strip-components 2 fonts/otf/$(notdir $@)
 	touch $@
 
 .fonts/ZallmanCaps.ttf: .sources/zallman-caps.zip | .fonts

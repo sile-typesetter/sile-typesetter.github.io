@@ -18,6 +18,7 @@ The biggest motivation for the release is actually the documentation.
 Our documentation changes don't show up in the automatic change logs, but we fixed a number of problems with the layout of the manual.
 Over the last couple releases we introduced several mistakes in the documentation code causing a bit of mess.
 The manual still isn't perfect, but at least no bits are drawn over other bits any more!
+Additionally a whole new chapter on how to write modules to add input and output formats landed thanks to [Didier Willis](http://github.com/Omikhleia).
 
 
 ### Bug Fixes

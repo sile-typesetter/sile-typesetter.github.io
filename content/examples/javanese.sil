@@ -1,7 +1,9 @@
 \begin[papersize=a5]{document}
 \nofolios
 \neverindent
+\use[module=packages.font-fallback]
 \font[family=Tuladha Jejeg OT,language=jv]
+\font:add-fallback[family=Junicode]
 \begin{raggedright}
 \font[size=24pt]{ꦥꦺꦔꦼꦠ꧀ꦠꦤ꧀}
 

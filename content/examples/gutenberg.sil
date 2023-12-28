@@ -1,9 +1,9 @@
 % TODO https://github.com/sile-typesetter/sile/issues/1227
 \begin[class=plain,papersize=130mm x 100mm]{document}\nofolios
-\script[src=packages/gutenberg]
-\script[src=packages/unichar]
-\script[src=packages/color]
-\script[src=packages/rules]
+\use[module=packages.gutenberg]
+\use[module=packages.unichar]
+\use[module=packages.color]
+\use[module=packages.rules]
 \define[command=lig-ll]{\color[color=red]{\unichar{U+F4F9}}}
 \define[command=nolig-fi]{f{}i}
 \define[command=ll]{\alternative{{ll}{\lig-ll}}}

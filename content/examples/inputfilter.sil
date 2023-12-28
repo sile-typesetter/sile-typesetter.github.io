@@ -1,7 +1,7 @@
 \begin[class=plain,papersize=a5]{document}
 \nofolios
 \neverindent
-\script[src=packages/color]
+\use[module=packages.color]
 
 \begin{script}
 

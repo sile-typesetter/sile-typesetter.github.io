@@ -17,6 +17,11 @@ This doesn't bring any user facing features or fixes, only a bit of refactoring 
 The main purpose is to straighten out the repository so the expected branch contains the release tags.
 Sorry for the noise.
 
+
+### Bug Fixes
+
+* **tooling:** Re-merge so release tag is on master branch ([e8eaf11](https://github.com/sile-typesetter/sile/commit/e8eaf11da6cd183168898eca08f6f789f46d599e))
+
   [release]: https://github.com/sile-typesetter/sile/releases/tag/v0.14.16
   [changelog]: https://github.com/sile-typesetter/sile/blob/master/CHANGELOG.md
   [commits]: https://github.com/sile-typesetter/sile/compare/v0.14.15...v0.14.16

@@ -4,6 +4,269 @@ template = "static.html"
 date = "1970-01-01"
 +++
 
+SILE accepts input in several formats.
+One is XML.
+Yes, just XML, no special input language required.
+Use any tooling you want to create XML.
+You can either target SILE's commands with XML tags or provide a module that handles the tag schema in your document.
+
+Secondarily for those that want it, a custom intput syntax can be used that is somewhat less verbose and easier to type than XML.
+
+We call it the SIL format (Sile Input Language).
+
+## Parsers
+
+The current official reference parser is the Lua LPEG based EPNF variant found in [inputters/sil-epnf.lua](https://github.com/sile-typesetter/sile/blob/develop/inputters/sil-epnf.lua).
+Recently we've been working to define a formal grammar spec using ABNF syntax.
+The current version of this is distributed as [sil.abnf](https://github.com/sile-typesetter/sile/blob/develop/sil.abnf) along with SILE sources.
+
+<details>
+<summary>sil.abnf</summary>
+
+```abnf
+; Formal grammar definition for SIL (SILE Input Language) files
+;
+; Based on RFC 5234 (Augmented BNF for Syntax Specifications: ABNF)
+; Uses RFC 7405 (Case-Sensitive String Support in ABNF)
+
+; NOTE: ABNF does not seem to have a way to express matching / balancing of
+; tags. The grammar below does not express SILE's ability to skip over
+; passthrough content until it hits the correct matching closing tag for
+; environments or the first unballanced brace for braced content.
+
+; A master document can only have one top level content item, but we allow
+; loading of fragments as well which can have any number of top level content
+; items, hence valid grammar can be any number of content items.
+document = *content
+
+; Top level content can be any sequence of these things
+content =  environment
+content =/ comment
+content =/ text
+content =/ braced-content
+content =/ command
+
+; Environments come in two flavors, passthrough (raw) and regular. The
+; difference is what is allowed to terminate them and what escapes are needed
+; for the content in the middle.
+environment =  %s"\begin" [ options ] "{" passthrough-command-id "}"
+               env-passthrough-text
+               %s"\end{" passthrough-command-id "}"
+environment =/ %s"\begin" [ options ] "{" command-id "}"
+               content
+               %s"\end{" command-id "}"
+
+; Passthrough (raw) environments can have any valid UTF-8 except the closing
+; delimiter matching the opening, per the environment rule.
+env-passthrough-text = *utf8-char
+
+; Nothing to see here.
+; But potentially important because it eats newlines!
+comment = "%" *utf8-char CRLF
+
+; Input strings that are not special
+text = *text-char
+
+; Input content wrapped in braces can be attatched to a command or used to
+; manually isolate chunks of content (e.g. to hinder ligatures).
+braced-content = "{" content "}"
+
+; As with environments, the content format may be passthrough (raw) or more sil
+; content depending on the command.
+command =  "\" passthrough-command-id [ options ] [ braced-passthrough-text ]
+command =/ "\" command-id [ options ] [ braced-content ]
+
+; Passthrough (raw) command text can have any valid UTF-8 except an unbalanced closing delimiter
+braced-passthrough-text = "{" *( *braced-passthrough-char / braced-passthrough-text ) "}"
+
+braced-passthrough-char =  %x00-7A ; omit {
+braced-passthrough-char =/ %x7C    ; omit }
+braced-passthrough-char =/ %x7E-7F ; end of utf8-1
+braced-passthrough-char =/ utf8-2
+braced-passthrough-char =/ utf8-3
+braced-passthrough-char =/ utf8-4
+
+options = "[" parameter *( "," parameter ) "]"
+parameter = *WSP identifier *WSP "=" *WSP ( quoted-value / value ) *WSP
+
+quoted-value = DQUOTE *quoted-value-char DQUOTE
+quoted-value-char = "\" %x22
+quoted-value-char =/ %x00-21 ; omit "
+quoted-value-char =/ %x23-7F ; end of utf8-1
+quoted-value-char =/ utf8-2
+quoted-value-char =/ utf8-3
+quoted-value-char =/ utf8-4
+
+value = *value-char
+value-char =  %x00-21 ; omit "
+value-char =/ %x23-2B ; omit ,
+value-char =/ %x3C-5C ; omit ]
+value-char =/ %x3E-7F ; end of utf8-1
+value-char =/ utf8-2
+value-char =/ utf8-3
+value-char =/ utf8-4
+
+text-char =  "\" ( %x5C / %x25 / %x7B / %x7D )
+text-char =/ %x00-24 ; omit %
+text-char =/ %x26-5B ; omit \
+text-char =/ %x5D-7A ; omit {
+text-char =/ %x7C    ; omit }
+text-char =/ %x7E-7F ; end of utf8-1
+text-char =/ utf8-2
+text-char =/ utf8-3
+text-char =/ utf8-4
+
+letter = ALPHA / "_" / ":"
+identifier = letter *( letter / DIGIT / "-" / "." )
+passthrough-command-id = %s"ftl" / %s"lua" / %s"math" / %s"raw" / %s"script" / %s"sil" / %s"use" / %s"xml"
+command-id = identifier
+
+; ASCII isn't good enough for us.
+utf8-char = utf8-1 / utf8-2 / utf8-3 / utf8-4
+utf8-1    = %x00-7F
+utf8-2    = %xC2-DF utf8-tail
+utf8-3    = %xE0 %xA0-BF utf8-tail / %xE1-EC 2utf8-tail / %xED %x80-9F utf8-tail / %xEE-EF 2utf8-tail
+utf8-4    = %xF0 %x90-BF 2utf8-tail / %xF1-F3 3utf8-tail / %xF4 %x80-8F 2utf8-tail
+utf8-tail = %x80-BF
+```
+
+</details>
+
+This grammar can be converted to a W3C EBNF grammar:
+
+<details>
+<summary>sil.ebnf</summary>
+
+```ebnf
+document ::= content*
+
+content  ::= environment
+           | comment
+           | text
+           | braced-content
+           | command
+
+environment
+         ::= '\begin' options? '{' passthrough-command-id '}' env-passthrough-text '\end{' passthrough-command-id '}'
+           | '\begin' options? '{' command-id '}' content '\end{' command-id '}'
+
+env-passthrough-text
+         ::= utf8-char*
+
+comment  ::= '%' utf8-char* CRLF
+
+text     ::= text-char*
+
+braced-content
+         ::= '{' content '}'
+
+command  ::= '\' passthrough-command-id options? braced-passthrough-text?
+           | '\' command-id options? braced-content?
+
+braced-passthrough-text
+         ::= '{' ( braced-passthrough-char* | braced-passthrough-text )* '}'
+
+braced-passthrough-char
+         ::= [#x0-#x7A]
+           | '|'
+           | [#x7E-#x7F]
+           | utf8-2
+           | utf8-3
+           | utf8-4
+
+options  ::= '[' parameter ( ',' parameter )* ']'
+
+parameter
+         ::= WSP* identifier WSP* '=' WSP* ( quoted-value | value ) WSP*
+
+quoted-value
+         ::= DQUOTE quoted-value-char* DQUOTE
+
+quoted-value-char
+         ::= '\' '"'
+           | [#x0-#x21]
+           | [#x23-#x7F]
+           | utf8-2
+           | utf8-3
+           | utf8-4
+
+value    ::= value-char*
+
+value-char
+         ::= [#x0-#x21]
+           | [#x23-#x2B]
+           | [<-\]
+           | [#x3E-#x7F]
+           | utf8-2
+           | utf8-3
+           | utf8-4
+
+text-char
+         ::= '\' ( '\' | '%' | '{' | '}' )
+           | [#x0-#x24]
+           | [&-[]
+           | [#x5D-#x7A]
+           | '|'
+           | [#x7E-#x7F]
+           | utf8-2
+           | utf8-3
+           | utf8-4
+
+letter   ::= ALPHA
+           | '_'
+           | ':'
+
+identifier
+         ::= letter ( letter | DIGIT | '-' | '.' )*
+
+passthrough-command-id
+         ::= 'ftl'
+           | 'lua'
+           | 'math'
+           | 'raw'
+           | 'script'
+           | 'sil'
+           | 'use'
+           | 'xml'
+
+command-id
+         ::= identifier
+
+utf8-char
+         ::= utf8-1
+           | utf8-2
+           | utf8-3
+           | utf8-4
+
+utf8-1   ::= [#x0-#x7F]
+
+utf8-2   ::= [#xC2-#xDF] utf8-tail
+
+utf8-3   ::= #xE0 [#xA0-#xBF] utf8-tail
+           | [#xE1-#xEC] utf8-tail utf8-tail
+           | #xED [#x80-#x9F] utf8-tail
+           | [#xEE-#xEF] utf8-tail utf8-tail
+
+utf8-4   ::= #xF0 [#x90-#xBF] utf8-tail utf8-tail
+           | [#xF1-#xF3] utf8-tail utf8-tail utf8-tail
+           | #xF4 [#x80-#x8F] utf8-tail utf8-tail
+
+utf8-tail
+         ::= [#x80-#xBF]
+```
+
+</details>
+
+## Railroad digrams and EBNF snippets
+
+What followes is EBNF grammar snippets and railroad diagrams for the syntax.
+
+<!--
+ebnf-convert -f none sil.abnf | ebnf-rr -nofactoring -noinline -noepsilon -md -
+-->
+
+----
+
 **document:**
 
 ![document](data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22167%22%20height%3D%2257%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%40namespace%20%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3B%20.line%20%7Bfill%3A%20none%3B%20stroke%3A%20%23332900%3B%20stroke-width%3A%201%3B%7D%20.bold-line%20%7Bstroke%3A%20%23141000%3B%20shape-rendering%3A%20crispEdges%3B%20stroke-width%3A%202%3B%7D%20.thin-line%20%7Bstroke%3A%20%231F1800%3B%20shape-rendering%3A%20crispEdges%7D%20.filled%20%7Bfill%3A%20%23332900%3B%20stroke%3A%20none%3B%7D%20text.terminal%20%7Bfont-family%3A%20Verdana%2C%20Sans-serif%3B%20font-size%3A%2012px%3B%20fill%3A%20%23141000%3B%20font-weight%3A%20bold%3B%20%7D%20text.nonterminal%20%7Bfont-family%3A%20Verdana%2C%20Sans-serif%3B%20font-size%3A%2012px%3B%20fill%3A%20%231A1400%3B%20font-weight%3A%20normal%3B%20%7D%20text.regexp%20%7Bfont-family%3A%20Verdana%2C%20Sans-serif%3B%20font-size%3A%2012px%3B%20fill%3A%20%231F1800%3B%20font-weight%3A%20normal%3B%20%7D%20rect%2C%20circle%2C%20polygon%20%7Bfill%3A%20%23332900%3B%20stroke%3A%20%23332900%3B%7D%20rect.terminal%20%7Bfill%3A%20%23FFDB4D%3B%20stroke%3A%20%23332900%3B%20stroke-width%3A%201%3B%7D%20rect.nonterminal%20%7Bfill%3A%20%23FFEC9E%3B%20stroke%3A%20%23332900%3B%20stroke-width%3A%201%3B%7D%20rect.text%20%7Bfill%3A%20none%3B%20stroke%3A%20none%3B%7D%20polygon.regexp%20%7Bfill%3A%20%23FFF4C7%3B%20stroke%3A%20%23332900%3B%20stroke-width%3A%201%3B%7D%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cpolygon%20points%3D%229%2051%201%2047%201%2055%22%2F%3E%3Cpolygon%20points%3D%2217%2051%209%2047%209%2055%22%2F%3E%3Crect%20x%3D%2251%22%20y%3D%223%22%20width%3D%2268%22%20height%3D%2232%22%2F%3E%3Crect%20x%3D%2249%22%20y%3D%221%22%20width%3D%2268%22%20height%3D%2232%22%20class%3D%22nonterminal%22%2F%3E%3Ctext%20class%3D%22nonterminal%22%20x%3D%2259%22%20y%3D%2221%22%3Econtent%3C%2Ftext%3E%3Cpath%20class%3D%22line%22%20d%3D%22m17%2051%20h2%20m20%200%20h10%20m0%200%20h78%20m-108%200%20l20%200%20m-1%200%20q-9%200%20-9%20-10%20l0%20-14%20q0%20-10%2010%20-10%20m88%2034%20l20%200%20m-20%200%20q10%200%2010%20-10%20l0%20-14%20q0%20-10%20-10%20-10%20m-88%200%20h10%20m68%200%20h10%20m23%2034%20h-3%22%2F%3E%3Cpolygon%20points%3D%22157%2051%20165%2047%20165%2055%22%2F%3E%3Cpolygon%20points%3D%22157%2051%20149%2047%20149%2055%22%2F%3E%3C%2Fsvg%3E)

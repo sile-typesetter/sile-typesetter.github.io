@@ -5,7 +5,7 @@
 \frame[id=narrow2,left=left(content)+width(content)/2,top=top(content),bottom=bottom(content),width=width(content)/3]
 \end{pagetemplate}
 \language[main=hy]
-\script[src=packages/font-fallback]
+\use[module=packages.font-fallback]
 \font[family=Noto Serif Armenian,size=9pt]
 \font:add-fallback[family=Noto Serif]
 \set[parameter=document.baselineskip,value=2.7ex]

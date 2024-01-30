@@ -1,5 +1,5 @@
 \begin[papersize=a5]{document}
-\script[src=packages/rotate]
+\use[module=packages.rotate]
 % \frame[id=folio,rotate=45] % TODO
 \font[size=12pt]
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod

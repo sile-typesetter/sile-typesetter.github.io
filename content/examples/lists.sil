@@ -1,7 +1,7 @@
 \begin[papersize=a5,class=plain]{document}
 \neverindent
 \nofolios
-\script[src=packages/lists]
+\use[module=packages.lists]
 \language[main=en]
 \font[family=Libertinus Serif, size=14]
 

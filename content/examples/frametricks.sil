@@ -1,6 +1,6 @@
 \begin[papersize=a5]{document}
 \nofolios
-\script[src=packages/frametricks]
+\use[module=packages.frametricks]
 \makecolumns[columns=2]
 \font[size=16pt]
 \set[parameter=document.baselineskip,value=3ex]

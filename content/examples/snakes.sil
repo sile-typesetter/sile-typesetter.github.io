@@ -1,6 +1,6 @@
 \begin[class=book,papersize=a5]{document}
 \nofolios
-\script[src=packages/url]
+\use[module=packages.url]
 \begin{script}
 local snakeGlue = SILE.nodefactory.glue()
 local snake = "snake.png"

@@ -1,7 +1,7 @@
 \begin[class=plain]{document}
 
-\script[src=packages/image]
-\script[src=packages/converters]
+\use[module=packages.image]
+\use[module=packages.converters]
 
 First line of text
 

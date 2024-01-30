@@ -1,8 +1,8 @@
 % TODO https://github.com/sile-typesetter/sile/issues/1225
 \begin[class=triglot,papersize=a5]{document}
 \nofolios
-\script[src=packages/rules]
-\script[src=packages/color]
+\use[module=packages.rules]
+\use[module=packages.color]
 \define[command=left:font]{\font[family=Cardo,size=10pt,language=el]}
 \define[command=middle:font]{\font[family=Gentium Plus,size=10pt,language=en]}
 \define[command=right:font]{\font[family=Hiragino Mincho Pro,size=10pt,language=ja]}

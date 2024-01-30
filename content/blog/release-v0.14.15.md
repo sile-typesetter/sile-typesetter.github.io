@@ -1,6 +1,6 @@
 +++
 title = "SILE v0.14.15 Is Released"
-date = "2024-01-27"
+date = "2024-01-27 13:35:45"
 
 [extra]
 post_author = "Caleb Maclennan"

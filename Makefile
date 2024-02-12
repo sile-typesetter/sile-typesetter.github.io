@@ -42,11 +42,27 @@ define runsile =
 	fi
 endef
 
+.PHONY: static
+static: examples lua-api-docs
+
+DOCSBRANCH = ldoc
+.PHONY: lua-api-docs
+lua-api-docs: static/lua-api/index.html
+
+static/lua-api/index.html: sile-sources-$(DOCSBRANCH)
+	pushd $<
+	touch build-aux/rust_boilerplate.mk
+	nix develop --phase autoreconf
+	nix develop --phase configure
+	nix develop --command bash -c "make lua-api-docs"
+	popd
+	rsync -av $</lua-api-docs/ $(@D)/
+
+sile-sources-$(DOCSBRANCH):
+	git clone -b $(DOCSBRANCH) --depth 1 --recurse-submodules https://github.com/alerque/sile $@
+
 .PHONY: examples
 examples: $(EXAMPLEPDFS) $(DEVELEXAMPLEPDFS) $(EXAMPLEPNGS) $(EXAMPLETHBS)
-
-.PHONY: static
-static: examples
 
 include Makefile-fonts
 

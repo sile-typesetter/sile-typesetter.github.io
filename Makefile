@@ -45,7 +45,7 @@ endef
 .PHONY: static
 static: examples lua-api-docs
 
-DOCSBRANCH = devel
+DOCSBRANCH = develop
 .PHONY: lua-api-docs
 lua-api-docs: static/lua-api/index.html
 

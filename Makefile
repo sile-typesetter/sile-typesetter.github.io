@@ -45,7 +45,7 @@ endef
 .PHONY: static
 static: examples lua-api-docs
 
-DOCSBRANCH = ldoc
+DOCSBRANCH = devel
 .PHONY: lua-api-docs
 lua-api-docs: static/lua-api/index.html
 
@@ -59,7 +59,7 @@ static/lua-api/index.html: sile-sources-$(DOCSBRANCH)
 	rsync -av $</lua-api-docs/ $(@D)/
 
 sile-sources-$(DOCSBRANCH):
-	git clone -b $(DOCSBRANCH) --depth 1 --recurse-submodules https://github.com/alerque/sile $@
+	git clone -b $(DOCSBRANCH) --depth 1 --recurse-submodules https://github.com/sile-typesetter/sile $@
 
 .PHONY: examples
 examples: $(EXAMPLEPDFS) $(DEVELEXAMPLEPDFS) $(EXAMPLEPNGS) $(EXAMPLETHBS)

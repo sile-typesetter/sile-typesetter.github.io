@@ -16,9 +16,9 @@ In the works for over a year with over 500 commits and 100 issues closed, please
 This is the big “Rewrite it in Rust”!
 *Caveat lector.*
 In truth this is a big release but it is **not** a rewrite.
-All the SILE internals are still written in Lua and 100% user modifiable at runtime.
+All the typesetting internals of SILE are still written in Lua and 100% user modifiable at runtime.
 From an end user or 3rd party module developer standpoint little has changed.
-However SILE itself is now a compiled Rust application that includes its own Lua interpreter.
+However **SILE itself is now a compiled Rust application** that includes its own Lua interpreter.
 The build process can (optionally) embed all the Lua and other resources files that makeup SILE and its dependencies in a single binary.
 This opens the door for improvements such as being able to leverage Rust libraries (including exposing their functions to Lua),
     write some parts of core functions in Rust for performance or preference,
@@ -28,35 +28,40 @@ This opens the door for improvements such as being able to leverage Rust librari
 
 The language change mostly affects building and packaging SILE itself.
 Once running, relatively little has changed with the *way* SILE interacts with documents.
-However quite a number of default settings have been changed.
-See the *Usage* section of these release notes and the `retrograde` module for tips on this not being too disruptive.
+That being said quite a number of default settings have been changed.
+See the *Usage* section of these release notes and the `retrograde` module documentation for tips on how to transition smoothly.
 
 For a transition period, the Lua based CLI is still available as `sile-lua`.
 This may be useful for scripting environments that generate inputs and/or parse the output of SILE itself.
 These should be transitioned to the new Rust CLI `sile` which has a few minor differences in argument handling and output message formatting.
-The Lua CLI will only be available fol a limited number of future releases.
+The Lua CLI will only be available for a limited number of future releases.
 Please do report any issues using the new CLI.
 
-Extra thanks to Didier for lots contributions and input during the development cycle;
-    and also to Fredrick for generous sponsorships that enabled me to commit quite a bit more time to development.
+Extra thanks to [Didier Willis](http://github.com/Omikhleia) for lots contributions and input during the development cycle;
+    and also to [Fredrick Brennan](https://github.com/ctrlcctrlv) for generous sponsorships that enabled me to commit quite a bit more time to development.
 
 #### Installation: For Anyone Installing From Packages
 
 If you install SILE from your distro's package manager or other packaging, nothing about your process needs to change.
-Update and enjoy.
+Update via your system tools and enjoy.
 
 #### Installation: For Distro Packagers and Source Installations
 
-If you install from source or package SILE, the build system has new dependencies.
-It now requires Rust tooling (`cargo`, `rustc`) as well as some more utilities (`jq`) at build time.
+If you install from source or package SILE, the build command sequence is the same but there are new prerequisite dependencies.
+It now requires Rust tooling (`cargo`, `rustc`) as well as some more utilities (`jq`) to be available at build time.
 No new dependencies are needed at run time.
-In fact it is now no longer necessary to use a Lua VM available at runtime.
+In fact it is now no longer necessary to use a Lua VM available at runtime for the new CLI.
 SILE brings its own Lua VM along.
-Optionally it can also be setup to embed all of its runtime dependencies in a single binary.
+(The legacy `sile-lua` CLI of course still uses Lua as before.)
+Optionally the build process can also be setup to embed all of its runtime dependencies in a single binary.
+See `./configure --enable-embedded-resources` and `./configure --enable-static` if you want to pursue the single binary route.
+Most users should use the defaults that install the Lua files and other assets separately as an easy reference for tinkering with and overriding them.
 
-The default Lua VM has been switched from whatever the system supplied to to LuaJIT.
-This is roughly equivalent to Lua 5.1 and doesn't have some niceties from 5.4, but it is much much faster.
-At build time SILE can be configured to used any version of Lua of your choice.
+Another notable change is that the default Lua VM has been switched from whatever the system supplied to to LuaJIT.
+This has been an option for a while, but the default has been whatever the newest PUC Lua version was on the host system.
+LuaJIT is roughly equivalent to Lua 5.1 and doesn't have some small niceties from 5.4, but it is much much faster.
+Some of the differences are papered over since SILE depends on and provides the *compat53* library compatibility layer.
+Of course build time SILE can still be configured to used any version of Lua of your choice.
 This can be used to match compatibility with 3rd party modules or other system components.
 
 #### Usage
@@ -82,11 +87,13 @@ As a demonstration we'll install a Markdown input module in a project-local dire
 $ sile -q -e 'print(SILE.lua_version); os.exit()'
 5.1
 $ luarocks --lua-version 5.1 --tree lua_modules install markdown.sile
-...
-$ echo '# Test *Markdown*' > test.md
+[…]
+$ echo 'Test *Markdown* rendering.' > test.md
 $ sile -u inputters.markdown test.md
-...
+[…]
 ```
+
+Without further ado, here is the nitty–gritty.
 
 
 ### ⚠ BREAKING CHANGES

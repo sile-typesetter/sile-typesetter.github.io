@@ -106,9 +106,9 @@ Without further ado, here is the nitty–gritty.
 
 * **inputters:** Input documents using the SIL language will now retain whitespace more consistently. Whitespace following environment blocks is no longer swallowed in differently than space following command syntax. Consecutive line breaks in the input will consistently trigger new paragraphs no matter what they follow.
 
-    Note that this change cannot be patched over via the retrograde package settings because by the time your document could specify what packages to load or settings to set, the input document has already been parsed. To achieve the same rendering results where environments could be ended leaving any amount of blank lines and still joined to the following content as part of the same paragraphs, you will need to remove the extranious whitespace.
+    Note that this change cannot be patched over via the retrograde package settings because by the time your document could specify what packages to load or settings to set, the input document has already been parsed. To achieve the same rendering results where environments could be ended leaving any amount of blank lines and still joined to the following content as part of the same paragraphs, you will need to remove the extraneous whitespace.
 
-* **core:** Several top level instance creaters of various names have been re-organized under SILE.types.
+* **core:** Several top level instance creators of various names have been re-organized under SILE.types.
 
     Specifically SILE.color, SILE.measurement, and SILE.length have the same names, just under SILE.types.<name>. Additionally SILE.nodefactory is now SILE.types.node and SILE.units is not SILE.types.unit.
 
@@ -116,11 +116,11 @@ Without further ado, here is the nitty–gritty.
 
 * **core:** Use SILE.papersize() instead of SILE.paperSizeParser()
 
-* **classes:** The "center", "raggedleft" and "raggedright" environments formerly reset the margins (left or right skips), meaning they'd take the full frame width. They all cancelled the paragraph indent. The new behaviour honors the fixed part of the parent context's margins, meaning that if you have an environment playing with margins such as an epigraph or an indented quote, those margins are not lost. The raggedleft and raggedright environment also now no longer cancel the pararagraph indent.
+* **classes:** The "center", "raggedleft" and "raggedright" environments formerly reset the margins (left or right skips), meaning they'd take the full frame width. They all cancelled the paragraph indent. The new behaviour honors the fixed part of the parent context's margins, meaning that if you have an environment playing with margins such as an epigraph or an indented quote, those margins are not lost. The raggedleft and raggedright environment also now no longer cancel the paragraph indent.
 
 * **classes:** The \script function was heavily overloaded to have many different functions at once and more targeted tools were introduced in SILE v0.14.0 To load 3rd party modules designed for use with SILE, use \use[module=...] instead of \script[src=...]. To run arbitrary Lua code inline use \lua{}; Lua code may be provided inline or externally via either a require= option to load a regular (non-SILE) Lua module using the Lua module path or src= option to load a file by file path.
 
-* **core:** For ... reasons ... the default width of spaces in SILE has been a hightly opinionated and non-standard 1.2 spaces. While it can be argued that this makes some fonts and some documents look better, it is a very strange thing to have as a global default. Unfortunately setting it back to a more conventional 1 space is a major change and will cause many/most documents to reflow.
+* **core:** For ... reasons ... the default width of spaces in SILE has been a highly opinionated and non-standard 1.2 spaces. While it can be argued that this makes some fonts and some documents look better, it is a very strange thing to have as a global default. Unfortunately setting it back to a more conventional 1 space is a major change and will cause many/most documents to re–flow.
 
     The old default can be recovered either in documents with:
 
@@ -134,7 +134,7 @@ Without further ado, here is the nitty–gritty.
     $ sile -e 'SILE.settings:set("shaper.spaceenlargementfactor", 1.2, true)'
     ```
 
-* **core:** The previous default paragraph indent was hard coded with a point size (20pt) that did not adapt will to different fonts or page layouts. The new default uses a relative unit that will adjust based on the leading (1bs). This will cause most documents to reflow. To keep them the same the setting may be reset to the old default either in the document:
+* **core:** The previous default paragraph indent was hard coded with a point size (20pt) that did not adapt will to different fonts or page layouts. The new default uses a relative unit that will adjust based on the leading (1bs). This will cause most documents to re–flow. To keep them the same the setting may be reset to the old default either in the document:
 
     ```sile
     \set[parameter=document.parindent,value=20pt,makedefault=true]
@@ -148,11 +148,11 @@ Without further ado, here is the nitty–gritty.
 
 * **utilities:** For modules that rely on `SILE.utilities` (`SU`), and in particular raw content handling functions `subContent()`, `walkContent()`, `stripContentPos()`, `hasContent()`, and `contentToString()`, these and similar functions have been moved into `SILE.utilities.ast` (`SU.ast`). The `subContent()` implementation also no longer adds id="stuff" attributes to everything.
 
-* **packages:** The default rendering of Ruby readings has changed from just using a bold weight to using the OpenType +ruby feature. Fonts that support this should work with no change, but documents rendered in fonts that do not support it will neet to set the `ruby.opentype` feature to `false` to get the same rendering method as before.
+* **packages:** The default rendering of Ruby readings has changed from just using a bold weight to using the OpenType +ruby feature. Fonts that support this should work with no change, but documents rendered in fonts that do not support it will need to set the `ruby.opentype` feature to `false` to get the same rendering method as before.
 
-* **classes:** The former implementation of the "em" command did not support nesting and was just setting the font style to italic. The command now alternates italic and regular when nested. * **packages:** The current (pseudo) idempotent behaviour when loading a package potentially clobbers anything that has been modified since the last load. Loading a package, then modifiying a function it provides, then loading the same package again will clobber the modifiecation. This is good for idempotency but not very good for user experience when you may not be modifiying all aspects of a document render pipeline at once, as in when using templates.
+* **classes:** The former implementation of the "em" command did not support nesting and was just setting the font style to italic. The command now alternates italic and regular when nested. * **packages:** The current (pseudo) idempotent behaviour when loading a package potentially clobbers anything that has been modified since the last load. Loading a package, then modifying a function it provides, then loading the same package again will clobber the modification. This is good for idempotency but not very good for user experience when you may not be modifying all aspects of a document render pipeline at once, as in when using templates.
 
-    This change makes the default behaviour to run setting, raw handler, and command registrations only once. An altertanive to :loadpackage() called :reloadpackage() can be used to force all these registrations to be rerun when the goal is to make sure of a specific state.
+    This change makes the default behaviour to run setting, raw handler, and command registrations only once. An alternative to :loadpackage() called :reloadpackage() can be used to force all these registrations to be rerun when the goal is to make sure of a specific state.
 
 * **classes:** Remove obsolete/broken native markdown class
 
@@ -161,7 +161,7 @@ Without further ado, here is the nitty–gritty.
 
 ### Features
 
-* **build:** Make vendoring Lua sources controlable at build time ([773245b](https://github.com/sile-typesetter/sile/commit/773245b8dcb8df1bc983c7320cb1ad2cdd46784d))
+* **build:** Make vendoring Lua sources controllable at build time ([773245b](https://github.com/sile-typesetter/sile/commit/773245b8dcb8df1bc983c7320cb1ad2cdd46784d))
 * **build:** Set default Lua version to prefer LuaJIT ([#1873](https://github.com/sile-typesetter/sile/issues/1873)) ([8a8b506](https://github.com/sile-typesetter/sile/commit/8a8b506fde16c677e5229f0ad5f60be28aeb7373))
 * **classes,outputters,packages:** New approach to full bleed printing, cropmarks, background ([aa538e2](https://github.com/sile-typesetter/sile/commit/aa538e215ddb4716e8360899e98fb6ef1512e477))
 * **classes:** Make text alignment commands honor nesting and margins ([7cde8a3](https://github.com/sile-typesetter/sile/commit/7cde8a31ff65913e8aed8784183cc939116c18d2))
@@ -171,7 +171,7 @@ Without further ado, here is the nitty–gritty.
 * **cli:** Allow more than one input document (Rust edition) ([bdfeecd](https://github.com/sile-typesetter/sile/commit/bdfeecd9c87b74e355ba297b698f817b95d32fef))
 * **core:** Allow multiple runtime SILE_PATH segments ([b329923](https://github.com/sile-typesetter/sile/commit/b3299239f608fea68d7b9c491e6f25e7abc889c0))
 * **core:** Allow multiple runtime SILE_PATH segments in Lua binary as well as Rust ([5e05fa9](https://github.com/sile-typesetter/sile/commit/5e05fa918cbb3a1c3be496dcb1bc06d86bcfec6c))
-* **core:** Automaticalyl include project-local lua_modules in module loader path ([fd940a9](https://github.com/sile-typesetter/sile/commit/fd940a9e0a8d2f813c04c80d408755a28957dcea))
+* **core:** Automatically include project-local lua_modules in module loader path ([fd940a9](https://github.com/sile-typesetter/sile/commit/fd940a9e0a8d2f813c04c80d408755a28957dcea))
 * **core:** Make it easier to add project-specific LuaRocks trees as dependencies ([796b344](https://github.com/sile-typesetter/sile/commit/796b344e557895c5448e552898a808750d382835))
 * **docker:** Add all default fonts and package management tooling to container ([6bd5dc0](https://github.com/sile-typesetter/sile/commit/6bd5dc03ff930e881e7d4fe1d9287a8a22f93ef9))
 * **docker:** Automatically adjust Docker user to owner of mounted data ([4ee535f](https://github.com/sile-typesetter/sile/commit/4ee535f79db2a3ab9ef2c325ccfd6466de526ea9))
@@ -216,7 +216,7 @@ Without further ado, here is the nitty–gritty.
 * **build:** Correct configure flag so debug builds are not release mode ([d931849](https://github.com/sile-typesetter/sile/commit/d931849f93c50a2722e07411579f891708b53fc6))
 * **build:** Fix build configuration for --with-system-libtexpdf ([d22ea34](https://github.com/sile-typesetter/sile/commit/d22ea347055ae2e183efc617d45a9e09b03b89c0))
 * **build:** Move build-time dependency checks out of runtime dep check configure flag ([5e587bd](https://github.com/sile-typesetter/sile/commit/5e587bdb2574f1e385fe24a1826bdbdb2e4c5253))
-* **build:** Stop copying libraries places autotools doesn't normaly handle them ([68d9008](https://github.com/sile-typesetter/sile/commit/68d900804ada4b9dceefe36604b2b22ccfaaffd4))
+* **build:** Stop copying libraries places autotools doesn't normally handle them ([68d9008](https://github.com/sile-typesetter/sile/commit/68d900804ada4b9dceefe36604b2b22ccfaaffd4))
 * **build:** Switch from xz to zst compression for official artifacts ([685780d](https://github.com/sile-typesetter/sile/commit/685780de79c299152221baec0da9cb5498878ec8))
 * **classes:** Reset current parindent at end of paragraphs, not beginning ([84c70fd](https://github.com/sile-typesetter/sile/commit/84c70fdf6fba4d9a644b35bf0ee9cbfcd029798f))
 * **core:** Output makedepends file after class finish and snippets ([f59670c](https://github.com/sile-typesetter/sile/commit/f59670c95f31cb404ce6bfcd99e4ab750f5387ea))
@@ -224,9 +224,9 @@ Without further ado, here is the nitty–gritty.
 * **docker:** Use LuaJIT not Lua5.1 for docker builds ([7687bf6](https://github.com/sile-typesetter/sile/commit/7687bf663f281e764b8c848701e11ed81e4f097e))
 * **inputters:** Allow empty string as option value in SIL parser ([160501c](https://github.com/sile-typesetter/sile/commit/160501cc8e424a0fffac8a4a9641f760ec7861a0))
 * **inputters:** Correct typo in SIL parser, disallow conflicting commands ([923b11e](https://github.com/sile-typesetter/sile/commit/923b11eb46c4e3930c540a249e6320704a54294d))
-* **inputters:** Make whitespace after envirnomnts behave the same as commands ([6d51ee3](https://github.com/sile-typesetter/sile/commit/6d51ee3d819902a052b76fbb0acd13cf3d45a038))
+* **inputters:** Make whitespace after environments behave the same as commands ([6d51ee3](https://github.com/sile-typesetter/sile/commit/6d51ee3d819902a052b76fbb0acd13cf3d45a038))
 * **languages:** Handle UTF8 properly in Liang hyphenation ([b33c11c](https://github.com/sile-typesetter/sile/commit/b33c11ce46766e9280d255e62075ea96c499eeac))
-* **languages:** Load default en language support if none explitly requested ([#2036](https://github.com/sile-typesetter/sile/issues/2036)) ([d02b063](https://github.com/sile-typesetter/sile/commit/d02b063a918b9c035138838e456945ff6d294b61))
+* **languages:** Load default en language support if none explicitly requested ([#2036](https://github.com/sile-typesetter/sile/issues/2036)) ([d02b063](https://github.com/sile-typesetter/sile/commit/d02b063a918b9c035138838e456945ff6d294b61))
 * **packages:** Color changes shall not affect other content at page breaks ([9d6d409](https://github.com/sile-typesetter/sile/commit/9d6d409a5cb2f593f5c2dee349aad67c8bdacf83))
 * **packages:** Correct bogus mixup of variable names in package inits ([8dfe3c3](https://github.com/sile-typesetter/sile/commit/8dfe3c3f070324ba0aced587fccbd063944fe4c0))
 * **packages:** Fix broken font fallback clear function ([2b15de5](https://github.com/sile-typesetter/sile/commit/2b15de500371fa6cbdfdf6f302c1360b4a023883))

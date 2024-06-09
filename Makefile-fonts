@@ -62,6 +62,18 @@ notobase = $(shell sed -e 's/-.*//' <<< $(notdir $1))
 .fonts/Noto%.ttc: | .fonts
 	curl -fsSL https://github.com/googlefonts/noto-cjk/raw/NotoSansV2.001/$(notdir $@) -o $@
 
+.fonts/EBGaramond-Regular.ttf: | .fonts
+	curl -fsSL https://fonts.googleapis.com/css?family=EB%20Garamond:400 |
+		sed -ne '/src:/{s/.*url(//;s/).*//;p}' |
+		xargs curl -fsSL -o $@
+	touch $@
+
+.fonts/Estonia-Regular.ttf: | .fonts
+	curl -fsSL https://fonts.googleapis.com/css?family=Estonia:400 |
+		sed -ne '/src:/{s/.*url(//;s/).*//;p}' |
+		xargs curl -fsSL -o $@
+	touch $@
+
 # Tell  make how to download font file bundles (when not downloadable individually)
 
 .sources/acorn-initials.zip: | .sources
@@ -72,12 +84,6 @@ notobase = $(shell sed -e 's/-.*//' <<< $(notdir $1))
 
 .sources/dejavu-fonts-ttf-2.37.tar.bz2: | .sources
 	curl -fsSL https://github.com/dejavu-fonts/dejavu-fonts/releases/download/version_2_37/$(notdir $@) -o $@
-
-.sources/EB_Garamond.zip: | .sources
-	curl -fsSL https://fonts.google.com/download?family=EB%20Garamond -o $@
-
-.sources/Estonia.zip: | .sources
-	curl -fsSL https://fonts.google.com/download?family=Estonia -o $@
 
 .sources/GentiumPlus-5.000.zip: | .sources
 	curl -fsSL https://software.sil.org/downloads/r/gentium/$(notdir $@) -o $@
@@ -118,14 +124,6 @@ notobase = $(shell sed -e 's/-.*//' <<< $(notdir $1))
 
 .fonts/DejaVu%: .sources/dejavu-fonts-ttf-2.37.tar.bz2 | .fonts
 	bsdtar -x -f $< -C $(dir $@) --strip-components 2 $(basename $(basename $(<F)))/ttf/$(notdir $@)
-	touch $@
-
-.fonts/EBGaramond-%: .sources/EB_Garamond.zip | .fonts
-	bsdtar -x -f $< -C $(dir $@) --strip-components 1 static/$(notdir $@)
-	touch $@
-
-.fonts/Estonia-%: .sources/Estonia.zip | .fonts
-	bsdtar -x -f $< -C $(dir $@) $(notdir $@)
 	touch $@
 
 .fonts/GentiumPlus%: .sources/GentiumPlus-5.000.zip | .fonts

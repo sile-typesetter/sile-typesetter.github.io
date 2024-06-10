@@ -13,7 +13,7 @@ See the included [CHANGELOG.md][changelog] or review the [commit history][commit
 ### Summary of Improvements
 
 This release fixes a regression in [v0.15.0][] involving 3rd party modules.
-We were not referencing the `LUA_PATH` (and `LUA_CPATH`) environment variables at run time, only at build thime.
+We were not referencing the `LUA_PATH` (and `LUA_CPATH`) environment variables at run time, only at build time.
 This made it unreasonably difficult to install and use 3rd party modules to a user's `$HOME` directory and use them in SILE.
 We were finding modules installed at the system level or locally to a project, but other trees were not being seen.
 

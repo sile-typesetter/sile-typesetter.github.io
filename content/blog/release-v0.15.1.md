@@ -12,7 +12,6 @@ See the included [CHANGELOG.md][changelog] or review the [commit history][commit
 
 ### Summary of Improvements
 
-
 The big [v0.15.0 release][v0.15.0] had some rough edges.
 First the source tarball was missing a vendored source file needed to build against some Lua versions.
 This did not affect building from Git sources, but made downstream distro packaging difficult.

@@ -51,9 +51,9 @@ lua-api-docs: static/lua-api/index.html
 
 static/lua-api/index.html: sile-sources-$(DOCSBRANCH)
 	pushd $<
-	touch build-aux/rust_boilerplate.mk
+	touch aminclude.am
 	nix develop --phase autoreconf
-	nix develop --phase configure
+	nix develop --configure
 	nix develop --command bash -c "make lua-api-docs"
 	popd
 	rsync -av $</lua-api-docs/ $(@D)/

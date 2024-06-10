@@ -1,5 +1,5 @@
 \begin[class=book,papersize=b6]{document}
-\begin{script}
+\begin{lua}
 
 SILE.registerCommand("book:chapterfont", function (options, content)
   SILE.call("medskip")
@@ -50,7 +50,7 @@ SILE.registerCommand("titlepage", function (options, content)
   SILE.call("eject")
 end)
 
-\end{script}
+\end{lua}
 \language[main=en]
 \titlepage
 \tableofcontents

@@ -3,15 +3,13 @@
 \neverindent
 \use[module=packages.color]
 
-\begin{script}
-
-local inputfilter = SILE.require("packages/inputfilter").exports
+\begin{lua}
 
 SILE.registerCommand("uppercase", function(options, content)
-  SILE.process(inputfilter.transformContent(content, string.upper))
+  SILE.process(SILE.documentState.documentClass.packages.inputfilter:transformContent(content, string.upper))
 end, "Typeset the enclosed text as uppercase")
 
-\end{script}
+\end{lua}
 
 This is a normal paragraph of text.
 

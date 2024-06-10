@@ -3,7 +3,7 @@
 \font[size=14.5pt,weight=600]
 \hyphenator:add-exceptions[lang=en]{iso-pe-ri-me-tric}% No idea where that weird word should really break.
 \nofolios
-\begin{script}
+\begin{lua}
 
 -- The math here finds intersection points for a line crossing a circle, making a bunch of assumptions about
 -- the line always being horizontal. Only touching doesn't count, only a full intersection is a win for this.
@@ -47,7 +47,7 @@ SILE.registerCommand("incircle", function (options, content)
   SILE.linebreak.parShape = oldParShape
 end, "Shape the start of paragraphs in a circle with parameterized center and radius")
 
-\end{script}
+\end{lua}
 % Galileo, 1638:
 \begin[radius=30%fw]{incircle}
 The area of a circle is a mean proportional between any two regular and similar

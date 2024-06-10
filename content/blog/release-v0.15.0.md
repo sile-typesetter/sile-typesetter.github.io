@@ -150,7 +150,9 @@ Without further ado, here is the nitty–gritty.
 
 * **packages:** The default rendering of Ruby readings has changed from just using a bold weight to using the OpenType +ruby feature. Fonts that support this should work with no change, but documents rendered in fonts that do not support it will need to set the `ruby.opentype` feature to `false` to get the same rendering method as before.
 
-* **classes:** The former implementation of the "em" command did not support nesting and was just setting the font style to italic. The command now alternates italic and regular when nested. * **packages:** The current (pseudo) idempotent behaviour when loading a package potentially clobbers anything that has been modified since the last load. Loading a package, then modifying a function it provides, then loading the same package again will clobber the modification. This is good for idempotency but not very good for user experience when you may not be modifying all aspects of a document render pipeline at once, as in when using templates.
+* **classes:** The former implementation of the "em" command did not support nesting and was just setting the font style to italic. The command now alternates italic and regular when nested.
+
+* **packages:** The current (pseudo) idempotent behaviour when loading a package potentially clobbers anything that has been modified since the last load. Loading a package, then modifying a function it provides, then loading the same package again will clobber the modification. This is good for idempotency but not very good for user experience when you may not be modifying all aspects of a document render pipeline at once, as in when using templates.
 
     This change makes the default behaviour to run setting, raw handler, and command registrations only once. An alternative to :loadpackage() called :reloadpackage() can be used to force all these registrations to be rerun when the goal is to make sure of a specific state.
 

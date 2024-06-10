@@ -35,10 +35,10 @@ SILE.registerCommand("incircle", function (options, content)
 	SILE.linebreak.parShape = function (self, line)
 		local c = SU.cast("number", center)
 		local r = SU.cast("number", radius)
-		local h = SILE.measurement((line-1).."bs"):tonumber()+3
+		local h = SILE.types.measurement((line-1).."bs"):tonumber()+3
 		local enter, exit = sliceofcircle(c, r, h)
 		if not enter then return 0, self.hsize, 0 end
-		local width = SILE.measurement(exit - enter)
+		local width = SILE.types.measurement(exit - enter)
 		return enter, width, nil
 	end
 	SILE.process(content)

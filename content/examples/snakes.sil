@@ -2,7 +2,7 @@
 \nofolios
 \use[module=packages.url]
 \begin{lua}
-local snakeGlue = SILE.nodefactory.glue()
+local snakeGlue = SILE.types.node.glue()
 local snake = "snake.png"
 local snakeimg = SILE.resolveFile(snake)
 snakeGlue.width = SILE.types.length("0pt plus 100000pt")
@@ -17,8 +17,8 @@ function snakeGlue:outputYourself (typesetter, line)
   SILE.outputter:drawImage(snakeimg, typesetter.frame.state.cursorX, typesetter.frame.state.cursorY - 12, scaledWidth, 12);
   typesetter.frame:advanceWritingDirection(scaledWidth)
 end
-SILE.settings:set("typesetter.parfillskip", SILE.nodefactory.glue())
-SILE.settings:set("document.parindent", SILE.nodefactory.glue())
+SILE.settings:set("typesetter.parfillskip", SILE.types.node.glue())
+SILE.settings:set("document.parindent", SILE.types.node.glue())
 SILE.settings:set("document.spaceskip", SILE.types.length("1spc"))
 SILE.settings:set("document.rskip", snakeGlue)
 \end{lua}

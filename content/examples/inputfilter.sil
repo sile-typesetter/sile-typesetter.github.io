@@ -2,11 +2,13 @@
 \nofolios
 \neverindent
 \use[module=packages.color]
+\use[module=packages.inputfilter]
 
 \begin{lua}
 
 SILE.registerCommand("uppercase", function(options, content)
-  SILE.process(SILE.documentState.documentClass.packages.inputfilter:transformContent(content, string.upper))
+  local class = SILE.documentState.documentClass
+  SILE.process(class.packages.inputfilter:transformContent(content, string.upper))
 end, "Typeset the enclosed text as uppercase")
 
 \end{lua}

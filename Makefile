@@ -43,23 +43,34 @@ define runsile =
 endef
 
 .PHONY: static
-static: examples lua-api-docs
+static: examples lua-api-docs rust-api-docs
 
 DOCSBRANCH = master
+
 .PHONY: lua-api-docs
 lua-api-docs: static/lua-api/index.html
 
 static/lua-api/index.html: sile-sources-$(DOCSBRANCH)
 	pushd $<
-	touch aminclude.am
-	nix develop --phase autoreconf
-	nix develop --configure
 	nix develop --command bash -c "make lua-api-docs"
 	popd
 	rsync -av $</lua-api-docs/ $(@D)/
 
+.PHONY: rust-api-docs
+rust-api-docs: static/rust-api/sile/index.html
+
+static/rust-api/sile/index.html: sile-sources-$(DOCSBRANCH)
+	pushd $<
+	nix develop --command bash -c "make rust-api-docs"
+	popd
+	rsync -av $</rust-api-docs/doc/ static/rust-api/
+
 sile-sources-$(DOCSBRANCH):
 	git clone -b $(DOCSBRANCH) --depth 1 --recurse-submodules https://github.com/sile-typesetter/sile $@
+	pushd $@
+	touch aminclude.am
+	nix develop --phase autoreconf
+	nix develop --configure
 
 .PHONY: examples
 examples: $(EXAMPLEPDFS) $(DEVELEXAMPLEPDFS) $(EXAMPLEPNGS) $(EXAMPLETHBS)

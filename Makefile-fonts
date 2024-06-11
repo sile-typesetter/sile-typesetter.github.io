@@ -9,6 +9,9 @@
 
 # List of font files we _actually need_
 DEFSFONTFILES  = GentiumPlus-R.ttf GentiumPlus-I.ttf
+DEFSFONTFILES += Hack-Regular.ttf
+DEFSFONTFILES += LibertinusSerif-Regular.otf
+DEFSFONTFILES += LibertinusMath-Regular.otf
 
 EXAMFONTFILES  = $(DEFSFONTFILES)
 EXAMFONTFILES += AcornInitials.ttf
@@ -20,8 +23,7 @@ EXAMFONTFILES += Estonia-Regular.ttf
 EXAMFONTFILES += Jomolhari-alpha3c-0605331.ttf
 EXAMFONTFILES += Junicode.ttf
 EXAMFONTFILES += LateefGR-Regular.ttf
-EXAMFONTFILES += LibertinusMath-Regular.otf
-EXAMFONTFILES += LibertinusSerif-Regular.otf LibertinusSerif-Bold.otf
+EXAMFONTFILES += LibertinusSerif-Bold.otf
 EXAMFONTFILES += NotoSans-Regular.ttf
 EXAMFONTFILES += NotoSansArabic-Regular.ttf
 EXAMFONTFILES += NotoSansArmenian-Regular.ttf
@@ -88,6 +90,9 @@ notobase = $(shell sed -e 's/-.*//' <<< $(notdir $1))
 .sources/GentiumPlus-5.000.zip: | .sources
 	curl -fsSL https://software.sil.org/downloads/r/gentium/$(notdir $@) -o $@
 
+.sources/Hack-v3.003-ttf.tar.xz: | .sources
+	curl -fsSL https://github.com/source-foundry/Hack/releases/download/v3.003/$(notdir $@) -o $@
+
 .sources/Jomolhari-alpha003.zip: | .sources
 	curl -fsSL https://collab.its.virginia.edu/access/content/group/26a34146-33a6-48ce-001e-f16ce7908a6a/Tibetan%20fonts/Tibetan%20Unicode%20Fonts/$(notdir $@) -o $@
 
@@ -128,6 +133,10 @@ notobase = $(shell sed -e 's/-.*//' <<< $(notdir $1))
 
 .fonts/GentiumPlus%: .sources/GentiumPlus-5.000.zip | .fonts
 	bsdtar -x -f $< -C $(dir $@) --strip-components 1 $(basename $(<F))/$(notdir $@)
+	touch $@
+
+.fonts/Hack%: .sources/Hack-v3.003-ttf.tar.xz | .fonts
+	bsdtar -x -f $< -C $(dir $@) $(notdir $@) && \
 	touch $@
 
 .fonts/Jomolhari-alpha3c-0605331.ttf: .sources/Jomolhari-alpha003.zip | .fonts

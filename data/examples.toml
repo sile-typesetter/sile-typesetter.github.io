@@ -7,6 +7,7 @@ title = "Basic typesetting"
 fn = "book"
 source = "book.sil"
 title = "A Story"
+devel = true
 
 [[basic]]
 fn = "docbook"
@@ -17,16 +18,19 @@ title = "Docbook XML input"
 fn = "inputfilter"
 source = "inputfilter.sil"
 title = "Input filters"
+devel = true
 
 [[basic]]
 fn = "parshape"
 source = "parshape.sil"
 title = "Dynamically computed paragraph shapes"
+devel = true
 
 [[basic]]
 fn = "snakes"
 source = "snakes.sil"
 title = "Snake Justification"
+devel = true
 
 # [[basic]]
 # fn = "byhand"

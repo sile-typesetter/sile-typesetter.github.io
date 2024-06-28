@@ -30,8 +30,8 @@ If you have any interest in bibliographies feel free to review ongoing issues an
 * **build:** Add a developer target to test build dist without automake ([7bdaf16](https://github.com/sile-typesetter/sile/commit/7bdaf16564d96a0755ce112f448ee9eaeeaf7059))
 * **languages:** Add Brazilian Portuguese specific hyphenation points ([895c575](https://github.com/sile-typesetter/sile/commit/895c575e55974e4485701e04256516d130cc66f8))
 * **packages:** Biblatex data inheritance and field mapping ([646e3a4](https://github.com/sile-typesetter/sile/commit/646e3a4ef613d13db9491b87127f01d28f549b23))
-* **packages:** Support `[@string](https://github.com/string)` syntax in bibTeX bibliography ([63083ad](https://github.com/sile-typesetter/sile/commit/63083addace0925eb5d83803a1a86465d84cf797)), closes [#2051](https://github.com/sile-typesetter/sile/issues/2051)
-* **packages:** Support `[@xdata](https://github.com/xdata)` entry type and xdata field in bibTeX bibliography ([ca906f0](https://github.com/sile-typesetter/sile/commit/ca906f0cfc882c5ad4ecb410f6aec001018b64a8))
+* **packages:** Support `@string` syntax in bibTeX bibliography ([63083ad](https://github.com/sile-typesetter/sile/commit/63083addace0925eb5d83803a1a86465d84cf797)), closes [#2051](https://github.com/sile-typesetter/sile/issues/2051)
+* **packages:** Support `@xdata` entry type and xdata field in bibTeX bibliography ([ca906f0](https://github.com/sile-typesetter/sile/commit/ca906f0cfc882c5ad4ecb410f6aec001018b64a8))
 * **packages:** Support crossref field in bibTeX bibliography ([c4ae919](https://github.com/sile-typesetter/sile/commit/c4ae919ed72bce5740cb59809be8557dfe9b9321)), closes [#2021](https://github.com/sile-typesetter/sile/issues/2021)
 * **tooling:** Add developer target to build Rust API docs ([384fa46](https://github.com/sile-typesetter/sile/commit/384fa463d71c6a7ecd24befd5670376874ce465f))
 
@@ -44,7 +44,7 @@ If you have any interest in bibliographies feel free to review ongoing issues an
 * **build:** Flag transitive dependency on Git if *not* using system LuaRocks ([ea2d501](https://github.com/sile-typesetter/sile/commit/ea2d501b65f1980c8b88b47dc9eedf6358f24453))
 * **languages:** Always set Fluent locale when setting `document.language` ([283fdc3](https://github.com/sile-typesetter/sile/commit/283fdc3062313394850cf5067c846db82f264c2e))
 * **packages:** Correct handling of ampersands and tildes in bibtex ([aaa613f](https://github.com/sile-typesetter/sile/commit/aaa613f636e6c892c70ea560a0815999ee617b2e)), closes [#2050](https://github.com/sile-typesetter/sile/issues/2050) [#1860](https://github.com/sile-typesetter/sile/issues/1860)
-* **packages:** Ignore `@preamble)` in bibTeX bibliography ([742a0c4](https://github.com/sile-typesetter/sile/commit/742a0c425787819c2cd14b950d5b7959669c86a6)), closes [#2051](https://github.com/sile-typesetter/sile/issues/2051)
+* **packages:** Ignore `@preamble` in bibTeX bibliography ([742a0c4](https://github.com/sile-typesetter/sile/commit/742a0c425787819c2cd14b950d5b7959669c86a6)), closes [#2051](https://github.com/sile-typesetter/sile/issues/2051)
 
   [release]: https://github.com/sile-typesetter/sile/releases/tag/v0.15.4
   [changelog]: https://github.com/sile-typesetter/sile/blob/master/CHANGELOG.md

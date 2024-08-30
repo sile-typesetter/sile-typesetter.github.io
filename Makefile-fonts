@@ -21,7 +21,7 @@ EXAMFONTFILES += DejaVuSansCondensed-Bold.ttf DejaVuSans-Bold.ttf DejaVuSans-Obl
 EXAMFONTFILES += EBGaramond-Regular.ttf
 EXAMFONTFILES += Estonia-Regular.ttf
 EXAMFONTFILES += Jomolhari-alpha3c-0605331.ttf
-EXAMFONTFILES += Junicode.ttf
+EXAMFONTFILES += Junicode-Regular.ttf
 EXAMFONTFILES += LateefGR-Regular.ttf
 EXAMFONTFILES += LibertinusSerif-Bold.otf
 EXAMFONTFILES += NotoSans-Regular.ttf
@@ -96,8 +96,8 @@ notobase = $(shell sed -e 's/-.*//' <<< $(notdir $1))
 .sources/Jomolhari-alpha003.zip: | .sources
 	curl -fsSL https://collab.its.virginia.edu/access/content/group/26a34146-33a6-48ce-001e-f16ce7908a6a/Tibetan%20fonts/Tibetan%20Unicode%20Fonts/$(notdir $@) -o $@
 
-.sources/junicode-1.002.zip: | .sources
-	curl -fsSL https://netix.dl.sourceforge.net/project/junicode/junicode/junicode-1.002/$(notdir $@) -o $@
+.sources/Junicode_2.209.zip: | .sources
+	curl -fsSL https://github.com/psb1558/Junicode-font/releases/download/v2.209/$(notdir $@) -o $@
 
 .sources/LateefGR-1.200.zip: | .sources
 	curl -fsSL https://software.sil.org/downloads/r/lateef/$(notdir $@) -o $@
@@ -143,8 +143,8 @@ notobase = $(shell sed -e 's/-.*//' <<< $(notdir $1))
 	bsdtar -x -f $< -C $(dir $@) $(notdir $@)
 	touch $@
 
-.fonts/Junicode%: .sources/junicode-1.002.zip | .fonts
-	bsdtar -x -f $< -C $(dir $@) $(notdir $@)
+.fonts/Junicode%: .sources/Junicode_2.209.zip | .fonts
+	bsdtar -x -f $< -C $(dir $@) --strip-components 2 Junicode/TTF/$(notdir $@)
 	touch $@
 
 .fonts/LateefGR%: .sources/LateefGR-1.200.zip | .fonts

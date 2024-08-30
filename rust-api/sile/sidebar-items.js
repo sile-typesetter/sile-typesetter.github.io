@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["inject_paths","inject_version","load_sile","run","start_luavm","version"],"mod":["cli"],"type":["Result"]};

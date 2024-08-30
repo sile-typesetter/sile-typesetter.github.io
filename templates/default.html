@@ -6,7 +6,7 @@
       <title>SILE – {{ page.title | default(value="Home") }}</title>
       <meta name="viewport" content="width=device-width">
       {% block rss %}
-      <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path=config.feed_filename, trailing_slash=false) }}">
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path=config.feed_filenames[0], trailing_slash=false) }}">
       {% endblock %}
 
       <!-- Custom CSS -->

@@ -5,8 +5,8 @@ title = "The SILE Typesetter"
 compile_sass = true
 build_search_index = false
 
-generate_feed = true
-feed_filename = "feed.xml"
+generate_feeds = true
+feed_filenames = [ "feed.xml" ]
 
 [slugify]
 paths = "safe"

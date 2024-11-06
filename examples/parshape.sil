@@ -1,0 +1,61 @@
+\begin[papersize=a5]{document}
+\language[main=en]
+\font[size=14.5pt,weight=600]
+\hyphenator:add-exceptions[lang=en]{iso-pe-ri-me-tric}% No idea where that weird word should really break.
+\nofolios
+\begin{lua}
+
+-- The math here finds intersection points for a line crossing a circle, making a bunch of assumptions about
+-- the line always being horizontal. Only touching doesn't count, only a full intersection is a win for this.
+-- http://csharphelper.com/blog/2014/09/determine-where-a-line-intersects-a-circle-in-c/
+local sliceofcircle = function (c, r, h)
+  local cx, cy, y = c, r, h
+  local B = 2 * -cx
+  local C = cx * cx + (y - cy) * (y - cy) - r * r
+  local det = B * B - 4 * C
+  if det <= 0 then
+    return false
+  else
+    local enter = (-B - math.sqrt(det)) / 2
+    local exit = (-B + math.sqrt(det)) / 2
+    return enter, exit
+  end
+end
+
+SILE.registerCommand("incircle", function (options, content)
+  local center = SU.cast("measurement", options.center or "50%fw")
+  local radius = SU.cast("measurement", options.radius or "50%fw")
+  local oldParShape = SILE.linebreak.parShape
+  SILE.typesetter:leaveHmode()
+  SILE.settings:temporarily(function ()
+	SILE.settings:set("linebreak.parShape", true)
+	SILE.settings:set("linebreak.tolerance", 2000)
+	SILE.settings:set("document.baselineskip", "1.6em")
+	SILE.settings:set("document.parindent", 0)
+	SILE.linebreak.parShape = function (self, line)
+		local c = SU.cast("number", center)
+		local r = SU.cast("number", radius)
+		local h = SILE.types.measurement((line-1).."bs"):tonumber()+3
+		local enter, exit = sliceofcircle(c, r, h)
+		if not enter then return 0, self.hsize, 0 end
+		local width = SILE.types.measurement(exit - enter)
+		return enter, width, nil
+	end
+	SILE.process(content)
+	SILE.typesetter:leaveHmode();
+  end)
+  SILE.linebreak.parShape = oldParShape
+end, "Shape the start of paragraphs in a circle with parameterized center and radius")
+
+\end{lua}
+% Galileo, 1638:
+\begin[radius=30%fw]{incircle}
+The area of a circle is a mean proportional between any two regular and similar
+polygons of which one circumscribes it and the other is isoperimetric with it.
+In addition, the area of the circle is less than that of any circumscribed
+polygon and greater than that of any isoperimetric polygon. And further, of
+these circumscribed polygons, the one that has the greater number of sides has
+a smaller area than the one that has a lesser number; but, on the other hand,
+the isoperimetric polygon that has the greater number of sides is the larger.
+\end{incircle}
+\end{document}

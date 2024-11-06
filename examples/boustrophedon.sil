@@ -1,0 +1,13 @@
+\begin[papersize=a5]{document}
+\nofolios
+\use[module=packages.boustrophedon]
+\define[command=string]{\font[size=25pt,family=New Athena Unicode,language=grc]{\noindent{}ΧΑΙΡΕΔΕΜΟΤΟΔΕΣΕΜΑΠΑΤΕΡΕΣΤΕΣΕΘΑΝΟΝΤΟΣΑΝΦΙΧΑΡΕΣΑΓΑΘΟΝΠΑΙΔΑΟΛΟΦΘΡΟΜΕΝΟΣΦΑΙΔΙΜΟΣΕΠΟΙΕ}}
+With Boustrophedon:
+\medskip
+\boustrophedon{\string}
+\bigskip
+
+Without Boustrophedon:
+\medskip
+\string
+\end{document}

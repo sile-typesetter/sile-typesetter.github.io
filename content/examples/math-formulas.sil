@@ -1,0 +1,40 @@
+\begin[papersize=a5]{document}
+\use[module=packages.math]
+\nofolios
+\neverindent
+\define[command=section]{\medskip\noindent\font[size=12pt]{\strong{\process}}\medskip}
+\font[family=Libertinus Serif]
+
+\section[numbered=false]{Laplace’s method}
+
+Suppose \math{f(x)} is a twice continuously differentiable function on \math{[a,b]}, and there exists a unique point \math{x_0 \in (a,b)} such that:
+\math[mode=display]{f(x_0) = \max_{x \in [a,b]} f(x) \quad \text{and} \quad f''(x_0) < 0.}
+
+Then:
+\math[mode=display, numbered=true]{\lim_{n\to\infty} \frac{\int_a^b e^{nf(x)} \, dx}{e^{nf(x_0)} \sqrt{\frac{2\pi}{n(-f''(x_0))}}}= 1.}
+
+\section[numbered=false]{Euler Product Formula}
+
+Let’s take \math{s \in \mathbb{C}}.
+The Euler Product Formula, when \math{\Re(s) > 1}, is given by:
+\math[mode=display, numbered=true]{\prod_{p \in \mathbb{P}} (\frac{1}{1 - p^{-s}})
+= \prod_{p \in \mathbb{P}} (\sum_{k=0}^{\infty}\frac{1}{p^{ks}})
+= \sum_{n=1}^{\infty} \frac{1}{n^s}
+= \zeta (s)
+= \frac{1}{\Gamma(s)} \int_0^\infty \frac{x ^ {s-1}}{e ^ x - 1} \, \mathrm{d}x}
+
+Where:
+\math[mode=display]{\Gamma (s) = \int_0^\infty x^{s-1}\,e^{-x} \, \mathrm{d}x}
+
+\section[numbered=false]{Stirling’s formula}
+
+It is also called Stirling’s approximation for factorials:
+\math[mode=display, numbered=true]{\lim_{n\to +\infty} \frac{n\,!}{\sqrt{2 \pi n} \; (n/e)^{n}} = 1}
+
+Also frequently written as:
+\math[mode=display]{n\,!\sim \sqrt{2\pi n}\, (\frac{n}{e})^n}
+
+One can easily derive the following limit from Stirling’s formula:
+\math[mode=display]{\lim_{n\to\infty} \frac{(n!)^{1/n}}{n} = \frac{1}{e}}
+
+\end{document}

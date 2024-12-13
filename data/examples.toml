@@ -146,6 +146,11 @@ source = "math.sil"
 title = "Math"
 
 [[packages]]
+fn = "math-formulas"
+source = "math-formulas.sil"
+title = "More math formulas"
+
+[[packages]]
 fn = "parallel"
 source = "parallel.sil"
 title = "Parallel layout"

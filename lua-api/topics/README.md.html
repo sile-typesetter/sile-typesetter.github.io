@@ -1,0 +1,548 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>SILE</h1>
+
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#What_is_SILE_">What is SILE? </a></li>
+<li><a href="#Where_does_it_run_">Where does it run? </a></li>
+<li><a href="#What_can_I_do_with_SILE__that_I_can___t_do_with_TeX__">What can I do with SILE (that I can’t do with TeX)? </a></li>
+<li><a href="#Download_and_Installation">Download and Installation </a></li>
+<li><a href="#Use_as_a_CI_job">Use as a CI job </a></li>
+<li><a href="#Installing_third_party_packages">Installing third-party packages </a></li>
+<li><a href="#Finding_Out_More">Finding Out More </a></li>
+<li><a href="#Contact">Contact </a></li>
+<li><a href="#License_Terms">License Terms </a></li>
+</ul>
+
+
+<h2>Topics</h2>
+<ul class="">
+  <li><strong>README</strong></li>
+</ul>
+<h2>Interfaces</h2>
+<ul class="nowrap">
+  <li><a href="../interfaces/classes.html">classes</a></li>
+  <li><a href="../interfaces/inputters.html">inputters</a></li>
+  <li><a href="../interfaces/languages.html">languages</a></li>
+  <li><a href="../interfaces/outputters.html">outputters</a></li>
+  <li><a href="../interfaces/packages.html">packages</a></li>
+  <li><a href="../interfaces/pagebuilders.html">pagebuilders</a></li>
+  <li><a href="../interfaces/shapers.html">shapers</a></li>
+  <li><a href="../interfaces/typesetters.html">typesetters</a></li>
+</ul>
+<h2>Types</h2>
+<ul class="nowrap">
+  <li><a href="../types/color.html">color</a></li>
+  <li><a href="../types/length.html">length</a></li>
+  <li><a href="../types/measurement.html">measurement</a></li>
+  <li><a href="../types/node.html">node</a></li>
+  <li><a href="../types/unit.html">unit</a></li>
+</ul>
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/classes.bible.html">classes.bible</a></li>
+  <li><a href="../modules/classes.book.html">classes.book</a></li>
+  <li><a href="../modules/classes.diglot.html">classes.diglot</a></li>
+  <li><a href="../modules/classes.docbook.html">classes.docbook</a></li>
+  <li><a href="../modules/classes.jbook.html">classes.jbook</a></li>
+  <li><a href="../modules/classes.jplain.html">classes.jplain</a></li>
+  <li><a href="../modules/classes.letter.html">classes.letter</a></li>
+  <li><a href="../modules/classes.plain.html">classes.plain</a></li>
+  <li><a href="../modules/classes.tbook.html">classes.tbook</a></li>
+  <li><a href="../modules/classes.tbook.html">classes.tbook</a></li>
+  <li><a href="../modules/classes.tplain.html">classes.tplain</a></li>
+  <li><a href="../modules/classes.triglot.html">classes.triglot</a></li>
+  <li><a href="../modules/packages.pdf.html">packages.pdf</a></li>
+</ul>
+<h2>Library</h2>
+<ul class="nowrap">
+  <li><a href="../library/SILE.html">SILE</a></li>
+  <li><a href="../library/SILE.font.html">SILE.font</a></li>
+  <li><a href="../library/SU.html">SU</a></li>
+  <li><a href="../library/SU.ast.html">SU.ast</a></li>
+  <li><a href="../library/SU.numbers.html">SU.numbers</a></li>
+  <li><a href="../library/SU.sorting.html">SU.sorting</a></li>
+  <li><a href="../library/globals.html">globals</a></li>
+  <li><a href="../library/packages.bibtex.csl.engine.html">packages.bibtex.csl.engine</a></li>
+  <li><a href="../library/packages.bibtex.csl.locale.html">packages.bibtex.csl.locale</a></li>
+  <li><a href="../library/packages.bibtex.csl.style.html">packages.bibtex.csl.style</a></li>
+  <li><a href="../library/packages.bibtex.csl.utils.casing.html">packages.bibtex.csl.utils.casing</a></li>
+  <li><a href="../library/packages.bibtex.csl.utils.superfolding.html">packages.bibtex.csl.utils.superfolding</a></li>
+  <li><a href="../library/packages.bibtex.csl.utils.xmlparser.html">packages.bibtex.csl.utils.xmlparser</a></li>
+  <li><a href="../library/packages.bibtex.support.bib2csl.html">packages.bibtex.support.bib2csl</a></li>
+  <li><a href="../library/packages.bibtex.support.isodatetime.html">packages.bibtex.support.isodatetime</a></li>
+  <li><a href="../library/packages.bibtex.support.locators.html">packages.bibtex.support.locators</a></li>
+  <li><a href="../library/packages.math.mathml-entities.html">packages.math.mathml-entities</a></li>
+  <li><a href="../library/packages.math.unicode-symbols.html">packages.math.unicode-symbols</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+    <a href="https://github.com/sile-typesetter/sile/actions?workflow=Build"><img src="https://img.shields.io/github/actions/workflow/status/sile-typesetter/sile/build.yml?branch=master&amp;label=Linux%20Build&amp;logo=Github" alt="Actions Build Status"/></a>
+<a href="https://cirrus-ci.com/github/sile-typesetter/sile/master"><img src="https://img.shields.io/cirrus/github/sile-typesetter/sile?label=FreeBSD%20Build&amp;logo=freebsd" alt="Cirrus Build Status"/></a>
+<a href="https://github.com/sile-typesetter/sile/pkgs/container/sile"><img src="https://img.shields.io/github/actions/workflow/status/sile-typesetter/sile/deploy.yml?branch=master&amp;label=Docker%20Build&amp;logo=Docker" alt="Docker Build Status"/></a>
+<a href="https://dev.azure.com/sile-typesetter/sile/_build/latest?definitionId=1&amp;branchName=master"><img src="https://img.shields.io/azure-devops/build/sile-typesetter/069c3e31-ee59-4bd6-b395-1f1059acd8db/1?label=Windows%20Build&amp;logo=Azuredevops" alt="Azure Build Status"/></a><br />
+<a href="https://github.com/sile-typesetter/sile/actions?workflow=Luacheck"><img src="https://img.shields.io/github/actions/workflow/status/sile-typesetter/sile/luacheck.yml?branch=master&amp;label=Luacheck&amp;logo=Lua" alt="Luacheck Lint Status"/></a>
+<a href="https://coveralls.io/github/sile-typesetter/sile?branch=master"><img src="https://img.shields.io/coveralls/github/sile-typesetter/sile?label=Coverage&amp;logo=Coveralls" alt="Coveralls Coverage Status"/></a><br />
+<a href="https://gitter.im/sile-typesetter/sile?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img src="https://img.shields.io/gitter/room/sile-typesetter/sile?color=blue&amp;label=Chat&amp;logo=Gitter" alt="Chat on Gitter"/></a>
+<a href="https://conventionalcommits.org"><img src="https://img.shields.io/badge/Conventional%20Commits-1.0.0-blue.svg" alt="Conventional Commits"/></a>
+<a href="http://commitizen.github.io/cz-cli/"><img src="https://img.shields.io/badge/Commitizen-friendly-blue.svg" alt="Commitizen Friendly"/></a></p>
+
+<p><a name="What_is_SILE_"></a></p>
+<h2>What is SILE?</h2>
+
+<p>SILE is a <a href="https://en.wikipedia.org/wiki/Typesetting">typesetting</a> system; its job is to produce beautiful printed documents.
+Conceptually, SILE is similar to <a href="https://en.wikipedia.org/wiki/TeX">TeX</a>—from which it borrows some concepts and algorithms—but the similarities end there.
+Rather than being a derivative of the TeX family SILE is a new typesetting and layout engine written from the ground up using modern technologies and borrowing some ideas from graphical systems such as <a href="https://en.wikipedia.org/wiki/Adobe_InDesign">InDesign</a>.</p>
+
+<p><a name="Where_does_it_run_"></a></p>
+<h2>Where does it run?</h2>
+
+<p>SILE can be <a href="#download-and-installation">downloaded &amp; installed</a> to your system or <a href="#use-as-a-CI-job">run remotely as a CI job</a>.</p>
+
+<p><a name="What_can_I_do_with_SILE__that_I_can___t_do_with_TeX__"></a></p>
+<h2>What can I do with SILE (that I can’t do with TeX)?</h2>
+
+<p>First, have a look at the <a href="http://www.sile-typesetter.org/examples/">usage examples gallery</a>. SILE allows you to:</p>
+
+<ul>
+    <li><p>Produce complex document layouts using frames.</p></li>
+    <li><p>Easily extend the typesetting system in a high-level programming language (Lua).</p></li>
+    <li><p>Directly process XML to PDF without the use of XSL stylesheets.</p></li>
+    <li><p>Typeset text on a grid.</p></li>
+</ul>
+
+<p><a name="Download_and_Installation"></a></p>
+<h2>Download and Installation</h2>
+
+<h3>For macOS</h3>
+
+<p>A formula is available for <a href="http://brew.sh">Homebrew</a> that can install either stable or head versions.
+For the latest prebuilt stable release:</p>
+
+
+<pre>
+$ brew install sile
+</pre>
+
+
+<p>Or to build and install from the latest git commit:</p>
+
+
+<pre>
+$ brew install sile <span class="comment">--HEAD</span>
+</pre>
+
+
+<p>Note the Homebrew package does not automatically install the <a href="#default-font">default font</a>.
+The easiest way to install Gentium Plus is through the <a href="https://github.com/Homebrew/homebrew-cask-fonts">Homebrew Fonts caskroom</a>:</p>
+
+
+<pre>
+$ brew tap homebrew/cask-fonts
+$ brew install <span class="comment">--cask font-gentium-plus</span>
+</pre>
+
+
+<h3>For Linux</h3>
+
+<h4>Arch Linux</h4>
+
+<p>Arch Linux has a prebuilt <a href="https://archlinux.org/packages/extra/x86_64/sile/">SILE package</a> in the official package repository:</p>
+
+
+<pre>
+$ pacman -S sile
+</pre>
+
+
+<p>The official package uses LuaJIT.
+If you install LuaRocks for use with SILE via <code>pacman</code>, use the <code>lua51-*</code> variants to match LuaJIT.</p>
+
+<h4>Fedora</h4>
+
+<p>Fedora Linux has SILE in their official repositories. To install run:</p>
+
+
+<pre>
+$ dnf install sile
+</pre>
+
+
+<p>Not all the fonts are not installed by default, to install them:</p>
+
+
+<pre>
+$ dnf install sil-gentium-plus-fonts alerque-libertinus-fonts hack-fonts
+</pre>
+
+
+<h4>OpenSUSE</h4>
+
+<p>OpenSUSE has official packages ready to install the usual way:</p>
+
+
+<pre>
+$ zypper install sile
+</pre>
+
+
+<h4>NixOS</h4>
+
+<p>A <a href="https://nixos.org/nix">Nix <code>sile</code> package</a> is available in both the stable and unstable channels;
+  the unstable channel having the latest stable SILE releases and the stable channel being frozen on NixOS releases.
+You can use all the usual Nix tricks including adding SILE into a <code>nix shell</code> environment or executing it directly with <code>nix run</code>.</p>
+
+<p>See additional usage notes in the <a href="#nix">Nix section</a>.</p>
+
+<h4>Ubuntu</h4>
+
+<p>A <a href="https://launchpad.net/~sile-typesetter/+archive/ubuntu/sile">PPA</a> is available for Ubuntu users with packages of SILE and all the necessary dependencies.
+We introduced support starting with Bionic (18.04) and maintain packages for all Ubuntu release series since for as long as they are supported by Canonical.</p>
+
+
+<pre>
+$ add-apt-repository ppa:sile-typesetter/sile
+$ apt-get update
+$ apt-get install sile
+</pre>
+
+
+<h4>Void Linux</h4>
+
+<p>Void Linux packages are available in the default package manager.</p>
+
+<h4>Other</h4>
+
+<p>Other Linux distros may install via <a href="#from-source">source</a>, via <a href="https://docs.brew.sh/Homebrew-on-Linux">Linux Brew</a>, or via <a href="#nixos">Nix</a>.</p>
+
+<h3>For BSD</h3>
+
+<p>Install from OpenBSD <a href="http://ports.su/print/sile">ports</a>, via <a href="#from-source">source</a>, or via <a href="#nixos">Nix</a>.</p>
+
+<h3>For Windows</h3>
+
+<p>There is no installer yet (track the status in <a href="https://github.com/sile-typesetter/sile/issues/410">issue #410</a>).
+Nobody is currently maintaining Windows compatibility in SILE and we expect the state to be a bit broken.
+Users of WSL (Windows Subsystem for Linux) may use the package manager of their choice depending on the system installed, including the respective <a href="#arch-linux">Arch Linux</a> or <a href="#ubuntu">Ubuntu</a> packages, <a href="https://docs.brew.sh/Homebrew-on-Linux">Linux Brew</a>, <a href="#from-source">source</a>, or via [Nix][#nixos].</p>
+
+<p>Some early work is present in the repository that should enable builds via CMake and Visual Studio, see discussion in <a href="https://github.com/sile-typesetter/sile/pull/567">issue #567</a>, but it needs a refresh for current dependencies.
+Prebuilt Windows binaries are supposed to be generated by the Azure <a href="https://dev.azure.com/sile-typesetter/sile/_build?view=runs">build pipeline</a> and may be downloaded by selecting a build, opening the Windows job, selecting the artifact link from the final stage, and using the download button next to the sile folder.</p>
+
+<h3>Multi-Platform &amp; Containers</h3>
+
+<h4>Docker</h4>
+
+<p>Docker images are available as <a href="https://hub.docker.com/repository/docker/siletypesetter/sile">siletypesetter/sile</a>.
+Released versions are available as tagged containers matching the release (e.g. <code>v0.10.0</code>).
+Additionally the latest release will be tagged <code>latest</code>, and a <code>master</code> tag is also available with the freshest development build.</p>
+
+<p>In order to be useful you need to tell the Docker run command a way to reach your source documents.
+This is done by mounting your project directory inside the container.
+This also gives SILE a place to write the output.
+The user and group IDs of the Docker user will be automatically adjusted to match those of the directory you mounted.</p>
+
+<p>You may find it easiest to do all this with an alias like this:</p>
+
+
+<pre>
+$ alias sile=<span class="string">'docker run -it --volume "$(pwd):/data" siletypesetter/sile:latest'</span>
+$ sile input.sil
+</pre>
+
+
+<p>One notable issue with using SILE from a Docker container is that by default it will not have access to your system’s fonts.
+To work around this you can map a folder of fonts (in any organization usable by fontconfig) into the container.
+This could be your system’s default font directory, your user one, a folder with project specific resources, or anything of your choosing.
+You can see where fonts are found on your system using <code>fc-list</code>.
+The path of your choosing from the host system should be mounted as a volume on <code>/fonts</code> inside the container like this:</p>
+
+
+<pre>
+$ docker run -it <span class="comment">--volume "/usr/share/fonts:/fonts" --volume "$(pwd):/data" siletypesetter/sile:latest</span>
+</pre>
+
+
+<h4>Nix</h4>
+
+<p>The <code>nix</code> package manager is available as a standalone package manager on many platforms other than NixOS including most Linux and BSD distributions, macOS, and even for Windows via WSL;
+  and thus presents a viable alternative way to run SILE on most systems.</p>
+
+<p><a href="https://nixos.org/nix">Nix packages</a> are available in both the stable and unstable channels.
+We recommend the unstable channel because all fresh packages (including stable SILE releases) land there first and eventually trickle down to the stable channel.
+You can use all the usual Nix tricks including launching a new shell with the <code>sile</code> command available or running it directly from any shell:</p>
+
+
+<pre>
+# Launch a new shell with SILE available
+$ nix shell nixpkgs/nixpkgs-unstable#sile
+$ sile &lt;arguments&gt;
+
+# Run SILE directly as a single command
+$ nix run nixpkgs/nixpkgs-unstable#sile <span class="comment">-- &lt;arguments&gt;</span>
+</pre>
+
+
+<p>The SILE source repository is also a <a href="https://wiki.nixos.org/wiki/Flakes#Installing_flakes">Nix Flake</a>.
+This means you can run any arbitrary tagged version, branch, or commit with a single command.
+This is an easy way to run SILE on other platforms, but also to test other versions or run the latest development version of SILE.</p>
+
+
+<pre>
+# Explicitly run a tagged version
+$ nix run github:sile-typesetter/sile/v0.<span class="number">14.13</span> <span class="comment">-- &lt;arguments&gt;
+</span>
+# Use the master branch HEAD that will become the <span class="global">next</span> minor release
+$ nix run github:sile-typesetter/sile <span class="comment">-- &lt;sile arguments&gt;
+</span>
+# Run the develop branch HEAD that will become the <span class="global">next</span> major release
+$ nix run github:sile-typesetter/sile/develop <span class="comment">-- &lt;sile arguments&gt;</span>
+</pre>
+
+
+<h3>From Source</h3>
+
+<p>SILE source code can be downloaded from <a href="http://www.sile-typesetter.org/">its website</a> or directly from <a href="https://github.com/sile-typesetter/sile/releases">the GitHub releases page</a>.</p>
+
+<p>SILE is completely programmable using the Lua programming language.
+As of v0.15.0, the CLI you actually execute is a Rust binary with a Lua VM built in.
+(For compatibility and demonstration purposes a pure Lua version of the CLI is still available as \code{sile-lua}.)
+The Rust binary can be built based on your system's Lua sources or use its own vendored Lua sources.
+All SILE's Lua code takes a lowest-common-denominator approach to Lua compatibility.
+Any of Lua 5.1, 5.2, 5.3, 5.4, or LuaJIT (2.0, 2.1, or OpenResty) are fully supported.
+Compiling it to match your system's Lua version has the advantage of making it easy to access system installed Lua Rocks, but this is not a requirement.</p>
+
+<p>Compiling from sources will require both a Rust toolchain and Lua sources.
+At runtime no Rust tooling is required, and the system Lua interpreter is not actually used.</p>
+
+<p>It also relies on external libraries to access fonts and write PDF files.
+Its preferred combination of libraries is <a href="http://www.freedesktop.org/wiki/Software/HarfBuzz/">HarfBuzz</a> and <a href="https://github.com/sile-typesetter/libtexpdf">libtexpdf</a>, a PDF creation library extracted from TeX.
+HarfBuzz (minimum version 2.7.4) should be available from your operating system’s package manager.
+For HarfBuzz to work you will also need fontconfig installed.
+SILE also requires the <a href="http://icu-project.org">ICU</a> libraries for Unicode handling.</p>
+
+<p>On macOS, ICU can be installed via Homebrew:</p>
+
+
+<pre>
+$ brew install icu4c
+</pre>
+
+
+<p>After that, you might need to set environment variables.
+If you try to <code>brew link</code> and you get a series of messages including something like these two lines, you will need to run that export line to correctly set your path:</p>
+
+
+<pre>
+For pkg-config to find icu4c you may need to set:
+  export PKG_CONFIG_PATH=<span class="string">"/usr/local/opt/icu4c/lib/pkgconfig"</span>
+</pre>
+
+<p>Optionally you may install the Lua libraries listed in the <a href="https://github.com/sile-typesetter/sile/blob/master/sile-dev-1.rockspec">rockspec</a> to your system (using either your system’s package manager or <a href="http://luarocks.org/en/Download">luarocks</a> (<code>luarocks install --only-deps sile-dev-1.rockspec</code>).
+By default all the required Lua libraries will be downloaded and bundled alongside the SILE the installation.
+If you downloaded a source tarball these dependencies are included.
+If you are using a Git clone of the source repository the build system will require <code>luarocks</code> to fetch them during build.
+Note that OpenSSL development headers will be required for one of the Lua modules to compile¹.
+If your system has all the required packages already you may add <code>--with-system-luarocks</code> to the <code>./configure</code> command to avoid bundling them.</p>
+
+<p>¹ <sub>OpenSSL development headers are required to build <em>luasec</em>, please make sure they are setup <em>BEFORE</em> trying to build SILE!
+If you use your system’s Luarocks packages this will be done for you, otherwise make sure you can compile luasec.
+You can try just this step in isolation before building SILE using <code>luarocks --tree=/tmp install luasec</code>.</sub></p>
+
+<p>If you are building from a git clone, start by running the script to setup your environment (if you are using the source tarball this is unnecessary):</p>
+
+
+<pre>
+$ ./bootstrap.sh
+</pre>
+
+
+<p>If you just plan on installing and using SILE, the default configure options (plus any Lua related options discussed above) should be fine.
+If you plan on developing SILE itself (whether to just tinker with it for your own use or contribute upstream) there is one particularly useful configuration option.
+You can add <code>--enable-developer-mode</code> will set the 'installed data' directory to the source location which will enable the compiled binary to run directly from the source directory without being installed at all.
+Additionally it will enable checks for tooling we expect SILE contributors to have such as tools used for testing.
+Using this options also enables a number of targets that wouldn’t normally be needed by end users such as <code>make regressions</code>.</p>
+
+<p>Once your dependencies are installed and you know what options you want, it is time to configure the sources, then build them.</p>
+
+
+<pre>
+$ ./configure
+$ make
+</pre>
+
+
+<p>If you just want to mess with SILE locally you can stop here (especially if you used <code>--enable-developer-mode</code>).
+However to actually install, you will need to run the installation command with system permissions.</p>
+
+
+<pre>
+$ sudo make install
+</pre>
+
+
+<p>On some systems you may also need to make the system aware of the newly installed libraries before first use:</p>
+
+
+<pre>
+$ ldconfig
+</pre>
+
+
+<h3>Default Font</h3>
+
+<p>Since SILE v0.9.5, the default font has been Gentium Plus which is freely available from <a href="http://software.sil.org/gentium/download/">SIL’s site</a>.
+(Previously we used Gentium Basic, but that’s getting harder to get hold of.)
+The math package uses <a href="https://github.com/alerque/libertinus">Libertinus Math</a> by default to render formulas.
+Additionally, monospace text by default is set in <a href="https://sourcefoundry.org/hack/">Hack</a>.
+It is not absolutely required that you install default fonts, but if this font is not installed on your system you won’t be able to use the examples without modification.</p>
+
+<h3>Testing the installation</h3>
+
+<p>If all goes well, after installation you should be able to render a sample document.
+Try creating a file <code>test.sil</code> with this content:</p>
+
+
+<pre>
+\<span class="function-name">begin</span>{document}
+Hello world!
+\<span class="keyword">end</span>{document}
+</pre>
+
+
+<p>And render it to a PDF like this:</p>
+
+
+<pre>
+$ sile test.sil
+SILE v0.<span class="number">12.5</span> (Lua <span class="number">5.4</span>)
+&lt;test.sil&gt;
+[<span class="number">1</span>]
+</pre>
+
+
+<p>You should now have a PDF file <code>test.pdf</code> ready for review.</p>
+
+<p><a name="Use_as_a_CI_job"></a></p>
+<h2>Use as a CI job</h2>
+
+<p>There are actually many ways to run SILE remotely as part of a CI work flow.
+Because packages are available for many platforms, one way would be to just use your platforms native package installation system to pull them into whatever CI runner environment you already use.
+Another way is to pull in the prebuilt Docker container and run that.</p>
+
+<p>As a case study, here is how a workflow could be setup in GitHub Actions:</p>
+
+
+<pre>
+name: SILE
+on: [ push, pull_request ]
+jobs:
+  sile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Render document with SILE
+        uses: sile-typesetter/sile@v0
+        with:
+          args: my-document.sil
+</pre>
+
+
+<p>Add to your repository as <code>.github/workflows/sile.yaml</code>.
+This work flow assumes your project has a source file <code>my-document.sil</code> and will leave behind a <code>my-document.pdf</code>.
+Note the comments in <a href="#docker">the section about Docker</a> regarding version tags.</p>
+
+<p><a name="Installing_third_party_packages"></a></p>
+<h2>Installing third-party packages</h2>
+
+<p>Third-party SILE packages can be installed using the <code>luarocks</code> package manager.
+Packages may be hosted anywhere, either on the default <a href="https://luarocks.org/">luarocks.org</a> repository or (as in the example below) listed in a specific server manifest.
+For example, to install <a href="https://github.com/Omikhleia/markdown.sile">markdown.sile</a> (a plugin that provides a SILE inputter that reads and processes Markdown documents) one could run:</p>
+
+
+<pre>
+$ luarocks install <span class="comment">--server=https://luarocks.org/dev markdown.sile</span>
+</pre>
+
+
+<p>By default, this will try to install the package to your system.
+This may not be desired (and usually requires root access), but there are two other ways to install plugins.
+First you make add <code>--tree ./</code> to install them in the current directory.
+In this case (and assuming this is the same directory as your document) SILE will automatically find such plugins.
+Additionally you make install them to your user profile by adding <code>--local</code> when installing.
+In this case you will also need to modify your user environment to check for plugins in that path since Lua does not do so by default.
+This can be done by running <code>eval $(luarocks path)</code> before running SILE (or from your shell’s initialization script).</p>
+
+<h3>Finding Lua version in use for running SILE</h3>
+
+<p>Third party packages must be installed for the same version of Lua that SILE uses.
+On systems with more than one Lua version installed, <em>and</em> where SILE does not use the default one you may need to specify the version manually.
+To get your Lua version which is used for the execution of <code>sile</code>:</p>
+
+
+<pre>
+$ export LUA_VERSION=$(sile -<span class="function-name">e</span> <span class="string">'print(SILE.lua_version);os.exit()'</span> <span class="number">2</span>&gt; /dev/null)
+$ luarocks install <span class="comment">--lua-version $LUA_VERSION ...</span>
+</pre>
+
+
+<p><a name="Finding_Out_More"></a></p>
+<h2>Finding Out More</h2>
+
+<p>Please read the <a href="http://sile-typesetter.org/manual/sile-latest.pdf">full SILE manual</a> for more information about what SILE is and how it can help you.
+There are example documents (source and PDF) <a href="http://www.sile-typesetter.org/examples/">on the SILE website</a>.
+There’s also an <a href="https://github.com/sile-typesetter/sile/wiki/faq">FAQ</a> available.</p>
+
+<p><a name="Contact"></a></p>
+<h2>Contact</h2>
+
+<p>Please report bugs and send patches and pull requests at the <a href="https://github.com/sile-typesetter/sile">github repository</a>.
+For questions and discussion, please join the <a href="https://groups.google.com/d/forum/sile-users">mailing list</a>.</p>
+
+<p><a name="License_Terms"></a></p>
+<h2>License Terms</h2>
+
+<p>SILE is distributed under the <a href="http://choosealicense.com/licenses/mit/">MIT license</a>.
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/lunarmodules/LDoc">LDoc 1.5.0</a></i>
+<i style="float:right;">Last updated 1980-01-01 00:00:00 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

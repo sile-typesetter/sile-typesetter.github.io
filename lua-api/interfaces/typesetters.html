@@ -1,0 +1,324 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>SILE</h1>
+
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Class_typesetter">Class typesetter </a></li>
+</ul>
+
+
+<h2>Interfaces</h2>
+<ul class="nowrap">
+  <li><a href="../interfaces/classes.html">classes</a></li>
+  <li><a href="../interfaces/inputters.html">inputters</a></li>
+  <li><a href="../interfaces/languages.html">languages</a></li>
+  <li><a href="../interfaces/outputters.html">outputters</a></li>
+  <li><a href="../interfaces/packages.html">packages</a></li>
+  <li><a href="../interfaces/pagebuilders.html">pagebuilders</a></li>
+  <li><a href="../interfaces/shapers.html">shapers</a></li>
+  <li><strong>typesetters</strong></li>
+</ul>
+<h2>Types</h2>
+<ul class="nowrap">
+  <li><a href="../types/color.html">color</a></li>
+  <li><a href="../types/length.html">length</a></li>
+  <li><a href="../types/measurement.html">measurement</a></li>
+  <li><a href="../types/node.html">node</a></li>
+  <li><a href="../types/unit.html">unit</a></li>
+</ul>
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/classes.bible.html">classes.bible</a></li>
+  <li><a href="../modules/classes.book.html">classes.book</a></li>
+  <li><a href="../modules/classes.diglot.html">classes.diglot</a></li>
+  <li><a href="../modules/classes.docbook.html">classes.docbook</a></li>
+  <li><a href="../modules/classes.jbook.html">classes.jbook</a></li>
+  <li><a href="../modules/classes.jplain.html">classes.jplain</a></li>
+  <li><a href="../modules/classes.letter.html">classes.letter</a></li>
+  <li><a href="../modules/classes.plain.html">classes.plain</a></li>
+  <li><a href="../modules/classes.tbook.html">classes.tbook</a></li>
+  <li><a href="../modules/classes.tbook.html">classes.tbook</a></li>
+  <li><a href="../modules/classes.tplain.html">classes.tplain</a></li>
+  <li><a href="../modules/classes.triglot.html">classes.triglot</a></li>
+  <li><a href="../modules/packages.pdf.html">packages.pdf</a></li>
+</ul>
+<h2>Library</h2>
+<ul class="nowrap">
+  <li><a href="../library/SILE.html">SILE</a></li>
+  <li><a href="../library/SILE.font.html">SILE.font</a></li>
+  <li><a href="../library/SU.html">SU</a></li>
+  <li><a href="../library/SU.ast.html">SU.ast</a></li>
+  <li><a href="../library/SU.numbers.html">SU.numbers</a></li>
+  <li><a href="../library/SU.sorting.html">SU.sorting</a></li>
+  <li><a href="../library/globals.html">globals</a></li>
+  <li><a href="../library/packages.bibtex.csl.engine.html">packages.bibtex.csl.engine</a></li>
+  <li><a href="../library/packages.bibtex.csl.locale.html">packages.bibtex.csl.locale</a></li>
+  <li><a href="../library/packages.bibtex.csl.style.html">packages.bibtex.csl.style</a></li>
+  <li><a href="../library/packages.bibtex.csl.utils.casing.html">packages.bibtex.csl.utils.casing</a></li>
+  <li><a href="../library/packages.bibtex.csl.utils.superfolding.html">packages.bibtex.csl.utils.superfolding</a></li>
+  <li><a href="../library/packages.bibtex.csl.utils.xmlparser.html">packages.bibtex.csl.utils.xmlparser</a></li>
+  <li><a href="../library/packages.bibtex.support.bib2csl.html">packages.bibtex.support.bib2csl</a></li>
+  <li><a href="../library/packages.bibtex.support.isodatetime.html">packages.bibtex.support.isodatetime</a></li>
+  <li><a href="../library/packages.bibtex.support.locators.html">packages.bibtex.support.locators</a></li>
+  <li><a href="../library/packages.math.mathml-entities.html">packages.math.mathml-entities</a></li>
+  <li><a href="../library/packages.math.unicode-symbols.html">packages.math.unicode-symbols</a></li>
+</ul>
+<h2>Topics</h2>
+<ul class="">
+  <li><a href="../topics/README.md.html">README</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Interfaces <code>typesetters</code></h1>
+<p>SILE typesetter class.</p>
+<p>
+
+</p>
+
+
+<h2><a href="#Class_typesetter">Class typesetter </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#typesetter:_init">typesetter:_init(frame)</a></td>
+	<td class="summary">Constructor</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#typesetter.declareSettings">typesetter.declareSettings(_)</a></td>
+	<td class="summary">Declare new setting types</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#typesetter:_repeatEnterLiners">typesetter:_repeatEnterLiners(slice)</a></td>
+	<td class="summary">Any unclosed liner is reopened on the current line, so we clone and repeat it.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#typesetter._reboxLiners">typesetter._reboxLiners(slice)</a></td>
+	<td class="summary">All pairs of liners are rebuilt as hboxes wrapping their content.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#typesetter:_processIfLiner">typesetter:_processIfLiner(node)</a></td>
+	<td class="summary">Check if a node is a liner, and process it if so, in a stack.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#typesetter:liner">typesetter:liner(name, content, outputYourself)</a></td>
+	<td class="summary">A liner is a construct that may span multiple lines.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Class_typesetter"></a>Class typesetter </h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "typesetter:_init"></a>
+    <strong>typesetter:_init(frame)</strong>
+    </dt>
+    <dd>
+    Constructor
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">frame</span>
+         A initial frame to attach the typesetter to.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "typesetter.declareSettings"></a>
+    <strong>typesetter.declareSettings(_)</strong>
+    </dt>
+    <dd>
+    Declare new setting types
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">_</span>
+            <span class="types"><span class="type">Settings common to any typesetter instance. These shouldn't be re-declared and overwritten/reset in the typesetter constructor (see issue https</span></span>
+        //github.com/sile-typesetter/sile/issues/1708). On the other hand, it's fairly acceptable to have them made global: Any derived typesetter, whatever its implementation, should likely provide some logic for them (= widows, orphans, spacing, etc.)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "typesetter:_repeatEnterLiners"></a>
+    <strong>typesetter:_repeatEnterLiners(slice)</strong>
+    </dt>
+    <dd>
+    Any unclosed liner is reopened on the current line, so we clone and repeat it.
+ An assumption is that the inserts are done after the current slice content,
+ supposed to be just before meaningful (visible) content.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">slice</span>
+            <span class="types"><span class="type">slice</span></span>
+
+
+
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">boolean</span></span>
+        Whether a liner was reopened
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "typesetter._reboxLiners"></a>
+    <strong>typesetter._reboxLiners(slice)</strong>
+    </dt>
+    <dd>
+    All pairs of liners are rebuilt as hboxes wrapping their content.
+ Migrating content, however, must be kept outside the hboxes at top slice level.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">slice</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         Flat nodes from current line
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+        New reboxed slice
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "typesetter:_processIfLiner"></a>
+    <strong>typesetter:_processIfLiner(node)</strong>
+    </dt>
+    <dd>
+    Check if a node is a liner, and process it if so, in a stack.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">node</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         Current node (any type)
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">boolean</span></span>
+        Whether a liner was opened
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "typesetter:liner"></a>
+    <strong>typesetter:liner(name, content, outputYourself)</strong>
+    </dt>
+    <dd>
+    A liner is a construct that may span multiple lines.
+ This is the user-facing method for creating such liners in packages.
+ The content may be line-broken, and each bit on each line will be wrapped
+ into a box.
+ These boxes will be formatted according to some output logic.
+ The output method has the same signature as the outputYourself method
+ of a box, and is responsible for outputting the liner inner content with the
+ outputContent(typesetter, line) method, possibly surrounded by some additional
+ effects.
+ If we are already in horizontal-restricted mode, the liner is processed
+ immediately, since line breaking won't occur then.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">name</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         Name of the liner (useful for debugging)
+        </li>
+        <li><span class="parameter">content</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         SILE AST to process
+        </li>
+        <li><span class="parameter">outputYourself</span>
+            <span class="types"><span class="type">function</span></span>
+         Output method for wrapped boxes
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/lunarmodules/LDoc">LDoc 1.5.0</a></i>
+<i style="float:right;">Last updated 1980-01-01 00:00:00 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

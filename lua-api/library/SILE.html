@@ -1,0 +1,899 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>SILE</h1>
+
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Fields">Fields </a></li>
+<li><a href="#Modules">Modules </a></li>
+<li><a href="#Data_tables">Data tables </a></li>
+<li><a href="#User_input">User input </a></li>
+<li><a href="#Core_functions">Core functions </a></li>
+</ul>
+
+
+<h2>Library</h2>
+<ul class="nowrap">
+  <li><strong>SILE</strong></li>
+  <li><a href="../library/SILE.font.html">SILE.font</a></li>
+  <li><a href="../library/SU.html">SU</a></li>
+  <li><a href="../library/SU.ast.html">SU.ast</a></li>
+  <li><a href="../library/SU.numbers.html">SU.numbers</a></li>
+  <li><a href="../library/SU.sorting.html">SU.sorting</a></li>
+  <li><a href="../library/globals.html">globals</a></li>
+  <li><a href="../library/packages.bibtex.csl.engine.html">packages.bibtex.csl.engine</a></li>
+  <li><a href="../library/packages.bibtex.csl.locale.html">packages.bibtex.csl.locale</a></li>
+  <li><a href="../library/packages.bibtex.csl.style.html">packages.bibtex.csl.style</a></li>
+  <li><a href="../library/packages.bibtex.csl.utils.casing.html">packages.bibtex.csl.utils.casing</a></li>
+  <li><a href="../library/packages.bibtex.csl.utils.superfolding.html">packages.bibtex.csl.utils.superfolding</a></li>
+  <li><a href="../library/packages.bibtex.csl.utils.xmlparser.html">packages.bibtex.csl.utils.xmlparser</a></li>
+  <li><a href="../library/packages.bibtex.support.bib2csl.html">packages.bibtex.support.bib2csl</a></li>
+  <li><a href="../library/packages.bibtex.support.isodatetime.html">packages.bibtex.support.isodatetime</a></li>
+  <li><a href="../library/packages.bibtex.support.locators.html">packages.bibtex.support.locators</a></li>
+  <li><a href="../library/packages.math.mathml-entities.html">packages.math.mathml-entities</a></li>
+  <li><a href="../library/packages.math.unicode-symbols.html">packages.math.unicode-symbols</a></li>
+</ul>
+<h2>Interfaces</h2>
+<ul class="nowrap">
+  <li><a href="../interfaces/classes.html">classes</a></li>
+  <li><a href="../interfaces/inputters.html">inputters</a></li>
+  <li><a href="../interfaces/languages.html">languages</a></li>
+  <li><a href="../interfaces/outputters.html">outputters</a></li>
+  <li><a href="../interfaces/packages.html">packages</a></li>
+  <li><a href="../interfaces/pagebuilders.html">pagebuilders</a></li>
+  <li><a href="../interfaces/shapers.html">shapers</a></li>
+  <li><a href="../interfaces/typesetters.html">typesetters</a></li>
+</ul>
+<h2>Types</h2>
+<ul class="nowrap">
+  <li><a href="../types/color.html">color</a></li>
+  <li><a href="../types/length.html">length</a></li>
+  <li><a href="../types/measurement.html">measurement</a></li>
+  <li><a href="../types/node.html">node</a></li>
+  <li><a href="../types/unit.html">unit</a></li>
+</ul>
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/classes.bible.html">classes.bible</a></li>
+  <li><a href="../modules/classes.book.html">classes.book</a></li>
+  <li><a href="../modules/classes.diglot.html">classes.diglot</a></li>
+  <li><a href="../modules/classes.docbook.html">classes.docbook</a></li>
+  <li><a href="../modules/classes.jbook.html">classes.jbook</a></li>
+  <li><a href="../modules/classes.jplain.html">classes.jplain</a></li>
+  <li><a href="../modules/classes.letter.html">classes.letter</a></li>
+  <li><a href="../modules/classes.plain.html">classes.plain</a></li>
+  <li><a href="../modules/classes.tbook.html">classes.tbook</a></li>
+  <li><a href="../modules/classes.tbook.html">classes.tbook</a></li>
+  <li><a href="../modules/classes.tplain.html">classes.tplain</a></li>
+  <li><a href="../modules/classes.triglot.html">classes.triglot</a></li>
+  <li><a href="../modules/packages.pdf.html">packages.pdf</a></li>
+</ul>
+<h2>Topics</h2>
+<ul class="">
+  <li><a href="../topics/README.md.html">README</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>SILE</code></h1>
+<p>The core SILE library.</p>
+<p> Depending on how SILE was loaded, everything in here will probably be available under a top level <a href="../library/SILE.html#">SILE</a> global. Note
+ that an additional global <a href="../library/SU.html#">SU</a> is typically available as an alias to <a href="../library/SILE.html#utilities">SILE.utilities</a>. Also some 3rd party Lua
+ libraries are always made available in the global scope, see <a href="../library/globals.html#">globals</a>.</p>
+
+
+<h2><a href="#Fields">Fields </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#version">version</a></td>
+	<td class="summary">Machine friendly short-form version.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#features">features</a></td>
+	<td class="summary">Status information about what options SILE was compiled with.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#lua_version">lua_version</a></td>
+	<td class="summary">ABI version of Lua VM.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#lua_isjit">lua_isjit</a></td>
+	<td class="summary">Whether or not Lua VM is a JIT compiler.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#full_version">full_version</a></td>
+	<td class="summary">User friendly long-form version string.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#quiet">quiet</a></td>
+	<td class="summary">Default to verbose mode, can be changed from the CLI or by libraries</td>
+	</tr>
+</table>
+<h2><a href="#Modules">Modules </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#utilities">utilities</a></td>
+	<td class="summary">Utilities module, typically accessed via <a href="../library/SU.html#">SU</a> alias.</td>
+	</tr>
+</table>
+<h2><a href="#Data_tables">Data tables </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Commands">Commands</a></td>
+	<td class="summary">Stash of all Lua functions used to power typesetter commands.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Help">Help</a></td>
+	<td class="summary">Short usage messages corresponding to typesetter commands.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#debugFlags">debugFlags</a></td>
+	<td class="summary">List of currently enabled debug flags.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#scratch">scratch</a></td>
+	<td class="summary">The wild-west of stash stuff.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#documentState">documentState</a></td>
+	<td class="summary">Data storage for typesetter, frame, and class information.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#rawHandlers">rawHandlers</a></td>
+	<td class="summary">Callback functions for handling types of raw content.</td>
+	</tr>
+</table>
+<h2><a href="#User_input">User input </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#input">input</a></td>
+	<td class="summary">All user-provided input collected before beginning document processing.</td>
+	</tr>
+</table>
+<h2><a href="#Core_functions">Core functions </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#init">init()</a></td>
+	<td class="summary">Initialize a SILE instance.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#use">use(module[, options[, reload=false]])</a></td>
+	<td class="summary">Multi-purpose loader to load and initialize modules.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#process">process(ast)</a></td>
+	<td class="summary">Process content.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#processString">processString(doc[, format[, filename[, options]]])</a></td>
+	<td class="summary">Process an input string.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#processFile">processFile(filename[, format[, options]])</a></td>
+	<td class="summary">Process an input file
+ Opens a file, converts the contents to an AST, then runs <a href="../library/SILE.html#process">process</a> on it.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#resolveFile">resolveFile(filename[, pathprefix])</a></td>
+	<td class="summary">Resolve relative file paths to identify absolute resources locations.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#call">call(command[, options={}[, content]])</a></td>
+	<td class="summary">Execute a registered SILE command.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#registerCommand">registerCommand(name, func[, help[, pack]])</a></td>
+	<td class="summary">(Deprecated) Register a function as a SILE command.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#setCommandDefaults">setCommandDefaults(command, options)</a></td>
+	<td class="summary">Wrap an existing command with new default options.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#finish">finish()</a></td>
+	<td class="summary">Finalize document processing
+ Signals that all the <code>SILE.process()</code> calls have been made and SILE should move on to finish up the output</p>
+
+<p> 1.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Fields"></a>Fields </h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "version"></a>
+    <strong>version</strong>
+    </dt>
+    <dd>
+    Machine friendly short-form version.
+ Semver, prefixed with "v", possible postfixed with ".r" followed by VCS version information.
+
+
+    <ul>
+        <li><span class="parameter">version</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "features"></a>
+    <strong>features</strong>
+    </dt>
+    <dd>
+    Status information about what options SILE was compiled with.
+
+
+    <h3>Fields:</h3>
+    <ul>
+        <li><span class="parameter">appkit</span>
+            <span class="types"><span class="type">boolean</span></span>
+
+
+
+        </li>
+        <li><span class="parameter">font_variations</span>
+            <span class="types"><span class="type">boolean</span></span>
+
+
+
+        </li>
+        <li><span class="parameter">fontconfig</span>
+            <span class="types"><span class="type">boolean</span></span>
+
+
+
+        </li>
+        <li><span class="parameter">harfbuzz</span>
+            <span class="types"><span class="type">boolean</span></span>
+
+
+
+        </li>
+        <li><span class="parameter">icu</span>
+            <span class="types"><span class="type">boolean</span></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "lua_version"></a>
+    <strong>lua_version</strong>
+    </dt>
+    <dd>
+    ABI version of Lua VM.
+ For example may be <code>&quot;5.1&quot;</code> or <code>&quot;5.4&quot;</code> or others. Note that the ABI version for most LuaJIT implementations is 5.1.
+
+
+    <ul>
+        <li><span class="parameter">lua_version</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "lua_isjit"></a>
+    <strong>lua_isjit</strong>
+    </dt>
+    <dd>
+    Whether or not Lua VM is a JIT compiler.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "full_version"></a>
+    <strong>full_version</strong>
+    </dt>
+    <dd>
+    User friendly long-form version string.
+ For example may be "SILE v0.14.17 (Lua 5.4)".
+
+
+    <ul>
+        <li><span class="parameter">full_version</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "quiet"></a>
+    <strong>quiet</strong>
+    </dt>
+    <dd>
+    Default to verbose mode, can be changed from the CLI or by libraries
+
+
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Modules"></a>Modules </h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "utilities"></a>
+    <strong>utilities</strong>
+    </dt>
+    <dd>
+    Utilities module, typically accessed via <a href="../library/SU.html#">SU</a> alias.
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../library/SU.html#">SU</a>
+    </ul>
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Data_tables"></a>Data tables </h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "Commands"></a>
+    <strong>Commands</strong>
+    </dt>
+    <dd>
+    Stash of all Lua functions used to power typesetter commands.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Help"></a>
+    <strong>Help</strong>
+    </dt>
+    <dd>
+    Short usage messages corresponding to typesetter commands.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "debugFlags"></a>
+    <strong>debugFlags</strong>
+    </dt>
+    <dd>
+    List of currently enabled debug flags.
+ E.g. <code>{ typesetter = true, frames, true }</code>.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "scratch"></a>
+    <strong>scratch</strong>
+    </dt>
+    <dd>
+    The wild-west of stash stuff.
+ No rules, just right (or usually wrong). Everything in here <em>should</em> be somewhere else, but lots of early SILE code
+ relied on this as a global key/value store for various class, document, and package values. Since v0.14.0 with many
+ core SILE components being instances of classes –and especially with each package having it's own variable namespace–
+ there are almost always better places for things. This scratch space will eventually be completely deprecated, so
+ don't put anything new in here and only use things in it if there are no other current alternatives.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "documentState"></a>
+    <strong>documentState</strong>
+    </dt>
+    <dd>
+    Data storage for typesetter, frame, and class information.
+ Current document class instances, node queues, and other "hot" data can be found here. As with <a href="../library/SILE.html#scratch">SILE.scratch</a>
+ everything in here probably belongs elsewhere, but for now it is what it is.
+
+
+    <h3>Fields:</h3>
+    <ul>
+        <li><span class="parameter">documentClass</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         The instantiated document processing class.
+        </li>
+        <li><span class="parameter">thisPageTemplate</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         The frameset used for the current page.
+        </li>
+        <li><span class="parameter">paperSize</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         The current paper size.
+        </li>
+        <li><span class="parameter">orgPaperSize</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         The original paper size if the current one is modified via packages.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "rawHandlers"></a>
+    <strong>rawHandlers</strong>
+    </dt>
+    <dd>
+    Callback functions for handling types of raw content.
+ All registered handlers for raw content blocks have an entry in this table with the type as the key and the
+ processing function as the value.
+ @ table rawHandlers
+
+
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="User_input"></a>User input </h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "input"></a>
+    <strong>input</strong>
+    </dt>
+    <dd>
+    All user-provided input collected before beginning document processing.
+ User input values, currently from CLI options, potentially all the inuts
+ needed for a user to use a SILE-as-a-library version to produce documents
+ programmatically.
+
+
+    <h3>Fields:</h3>
+    <ul>
+        <li><span class="parameter">filenames</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         Path names of file(s) intended for processing. Files are processed in the order provided.
+ File types may be mixed of any formaat for which SILE has an inputter module.
+        </li>
+        <li><span class="parameter">evaluates</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         List of strings to be evaluated as Lua code snippets <em>before</em> processing inputs.
+        </li>
+        <li><span class="parameter">evaluateAfters</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         List of strings to be evaluated as Lua code snippets <em>after</em> processing inputs.
+        </li>
+        <li><span class="parameter">uses</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         List of strings specifying module names (and optionally optionns) for modules to load <em>before</em>
+ processing inputs. For example this accommodates loading inputter modules before any input of that type is encountered.
+ Additionally it can be used to process a document using a document class <em>other than</em> the one specified in the
+ document itself. Document class modules loaded here are instantiated after load, meaning the document will not be
+ queried for a class at all.
+        </li>
+        <li><span class="parameter">options</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         Extra document class options to set or override in addition to ones found in the first input
+ document.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Core_functions"></a>Core functions </h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "init"></a>
+    <strong>init()</strong>
+    </dt>
+    <dd>
+    Initialize a SILE instance.
+ Presumes CLI args have already been processed and/or library inputs are set.</p>
+
+<ol>
+    <li>If no backend has been loaded already (e.g. via <code>--use</code>) then assumes <em>libtexpdf</em>.</li>
+    <li>Loads and instantiates a shaper and outputter module appropriate for the chosen backend.</li>
+    <li>Instantiates a pagebuilder.</li>
+    <li>Starts a Lua profiler if the profile debug flag is set.</li>
+    <li>Instantiates a dependency tracker if we've been asked to write make dependencies.</li>
+    <li>Runs any code snippents passed with <code>--eval</code>.</li>
+</ol>
+
+<p> Does not move on to processing input document(s).
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "use"></a>
+    <strong>use(module[, options[, reload=false]])</strong>
+    </dt>
+    <dd>
+    Multi-purpose loader to load and initialize modules.
+ This is used to load and initialize core parts of SILE and also 3rd party modules.
+ Module types supported bay be an <em>inputter</em>, <em>outputer</em>, <em>shaper</em>, <em>typesetter</em>, <em>pagebuilder</em>, or <em>package</em>.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">module</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a> or <a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         The module spec name to load (dot-separated, e.g. <code>&quot;packages.lorem&quot;</code>) or a table with
+   a module that has already been loaded.
+        </li>
+        <li><span class="parameter">options</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         Startup options as key/value pairs passed to the module when initialized.
+         (<em>optional</em>)
+        </li>
+        <li><span class="parameter">reload</span>
+            <span class="types"><span class="type">boolean</span></span>
+         whether or not to reload a module that has been loaded and initialized before.
+         (<em>default</em> false)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "process"></a>
+    <strong>process(ast)</strong>
+    </dt>
+    <dd>
+    Process content.
+ This is the main 'action' SILE does. Once input files are parsed into an abstract syntax tree, then we recursively
+ iterate through the tree handling each item in the order encountered.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">ast</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         SILE content in abstract syntax tree format (a table of strings, functions, or more AST trees).
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "processString"></a>
+    <strong>processString(doc[, format[, filename[, options]]])</strong>
+    </dt>
+    <dd>
+    Process an input string.
+ First converts the string to an AST, then runs <a href="../library/SILE.html#process">process</a> on it.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">doc</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         Input string to be converted to SILE content.
+        </li>
+        <li><span class="parameter">format</span>
+            <span class="types"><span class="type">nil</span> or <a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         The name of the formatter. If nil, defaults to using each intputter's auto detection.
+         (<em>optional</em>)
+        </li>
+        <li><span class="parameter">filename</span>
+            <span class="types"><span class="type">nil</span> or <a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         Pseudo filename to identify the content with, useful for error messages stack traces.
+         (<em>optional</em>)
+        </li>
+        <li><span class="parameter">options</span>
+            <span class="types"><span class="type">nil</span> or <a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         Options to pass to the inputter instance when instantiated.
+         (<em>optional</em>)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "processFile"></a>
+    <strong>processFile(filename[, format[, options]])</strong>
+    </dt>
+    <dd>
+    Process an input file
+ Opens a file, converts the contents to an AST, then runs <a href="../library/SILE.html#process">process</a> on it.
+ Roughly equivalent to listing the file as an input, but easier to embed in code.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">filename</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         Path of file to open string to be converted to SILE content.
+        </li>
+        <li><span class="parameter">format</span>
+            <span class="types"><span class="type">nil</span> or <a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         The name of the formatter. If nil, defaults to using each intputter's auto detection.
+         (<em>optional</em>)
+        </li>
+        <li><span class="parameter">options</span>
+            <span class="types"><span class="type">nil</span> or <a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         Options to pass to the inputter instance when instantiated.
+         (<em>optional</em>)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "resolveFile"></a>
+    <strong>resolveFile(filename[, pathprefix])</strong>
+    </dt>
+    <dd>
+    Resolve relative file paths to identify absolute resources locations.
+ Makes it possible to load resources from relative paths, relative to a document or project or SILE itself.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">filename</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         Name of file to find using the same order of precedence logic in <code>require()</code>.
+        </li>
+        <li><span class="parameter">pathprefix</span>
+            <span class="types"><span class="type">nil</span> or <a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         Optional prefix in which to look for if the file isn't found otherwise.
+         (<em>optional</em>)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "call"></a>
+    <strong>call(command[, options={}[, content]])</strong>
+    </dt>
+    <dd>
+    Execute a registered SILE command.
+ Uses a function previously registered by any modules explicitly loaded by the user at runtime via <code>--use</code>, the SILE
+ core, the document class, or any loaded package.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">command</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         Command name.
+        </li>
+        <li><span class="parameter">options</span>
+            <span class="types"><span class="type">nil</span> or <a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         Options to pass to the command.
+         (<em>default</em> {})
+        </li>
+        <li><span class="parameter">content</span>
+            <span class="types"><span class="type">nil</span> or <a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         Any valid AST node to be processed by the command.
+         (<em>optional</em>)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "registerCommand"></a>
+    <strong>registerCommand(name, func[, help[, pack]])</strong>
+    </dt>
+    <dd>
+    (Deprecated) Register a function as a SILE command.
+ Takes any Lua function and registers it for use as a SILE command (which will in turn be used to process any content
+ nodes identified with the command name.</p>
+
+<p> Note that alternative versions of this action are available as methods on document classes and packages. Those
+ interfaces should be preferred to this global one.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">name</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         Name of cammand to register.
+        </li>
+        <li><span class="parameter">func</span>
+            <span class="types"><span class="type">function</span></span>
+         Callback function to use as command handler.
+        </li>
+        <li><span class="parameter">help</span>
+            <span class="types"><span class="type">nil</span> or <a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         User friendly short usage string for use in error messages, documentation, etc.
+         (<em>optional</em>)
+        </li>
+        <li><span class="parameter">pack</span>
+            <span class="types"><span class="type">nil</span> or <a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         Information identifying the module registering the command for use in error and usage
+ messages. Usually auto-detected.
+         (<em>optional</em>)
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "setCommandDefaults"></a>
+    <strong>setCommandDefaults(command, options)</strong>
+    </dt>
+    <dd>
+    Wrap an existing command with new default options.
+ Modifies an already registered SILE command with a new table of options to be used as default values any time it is
+ called. Calling options still take precedence.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">command</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         Name of command to overwrite.
+        </li>
+        <li><span class="parameter">options</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         Options to set as updated defaults.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "finish"></a>
+    <strong>finish()</strong>
+    </dt>
+    <dd>
+
+<p>Finalize document processing
+ Signals that all the <code>SILE.process()</code> calls have been made and SILE should move on to finish up the output</p>
+
+<ol>
+    <li>Tells the document class to run its <code>:finish()</code> method. This method is typically responsible for calling the
+    <code>:finish()</code> method of the outputter module in the appropriate sequence.</li>
+    <li>Closes out anything in active memory we don't need like font instances.</li>
+    <li>Evaluate any snippets in SILE.input.evalAfter table.</li>
+    <li>Stops logging dependencies and writes them to a makedepends file if requested.</li>
+    <li>Close out the Lua profiler if it was running.</li>
+    <li>Output version information if versions debug flag is set.</li>
+</ol>
+
+
+
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/lunarmodules/LDoc">LDoc 1.5.0</a></i>
+<i style="float:right;">Last updated 1980-01-01 00:00:00 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

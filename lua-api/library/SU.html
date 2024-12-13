@@ -1,0 +1,1424 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>SILE</h1>
+
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Generic">Generic </a></li>
+<li><a href="#Type_handling">Type handling </a></li>
+<li><a href="#Errors_and_debugging">Errors and debugging </a></li>
+<li><a href="#Math">Math </a></li>
+<li><a href="#Text_handling">Text handling </a></li>
+</ul>
+
+
+<h2>Library</h2>
+<ul class="nowrap">
+  <li><a href="../library/SILE.html">SILE</a></li>
+  <li><a href="../library/SILE.font.html">SILE.font</a></li>
+  <li><strong>SU</strong></li>
+  <li><a href="../library/SU.ast.html">SU.ast</a></li>
+  <li><a href="../library/SU.numbers.html">SU.numbers</a></li>
+  <li><a href="../library/SU.sorting.html">SU.sorting</a></li>
+  <li><a href="../library/globals.html">globals</a></li>
+  <li><a href="../library/packages.bibtex.csl.engine.html">packages.bibtex.csl.engine</a></li>
+  <li><a href="../library/packages.bibtex.csl.locale.html">packages.bibtex.csl.locale</a></li>
+  <li><a href="../library/packages.bibtex.csl.style.html">packages.bibtex.csl.style</a></li>
+  <li><a href="../library/packages.bibtex.csl.utils.casing.html">packages.bibtex.csl.utils.casing</a></li>
+  <li><a href="../library/packages.bibtex.csl.utils.superfolding.html">packages.bibtex.csl.utils.superfolding</a></li>
+  <li><a href="../library/packages.bibtex.csl.utils.xmlparser.html">packages.bibtex.csl.utils.xmlparser</a></li>
+  <li><a href="../library/packages.bibtex.support.bib2csl.html">packages.bibtex.support.bib2csl</a></li>
+  <li><a href="../library/packages.bibtex.support.isodatetime.html">packages.bibtex.support.isodatetime</a></li>
+  <li><a href="../library/packages.bibtex.support.locators.html">packages.bibtex.support.locators</a></li>
+  <li><a href="../library/packages.math.mathml-entities.html">packages.math.mathml-entities</a></li>
+  <li><a href="../library/packages.math.unicode-symbols.html">packages.math.unicode-symbols</a></li>
+</ul>
+<h2>Interfaces</h2>
+<ul class="nowrap">
+  <li><a href="../interfaces/classes.html">classes</a></li>
+  <li><a href="../interfaces/inputters.html">inputters</a></li>
+  <li><a href="../interfaces/languages.html">languages</a></li>
+  <li><a href="../interfaces/outputters.html">outputters</a></li>
+  <li><a href="../interfaces/packages.html">packages</a></li>
+  <li><a href="../interfaces/pagebuilders.html">pagebuilders</a></li>
+  <li><a href="../interfaces/shapers.html">shapers</a></li>
+  <li><a href="../interfaces/typesetters.html">typesetters</a></li>
+</ul>
+<h2>Types</h2>
+<ul class="nowrap">
+  <li><a href="../types/color.html">color</a></li>
+  <li><a href="../types/length.html">length</a></li>
+  <li><a href="../types/measurement.html">measurement</a></li>
+  <li><a href="../types/node.html">node</a></li>
+  <li><a href="../types/unit.html">unit</a></li>
+</ul>
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/classes.bible.html">classes.bible</a></li>
+  <li><a href="../modules/classes.book.html">classes.book</a></li>
+  <li><a href="../modules/classes.diglot.html">classes.diglot</a></li>
+  <li><a href="../modules/classes.docbook.html">classes.docbook</a></li>
+  <li><a href="../modules/classes.jbook.html">classes.jbook</a></li>
+  <li><a href="../modules/classes.jplain.html">classes.jplain</a></li>
+  <li><a href="../modules/classes.letter.html">classes.letter</a></li>
+  <li><a href="../modules/classes.plain.html">classes.plain</a></li>
+  <li><a href="../modules/classes.tbook.html">classes.tbook</a></li>
+  <li><a href="../modules/classes.tbook.html">classes.tbook</a></li>
+  <li><a href="../modules/classes.tplain.html">classes.tplain</a></li>
+  <li><a href="../modules/classes.triglot.html">classes.triglot</a></li>
+  <li><a href="../modules/packages.pdf.html">packages.pdf</a></li>
+</ul>
+<h2>Topics</h2>
+<ul class="">
+  <li><a href="../topics/README.md.html">README</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>SU</code></h1>
+<p>SILE.utilities (aliased as SU)</p>
+<p>
+
+</p>
+
+
+<h2><a href="#Generic">Generic </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#concat">concat(array[, separator=" "])</a></td>
+	<td class="summary">Concatenate values from a table using a given separator.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#map">map(func, array)</a></td>
+	<td class="summary">Execute a callback function on each value in a table.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#required">required(options, name, context, required_type)</a></td>
+	<td class="summary">Require that an option table contains a specific value, otherwise raise an error.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#sortedpairs">sortedpairs(input)</a></td>
+	<td class="summary">Iterate over key/value pairs in sequence of the sorted keys.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#splice">splice(array, start, stop, replacement)</a></td>
+	<td class="summary">Substitute a range of value(s) in one table with values from another.</td>
+	</tr>
+</table>
+<h2><a href="#Type_handling">Type handling </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#boolean">boolean(value[, default=false])</a></td>
+	<td class="summary">Cast user input into a boolean type.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#cast">cast(wantedType)</a></td>
+	<td class="summary">Cast user input to an expected type.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#type">type(value)</a></td>
+	<td class="summary">Return the type of an object
+ Like Lua's <a href="../library/SU.html#type">type</a>, but also handles various SILE user data types.</td>
+	</tr>
+</table>
+<h2><a href="#Errors_and_debugging">Errors and debugging </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#debug">debug(category, ...)</a></td>
+	<td class="summary">Output a debug message only if debugging for a specific category is enabled.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#debugging">debugging(category)</a></td>
+	<td class="summary">Determine if a specific debug flag is set.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#deprecated">deprecated(old, new, warnat, errorat, extra)</a></td>
+	<td class="summary">Warn about use of a deprecated feature.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#dump">dump(...)</a></td>
+	<td class="summary">Dump the contents of a any Lua type.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#error">error(message, isbug)</a></td>
+	<td class="summary">Raise an error and exit.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#msg">msg(message)</a></td>
+	<td class="summary">Output an information message.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#warn">warn(message, isbug)</a></td>
+	<td class="summary">Output a warning.</td>
+	</tr>
+</table>
+<h2><a href="#Math">Math </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#feq">feq(lhs, rhs)</a></td>
+	<td class="summary">Check equality of floating point values.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#sum">sum(array)</a></td>
+	<td class="summary">Add up all the values in a table.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#max">max(...)</a></td>
+	<td class="summary">Return maximum value of inputs.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#min">min(...)</a></td>
+	<td class="summary">Return minimum value of inputs.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#debug_round">debug_round(input)</a></td>
+	<td class="summary">Round and normalize a number for debugging.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#compress">compress(items)</a></td>
+	<td class="summary">Remove empty spaces from list-like tables
+ Iterating list-like tables is hard if some values have been removed.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#flip_in_place">flip_in_place(tbl)</a></td>
+	<td class="summary">Reverse the order of a list-like table.</td>
+	</tr>
+</table>
+<h2><a href="#Text_handling">Text handling </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#gtoke">gtoke(string, pattern)</a></td>
+	<td class="summary">Iterate over a string split into tokens via a pattern.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#codepoint">codepoint(uchar)</a></td>
+	<td class="summary">Convert a Unicode character to its corresponding codepoint.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#utf8charfromcodepoint">utf8charfromcodepoint(codepoint)</a></td>
+	<td class="summary">Covert a code point to a Unicode character.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#utf16codes">utf16codes(ustr, endian)</a></td>
+	<td class="summary">Convert a UTF-16 encoded string to a series of code points.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#splitUtf8">splitUtf8(str)</a></td>
+	<td class="summary">Split a UTF-8 string into characters.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#lastChar">lastChar(str)</a></td>
+	<td class="summary">The last Unicode character in a UTF-8 encoded string.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#firstChar">firstChar(str)</a></td>
+	<td class="summary">The first Unicode character in a UTF-8 encoded string.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#utf8charat">utf8charat(str, index)</a></td>
+	<td class="summary">The Unicode character in a UTF-8 encoded string at a specific position
+ Uses <a href="../library/SU.html#splitUtf8">SU.splitUtf8</a> to break an string into segments represtenting encoded characters, returns the Nth one.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#hexencoded">hexencoded(str)</a></td>
+	<td class="summary">Encode a string to a hexadecimal replesentation.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#hexdecoded">hexdecoded(str)</a></td>
+	<td class="summary">Decode a hexadecimal replesentation into a string.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#utf8_to_utf16be">utf8_to_utf16be(str)</a></td>
+	<td class="summary">Convert a UTF-8 string to big-endian UTF-16.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#utf8_to_utf16le">utf8_to_utf16le(str)</a></td>
+	<td class="summary">Convert a UTF-8 string to little-endian UTF-16.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#utf8_to_utf16be_hexencoded">utf8_to_utf16be_hexencoded(str)</a></td>
+	<td class="summary">Convert a UTF-8 string to big-endian UTF-16, then encode in hex.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#utf8_to_utf16le_hexencoded">utf8_to_utf16le_hexencoded(str)</a></td>
+	<td class="summary">Convert a UTF-8 string to little-endian UTF-16, then encode in hex.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#utf16be_to_utf8">utf16be_to_utf8(str)</a></td>
+	<td class="summary">Convert a big-endian UTF-16 string to UTF-8.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#utf16le_to_utf8">utf16le_to_utf8(str)</a></td>
+	<td class="summary">Convert a little-endian UTF-16 string to UTF-8.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Generic"></a>Generic </h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "concat"></a>
+    <strong>concat(array[, separator=" "])</strong>
+    </dt>
+    <dd>
+    Concatenate values from a table using a given separator.
+ Differs from <a href="https://www.lua.org/manual/5.2/manual.html#pdf-table.concat">table.concat</a> in that all values are explicitly cast to strings, allowing debugging of tables that
+ include functions, other tables, data types, etc.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">array</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         Input.
+        </li>
+        <li><span class="parameter">separator</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         Separator.
+         (<em>default</em> " ")
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "map"></a>
+    <strong>map(func, array)</strong>
+    </dt>
+    <dd>
+    Execute a callback function on each value in a table.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">func</span>
+            <span class="types"><span class="type">function</span></span>
+         Function to run on each value.
+        </li>
+        <li><span class="parameter">array</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         Input list-like table.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "required"></a>
+    <strong>required(options, name, context, required_type)</strong>
+    </dt>
+    <dd>
+    Require that an option table contains a specific value, otherwise raise an error.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">options</span>
+         Input table of options.
+        </li>
+        <li><span class="parameter">name</span>
+         Name of the required option.
+        </li>
+        <li><span class="parameter">context</span>
+         User friendly name of the function or calling context.
+        </li>
+        <li><span class="parameter">required_type</span>
+         The name of a data type that the option must successfully cast to.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "sortedpairs"></a>
+    <strong>sortedpairs(input)</strong>
+    </dt>
+    <dd>
+    Iterate over key/value pairs in sequence of the sorted keys.
+ Table iteration order with <a href="https://www.lua.org/manual/5.2/manual.html#pdf-pairs">pairs</a> is non-deterministic. This function returns an iterator that can be used in plais
+ of <a href="https://www.lua.org/manual/5.2/manual.html#pdf-pairs">pairs</a> that will iterate through the values in the order of their <em>sorted</em> keys.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">input</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         Input table.
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">for</span> val <span class="keyword">in</span> SU.<span class="function-name">sortedpairs</span>({ b: <span class="string">"runs second"</span>, a: <span class="string">"runs first"</span> ) <span class="keyword">do</span> <span class="global">print</span>(val) <span class="keyword">end</span></pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "splice"></a>
+    <strong>splice(array, start, stop, replacement)</strong>
+    </dt>
+    <dd>
+    Substitute a range of value(s) in one table with values from another.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">array</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         Table to modify.
+        </li>
+        <li><span class="parameter">start</span>
+            <span class="types"><span class="type">integer</span></span>
+         First key to replace.
+        </li>
+        <li><span class="parameter">stop</span>
+            <span class="types"><span class="type">integer</span></span>
+         Last key to replace.
+        </li>
+        <li><span class="parameter">replacement</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         Table from which to pull key/values plairs to inject in array.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+        array First input array modified with values from replacement.
+    </ol>
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Type_handling"></a>Type handling </h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "boolean"></a>
+    <strong>boolean(value[, default=false])</strong>
+    </dt>
+    <dd>
+    Cast user input into a boolean type.
+ User input content such as options typed into documents will return string values such as "true" or "false rather
+ than true or false types. This evaluates those strings or other inputs ane returns a consistent boolean type in
+ return.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">value</span>
+            <span class="types"><span class="type">nil</span>, <span class="type">bool</span> or <a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         Input value such as a string to evaluate for thruthyness.
+        </li>
+        <li><span class="parameter">default</span>
+            <span class="types"><a class="type" href="../library/SU.html#boolean">boolean</a></span>
+         Whether to assume inputs that don't specifically evaluate to something should be true or false.
+         (<em>default</em> false)
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../library/SU.html#boolean">boolean</a></span>
+
+
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "cast"></a>
+    <strong>cast(wantedType)</strong>
+    </dt>
+    <dd>
+    Cast user input to an expected type.
+ If possible, converts input from one type to another. Not all types can be cast. For example "four" can't be cast to
+ a number, but "4" or 4 can. Likewise "6pt" or 6 can be cast to a SILE.types.measurement, SILE.types.length, or even
+ a SILE.types.node.glue, but not a SILE.types.color.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">wantedType</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         Expected type.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        A value of the type wantedType.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "type"></a>
+    <strong>type(value)</strong>
+    </dt>
+    <dd>
+    Return the type of an object
+ Like Lua's <a href="../library/SU.html#type">type</a>, but also handles various SILE user data types.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">value</span>
+            <span class="types"><span class="type">any</span></span>
+         Any input value. If a table is one of SILE's classes or types, report on it's internal type.
+ Otherwise use the output of <a href="../library/SU.html#type">type</a>.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+
+    </ol>
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Errors_and_debugging"></a>Errors and debugging </h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "debug"></a>
+    <strong>debug(category, ...)</strong>
+    </dt>
+    <dd>
+    Output a debug message only if debugging for a specific category is enabled.
+ Importantly passing siries of strings, functions, or tables is more efficient than trying to formulate a full message
+ using concatenation and tostring() methods in the original code because it doesn't have to even run if the relevant
+ debug flag is not enabled.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">category</span>
+            <span class="types"><span class="type">text</span></span>
+         Category flag for which this message should be output.
+        </li>
+        <li><span class="parameter">...</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a>, <span class="type">function</span> or <a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         Each argument will be returned separated by spaces, strings directly, functions by
+ evaluating them and assuming the return value is a string, and tables by using their internal :__tostring() methods.
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">&gt; glue = SILE.types.node.<span class="function-name">glue</span>(<span class="string">"6em"</span>)
+&gt; SU.<span class="global">debug</span>(<span class="string">"foo"</span>, <span class="string">"A glue node"</span>, glue)
+[foo] A glue node G&lt;<span class="number">6</span>em&gt;</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "debugging"></a>
+    <strong>debugging(category)</strong>
+    </dt>
+    <dd>
+    Determine if a specific debug flag is set.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">category</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         Name of the flag status to check, e.g. "frames".
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../library/SU.html#boolean">boolean</a></span>
+
+
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "deprecated"></a>
+    <strong>deprecated(old, new, warnat, errorat, extra)</strong>
+    </dt>
+    <dd>
+    Warn about use of a deprecated feature.
+ Checks the current version and decides whether to warn or error, then oatputs a message with as much useful
+ information as possible to make it easy for end users to update their usage.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">old</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         The name of the deprecated interface.
+        </li>
+        <li><span class="parameter">new</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         A name of a suggested replacement interface.
+        </li>
+        <li><span class="parameter">warnat</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         The first release where the interface is considered deprecated, at which point their might be
+ a shim.
+        </li>
+        <li><span class="parameter">errorat</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         The first release where the interface is no longer functional even with a shim.
+        </li>
+        <li><span class="parameter">extra</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         Longer-form help to include in output separate from the expected one-liner of warning messages.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "dump"></a>
+    <strong>dump(...)</strong>
+    </dt>
+    <dd>
+    Dump the contents of a any Lua type.
+ For quick debugging, can be used on any number of any type of Lua value. Pretty-prints tables.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">...</span>
+            <span class="types"><span class="type">any</span></span>
+         Any number of values
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "error"></a>
+    <strong>error(message, isbug)</strong>
+    </dt>
+    <dd>
+    Raise an error and exit.
+ Outputs a warning message via <a href="../library/SU.html#warn">warn</a>, then finishes up anything it can without processing more content, then exits.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">message</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         The error message to give.
+        </li>
+        <li><span class="parameter">isbug</span>
+            <span class="types"><a class="type" href="../library/SU.html#boolean">boolean</a></span>
+         Whether or not hitting this error is expected to be a code bug (as opposed to mistakes in user input).
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "msg"></a>
+    <strong>msg(message)</strong>
+    </dt>
+    <dd>
+    Output an information message.
+ Basically like <a href="../library/SU.html#warn">warn</a>, except to source tracing information is added.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">message</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "warn"></a>
+    <strong>warn(message, isbug)</strong>
+    </dt>
+    <dd>
+    Output a warning.
+ Outputs a warning message including identifying where in the processing SILE is at when the warning is given.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">message</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         The error message to give.
+        </li>
+        <li><span class="parameter">isbug</span>
+            <span class="types"><a class="type" href="../library/SU.html#boolean">boolean</a></span>
+         Whether or not hitting this warning is expected to be a code bug (as opposed to mistakes in user input).
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Math"></a>Math </h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "feq"></a>
+    <strong>feq(lhs, rhs)</strong>
+    </dt>
+    <dd>
+    Check equality of floating point values.
+ Comparing floating point numbers using math functions in Lua may give different and unexpected answers depending on
+ the Lua VM and other environmental factors. This normalizes them using our standard internal epsilon value and
+ compares the absolute intereger value to avoid floating point number weirdness.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">lhs</span>
+            <span class="types"><span class="type">float</span></span>
+
+
+
+        </li>
+        <li><span class="parameter">rhs</span>
+            <span class="types"><span class="type">float</span></span>
+
+
+
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../library/SU.html#boolean">boolean</a></span>
+
+
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "sum"></a>
+    <strong>sum(array)</strong>
+    </dt>
+    <dd>
+    Add up all the values in a table.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">array</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         Input list-like table.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">number</span></span>
+        Sum of all values.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "max"></a>
+    <strong>max(...)</strong>
+    </dt>
+    <dd>
+    Return maximum value of inputs.
+ <a href="https://www.lua.org/manual/5.2/manual.html#pdf-math.max">math.max</a>, but works on SILE types such as SILE.types.measurement.
+ Lua &lt;= 5.2 can't handle math operators on objects.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">...</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "min"></a>
+    <strong>min(...)</strong>
+    </dt>
+    <dd>
+    Return minimum value of inputs.
+ <a href="https://www.lua.org/manual/5.2/manual.html#pdf-math.min">math.min</a>, but works on SILE types such as SILE.types.measurement.
+ Lua &lt;= 5.2 can't handle math operators on objects.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">...</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "debug_round"></a>
+    <strong>debug_round(input)</strong>
+    </dt>
+    <dd>
+    Round and normalize a number for debugging.
+ LuaJIT 2.1 betas (and inheritors such as OpenResty and Moonjit) are biased
+ towards rounding 0.5 up to 1, all other Lua interpreters are biased
+ towards rounding such floating point numbers down.  This hack shaves off
+ just enough to fix the bias so our test suite works across interpreters.
+ Note that even a true rounding function here will fail because the bias is
+ inherent to the floating point type. Also note we are erroring in favor of
+ the <em>less</em> common option because the LuaJIT VMS are hopelessly broken
+ whereas normal LUA VMs can be cooerced.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">input</span>
+            <span class="types"><span class="type">number</span></span>
+         Input value.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+        Four-digit precision foating point.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "compress"></a>
+    <strong>compress(items)</strong>
+    </dt>
+    <dd>
+    Remove empty spaces from list-like tables
+ Iterating list-like tables is hard if some values have been removed.  This converts { 1 = "a", 3 = "b" } into
+ { 1 = "a", 2 = "b" } which can be iterated using <a href="https://www.lua.org/manual/5.2/manual.html#pdf-ipairs">ipairs</a> without stopping after 1.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         List-like table potentially with holes.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+        List like table without holes.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "flip_in_place"></a>
+    <strong>flip_in_place(tbl)</strong>
+    </dt>
+    <dd>
+    Reverse the order of a list-like table.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">tbl</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         Input list-like table.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Text_handling"></a>Text handling </h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "gtoke"></a>
+    <strong>gtoke(string, pattern)</strong>
+    </dt>
+    <dd>
+    Iterate over a string split into tokens via a pattern.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">string</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         Input string.
+        </li>
+        <li><span class="parameter">pattern</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         Pattern on which to split the input.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">function</span></span>
+        An iterator function
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">for</span> str <span class="keyword">in</span> SU.<span class="function-name">gtoke</span>(<span class="string">"foo-bar-baz"</span>, <span class="string">"-"</span>) <span class="keyword">do</span> <span class="global">print</span>(str) <span class="keyword">end</span></pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "codepoint"></a>
+    <strong>codepoint(uchar)</strong>
+    </dt>
+    <dd>
+    Convert a Unicode character to its corresponding codepoint.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">uchar</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         A single inicode character.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        number The Unicode code point where uchar is encoded.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "utf8charfromcodepoint"></a>
+    <strong>utf8charfromcodepoint(codepoint)</strong>
+    </dt>
+    <dd>
+    Covert a code point to a Unicode character.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">codepoint</span>
+            <span class="types"><span class="type">number</span> or <a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         Input code point value, either as a number or a string representing the decimal value "U+NNNN" or hex value "0xFFFF".
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+        The character replestened by a codepoint descriptions.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "utf16codes"></a>
+    <strong>utf16codes(ustr, endian)</strong>
+    </dt>
+    <dd>
+    Convert a UTF-16 encoded string to a series of code points.
+ Like <code>luautf8.codes</code>, but for UTF-16 strings.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">ustr</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         Input string.
+        </li>
+        <li><span class="parameter">endian</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         Either "le" or "be" depending on the encoding endedness.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+        Serious of hex encoded code points.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "splitUtf8"></a>
+    <strong>splitUtf8(str)</strong>
+    </dt>
+    <dd>
+    Split a UTF-8 string into characters.
+ Lua's <code>string.split</code> will only explode a string by bytes. For text processing purposes it is usually more desirable
+ to split it into 1, 2, 3, or 4 byte groups matching the UTF-8 encoding.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">str</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         Input UTF-8 encoded string.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+        A list-like table of UTF8 strings each representing a Unicode char from the input string.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "lastChar"></a>
+    <strong>lastChar(str)</strong>
+    </dt>
+    <dd>
+    The last Unicode character in a UTF-8 encoded string.
+ Uses <a href="../library/SU.html#splitUtf8">SU.splitUtf8</a> to break an string into segments represtenting encoded characters, returns the last one. May be
+ more than one byte.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">str</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         Input string.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+        A single Unicode character.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "firstChar"></a>
+    <strong>firstChar(str)</strong>
+    </dt>
+    <dd>
+    The first Unicode character in a UTF-8 encoded string.
+ Uses <a href="../library/SU.html#splitUtf8">SU.splitUtf8</a> to break an string into segments represtenting encoded characters, returns the first one. May be
+ more than one byte.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">str</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         Input string.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+        A single Unicode character.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "utf8charat"></a>
+    <strong>utf8charat(str, index)</strong>
+    </dt>
+    <dd>
+    The Unicode character in a UTF-8 encoded string at a specific position
+ Uses <a href="../library/SU.html#splitUtf8">SU.splitUtf8</a> to break an string into segments represtenting encoded characters, returns the Nth one.  May be
+ more than one byte.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">str</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         Input string.
+        </li>
+        <li><span class="parameter">index</span>
+            <span class="types"><span class="type">number</span></span>
+         Index of character to return.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+        A single Unicode character.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "hexencoded"></a>
+    <strong>hexencoded(str)</strong>
+    </dt>
+    <dd>
+    Encode a string to a hexadecimal replesentation.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">str</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         Input UTF-8 string
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+        Hexadecimal replesentation of str.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "hexdecoded"></a>
+    <strong>hexdecoded(str)</strong>
+    </dt>
+    <dd>
+    Decode a hexadecimal replesentation into a string.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">str</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         Input hexadecimal encoded string.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+        UTF-8 string.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "utf8_to_utf16be"></a>
+    <strong>utf8_to_utf16be(str)</strong>
+    </dt>
+    <dd>
+    Convert a UTF-8 string to big-endian UTF-16.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">str</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         UTF-8 encoded string.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+        Big-endian UTF-16 encoded string.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "utf8_to_utf16le"></a>
+    <strong>utf8_to_utf16le(str)</strong>
+    </dt>
+    <dd>
+    Convert a UTF-8 string to little-endian UTF-16.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">str</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         UTF-8 encoded string.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+        Little-endian UTF-16 encoded string.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "utf8_to_utf16be_hexencoded"></a>
+    <strong>utf8_to_utf16be_hexencoded(str)</strong>
+    </dt>
+    <dd>
+    Convert a UTF-8 string to big-endian UTF-16, then encode in hex.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">str</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         UTF-8 encoded string.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+        Hexadecimal representation of a big-endian UTF-16 encoded string.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "utf8_to_utf16le_hexencoded"></a>
+    <strong>utf8_to_utf16le_hexencoded(str)</strong>
+    </dt>
+    <dd>
+    Convert a UTF-8 string to little-endian UTF-16, then encode in hex.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">str</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         UTF-8 encoded string.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+        Hexadecimal representation of a little-endian UTF-16 encoded string.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "utf16be_to_utf8"></a>
+    <strong>utf16be_to_utf8(str)</strong>
+    </dt>
+    <dd>
+    Convert a big-endian UTF-16 string to UTF-8.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">str</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         Big-endian UTF-16 encoded string.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+        UTF-8 encoded string.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "utf16le_to_utf8"></a>
+    <strong>utf16le_to_utf8(str)</strong>
+    </dt>
+    <dd>
+    Convert a little-endian UTF-16 string to UTF-8.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">str</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         Little-endian UTF-16 encoded string.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+        UTF-8 encoded string.
+    </ol>
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/lunarmodules/LDoc">LDoc 1.5.0</a></i>
+<i style="float:right;">Last updated 1980-01-01 00:00:00 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

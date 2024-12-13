@@ -100,6 +100,7 @@ source = "armenian.sil"
 title = "Armenian hyphenation"
 
 [[packages]]
+devel = true
 fn = "bibtex"
 source = "bibtex.sil"
 title = "BibTeX bibliography support"

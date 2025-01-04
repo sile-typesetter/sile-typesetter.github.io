@@ -44,9 +44,7 @@ The math support continues to be refined by [Didier Willis](http://github.com/Om
 * **rusile:** Adjust module loader to Darwin's shared module extension ([2c5ea3e](https://github.com/sile-typesetter/sile/commit/2c5ea3e8ab62c81808c6a73bc83f39f4ced3cbd7))
 
 
-  [release]: https://github.com/sile-typesetter/sile/releases/tag/v0.15.7
+  [release]: https://github.com/sile-typesetter/sile/releases/tag/v0.15.8
   [changelog]: https://github.com/sile-typesetter/sile/blob/master/CHANGELOG.md
-  [commits]: https://github.com/sile-typesetter/sile/compare/v0.15.6...v0.15.7
+  [commits]: https://github.com/sile-typesetter/sile/compare/v0.15.7...v0.15.8
   [bibliography]: https://github.com/orgs/sile-typesetter/projects/12
-
-

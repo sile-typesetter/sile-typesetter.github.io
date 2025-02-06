@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>SILE – SILE v0.14.10 Is Released</title>
+      <meta name="viewport" content="width=device-width">
+      
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+      
+
+      <!-- Custom CSS -->
+      <link rel="stylesheet" href="/main.css">
+
+      <!-- Responsive CSS -->
+      <link rel="stylesheet" href="/css/responsive.css">
+
+      <!-- Fonts -->
+      <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400;1,600&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+      <link rel='stylesheet' href='//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack-subset.css'>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-63500-7', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </head>
+  <body>
+    <div id="site">
+      <div id="sidebar">
+        <div id="header">
+          <h1 class="title"><a href="https://sile-typesetter.org"><img id="logo" src="/images/logo.png"></a></h1>
+          <span class="tagline">The SILE Typesetter</span>
+        </div>
+
+        <ul>
+  <li> <a href="/">Home</a></li>
+  <li> <a href="/what-is-sile/">What is SILE?</a></li>
+  <li> <a href="/examples/">Examples</a>
+    <ul>
+      <li><a href="/examples/global/">Global Scripts</a></li>
+      <li><a href="/examples/packages/">Packages</a></li>
+    </ul>
+  </li>
+  <li> <a href="/manual/sile-0.15.9.pdf">Manual (PDF)</a></li>
+  <li> <a href="/lua-api">Lua API</a></li>
+  <li> <a href="/rust-api/sile">Rust API</a></li>
+  <li> <a href="/sil-grammar/">SIL Grammar</a></li>
+  <li> <a href="https://github.com/sile-typesetter/sile/releases"><strong>Download</strong></a></li>
+</ul>
+
+
+        <div class="footer">
+          <span id="footer-links">
+            <a href="https://github.com/sile-typesetter/sile" class="footer-link">GitHub</a>
+          </span>
+        </div>
+      </div>
+
+        
+<div id="content">
+<div id="home">
+    <div class="post-info">
+    <div class="cover-photo-container">
+      <img class="cover-photo" src="/images/cover.jpg">
+    </div>
+  </div>
+
+    <div class="post-info">
+    <div class="info-container">
+      <h1 class="title">SILE v0.14.10 Is Released</h1>
+      <div class="meta">
+        
+          <span class="date"><a href="&#x2F;blog&#x2F;release-v0.14.10&#x2F;">11 Jul 2023</a></span>
+        
+        
+          — <span class="author">Caleb Maclennan</span>
+        
+      </div>
+  </div>
+
+  <div class="post">
+    <p>Version v0.14.10 of SILE has been released and is <a href="https://github.com/sile-typesetter/sile/releases/tag/v0.14.10">available for download</a>!
+See the included <a href="https://github.com/sile-typesetter/sile/blob/master/CHANGELOG.md">CHANGELOG.md</a> or review the <a href="https://github.com/sile-typesetter/sile/compare/v0.14.9...v0.14.10">commit history</a> for more explicit details.</p>
+<h3 id="Summary_of_Improvements">Summary of Improvements</h3>
+<p>Not all releases bring groundbreaking changes.
+This one is a roll-up of bits and bops.
+A few small quality of live improvements, some localizations, some bug fixes, some conveniences for 3rd party package developers, and so forth.
+Enjoy.</p>
+<h3 id="Notes_about_the_Future">Notes about the Future</h3>
+<p>If you're looking for messy fun, check out the <a href="https://github.com/alerque/sile/tree/riir">riir</a> branch and <a href="https://github.com/sile-typesetter/sile/pull/1762">PR#1762</a>.
+As the name suggests, this is a major project overhaul based in Rust.
+Have no fear!
+Everything is still fully customizable in Lua.
+We have no plans of taking away that flexibility.
+The current proof of concept is a CLI binary is Rust that provides it's own Lua interpreter (optionally linked to the system one or completely vendored).
+This normalizes the environment, allows targeting environments where Lua is hard to get running, allows parts of the system to be selectively coded in Rust for speed benefits, etc.
+The PoC already passes 100% of the existing tests, loads 3rd party packages as usual, and is a full drop in replacement for the current Lua based CLI.
+As of this writing the plan is to land this new CLI in v0.15.0, potentially enabling easy(er) installation on Windows in follow up releases.</p>
+<p>If you are a 3rd party developer, by sure to keep an eye on your Lua support.
+SILE already supports Lua versions 5.1.x through 5.4.x and well as LuaJIT.
+The same range of support is already achievable at build time in the Rust CLI.
+The LuaJIT provides the usual massive improvement in speed.
+We plan to push for this to be the default option in distro packages in the future even on platforms where the default Lua interpreter is 5.4.
+Making sure your packages run under the existing LuaJIT support should future proof them to easily transition to the Rust based SILE builds.</p>
+<h3 id="Features">Features</h3>
+<ul>
+<li><strong>cli:</strong> Allow more than one input document (<a href="https://github.com/sile-typesetter/sile/commit/d20cbd8a0b7a197ca87ca1dd1a39640fa746e301">d20cbd8</a>)</li>
+<li><strong>i18n:</strong> Add localized strings for Cantonese and Chinese (<a href="https://github.com/sile-typesetter/sile/commit/cb67d3686117258adaca546298063d23c66135f9">cb67d36</a>)</li>
+<li><strong>packages:</strong> Add document class styling in autodoc (<a href="https://github.com/sile-typesetter/sile/commit/e70fa509673c32977a1e1f0545373229198c8aa8">e70fa50</a>)</li>
+<li><strong>packages:</strong> Provide API for registering raw handlers linked to packages (<a href="https://github.com/sile-typesetter/sile/commit/45cd3ac96acbe3f2dd572ce0c3c72c7599090e6b">45cd3ac</a>)</li>
+</ul>
+<h3 id="Bug_Fixes">Bug Fixes</h3>
+<ul>
+<li>
+<p><strong>build:</strong> Avoid build artifacts being listed for installation (<a href="https://github.com/sile-typesetter/sile/commit/29c2ccd227774caa4accb90bb0d23825aafccfd1">29c2ccd</a>)</p>
+</li>
+<li>
+<p><strong>core:</strong> Avoid stack overflow in Harfbuzz module (<a href="https://github.com/sile-typesetter/sile/issues/1793">#1793</a>) (<a href="https://github.com/sile-typesetter/sile/commit/5001efe0cfeb421ce5796f8303bf046bb68c8326">5001efe</a>)</p>
+</li>
+<li>
+<p><strong>outputters:</strong> Setup --makedeps to play along without explicit --output (<a href="https://github.com/sile-typesetter/sile/commit/6ff2e16f24224bc2781edc38be8cb9e1418fb30e">6ff2e16</a>)</p>
+</li>
+<li>
+<p><strong>packages:</strong> Converters package no longer worked after 0.13.0 (<a href="https://github.com/sile-typesetter/sile/commit/433795c3979688469a098a9966a595a4b0d34818">433795c</a>)</p>
+</li>
+<li>
+<p><strong>packages:</strong> Correct chord line height and chord font use (<a href="https://github.com/sile-typesetter/sile/commit/65961c6629244817220bac8a6f386a9a738b7f0b">65961c6</a>), closes <a href="https://github.com/sile-typesetter/sile/issues/1351">#1351</a></p>
+</li>
+</ul>
+
+  </div>
+
+</div>
+</div>
+
+
+
+    </div>
+    <script src="/scripts/responsive.js" type="text/javascript"></script>
+  </body>
+</html>

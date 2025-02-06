@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>SILE – SILE v0.12.0 Is Released</title>
+      <meta name="viewport" content="width=device-width">
+      
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+      
+
+      <!-- Custom CSS -->
+      <link rel="stylesheet" href="/main.css">
+
+      <!-- Responsive CSS -->
+      <link rel="stylesheet" href="/css/responsive.css">
+
+      <!-- Fonts -->
+      <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400;1,600&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+      <link rel='stylesheet' href='//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack-subset.css'>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-63500-7', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </head>
+  <body>
+    <div id="site">
+      <div id="sidebar">
+        <div id="header">
+          <h1 class="title"><a href="https://sile-typesetter.org"><img id="logo" src="/images/logo.png"></a></h1>
+          <span class="tagline">The SILE Typesetter</span>
+        </div>
+
+        <ul>
+  <li> <a href="/">Home</a></li>
+  <li> <a href="/what-is-sile/">What is SILE?</a></li>
+  <li> <a href="/examples/">Examples</a>
+    <ul>
+      <li><a href="/examples/global/">Global Scripts</a></li>
+      <li><a href="/examples/packages/">Packages</a></li>
+    </ul>
+  </li>
+  <li> <a href="/manual/sile-0.15.9.pdf">Manual (PDF)</a></li>
+  <li> <a href="/lua-api">Lua API</a></li>
+  <li> <a href="/rust-api/sile">Rust API</a></li>
+  <li> <a href="/sil-grammar/">SIL Grammar</a></li>
+  <li> <a href="https://github.com/sile-typesetter/sile/releases"><strong>Download</strong></a></li>
+</ul>
+
+
+        <div class="footer">
+          <span id="footer-links">
+            <a href="https://github.com/sile-typesetter/sile" class="footer-link">GitHub</a>
+          </span>
+        </div>
+      </div>
+
+        
+<div id="content">
+<div id="home">
+    <div class="post-info">
+    <div class="cover-photo-container">
+      <img class="cover-photo" src="/images/cover.jpg">
+    </div>
+  </div>
+
+    <div class="post-info">
+    <div class="info-container">
+      <h1 class="title">SILE v0.12.0 Is Released</h1>
+      <div class="meta">
+        
+          <span class="date"><a href="&#x2F;blog&#x2F;release-v0.12.0&#x2F;">22 Sep 2021</a></span>
+        
+        
+          — <span class="author">Caleb Maclennan</span>
+        
+      </div>
+  </div>
+
+  <div class="post">
+    <p>Version v0.12.0 of SILE has been released and is <a href="https://github.com/sile-typesetter/sile/releases/tag/v0.12.0">available for download</a>!
+See the included <a href="https://github.com/sile-typesetter/sile/blob/master/CHANGELOG.md">CHANGELOG.md</a> or review the <a href="https://github.com/sile-typesetter/sile/compare/v0.11.1...v0.12.0">commit history</a> for more explicit details.</p>
+<h3 id="Summary_of_Improvements">Summary of Improvements</h3>
+<p>Please welcome <em>MATH</em> typesetting!</p>
+<p>While this release follows close on the heels of previous releases it represents over 2 years of work from community contributors.
+Rui Xia started work on a native math feature in April of 2019.
+While this initial phase was never completed, it did get as far as a working prototype.
+In November of 2020, Oliver Nicole picked up on the work and transformed the prototype into the shape as found in this release.
+Additional thanks to Mateusz Czapliński for input throughout the process.</p>
+<p>On a conceptual level the math support is based on <a href="https://www.w3.org/Math/">MathML</a> and relies on OpenType math fonts.
+The input notation may be MathML (either directly using the native XML syntax or using an 1-to-1 equivalent SILE syntax) or an alternative math shorthand similar to the math notation used by TeX.
+See section 5.29.5 in the <a href="/manual/sile-0.12.0.pdf">v0.12.0 manual</a> for detailed documentation on the new math package.
+Examples are given for various formulas and syntax options.
+A math example has also been added to the <a href="/examples/packages/">packages example gallery</a> on this website.</p>
+
+<div class="example">
+  <a href="/examples/math.png">
+    <img src="/examples/math-thumb.png">
+  </a>
+  <br/>
+  <span class="title">Math</span><br/>
+  (<a href="/examples/math.sil">source</a>)
+  (<a href="/examples/math.pdf">PDF</a>)
+</div>
+<p>Additionally Didier Willis contributed several new features and fixes including much more control over Table of Contents, styling options for PDF links, correct French punctuation treatment, and more.</p>
+<p>Thanks to the contributions of Doron Behar, as of this release SILE is usable as a <a href="https://nixos.wiki/wiki/Flakes">Nix Flake</a> (in addition to the usual Nix package).
+This is an easy way to test run the latest Git HEAD version at any time from almost any OS.
+One you have flake support enabled, just run <code>nix run github:sile-typesetter/sile -- &lt;sile orguments&gt;</code>.
+This website uses this to regenerate some of the examples in the gallery.</p>
+<p>Even though the math package is a major new feature, ultimately the major version bump was caused by a breaking change elsewhere.
+Previous to this release, the font used for footnotes was the SILE default unless specifically set.
+Setting changes were relative to the SILE default rather than the document default.
+This behavior was workable, but usually came as a surprise to most users.
+With this release, footnote and folio frame font settings default to being relative to the current document font.
+The font family, size, leading, and all other aspects of footnotes and folios are still configurable with the same tools as before.
+But this is a breaking change because those settings are now relative to a different base which might cause many documents to need updating.</p>
+<h3 id="⚠_BREAKING_CHANGES">⚠ BREAKING CHANGES</h3>
+<ul>
+<li><strong>packages:</strong> Previous to this release footnote and folio frames took
+their font settings from a new typesetter with default settings. With
+this release the settings are now derived from the typesetter in the
+default frame, hence inheriting font family, size, leading, and other
+settings. Values can still be set using the same functions, but relative
+values such as font sizes are based on a different base.</li>
+</ul>
+<h3 id="Features">Features</h3>
+<ul>
+<li><strong>core:</strong> Add MATH variants table parser (<a href="https://github.com/sile-typesetter/sile/commit/b6c554e0d309302c69402263217a59e0e129ca09">b6c554e</a>)</li>
+<li><strong>core:</strong> Add OpenType MATH table parser (<a href="https://github.com/sile-typesetter/sile/commit/835da217b2aeaf53d7a172d18a887d77cc13f666">835da21</a>)</li>
+<li><strong>math:</strong> Add ‘debug’ option to math command (<a href="https://github.com/sile-typesetter/sile/commit/58cc9dc8a96dde36bc77e385faa72014b348408f">58cc9dc</a>)</li>
+<li><strong>math:</strong> Add “big operator” support (<a href="https://github.com/sile-typesetter/sile/commit/5b9a1509f9ca0fa55068fcd1da64714c7ce84dfa">5b9a150</a>)</li>
+<li><strong>math:</strong> Add fixes to support less complete fonts (<a href="https://github.com/sile-typesetter/sile/commit/1c22af373bf08badfd9b09b01974f255ee738054">1c22af3</a>)</li>
+<li><strong>math:</strong> Add italic correction to superscript; correct subscript size (<a href="https://github.com/sile-typesetter/sile/commit/d81fdee7321107507e92def15a60b289abc6e1be">d81fdee</a>)</li>
+<li><strong>math:</strong> Add math.font.filename setting (<a href="https://github.com/sile-typesetter/sile/commit/522d70bb518e978da3ba60f0ff5689063f589638">522d70b</a>)</li>
+<li><strong>math:</strong> Add math.font.size setting (<a href="https://github.com/sile-typesetter/sile/commit/5077d1c06405dc25316600a680d922d4ab87b204">5077d1c</a>)</li>
+<li><strong>math:</strong> Add operator defaults (<a href="https://github.com/sile-typesetter/sile/commit/14bdf1a0dd1e6c3db1c281a1e0c4b2f540d2b91a">14bdf1a</a>)</li>
+<li><strong>math:</strong> Add parameter to draw debug boxes around math components (<a href="https://github.com/sile-typesetter/sile/commit/2458d188af912171101f9af456f2ab19b7184a20">2458d18</a>)</li>
+<li><strong>math:</strong> Add parameters and support mathvariant param for mi tag (<a href="https://github.com/sile-typesetter/sile/commit/869dca86f0c0979145260d1d9a8a22d9dab6e47d">869dca8</a>)</li>
+<li><strong>math:</strong> Add plain text support (<a href="https://github.com/sile-typesetter/sile/commit/3a09e9d1d9c05dfec3f9433541ed5b8512dda373">3a09e9d</a>)</li>
+<li><strong>math:</strong> Add subscript and superscript; add math constants (<a href="https://github.com/sile-typesetter/sile/commit/0489c04d944df52a1396cd5c902344ef8c53db2d">0489c04</a>)</li>
+<li><strong>math:</strong> Add support for “symbol macros”, expanding to strings (<a href="https://github.com/sile-typesetter/sile/commit/27658f517c59567842839776589e76b7cc062b74">27658f5</a>)</li>
+<li><strong>math:</strong> Add support for fractions (<a href="https://github.com/sile-typesetter/sile/commit/6f4fc24d69c38beb9c623aeb12e3362d4489c884">6f4fc24</a>)</li>
+<li><strong>math:</strong> Add tags for some mathematical symbols (<a href="https://github.com/sile-typesetter/sile/commit/b9fd771007418566939d716a9a413d959c9bda2f">b9fd771</a>)</li>
+<li><strong>math:</strong> Add tex-like math parser (<a href="https://github.com/sile-typesetter/sile/commit/edceaf7dfb5c644daec27915f2106195a7a08c5a">edceaf7</a>)</li>
+<li><strong>math:</strong> Allow vertical stacking of top-level ‘mrow’s (<a href="https://github.com/sile-typesetter/sile/commit/56b553c1821104eda2fdd2e34ac1b2f06882ee81">56b553c</a>)</li>
+<li><strong>math:</strong> Center display math neatly (<a href="https://github.com/sile-typesetter/sile/commit/8951378c1b9ad076699256d116314fae98705c7f">8951378</a>)</li>
+<li><strong>math:</strong> Implement and use munder and mover (<a href="https://github.com/sile-typesetter/sile/commit/61eac7a95c8a05e255e61285fcc7776ac4123d35">61eac7a</a>)</li>
+<li><strong>math:</strong> Implement generic bbox shaper (<a href="https://github.com/sile-typesetter/sile/commit/9c86aff63ab072fe0a54fe06d8fbb3e27250a8cb">9c86aff</a>)</li>
+<li><strong>math:</strong> Output error if rending with non-math font (<a href="https://github.com/sile-typesetter/sile/commit/c79617bad7f4aba8c8ecd6b3dc50b5676b6cbf47">c79617b</a>)</li>
+<li><strong>math:</strong> Replace leading <code>-</code> with <code>−</code> in numbers (<a href="https://github.com/sile-typesetter/sile/commit/f8d490ccb298f730176d300100ebc0fec6c6128e">f8d490c</a>)</li>
+<li><strong>math:</strong> Support double-struck identifiers (<a href="https://github.com/sile-typesetter/sile/commit/29674bf069d46a0e6694ac6e7ef11b4c4864f43d">29674bf</a>)</li>
+<li><strong>math:</strong> Support for simple macros (<a href="https://github.com/sile-typesetter/sile/commit/5b4ecf72ca5718d73c24c97c8aa0806e5a12d519">5b4ecf7</a>)</li>
+<li><strong>math:</strong> Support italic (<a href="https://github.com/sile-typesetter/sile/commit/c9b2884ad98cc4102f04ae6e158e0b4821a61ef8">c9b2884</a>)</li>
+<li><strong>math:</strong> Support more integral-like operators (<a href="https://github.com/sile-typesetter/sile/commit/90a6c44e931e24f3696e8adec905a318f9134062">90a6c44</a>)</li>
+<li><strong>math:</strong> Support of UTF-8 in texmath, support of mo, mi and mn in-grammar (<a href="https://github.com/sile-typesetter/sile/commit/959d1cce7b3d01f2e4d8182726b5c20f97194f4b">959d1cc</a>)</li>
+<li><strong>math:</strong> Turn "-" (hyphen) into "−" (minus) in math (<a href="https://github.com/sile-typesetter/sile/commit/fbed523f4792af569c2548c25d0d941f0b464b60">fbed523</a>)</li>
+<li><strong>packages:</strong> Add border style and color to hyperlinks (<a href="https://github.com/sile-typesetter/sile/commit/bb880bed7b8564591d2600a98786d05a24086d2b">bb880be</a>)</li>
+<li><strong>packages:</strong> Add function to remove last added fallback font (<a href="https://github.com/sile-typesetter/sile/commit/acf987b23b8ebf8446d9e65fa42fcb1c1fa34528">acf987b</a>)</li>
+<li><strong>packages:</strong> Add linking support to toc entries (<a href="https://github.com/sile-typesetter/sile/commit/e589cb96ba24ef06c0bda1297729f8925f8d1550">e589cb9</a>)</li>
+<li><strong>packages:</strong> Add toc depth option and hooks for showing section numbers (<a href="https://github.com/sile-typesetter/sile/commit/c48fcdeebe4bf0a1b75f5f722fad1268e797831d">c48fcde</a>)</li>
+<li><strong>packages:</strong> Allow URLs to have many breakpoints (<a href="https://github.com/sile-typesetter/sile/issues/1233">#1233</a>) (<a href="https://github.com/sile-typesetter/sile/commit/b145605f5326e54fbf3cbf88bc2d334c403ba685">b145605</a>)</li>
+<li><strong>packages:</strong> Warn if toc contents have changed (<a href="https://github.com/sile-typesetter/sile/commit/5b6eed8c39670a58a4c3d9e1fcb07504ade96df1">5b6eed8</a>)</li>
+<li><strong>tooling:</strong> Enable use as a Nix flake (<a href="https://github.com/sile-typesetter/sile/commit/8b503bb74bb51b388d0140cac5848902858b8e58">8b503bb</a>)</li>
+</ul>
+<h3 id="Bug_Fixes">Bug Fixes</h3>
+<ul>
+<li>
+<p><strong>classes:</strong> Don't increment counters on unnumbered book sections (<a href="https://github.com/sile-typesetter/sile/commit/6cfca4d86885a5df4ca6f0d46153d5b3e925f4ee">6cfca4d</a>)</p>
+</li>
+<li>
+<p><strong>core:</strong> Correct --help output to reflect required values (<a href="https://github.com/sile-typesetter/sile/commit/da487ec0c1295d3a54ff50f22dd63fd28e2b80b1">da487ec</a>)</p>
+</li>
+<li>
+<p><strong>languages:</strong> Add test 704 for French punctuations, fix expected 621 and 702 results (<a href="https://github.com/sile-typesetter/sile/commit/8e9b056664214f59326b2b7d1cc5c9af1d74522e">8e9b056</a>)</p>
+</li>
+<li>
+<p><strong>languages:</strong> Correct Armenian support to use ISO 639 code ‘hy’ (<a href="https://github.com/sile-typesetter/sile/commit/ffafbe617743ad43a781edce08836d0d88f5da2b">ffafbe6</a>)</p>
+</li>
+<li>
+<p><strong>languages:</strong> Correct punctuation rules for French (<a href="https://github.com/sile-typesetter/sile/commit/95c23982f407299cd57e7b41c162a10f0e992f77">95c2398</a>)</p>
+</li>
+<li>
+<p><strong>languages:</strong> Don't initialize Japanese unless actually called for (<a href="https://github.com/sile-typesetter/sile/commit/3aba931ecf773a4dc7d881912f21bd952b9760a1">3aba931</a>)</p>
+</li>
+<li>
+<p><strong>languages:</strong> Shortcut ICU soft breaks in French (<a href="https://github.com/sile-typesetter/sile/commit/ed8734cb19020554f951ebb970c999a9592f41b7">ed8734c</a>)</p>
+</li>
+<li>
+<p><strong>math:</strong> Fix underover error with sub wider than base but no sup (<a href="https://github.com/sile-typesetter/sile/commit/bc87393b952eef2429aef27e45508636c1dc1551">bc87393</a>)</p>
+</li>
+<li>
+<p><strong>packages:</strong> Don't replace shaper unless actually initializing color-fonts package (<a href="https://github.com/sile-typesetter/sile/commit/269ca5923c5588303dc8fcf2d33e32cdd072419c">269ca59</a>)</p>
+</li>
+<li>
+<p><strong>packages:</strong> Fix deprecation warning command in package docs (<a href="https://github.com/sile-typesetter/sile/commit/a69d7747bb5e6643add953c458739aafcfee105b">a69d774</a>)</p>
+</li>
+<li>
+<p><strong>packages:</strong> Reset footnote and folio settings top level state (<a href="https://github.com/sile-typesetter/sile/commit/3795a4e83823642a69e481cecd15a4966053fd71">3795a4e</a>)</p>
+</li>
+<li>
+<p><strong>shaper:</strong> Fix memory leak in Harfbuzz library (<a href="https://github.com/sile-typesetter/sile/issues/1243">#1243</a>) (<a href="https://github.com/sile-typesetter/sile/commit/035dcc8d46bba8bb2ec3a2df634c6c747d4a2526">035dcc8</a>)</p>
+</li>
+</ul>
+
+  </div>
+
+</div>
+</div>
+
+
+
+    </div>
+    <script src="/scripts/responsive.js" type="text/javascript"></script>
+  </body>
+</html>

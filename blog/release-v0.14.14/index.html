@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>SILE – SILE v0.14.14 Is Released</title>
+      <meta name="viewport" content="width=device-width">
+      
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+      
+
+      <!-- Custom CSS -->
+      <link rel="stylesheet" href="/main.css">
+
+      <!-- Responsive CSS -->
+      <link rel="stylesheet" href="/css/responsive.css">
+
+      <!-- Fonts -->
+      <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400;1,600&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+      <link rel='stylesheet' href='//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack-subset.css'>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-63500-7', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </head>
+  <body>
+    <div id="site">
+      <div id="sidebar">
+        <div id="header">
+          <h1 class="title"><a href="https://sile-typesetter.org"><img id="logo" src="/images/logo.png"></a></h1>
+          <span class="tagline">The SILE Typesetter</span>
+        </div>
+
+        <ul>
+  <li> <a href="/">Home</a></li>
+  <li> <a href="/what-is-sile/">What is SILE?</a></li>
+  <li> <a href="/examples/">Examples</a>
+    <ul>
+      <li><a href="/examples/global/">Global Scripts</a></li>
+      <li><a href="/examples/packages/">Packages</a></li>
+    </ul>
+  </li>
+  <li> <a href="/manual/sile-0.15.9.pdf">Manual (PDF)</a></li>
+  <li> <a href="/lua-api">Lua API</a></li>
+  <li> <a href="/rust-api/sile">Rust API</a></li>
+  <li> <a href="/sil-grammar/">SIL Grammar</a></li>
+  <li> <a href="https://github.com/sile-typesetter/sile/releases"><strong>Download</strong></a></li>
+</ul>
+
+
+        <div class="footer">
+          <span id="footer-links">
+            <a href="https://github.com/sile-typesetter/sile" class="footer-link">GitHub</a>
+          </span>
+        </div>
+      </div>
+
+        
+<div id="content">
+<div id="home">
+    <div class="post-info">
+    <div class="cover-photo-container">
+      <img class="cover-photo" src="/images/cover.jpg">
+    </div>
+  </div>
+
+    <div class="post-info">
+    <div class="info-container">
+      <h1 class="title">SILE v0.14.14 Is Released</h1>
+      <div class="meta">
+        
+          <span class="date"><a href="&#x2F;blog&#x2F;release-v0.14.14&#x2F;">23 Dec 2023</a></span>
+        
+        
+          — <span class="author">Caleb Maclennan</span>
+        
+      </div>
+  </div>
+
+  <div class="post">
+    <p>Version v0.14.14 of SILE has been released and is <a href="https://github.com/sile-typesetter/sile/releases/tag/v0.14.14">available for download</a>!
+See the included <a href="https://github.com/sile-typesetter/sile/blob/master/CHANGELOG.md">CHANGELOG.md</a> or review the <a href="https://github.com/sile-typesetter/sile/compare/v0.14.13...v0.14.14">commit history</a> for more explicit details.</p>
+<h3 id="Summary_of_Improvements">Summary of Improvements</h3>
+<p>Merry Christmas!</p>
+<p>Not this isn't the Rusty release you might want in your stocking.
+That is coming along nicely though, we're just including an abitioun rollup of breaking changes and going slow to do it right.
+You can <a href="https://github.com/alerque/sile-typesetter.github.io/blob/v015/content/blog/release-v0.15.0.md">preview the release notes</a> or follow issues in <a href="https://github.com/sile-typesetter/sile/milestone/34">the milestore</a> for teasers.
+More notably there are already lots of ways to run the development release: Homebrew has <code>--HEAD</code> support, Docker images are available, the Nix flake works, Arch Linux has VCS packages, and more.
+If you want to start putting it through the paces go ahead.</p>
+<p>Until the cookies are fully baked, this minor release has a few goodies that are not breaking changes.
+<a href="http://github.com/Omikhleia">Didier Willis</a> contributed some updates to the <code>dropcaps</code> package to better handle fonts with descenders in their capitals.
+He also contributed some improvements to Unicode handling: soft hyphen and non-breaking spaces work as expected.
+SILE has perhaps more robust ways of defining custom hyphenation and glue nodes, but the Unicode handling is convenient is handy if you input content has such data anyway.
+For bonus points some CLI error messages have been dramatically improved to be more informative and less repetative.</p>
+<h3 id="Features">Features</h3>
+<ul>
+<li><strong>cli:</strong> Change module load error to suggestion for how to install 3rd party modules (<a href="https://github.com/sile-typesetter/sile/commit/c2800505eda2ee1630eea931f88efb07f6892d00">c280050</a>)</li>
+<li><strong>languages:</strong> U+00A0 non-breaking space must be stretchable by default (<a href="https://github.com/sile-typesetter/sile/commit/b769a633069db4f32746d920dc9696296c7ab7db">b769a63</a>)</li>
+<li><strong>typesetters:</strong> Support U+00AD soft hyphen as discretionary break (<a href="https://github.com/sile-typesetter/sile/commit/285507e5fddf3b0c752bb2b5bf81e8bf7f19144a">285507e</a>)</li>
+</ul>
+<h3 id="Bug_Fixes">Bug Fixes</h3>
+<ul>
+<li>
+<p><strong>backends:</strong> Fix plain text backend to work in LuaJIT/Lua 5.1 (<a href="https://github.com/sile-typesetter/sile/commit/b185d4972a5f29e7441f7af34e1ac49f49e6747f">b185d49</a>)</p>
+</li>
+<li>
+<p><strong>cli:</strong> Stop outputting error messages twice on failure to process main file (<a href="https://github.com/sile-typesetter/sile/commit/da5d60902a4129deb79ae4658ba82757d7277b85">da5d609</a>)</p>
+</li>
+<li>
+<p><strong>core:</strong> Use nil-safe and Lua-version-robust table utils (<a href="https://github.com/sile-typesetter/sile/commit/2405b23f0f448b217a066ecb34cae54f3e63aa64">2405b23</a>)</p>
+</li>
+<li>
+<p><strong>packages:</strong> Adjust dropcap logic for letters with a depth (<a href="https://github.com/sile-typesetter/sile/commit/fd6963d226cc6a3b325dd796414936d200ae1ed2">fd6963d</a>)</p>
+</li>
+</ul>
+
+  </div>
+
+</div>
+</div>
+
+
+
+    </div>
+    <script src="/scripts/responsive.js" type="text/javascript"></script>
+  </body>
+</html>

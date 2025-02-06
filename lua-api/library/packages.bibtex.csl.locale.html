@@ -1,0 +1,352 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>SILE</h1>
+
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+</ul>
+
+
+<h2>Library</h2>
+<ul class="nowrap">
+  <li><a href="../library/SILE.html">SILE</a></li>
+  <li><a href="../library/SILE.font.html">SILE.font</a></li>
+  <li><a href="../library/SU.html">SU</a></li>
+  <li><a href="../library/SU.ast.html">SU.ast</a></li>
+  <li><a href="../library/SU.numbers.html">SU.numbers</a></li>
+  <li><a href="../library/SU.sorting.html">SU.sorting</a></li>
+  <li><a href="../library/globals.html">globals</a></li>
+  <li><a href="../library/packages.bibtex.csl.engine.html">packages.bibtex.csl.engine</a></li>
+  <li><strong>packages.bibtex.csl.locale</strong></li>
+  <li><a href="../library/packages.bibtex.csl.style.html">packages.bibtex.csl.style</a></li>
+  <li><a href="../library/packages.bibtex.csl.utils.casing.html">packages.bibtex.csl.utils.casing</a></li>
+  <li><a href="../library/packages.bibtex.csl.utils.superfolding.html">packages.bibtex.csl.utils.superfolding</a></li>
+  <li><a href="../library/packages.bibtex.csl.utils.xmlparser.html">packages.bibtex.csl.utils.xmlparser</a></li>
+  <li><a href="../library/packages.bibtex.support.bib2csl.html">packages.bibtex.support.bib2csl</a></li>
+  <li><a href="../library/packages.bibtex.support.isodatetime.html">packages.bibtex.support.isodatetime</a></li>
+  <li><a href="../library/packages.bibtex.support.locators.html">packages.bibtex.support.locators</a></li>
+  <li><a href="../library/packages.math.mathml-entities.html">packages.math.mathml-entities</a></li>
+  <li><a href="../library/packages.math.unicode-symbols.html">packages.math.unicode-symbols</a></li>
+</ul>
+<h2>Interfaces</h2>
+<ul class="nowrap">
+  <li><a href="../interfaces/classes.html">classes</a></li>
+  <li><a href="../interfaces/inputters.html">inputters</a></li>
+  <li><a href="../interfaces/languages.html">languages</a></li>
+  <li><a href="../interfaces/outputters.html">outputters</a></li>
+  <li><a href="../interfaces/packages.html">packages</a></li>
+  <li><a href="../interfaces/pagebuilders.html">pagebuilders</a></li>
+  <li><a href="../interfaces/shapers.html">shapers</a></li>
+  <li><a href="../interfaces/typesetters.html">typesetters</a></li>
+</ul>
+<h2>Types</h2>
+<ul class="nowrap">
+  <li><a href="../types/color.html">color</a></li>
+  <li><a href="../types/length.html">length</a></li>
+  <li><a href="../types/measurement.html">measurement</a></li>
+  <li><a href="../types/node.html">node</a></li>
+  <li><a href="../types/unit.html">unit</a></li>
+</ul>
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/classes.bible.html">classes.bible</a></li>
+  <li><a href="../modules/classes.book.html">classes.book</a></li>
+  <li><a href="../modules/classes.diglot.html">classes.diglot</a></li>
+  <li><a href="../modules/classes.docbook.html">classes.docbook</a></li>
+  <li><a href="../modules/classes.jbook.html">classes.jbook</a></li>
+  <li><a href="../modules/classes.jplain.html">classes.jplain</a></li>
+  <li><a href="../modules/classes.letter.html">classes.letter</a></li>
+  <li><a href="../modules/classes.plain.html">classes.plain</a></li>
+  <li><a href="../modules/classes.tbook.html">classes.tbook</a></li>
+  <li><a href="../modules/classes.tbook.html">classes.tbook</a></li>
+  <li><a href="../modules/classes.tplain.html">classes.tplain</a></li>
+  <li><a href="../modules/classes.triglot.html">classes.triglot</a></li>
+  <li><a href="../modules/packages.pdf.html">packages.pdf</a></li>
+</ul>
+<h2>Topics</h2>
+<ul class="">
+  <li><a href="../topics/README.md.html">README</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>packages.bibtex.csl.locale</code></h1>
+<p>Reader for CSL 1.0.2 locale files</p>
+<p>
+
+</p>
+    <h3>Info:</h3>
+    <ul>
+        <li><strong>Copyright</strong>:  License: MIT (c) 2024 Omikhleia</p>
+
+<p> Public API:
+  - (static method) CslLocale.parse(doc) -> CslLocale
+  - (static method) CslLocale.read(filename) -> CslLocale
+  - CslLocale:date(form) -> table<cs:date-parts>
+  - CslLocale:term(name, form?, plural?) -> string, gender
+  - CslLocale:ordinal(number, form?, gender-form?, plural?) -> string
+  - CslLocale:case(text, textCase) -> string</li>
+    </ul>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#CslLocale:date">CslLocale:date(form)</a></td>
+	<td class="summary">Lookup a date format in the locale.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#CslLocale:term">CslLocale:term(name, form, plural)</a></td>
+	<td class="summary">Lookup a term in the locale.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#CslLocale:ordinal">CslLocale:ordinal(number, form, genderf, plural)</a></td>
+	<td class="summary">Lookup an ordinal term in the locale.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#CslLocale:case">CslLocale:case(text, textCase)</a></td>
+	<td class="summary">Apply a text case transformation.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#CslLocale.parse">CslLocale.parse(doc)</a></td>
+	<td class="summary">Parse a CSL locale file (static method).</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#CslLocale.read">CslLocale.read(filename)</a></td>
+	<td class="summary">Read a CSL locale file (static method).</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "CslLocale:date"></a>
+    <strong>CslLocale:date(form)</strong>
+    </dt>
+    <dd>
+    Lookup a date format in the locale.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">form</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         The form of the date ('numeric' or 'text')
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+        The date format as a table of cs:date-parts
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "CslLocale:term"></a>
+    <strong>CslLocale:term(name, form, plural)</strong>
+    </dt>
+    <dd>
+    Lookup a term in the locale.
+ Reserved for non-ordinal terms.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">name</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         The name of the term
+        </li>
+        <li><span class="parameter">form</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         The form of the term (default: "long")
+        </li>
+        <li><span class="parameter">plural</span>
+            <span class="types"><span class="type">boolean</span></span>
+         Whether to return the plural form (default: false)
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string,string</a></span>
+        The term (or empty string), and the gender or the term (or nil)
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "CslLocale:ordinal"></a>
+    <strong>CslLocale:ordinal(number, form, genderf, plural)</strong>
+    </dt>
+    <dd>
+    Lookup an ordinal term in the locale.
+ Reserved for ordinal terms.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">number</span>
+            <span class="types"><span class="type">number</span></span>
+         The numeric value to be formatted
+        </li>
+        <li><span class="parameter">form</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         The form of the term (default: "short")
+        </li>
+        <li><span class="parameter">genderf</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         The gender-form of the term (default: "neuter")
+        </li>
+        <li><span class="parameter">plural</span>
+            <span class="types"><span class="type">boolean</span></span>
+         Whether to return the plural form (default: false)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "CslLocale:case"></a>
+    <strong>CslLocale:case(text, textCase)</strong>
+    </dt>
+    <dd>
+    Apply a text case transformation.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">text</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         Text to transform
+        </li>
+        <li><span class="parameter">textCase</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         CSL case transformation
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+        The transformed text
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "CslLocale.parse"></a>
+    <strong>CslLocale.parse(doc)</strong>
+    </dt>
+    <dd>
+    Parse a CSL locale file (static method).
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">doc</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         The CSL locale file content
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">CslLocale</span></span>
+        The locale object (or nil, error message on failure)
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "CslLocale.read"></a>
+    <strong>CslLocale.read(filename)</strong>
+    </dt>
+    <dd>
+    Read a CSL locale file (static method).
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">filename</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         The resolved filename of the locale file
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">CslLocale</span></span>
+        The locale object (or nil, error message on failure)
+    </ol>
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/lunarmodules/LDoc">LDoc 1.5.0</a></i>
+<i style="float:right;">Last updated 1980-01-01 00:00:00 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

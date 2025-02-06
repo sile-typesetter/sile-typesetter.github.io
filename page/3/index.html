@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>SILE – Home</title>
+      <meta name="viewport" content="width=device-width">
+      
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+      
+
+      <!-- Custom CSS -->
+      <link rel="stylesheet" href="/main.css">
+
+      <!-- Responsive CSS -->
+      <link rel="stylesheet" href="/css/responsive.css">
+
+      <!-- Fonts -->
+      <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400;1,600&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+      <link rel='stylesheet' href='//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack-subset.css'>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-63500-7', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </head>
+  <body>
+    <div id="site">
+      <div id="sidebar">
+        <div id="header">
+          <h1 class="title"><a href="https://sile-typesetter.org"><img id="logo" src="/images/logo.png"></a></h1>
+          <span class="tagline">The SILE Typesetter</span>
+        </div>
+
+        <ul>
+  <li> <a href="/">Home</a></li>
+  <li> <a href="/what-is-sile/">What is SILE?</a></li>
+  <li> <a href="/examples/">Examples</a>
+    <ul>
+      <li><a href="/examples/global/">Global Scripts</a></li>
+      <li><a href="/examples/packages/">Packages</a></li>
+    </ul>
+  </li>
+  <li> <a href="/manual/sile-0.15.9.pdf">Manual (PDF)</a></li>
+  <li> <a href="/lua-api">Lua API</a></li>
+  <li> <a href="/rust-api/sile">Rust API</a></li>
+  <li> <a href="/sil-grammar/">SIL Grammar</a></li>
+  <li> <a href="https://github.com/sile-typesetter/sile/releases"><strong>Download</strong></a></li>
+</ul>
+
+
+        <div class="footer">
+          <span id="footer-links">
+            <a href="https://github.com/sile-typesetter/sile" class="footer-link">GitHub</a>
+          </span>
+        </div>
+      </div>
+
+        
+<div id="content">
+<div id="home">
+  <div class="post-info">
+    <div class="cover-photo-container">
+      <img class="cover-photo" src="/images/cover.jpg">
+    </div>
+  </div>
+
+
+      <div class="post-info">
+    <div class="info-container">
+      <h1 class="title">SILE v0.14.17 Is Released</h1>
+      <div class="meta">
+        
+          <span class="date"><a href="&#x2F;blog&#x2F;release-v0.14.17&#x2F;">07 Feb 2024</a></span>
+        
+        
+          — <span class="author">Caleb Maclennan</span>
+        
+      </div>
+  </div>
+
+  <div class="post">
+    <p>Version v0.14.17 of SILE has been released and is <a href="https://github.com/sile-typesetter/sile/releases/tag/v0.14.17">available for download</a>!
+See the included <a href="https://github.com/sile-typesetter/sile/blob/master/CHANGELOG.md">CHANGELOG.md</a> or review the <a href="https://github.com/sile-typesetter/sile/compare/v0.14.16...v0.14.17">commit history</a> for more explicit details.</p>
+<h3 id="Summary_of_Improvements">Summary of Improvements</h3>
+<p>The "big v0.15" is still brewing, but we keep coming up with little improvements that easily fit in the v0.14 series.
+It turns out the special hyphenation handling we added to Polish (for explicitly hyphenated words) is used by quite a few languages.
+At this time we've applied it by default to Croatian, Czech, Portuguese, Slovak. and Spanish.
+Thanks to <a href="http://github.com/Omikhleia">Didier Willis</a> for much of the research on this as well as <a href="https://github.com/jodros">João Quinaglia</a>, <a href="https://github.com/DavidLRowe">David Rowe</a>, <a href="https://github.com/jakubkaczor">Jakub Kaczor</a>, and <a href="https://github.com/tomas-vl">Thomas Vl</a> for domain expertise.</p>
+<p>Additionally João contributed an option for columns command to more easily set up column frames with balancing turned on or off.</p>
+<h3 id="Features">Features</h3>
+<ul>
+<li>
+<p><strong>languages:</strong> Enable explicit hyphen repetition handling in Croatian (<a href="https://github.com/sile-typesetter/sile/commit/c29545dd6f60bc01dc71de82f88274feff3b0fdf">c29545d</a>)</p>
+</li>
+<li>
+<p><strong>languages:</strong> Enable explicit hyphen repetition handling in Czech (<a href="https://github.com/sile-typesetter/sile/commit/b05d6211b2c3daf9d8a69d7c4db75f430a86eea6">b05d621</a>)</p>
+</li>
+<li>
+<p><strong>languages:</strong> Enable explicit hyphen repetition handling in Portuguese (<a href="https://github.com/sile-typesetter/sile/commit/2a58d9684848ad7475e879191058d0c59de8e3c5">2a58d96</a>)</p>
+</li>
+<li>
+<p><strong>languages:</strong> Enable explicit hyphen repetition handling in Slovak (<a href="https://github.com/sile-typesetter/sile/commit/82640b03cdc82356a1ea9bbffbb4f5fd2471e3a2">82640b0</a>)</p>
+</li>
+<li>
+<p><strong>languages:</strong> Enable explicit hyphen repetition handling in Spanish (<a href="https://github.com/sile-typesetter/sile/commit/8db7f238fb63c86ee0d49bd34afd6a35a03f8eb8">8db7f23</a>)</p>
+</li>
+<li>
+<p><strong>packages:</strong> Add balancing option to makecolums command (<a href="https://github.com/sile-typesetter/sile/issues/1950">#1950</a>) (<a href="https://github.com/sile-typesetter/sile/commit/b5ce8e615c5e22c087ea8c8c6f7e30266e0f8634">b5ce8e6</a>)</p>
+</li>
+</ul>
+
+  </div>
+
+
+      <div class="post-info">
+    <div class="info-container">
+      <h1 class="title">SILE v0.14.16 Is Released</h1>
+      <div class="meta">
+        
+          <span class="date"><a href="&#x2F;blog&#x2F;release-v0.14.16&#x2F;">27 Jan 2024</a></span>
+        
+        
+          — <span class="author">Caleb Maclennan</span>
+        
+      </div>
+  </div>
+
+  <div class="post">
+    <p>Version v0.14.16 of SILE has been released and is <a href="https://github.com/sile-typesetter/sile/releases/tag/v0.14.16">available for download</a>!
+See the included <a href="https://github.com/sile-typesetter/sile/blob/master/CHANGELOG.md">CHANGELOG.md</a> or review the <a href="https://github.com/sile-typesetter/sile/compare/v0.14.15...v0.14.16">commit history</a> for more explicit details.</p>
+<h3 id="Summary_of_Improvements">Summary of Improvements</h3>
+<p>If goofed up some of the merges involved in the release process for v0.14.15.
+This doesn't bring any user facing features or fixes, only a bit of refactoring intended to be in the last release.
+The main purpose is to straighten out the repository so the expected branch contains the release tags.
+Sorry for the noise.</p>
+<h3 id="Bug_Fixes">Bug Fixes</h3>
+<ul>
+<li>
+<p><strong>tooling:</strong> Re-merge so release tag is on master branch (<a href="https://github.com/sile-typesetter/sile/commit/e8eaf11da6cd183168898eca08f6f789f46d599e">e8eaf11</a>)</p>
+</li>
+</ul>
+
+  </div>
+
+
+      <div class="post-info">
+    <div class="info-container">
+      <h1 class="title">SILE v0.14.15 Is Released</h1>
+      <div class="meta">
+        
+          <span class="date"><a href="&#x2F;blog&#x2F;release-v0.14.15&#x2F;">27 Jan 2024</a></span>
+        
+        
+          — <span class="author">Caleb Maclennan</span>
+        
+      </div>
+  </div>
+
+  <div class="post">
+    <p>Version v0.14.15 of SILE has been released and is <a href="https://github.com/sile-typesetter/sile/releases/tag/v0.14.15">available for download</a>!
+See the included <a href="https://github.com/sile-typesetter/sile/blob/master/CHANGELOG.md">CHANGELOG.md</a> or review the <a href="https://github.com/sile-typesetter/sile/compare/v0.14.14...v0.14.15">commit history</a> for more explicit details.</p>
+<h3 id="Summary_of_Improvements">Summary of Improvements</h3>
+<p>In today's minor release we tinker with language support.</p>
+<p><a href="http://github.com/Omikhleia">Didier Willis</a> contributed improvements to non-breaking space handling in French.
+He also setup handling of Catalan hyphenation at ela geminada and Polish hyphenation at existing hyphens.
+Turkish gained a new setting (on by default per the current Turkish Language Association guidelines) for handling hyphenation at apostrophes.
+The previous behaviour (used by some publisher style guides) is available by toggling off the new setting.</p>
+<p>All languages gained an (on by default) setting that makes spaces after em-dashes at the start of paragraphs be fixed width.
+This is used in at least French and Turkish typography to typeset dialogue and the fixed spacing keeps everything lining up per expectations.
+Other languages may benefit as well, but also the feature can be disabled if flexible spacing is actually desired.</p>
+<p>Details for each of these languages and their related settings are in the SILE manual.</p>
+<h3 id="Features">Features</h3>
+<ul>
+<li><strong>languages:</strong> Accomodate alternate Turkish hyphenation guidelines at apostrophes (<a href="https://github.com/sile-typesetter/sile/commit/92904fcaf119cb95633c2865c2cdef89106803a1">92904fc</a>)</li>
+<li><strong>typesetters:</strong> Support for speaker change introduced by em-dash (<a href="https://github.com/sile-typesetter/sile/commit/2afa4cbf7eafcc9efef4ea5219c9508fff7989a8">2afa4cb</a>)</li>
+</ul>
+<h3 id="Bug_Fixes">Bug Fixes</h3>
+<ul>
+<li>
+<p><strong>languages:</strong> Break at ela geminada in Catalan cancels the punt vola (<a href="https://github.com/sile-typesetter/sile/commit/f8c4c1e46fecfb4f3bb7000ae0e87d04eb5d2738">f8c4c1e</a>)</p>
+</li>
+<li>
+<p><strong>languages:</strong> Break at explicit hyphen in Polish repeats the hyphen (<a href="https://github.com/sile-typesetter/sile/commit/0f8c7aa087c6fe447fc0a5d96944e9ca1b7f141e">0f8c7aa</a>)</p>
+</li>
+<li>
+<p><strong>languages:</strong> Remove multiple repetitions of U+00A0 nbsp in French (<a href="https://github.com/sile-typesetter/sile/commit/0356a4977722c77e11ada667efb106d9ad70219a">0356a49</a>)</p>
+</li>
+<li>
+<p><strong>languages:</strong> U+00A0 nbsp in French causes unexpected word breaks (<a href="https://github.com/sile-typesetter/sile/commit/b93975c2d572d64afbc89c47cab8cc3ad4735445">b93975c</a>)</p>
+</li>
+</ul>
+
+  </div>
+
+
+      <div class="post-info">
+    <div class="info-container">
+      <h1 class="title">SILE v0.14.14 Is Released</h1>
+      <div class="meta">
+        
+          <span class="date"><a href="&#x2F;blog&#x2F;release-v0.14.14&#x2F;">23 Dec 2023</a></span>
+        
+        
+          — <span class="author">Caleb Maclennan</span>
+        
+      </div>
+  </div>
+
+  <div class="post">
+    <p>Version v0.14.14 of SILE has been released and is <a href="https://github.com/sile-typesetter/sile/releases/tag/v0.14.14">available for download</a>!
+See the included <a href="https://github.com/sile-typesetter/sile/blob/master/CHANGELOG.md">CHANGELOG.md</a> or review the <a href="https://github.com/sile-typesetter/sile/compare/v0.14.13...v0.14.14">commit history</a> for more explicit details.</p>
+<h3 id="Summary_of_Improvements">Summary of Improvements</h3>
+<p>Merry Christmas!</p>
+<p>Not this isn't the Rusty release you might want in your stocking.
+That is coming along nicely though, we're just including an abitioun rollup of breaking changes and going slow to do it right.
+You can <a href="https://github.com/alerque/sile-typesetter.github.io/blob/v015/content/blog/release-v0.15.0.md">preview the release notes</a> or follow issues in <a href="https://github.com/sile-typesetter/sile/milestone/34">the milestore</a> for teasers.
+More notably there are already lots of ways to run the development release: Homebrew has <code>--HEAD</code> support, Docker images are available, the Nix flake works, Arch Linux has VCS packages, and more.
+If you want to start putting it through the paces go ahead.</p>
+<p>Until the cookies are fully baked, this minor release has a few goodies that are not breaking changes.
+<a href="http://github.com/Omikhleia">Didier Willis</a> contributed some updates to the <code>dropcaps</code> package to better handle fonts with descenders in their capitals.
+He also contributed some improvements to Unicode handling: soft hyphen and non-breaking spaces work as expected.
+SILE has perhaps more robust ways of defining custom hyphenation and glue nodes, but the Unicode handling is convenient is handy if you input content has such data anyway.
+For bonus points some CLI error messages have been dramatically improved to be more informative and less repetative.</p>
+<h3 id="Features">Features</h3>
+<ul>
+<li><strong>cli:</strong> Change module load error to suggestion for how to install 3rd party modules (<a href="https://github.com/sile-typesetter/sile/commit/c2800505eda2ee1630eea931f88efb07f6892d00">c280050</a>)</li>
+<li><strong>languages:</strong> U+00A0 non-breaking space must be stretchable by default (<a href="https://github.com/sile-typesetter/sile/commit/b769a633069db4f32746d920dc9696296c7ab7db">b769a63</a>)</li>
+<li><strong>typesetters:</strong> Support U+00AD soft hyphen as discretionary break (<a href="https://github.com/sile-typesetter/sile/commit/285507e5fddf3b0c752bb2b5bf81e8bf7f19144a">285507e</a>)</li>
+</ul>
+<h3 id="Bug_Fixes">Bug Fixes</h3>
+<ul>
+<li>
+<p><strong>backends:</strong> Fix plain text backend to work in LuaJIT/Lua 5.1 (<a href="https://github.com/sile-typesetter/sile/commit/b185d4972a5f29e7441f7af34e1ac49f49e6747f">b185d49</a>)</p>
+</li>
+<li>
+<p><strong>cli:</strong> Stop outputting error messages twice on failure to process main file (<a href="https://github.com/sile-typesetter/sile/commit/da5d60902a4129deb79ae4658ba82757d7277b85">da5d609</a>)</p>
+</li>
+<li>
+<p><strong>core:</strong> Use nil-safe and Lua-version-robust table utils (<a href="https://github.com/sile-typesetter/sile/commit/2405b23f0f448b217a066ecb34cae54f3e63aa64">2405b23</a>)</p>
+</li>
+<li>
+<p><strong>packages:</strong> Adjust dropcap logic for letters with a depth (<a href="https://github.com/sile-typesetter/sile/commit/fd6963d226cc6a3b325dd796414936d200ae1ed2">fd6963d</a>)</p>
+</li>
+</ul>
+
+  </div>
+
+
+      <div class="post-info">
+    <div class="info-container">
+      <h1 class="title">SILE v0.14.13 Is Released</h1>
+      <div class="meta">
+        
+          <span class="date"><a href="&#x2F;blog&#x2F;release-v0.14.13&#x2F;">30 Oct 2023</a></span>
+        
+        
+          — <span class="author">Caleb Maclennan</span>
+        
+      </div>
+  </div>
+
+  <div class="post">
+    <p>Version v0.14.13 of SILE has been released and is <a href="https://github.com/sile-typesetter/sile/releases/tag/v0.14.13">available for download</a>!
+See the included <a href="https://github.com/sile-typesetter/sile/blob/master/CHANGELOG.md">CHANGELOG.md</a> or review the <a href="https://github.com/sile-typesetter/sile/compare/v0.14.12...v0.14.13">commit history</a> for more explicit details.</p>
+<h3 id="Summary_of_Improvements">Summary of Improvements</h3>
+<p>This minor release brings a couple improvements from a new contributor, <a href="https://github.com/jodros">João Quinaglia</a>.
+We have one new feature, a boolean option flag on our base class that enables landscape mode.
+Any paper orientation has been supported already, but the preset paper sizes only had the standard portrait orientation and landscape orientations required entering custom dimensions.
+This flag makes it a bit easier to swap the X and Y dimensions of the standard (or custom) value parsed from the <em>papersize</em> option.
+Additionally he fixed a bug in the <em>frametricks</em> package such that using the <code>\makecolumns</code> function doesn't break relative frame constraints used by, for example, footnote or folio frames.
+This fix only works for TTB-LTR automatic column setups for now.</p>
+<p>Finally, some build system fixes and features were backported from v0.15.0 development work.
+Most significantly the handling of the <code>SILE_PATH</code> environment variable now allows multiple paths, which in turn allows a single project to utilize multiple external <em>collections</em> of 3rd party packages rather than having to collate them all into one location.</p>
+<h3 id="Features">Features</h3>
+<ul>
+<li><strong>classes:</strong> Add landscape option to base class (<a href="https://github.com/sile-typesetter/sile/issues/1892">#1892</a>) (<a href="https://github.com/sile-typesetter/sile/commit/0fb9adefca3adf9ff8a56755e69474960792d85a">0fb9ade</a>)</li>
+<li><strong>cli:</strong> Allow multiple runtime SILE_PATH segments (backport from develop branch) (<a href="https://github.com/sile-typesetter/sile/commit/e7c8fe219686aa327032154484bf78be86c0baaa">e7c8fe2</a>)</li>
+</ul>
+<h3 id="Bug_Fixes">Bug Fixes</h3>
+<ul>
+<li>
+<p><strong>frames:</strong> Update frame constraints with new frame IDs after \makecolumns (<a href="https://github.com/sile-typesetter/sile/commit/b2d6b4f7b095d74f3d39123904495a8e024c0f05">b2d6b4f</a>)</p>
+</li>
+</ul>
+
+  </div>
+
+
+
+<div class="pagination">
+  
+    <a href="&#x2F;page&#x2F;2&#x2F;">&laquo; Prev</a>
+  
+
+  
+    
+      <a href="/">1</a>
+    
+  
+    
+      <a href="/page/2/">2</a>
+    
+  
+    
+      <em>3</em>
+    
+  
+    
+      <a href="/page/4/">4</a>
+    
+  
+    
+      <a href="/page/5/">5</a>
+    
+  
+    
+      <a href="/page/6/">6</a>
+    
+  
+    
+      <a href="/page/7/">7</a>
+    
+  
+    
+      <a href="/page/8/">8</a>
+    
+  
+    
+      <a href="/page/9/">9</a>
+    
+  
+    
+      <a href="/page/10/">10</a>
+    
+  
+    
+      <a href="/page/11/">11</a>
+    
+  
+    
+      <a href="/page/12/">12</a>
+    
+  
+    
+      <a href="/page/13/">13</a>
+    
+  
+    
+      <a href="/page/14/">14</a>
+    
+  
+
+  
+    <a href="&#x2F;page&#x2F;4&#x2F;">Next &raquo;</a>
+  
+</div>
+</div>
+</div>
+
+
+    </div>
+    <script src="/scripts/responsive.js" type="text/javascript"></script>
+  </body>
+</html>

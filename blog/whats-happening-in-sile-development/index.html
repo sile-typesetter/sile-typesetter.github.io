@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>SILE – What’s Happening In SILE Development</title>
+      <meta name="viewport" content="width=device-width">
+      
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+      
+
+      <!-- Custom CSS -->
+      <link rel="stylesheet" href="/main.css">
+
+      <!-- Responsive CSS -->
+      <link rel="stylesheet" href="/css/responsive.css">
+
+      <!-- Fonts -->
+      <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400;1,600&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+      <link rel='stylesheet' href='//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack-subset.css'>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-63500-7', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </head>
+  <body>
+    <div id="site">
+      <div id="sidebar">
+        <div id="header">
+          <h1 class="title"><a href="https://sile-typesetter.org"><img id="logo" src="/images/logo.png"></a></h1>
+          <span class="tagline">The SILE Typesetter</span>
+        </div>
+
+        <ul>
+  <li> <a href="/">Home</a></li>
+  <li> <a href="/what-is-sile/">What is SILE?</a></li>
+  <li> <a href="/examples/">Examples</a>
+    <ul>
+      <li><a href="/examples/global/">Global Scripts</a></li>
+      <li><a href="/examples/packages/">Packages</a></li>
+    </ul>
+  </li>
+  <li> <a href="/manual/sile-0.15.9.pdf">Manual (PDF)</a></li>
+  <li> <a href="/lua-api">Lua API</a></li>
+  <li> <a href="/rust-api/sile">Rust API</a></li>
+  <li> <a href="/sil-grammar/">SIL Grammar</a></li>
+  <li> <a href="https://github.com/sile-typesetter/sile/releases"><strong>Download</strong></a></li>
+</ul>
+
+
+        <div class="footer">
+          <span id="footer-links">
+            <a href="https://github.com/sile-typesetter/sile" class="footer-link">GitHub</a>
+          </span>
+        </div>
+      </div>
+
+        
+<div id="content">
+<div id="home">
+    <div class="post-info">
+    <div class="cover-photo-container">
+      <img class="cover-photo" src="/images/cover.jpg">
+    </div>
+  </div>
+
+    <div class="post-info">
+    <div class="info-container">
+      <h1 class="title">What’s Happening In SILE Development</h1>
+      <div class="meta">
+        
+          <span class="date"><a href="&#x2F;blog&#x2F;whats-happening-in-sile-development&#x2F;">24 Sep 2014</a></span>
+        
+        
+          — <span class="author">Simon Cozens</span>
+        
+      </div>
+  </div>
+
+  <div class="post">
+    <p>Right now SILE is in a state of flux. There doesn’t appear to be much going on in the SILE repository but actually there is a lot of coding happening behind the scenes.</p>
+<p>The Pango/Cairo backend got SILE started and producing useful output, but it was never intended to be a permanent solution. The Cairo PDF writer only supports creation of simple PDFs, and does not include features such as document structure, thumbnails, hyperlinks, annotations and so on.</p>
+<p>Although I was hoping to replace it eventually, my hand has been forced by some bug reports on Linux where Pango was not positioning the glyphs with sufficient accuracy, leading to badly letter-spaced text. So, SILE is moving to <a href="https://www.freedesktop.org/wiki/Software/HarfBuzz/">Harfbuzz</a> for text shaping and a different PDF library.</p>
+<p>The first part is done, and there is a Harfbuzz shaper written. The second part is proving more troublesome. There are several PDF libraries out there but none of them really provide what SILE needs. The nearest is <a href="http://podofo.sourceforge.net">PoDoFo</a>, and I have SILE working with Harfbuzz and PoDoFo, but it requires a number of patches applied to the latest development source of the PoDoFo library. This obviously isn’t a great way for people to install and deploy SILE.</p>
+<p>So, since we’re going to have to ship our own PDF library with SILE anyway, my latest thought is, why don’t we actually ship a good one? And it turns out the best one available is the one which turns TeX’s DVIs (and XeTeX’s XDVs) into PDFs. Unfortunately, it’s currently quite tightly bound to xdvipdfm, and is not actually a library yet. Right now, I’m turning it into a separate library so it can ship with SILE, and SILE will eventually be driven by Harfbuzz/<a href="https://github.com/simoncozens/dvipdfm-x/tree/libtexpdf">libtexpdf</a>.</p>
+
+  </div>
+
+</div>
+</div>
+
+
+
+    </div>
+    <script src="/scripts/responsive.js" type="text/javascript"></script>
+  </body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>SILE – SILE v0.12.1 Is Released</title>
+      <meta name="viewport" content="width=device-width">
+      
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+      
+
+      <!-- Custom CSS -->
+      <link rel="stylesheet" href="/main.css">
+
+      <!-- Responsive CSS -->
+      <link rel="stylesheet" href="/css/responsive.css">
+
+      <!-- Fonts -->
+      <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400;1,600&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+      <link rel='stylesheet' href='//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack-subset.css'>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-63500-7', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </head>
+  <body>
+    <div id="site">
+      <div id="sidebar">
+        <div id="header">
+          <h1 class="title"><a href="https://sile-typesetter.org"><img id="logo" src="/images/logo.png"></a></h1>
+          <span class="tagline">The SILE Typesetter</span>
+        </div>
+
+        <ul>
+  <li> <a href="/">Home</a></li>
+  <li> <a href="/what-is-sile/">What is SILE?</a></li>
+  <li> <a href="/examples/">Examples</a>
+    <ul>
+      <li><a href="/examples/global/">Global Scripts</a></li>
+      <li><a href="/examples/packages/">Packages</a></li>
+    </ul>
+  </li>
+  <li> <a href="/manual/sile-0.15.9.pdf">Manual (PDF)</a></li>
+  <li> <a href="/lua-api">Lua API</a></li>
+  <li> <a href="/rust-api/sile">Rust API</a></li>
+  <li> <a href="/sil-grammar/">SIL Grammar</a></li>
+  <li> <a href="https://github.com/sile-typesetter/sile/releases"><strong>Download</strong></a></li>
+</ul>
+
+
+        <div class="footer">
+          <span id="footer-links">
+            <a href="https://github.com/sile-typesetter/sile" class="footer-link">GitHub</a>
+          </span>
+        </div>
+      </div>
+
+        
+<div id="content">
+<div id="home">
+    <div class="post-info">
+    <div class="cover-photo-container">
+      <img class="cover-photo" src="/images/cover.jpg">
+    </div>
+  </div>
+
+    <div class="post-info">
+    <div class="info-container">
+      <h1 class="title">SILE v0.12.1 Is Released</h1>
+      <div class="meta">
+        
+          <span class="date"><a href="&#x2F;blog&#x2F;release-v0.12.1&#x2F;">12 Jan 2022</a></span>
+        
+        
+          — <span class="author">Caleb Maclennan</span>
+        
+      </div>
+  </div>
+
+  <div class="post">
+    <p>Version v0.12.1 of SILE has been released and is <a href="https://github.com/sile-typesetter/sile/releases/tag/v0.12.1">available for download</a>!
+See the included <a href="https://github.com/sile-typesetter/sile/blob/master/CHANGELOG.md">CHANGELOG.md</a> or review the <a href="https://github.com/sile-typesetter/sile/compare/v0.12.0...v0.12.1">commit history</a> for more explicit details.</p>
+<h3 id="Summary_of_Improvements">Summary of Improvements</h3>
+<p>The first minor release in the v0.12.x series brings several new features relevant to paragraph shaping.
+Didier Willis has fleshed out the linebreak mechanism with full parity of LaTeX's settings including <code>hangingIndent</code> and <code>parShape</code>.
+Having fully featured paragraph-wise hanging indent settings enabled a new package, dropcaps, to provide much more robust dropcap functionality than the previous floating frame mechanism we used for this.
+(Note the dropcap package documentation did not make it in the manual at release time, see the example on the website or the manual from a newer release for usage.)
+Additionally the paragraph shape callback function can now be used to create fancy paragraph shapes using any geometry you can specify or calculate.</p>
+<p>
+<div class="example">
+  <a href="/examples/dropcaps.png">
+    <img src="/examples/dropcaps-thumb.png">
+  </a>
+  <br/>
+  <span class="title">Dropcaps</span><br/>
+  (<a href="/examples/dropcaps.sil">source</a>)
+  (<a href="/examples/dropcaps.pdf">PDF</a>)
+</div>
+
+
+<div class="example">
+  <a href="/examples/parshape.png">
+    <img src="/examples/parshape-thumb.png">
+  </a>
+  <br/>
+  <span class="title">Dynamically computed paragraph shapes</span><br/>
+  (<a href="/examples/parshape.sil">source</a>)
+  (<a href="/examples/parshape.pdf">PDF</a>)
+</div>
+</p>
+<p>Bugfixes in this release cover several issues with French language, PDF metadata encoding, color fonts, book class headers, and more.</p>
+<h3 id="Features">Features</h3>
+<ul>
+<li><strong>build:</strong> Accommodate SOURCE_DATE_EPOCH for reproducible builds (<a href="https://github.com/sile-typesetter/sile/commit/16c81a8dfb191238d65610380d648437a6492f2e">16c81a8</a>)</li>
+<li><strong>classes:</strong> Add \noop function for versatile SILE.call() use (<a href="https://github.com/sile-typesetter/sile/commit/2b045078120c52ccc948cc663936504153285132">2b04507</a>)</li>
+<li><strong>core:</strong> Add OpenType post (v1) table parser (<a href="https://github.com/sile-typesetter/sile/commit/a985aedbd5553987f63be04f9b74d1a6b2299952">a985aed</a>)</li>
+<li><strong>core:</strong> Implement Knuth's hangAfter and hangIndent (<a href="https://github.com/sile-typesetter/sile/commit/54171894f3f1415f33891192631f54af47db9c28">5417189</a>)</li>
+<li><strong>core:</strong> Implement paragraph duration hanging indent settings (<a href="https://github.com/sile-typesetter/sile/commit/18ee23bc1271ba1be7aee98c8346b3f9c225d9dc">18ee23b</a>)</li>
+<li><strong>core:</strong> Implement paragraph shaping (parshape) (<a href="https://github.com/sile-typesetter/sile/commit/c2c0235717202c811673379dd6b54118468b327e">c2c0235</a>)</li>
+<li><strong>packages:</strong> Add dropcaps package (<a href="https://github.com/sile-typesetter/sile/commit/cb9105a676e8e0efad29bb62d135fd0d02ef6d1d">cb9105a</a>)</li>
+<li><strong>packages:</strong> Add shift, raise, and size options to dropcaps (<a href="https://github.com/sile-typesetter/sile/commit/0a88948e5028e4f3b82ad7ee689d5f53e0358ddd">0a88948</a>)</li>
+<li><strong>packages:</strong> Implement color option for dropcaps (<a href="https://github.com/sile-typesetter/sile/commit/d042bcf31dcd52d1a51dad527f727834ca8e22d9">d042bcf</a>)</li>
+<li><strong>packages:</strong> Use font's post table to determine underline position (<a href="https://github.com/sile-typesetter/sile/commit/ae1b929cfe3bd1784bd2962a5ccb8b53b47377d7">ae1b929</a>)</li>
+</ul>
+<h3 id="Bug_Fixes">Bug Fixes</h3>
+<ul>
+<li>
+<p><strong>backends:</strong> Move Lua 5.1 macro so covers whole file (<a href="https://github.com/sile-typesetter/sile/commit/9b40772920602bd1a9543d38bf9cf5e51d1f4b24">9b40772</a>)</p>
+</li>
+<li>
+<p><strong>classes:</strong> Reset state when calling running headers (<a href="https://github.com/sile-typesetter/sile/commit/ec0a7b8d0494f83cbfd546bee3896af2a944c6a0">ec0a7b8</a>)</p>
+</li>
+<li>
+<p><strong>classes:</strong> Unnumbered book sections shall not display a number in running headers (<a href="https://github.com/sile-typesetter/sile/commit/4afde429179b5bcff2f5f713ed0bb4cc103475a5">4afde42</a>)</p>
+</li>
+<li>
+<p>Fixes name of accented math symbol, eliminates duplicate newStandardHspace assignment (<a href="https://github.com/sile-typesetter/sile/commit/4c38f1a50ee3ce4a661bbd04b3382d57362e952f">4c38f1a</a>), closes <a href="https://github.com/sile-typesetter/sile/issues/1274">#1274</a></p>
+</li>
+<li>
+<p><strong>languages:</strong> Correct hyphenation after apostrophe in French and Catalan (<a href="https://github.com/sile-typesetter/sile/commit/4c93891f3bbc2b95e5dca99eee46ab72d2248b9e">4c93891</a>)</p>
+</li>
+<li>
+<p><strong>languages:</strong> Correct synchronisation between indexes in French word breaking (<a href="https://github.com/sile-typesetter/sile/commit/94ca931e968b682c81a30dce7deace629b97afa2">94ca931</a>)</p>
+</li>
+<li>
+<p><strong>languages:</strong> Repair broken French hyphenation patterns (<a href="https://github.com/sile-typesetter/sile/commit/c25d9d7d7ff1ed2d1a291de1396795f4c9a72700">c25d9d7</a>)</p>
+</li>
+<li>
+<p><strong>packages:</strong> Add \pdf:metadata support for dates (<a href="https://github.com/sile-typesetter/sile/commit/1b87305b7503c1c7deb88793b428d5278b42f14c">1b87305</a>)</p>
+</li>
+<li>
+<p><strong>packages:</strong> Apply OpenType x and y offsets to color fonts (<a href="https://github.com/sile-typesetter/sile/commit/d66dc5fadaaa4992f6d33101023541c6b0ab93f2">d66dc5f</a>), closes <a href="https://github.com/sile-typesetter/sile/issues/1147">#1147</a></p>
+</li>
+<li>
+<p><strong>packages:</strong> Correct rebox to not output duplicate content (<a href="https://github.com/sile-typesetter/sile/commit/2802d9b14318a514da5fa56bfb60f67b698db51b">2802d9b</a>)</p>
+</li>
+<li>
+<p><strong>packages:</strong> Don't over-isolate functions run in Pandoc imports (<a href="https://github.com/sile-typesetter/sile/issues/1254">#1254</a>) (<a href="https://github.com/sile-typesetter/sile/commit/84507a546ac63f7f40e65abbfe6831ff4c19f046">84507a5</a>)</p>
+</li>
+<li>
+<p><strong>utilities:</strong> Fix UTF-16 encode/decode utility functions (<a href="https://github.com/sile-typesetter/sile/commit/71800815daf6275a35aa6578de56a84f043e5317">7180081</a>), closes <a href="https://github.com/sile-typesetter/sile/issues/1280">#1280</a></p>
+</li>
+<li>
+<p><strong>utilities:</strong> Set language of roman numerals to Latin to avoid casing issues (<a href="https://github.com/sile-typesetter/sile/issues/1253">#1253</a>) (<a href="https://github.com/sile-typesetter/sile/commit/95c4e2c0e1b1291849edf7ac8e456a954097286c">95c4e2c</a>)</p>
+</li>
+</ul>
+
+  </div>
+
+</div>
+</div>
+
+
+
+    </div>
+    <script src="/scripts/responsive.js" type="text/javascript"></script>
+  </body>
+</html>

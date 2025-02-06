@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>SILE – SILE v0.14.3 Is Released</title>
+      <meta name="viewport" content="width=device-width">
+      
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+      
+
+      <!-- Custom CSS -->
+      <link rel="stylesheet" href="/main.css">
+
+      <!-- Responsive CSS -->
+      <link rel="stylesheet" href="/css/responsive.css">
+
+      <!-- Fonts -->
+      <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400;1,600&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+      <link rel='stylesheet' href='//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack-subset.css'>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-63500-7', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </head>
+  <body>
+    <div id="site">
+      <div id="sidebar">
+        <div id="header">
+          <h1 class="title"><a href="https://sile-typesetter.org"><img id="logo" src="/images/logo.png"></a></h1>
+          <span class="tagline">The SILE Typesetter</span>
+        </div>
+
+        <ul>
+  <li> <a href="/">Home</a></li>
+  <li> <a href="/what-is-sile/">What is SILE?</a></li>
+  <li> <a href="/examples/">Examples</a>
+    <ul>
+      <li><a href="/examples/global/">Global Scripts</a></li>
+      <li><a href="/examples/packages/">Packages</a></li>
+    </ul>
+  </li>
+  <li> <a href="/manual/sile-0.15.9.pdf">Manual (PDF)</a></li>
+  <li> <a href="/lua-api">Lua API</a></li>
+  <li> <a href="/rust-api/sile">Rust API</a></li>
+  <li> <a href="/sil-grammar/">SIL Grammar</a></li>
+  <li> <a href="https://github.com/sile-typesetter/sile/releases"><strong>Download</strong></a></li>
+</ul>
+
+
+        <div class="footer">
+          <span id="footer-links">
+            <a href="https://github.com/sile-typesetter/sile" class="footer-link">GitHub</a>
+          </span>
+        </div>
+      </div>
+
+        
+<div id="content">
+<div id="home">
+    <div class="post-info">
+    <div class="cover-photo-container">
+      <img class="cover-photo" src="/images/cover.jpg">
+    </div>
+  </div>
+
+    <div class="post-info">
+    <div class="info-container">
+      <h1 class="title">SILE v0.14.3 Is Released</h1>
+      <div class="meta">
+        
+          <span class="date"><a href="&#x2F;blog&#x2F;release-v0.14.3&#x2F;">01 Sep 2022</a></span>
+        
+        
+          — <span class="author">Caleb Maclennan</span>
+        
+      </div>
+  </div>
+
+  <div class="post">
+    <p>Version v0.14.3 of SILE has been released and is <a href="https://github.com/sile-typesetter/sile/releases/tag/v0.14.3">available for download</a>!
+See the included <a href="https://github.com/sile-typesetter/sile/blob/master/CHANGELOG.md">CHANGELOG.md</a> or review the <a href="https://github.com/sile-typesetter/sile/compare/v0.14.2...v0.14.3">commit history</a> for more explicit details.</p>
+<h3 id="Summary_of_Improvements">Summary of Improvements</h3>
+<p>This release addresses a few pain points discovered using the v0.14 series in production.</p>
+<p>For 3rd party package developers, it's now easier to <em>find</em> non-Lua resources you installed along with your package.
+Among several contributions from <a href="http://github.com/Omikhleia">Didier Willis</a>, the output backend now returns useful information about images it embeds directly.
+The same work also allows specific pages of PDFs to to be emdeded as images, not just the first page.
+He also helped refactor existing interfaces to make them easier to extend, such as the table of contents package.
+A long standing issue with Turkish hyphenation has been addressed, eliminating the need for preprocessing or other workarounds.
+More long standing issues with the book class and chapter opening spreads have been addressed.
+Some priority and interactions between new CLI flags has been worked out.
+A few more misc bugs were also squished and relevant tests added.</p>
+<h3 id="Features">Features</h3>
+<ul>
+<li><strong>languages:</strong> Handle hyphenation of inter-word apostrophes in Turkish (<a href="https://github.com/sile-typesetter/sile/commit/50ae9368b29bfcb9f7d2274235c0398500d7665e">50ae936</a>)</li>
+<li><strong>packages:</strong> Add \open-spread function with more features than \open-double-page (<a href="https://github.com/sile-typesetter/sile/commit/c2ba579a56a79fea82e8ec83b95321af438793e4">c2ba579</a>)</li>
+<li><strong>packages:</strong> Add ability to select a page in PDF images (<a href="https://github.com/sile-typesetter/sile/commit/a477d94f9831bdd31d4925bd44660f1f24d4e290">a477d94</a>)</li>
+<li><strong>packages:</strong> Allow for customized content on otherwise blank filler pages (<a href="https://github.com/sile-typesetter/sile/commit/5ae97bffba3192df8e1c8bf7c74c459ac137af56">5ae97bf</a>)</li>
+<li><strong>packages:</strong> Provide base directory to packages (<a href="https://github.com/sile-typesetter/sile/issues/1529">#1529</a>) (<a href="https://github.com/sile-typesetter/sile/commit/f9ae99499ea8fada36abd849c95e2afd7f1e4030">f9ae994</a>)</li>
+<li><strong>utilities:</strong> Return image resolution with libtexpdf backend (<a href="https://github.com/sile-typesetter/sile/commit/a9c11d319cf83d38b72d09430a65cfb62e013494">a9c11d3</a>)</li>
+</ul>
+<h3 id="Bug_Fixes">Bug Fixes</h3>
+<ul>
+<li><strong>cli:</strong> Actually apply cli provided class options (<a href="https://github.com/sile-typesetter/sile/commit/505919e4c07638e7bf6da9ebc4af12e2355a2460">505919e</a>)</li>
+<li><strong>cli:</strong> Allow CLI option to override document specified class (<a href="https://github.com/sile-typesetter/sile/commit/5232ce8dd42fae9005c36c4e04ad988d4afedb77">5232ce8</a>)</li>
+<li><strong>nodes:</strong> Correct calculating width of postbreak discretionaries (<a href="https://github.com/sile-typesetter/sile/commit/ea7912cf0c1951f68b04b7d2dfef2057115ef77d">ea7912c</a>)</li>
+<li><strong>nodes:</strong> Work around discressionaries being output when not wanted (<a href="https://github.com/sile-typesetter/sile/commit/c7dc439456ad741fe644a88e6476596b8ec2a72f">c7dc439</a>)</li>
+<li><strong>packages:</strong> Fix over-aggressive eject in \open-double-page (<a href="https://github.com/sile-typesetter/sile/commit/562055681c1ccf3b47857864d9363fb985ed7fac">5620556</a>)</li>
+<li><strong>packages:</strong> Homogenize image width and height as measurements (<a href="https://github.com/sile-typesetter/sile/commit/b91cfbb9e80e4330be5b9dc307d721513bbd462a">b91cfbb</a>), closes <a href="https://github.com/sile-typesetter/sile/issues/1506">#1506</a></li>
+<li><strong>packages:</strong> Make sure PDF initialized before PDF package does anything (<a href="https://github.com/sile-typesetter/sile/issues/1550">#1550</a>) (<a href="https://github.com/sile-typesetter/sile/commit/ebc3748e00df700002622a7f3b8ad1e2cd5bfb65">ebc3748</a>)</li>
+<li><strong>packages:</strong> Resolve src= relative to document for SVG images (<a href="https://github.com/sile-typesetter/sile/commit/b55fc98e728ee69fc983be58e7331864617547b8">b55fc98</a>), closes <a href="https://github.com/sile-typesetter/sile/issues/1532">#1532</a></li>
+</ul>
+<h3 id="Reverts">Reverts</h3>
+<ul>
+<li>
+<p>Revert "chore(cli): Output header before doing anything that might throw warnings" (<a href="https://github.com/sile-typesetter/sile/commit/58da8ad5b824fa9ccc97d0ddfbea44e3a5c39c8e">58da8ad</a>)</p>
+</li>
+</ul>
+
+  </div>
+
+</div>
+</div>
+
+
+
+    </div>
+    <script src="/scripts/responsive.js" type="text/javascript"></script>
+  </body>
+</html>

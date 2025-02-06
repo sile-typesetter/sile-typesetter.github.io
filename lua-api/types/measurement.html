@@ -1,0 +1,276 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>SILE</h1>
+
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Class_measurement">Class measurement </a></li>
+</ul>
+
+
+<h2>Types</h2>
+<ul class="nowrap">
+  <li><a href="../types/color.html">color</a></li>
+  <li><a href="../types/length.html">length</a></li>
+  <li><strong>measurement</strong></li>
+  <li><a href="../types/node.html">node</a></li>
+  <li><a href="../types/unit.html">unit</a></li>
+</ul>
+<h2>Interfaces</h2>
+<ul class="nowrap">
+  <li><a href="../interfaces/classes.html">classes</a></li>
+  <li><a href="../interfaces/inputters.html">inputters</a></li>
+  <li><a href="../interfaces/languages.html">languages</a></li>
+  <li><a href="../interfaces/outputters.html">outputters</a></li>
+  <li><a href="../interfaces/packages.html">packages</a></li>
+  <li><a href="../interfaces/pagebuilders.html">pagebuilders</a></li>
+  <li><a href="../interfaces/shapers.html">shapers</a></li>
+  <li><a href="../interfaces/typesetters.html">typesetters</a></li>
+</ul>
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/classes.bible.html">classes.bible</a></li>
+  <li><a href="../modules/classes.book.html">classes.book</a></li>
+  <li><a href="../modules/classes.diglot.html">classes.diglot</a></li>
+  <li><a href="../modules/classes.docbook.html">classes.docbook</a></li>
+  <li><a href="../modules/classes.jbook.html">classes.jbook</a></li>
+  <li><a href="../modules/classes.jplain.html">classes.jplain</a></li>
+  <li><a href="../modules/classes.letter.html">classes.letter</a></li>
+  <li><a href="../modules/classes.plain.html">classes.plain</a></li>
+  <li><a href="../modules/classes.tbook.html">classes.tbook</a></li>
+  <li><a href="../modules/classes.tbook.html">classes.tbook</a></li>
+  <li><a href="../modules/classes.tplain.html">classes.tplain</a></li>
+  <li><a href="../modules/classes.triglot.html">classes.triglot</a></li>
+  <li><a href="../modules/packages.pdf.html">packages.pdf</a></li>
+</ul>
+<h2>Library</h2>
+<ul class="nowrap">
+  <li><a href="../library/SILE.html">SILE</a></li>
+  <li><a href="../library/SILE.font.html">SILE.font</a></li>
+  <li><a href="../library/SU.html">SU</a></li>
+  <li><a href="../library/SU.ast.html">SU.ast</a></li>
+  <li><a href="../library/SU.numbers.html">SU.numbers</a></li>
+  <li><a href="../library/SU.sorting.html">SU.sorting</a></li>
+  <li><a href="../library/globals.html">globals</a></li>
+  <li><a href="../library/packages.bibtex.csl.engine.html">packages.bibtex.csl.engine</a></li>
+  <li><a href="../library/packages.bibtex.csl.locale.html">packages.bibtex.csl.locale</a></li>
+  <li><a href="../library/packages.bibtex.csl.style.html">packages.bibtex.csl.style</a></li>
+  <li><a href="../library/packages.bibtex.csl.utils.casing.html">packages.bibtex.csl.utils.casing</a></li>
+  <li><a href="../library/packages.bibtex.csl.utils.superfolding.html">packages.bibtex.csl.utils.superfolding</a></li>
+  <li><a href="../library/packages.bibtex.csl.utils.xmlparser.html">packages.bibtex.csl.utils.xmlparser</a></li>
+  <li><a href="../library/packages.bibtex.support.bib2csl.html">packages.bibtex.support.bib2csl</a></li>
+  <li><a href="../library/packages.bibtex.support.isodatetime.html">packages.bibtex.support.isodatetime</a></li>
+  <li><a href="../library/packages.bibtex.support.locators.html">packages.bibtex.support.locators</a></li>
+  <li><a href="../library/packages.math.mathml-entities.html">packages.math.mathml-entities</a></li>
+  <li><a href="../library/packages.math.unicode-symbols.html">packages.math.unicode-symbols</a></li>
+</ul>
+<h2>Topics</h2>
+<ul class="">
+  <li><a href="../topics/README.md.html">README</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Types <code>measurement</code></h1>
+<p>SILE measurement type.</p>
+<p> Measurements consist of an amount and a unit. Any registered <code>types.unit</code> may be used. Some units are relative and
+ their value may depend on the context where they are evaluated. Others are absolute. Unlike <code>types.length</code>
+ measurements have no stretch or shrink parameters.</p>
+
+
+<h2><a href="#Class_measurement">Class measurement </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#measurement:_init">measurement:_init(amount[, unit=pt])</a></td>
+	<td class="summary">Constructor.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#measurement:absolute">measurement:absolute()</a></td>
+	<td class="summary">Convert relative measurements to absolute values and return a measurement.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#measurement:tonumber">measurement:tonumber()</a></td>
+	<td class="summary">Convert relative measurements to absolute values and return a number.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#measurement:__add">measurement:__add(other)</a></td>
+	<td class="summary">Addition meta-method.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Class_measurement"></a>Class measurement </h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "measurement:_init"></a>
+    <strong>measurement:_init(amount[, unit=pt])</strong>
+    </dt>
+    <dd>
+    Constructor.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">amount</span>
+            <span class="types"><span class="type">number</span>, <span class="type">length</span>, <a class="type" href="../types/measurement.html#measurement">measurement</a> or <a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         Amount of units or a string with the amount and unit.
+        </li>
+        <li><span class="parameter">unit</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         Name of unit.
+         (<em>default</em> pt)
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../types/measurement.html#measurement">measurement</a></span>
+
+
+
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">SILE.types.<span class="function-name">measurement</span>(<span class="number">3</span>, <span class="string">"em"</span>)
+SILE.types.<span class="function-name">measurement</span>(<span class="string">"2%fw"</span>)
+SILE.types.<span class="function-name">measurement</span>(<span class="number">6</span>)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "measurement:absolute"></a>
+    <strong>measurement:absolute()</strong>
+    </dt>
+    <dd>
+    Convert relative measurements to absolute values and return a measurement.
+ Resolves relative measurements (like em relevant to the current font size) into absolute measurements.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../types/measurement.html#measurement">measurement</a></span>
+        A new measurement in pt with any relative values resolved.
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">&gt; a = SILE.types.<span class="function-name">measurement</span>(<span class="string">"1.2em"</span>)
+&gt; <span class="global">print</span>(a:<span class="function-name">absolute</span>())
+<span class="number">12</span>pt</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "measurement:tonumber"></a>
+    <strong>measurement:tonumber()</strong>
+    </dt>
+    <dd>
+    Convert relative measurements to absolute values and return a number.
+ Similar to <a href="../types/measurement.html#measurement:absolute">measurement:absolute</a> but returns a number instead of a new measurement type.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">number</span></span>
+        A number (corresponding to pts) for the amount with any relative values resolved.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "measurement:__add"></a>
+    <strong>measurement:__add(other)</strong>
+    </dt>
+    <dd>
+    Addition meta-method.
+ Assuming matching relative units or absolute units, allows two measurements to be combined into one.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">other</span>
+            <span class="types"><a class="type" href="../types/measurement.html#measurement">measurement</a></span>
+
+
+
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">measuremnet</span></span>
+        A new measurement of the same unit type as <code>self</code> with the value of <code>other</code> added.
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">&gt; a = SILE.types.<span class="function-name">measurement</span>(<span class="number">6</span>, <span class="string">"em"</span>)
+&gt; b = SILE.types.<span class="function-name">measurement</span>(<span class="string">"2em"</span>)
+&gt; c = a + b
+&gt; <span class="global">print</span>(c)
+<span class="number">8</span>em</pre>
+    </ul>
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/lunarmodules/LDoc">LDoc 1.5.0</a></i>
+<i style="float:right;">Last updated 1980-01-01 00:00:00 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

@@ -1,0 +1,32 @@
+\begin[papersize=a5]{document}
+\nofolios
+\use[module=packages.rules]
+\use[module=packages.raiselower]
+\font[size=14pt]
+
+“Rules” are rectangular ink blobs that can be be used to create a variety of effects.
+
+\fullrule
+
+Simple rectangular boxes are easy. QED \hrule[height=1ex, width=1ex]
+
+\noindent\hfill\raise[height=0.5ex]{\hrule[width=25%lw, height=0.4pt]}\hfill
+
+One can also underline \underline{content} or strike \strikethrough{content}.
+These can be nested and can span multiple lines as paragraphs are line-wrapped:
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. \underline{Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor}. \strikethrough{Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.} Duis semper. Duis arcu massa, \underline{scelerisque \strikethrough{vita} vitae}, consequat in, pretium a, enim.
+
+\noindent\hfill\raise[height=0.5ex]{\hrule[width=25%lw, height=0.4pt]}\hfill
+
+Rule “fills” stretch to the available width of the line.
+
+Placeholder for some input: \hrulefill[position=underline].
+
+\medskip
+Obviously, the following example is just for the Wow! factor.
+There are many ways to display a glider from Conway’s Game of Life, and this one is certainly not the most efficient and elegant!
+
+\noindent\hrulefill[raise=9pt, thickness=1pt]\glue[width=2pt]\rebox[height=20pt]{\hrule[height=5pt, width=5pt]\glue[width=1pt]\hrule[height=5pt, width=5pt]\glue[width=1pt]\hrule[height=5pt, width=5pt]\glue[width=-5pt]\raise[height=6pt]{\hrule[height=5pt, width=5pt]}%
+\glue[width=-11pt]\raise[height=12pt]{\hrule[height=5pt, width=5pt]}}\glue[width=9pt]\hrulefill[raise=9pt, thickness=1pt]
+
+\end{document}

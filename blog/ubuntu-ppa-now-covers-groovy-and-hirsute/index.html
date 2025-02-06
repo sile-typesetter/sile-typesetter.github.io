@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>SILE – Ubuntu PPA Now Covers Groovy and Hirsute</title>
+      <meta name="viewport" content="width=device-width">
+      
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+      
+
+      <!-- Custom CSS -->
+      <link rel="stylesheet" href="/main.css">
+
+      <!-- Responsive CSS -->
+      <link rel="stylesheet" href="/css/responsive.css">
+
+      <!-- Fonts -->
+      <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400;1,600&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+      <link rel='stylesheet' href='//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack-subset.css'>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-63500-7', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </head>
+  <body>
+    <div id="site">
+      <div id="sidebar">
+        <div id="header">
+          <h1 class="title"><a href="https://sile-typesetter.org"><img id="logo" src="/images/logo.png"></a></h1>
+          <span class="tagline">The SILE Typesetter</span>
+        </div>
+
+        <ul>
+  <li> <a href="/">Home</a></li>
+  <li> <a href="/what-is-sile/">What is SILE?</a></li>
+  <li> <a href="/examples/">Examples</a>
+    <ul>
+      <li><a href="/examples/global/">Global Scripts</a></li>
+      <li><a href="/examples/packages/">Packages</a></li>
+    </ul>
+  </li>
+  <li> <a href="/manual/sile-0.15.9.pdf">Manual (PDF)</a></li>
+  <li> <a href="/lua-api">Lua API</a></li>
+  <li> <a href="/rust-api/sile">Rust API</a></li>
+  <li> <a href="/sil-grammar/">SIL Grammar</a></li>
+  <li> <a href="https://github.com/sile-typesetter/sile/releases"><strong>Download</strong></a></li>
+</ul>
+
+
+        <div class="footer">
+          <span id="footer-links">
+            <a href="https://github.com/sile-typesetter/sile" class="footer-link">GitHub</a>
+          </span>
+        </div>
+      </div>
+
+        
+<div id="content">
+<div id="home">
+    <div class="post-info">
+    <div class="cover-photo-container">
+      <img class="cover-photo" src="/images/cover.jpg">
+    </div>
+  </div>
+
+    <div class="post-info">
+    <div class="info-container">
+      <h1 class="title">Ubuntu PPA Now Covers Groovy and Hirsute</h1>
+      <div class="meta">
+        
+          <span class="date"><a href="&#x2F;blog&#x2F;ubuntu-ppa-now-covers-groovy-and-hirsute&#x2F;">04 Mar 2021</a></span>
+        
+        
+          — <span class="author">Caleb Maclennan</span>
+        
+      </div>
+  </div>
+
+  <div class="post">
+    <p>Our “official” Ubuntu <a href="https://launchpad.net/~sile-typesetter/+archive/ubuntu/sile">PPA</a> with prebuilt SILE packages –including all the dependencies missing from the base Ubuntu package set– fell a little bit behind last month. In fact it never got updated with the SILE <a href="/blog/release-v0.10.14/">v0.10.14</a> release. It has been revived and is now up to date with <a href="/blog/release-v0.10.15/">v0.10.15</a> packages.</p>
+<p>As before, both of the last two major <a href="https://wiki.ubuntu.com/Releases">LTS releases</a> are supported: Bionic Beaver (18.04) and Focal Fossa (20.04). In addition, as of today the distribution coverage has been expanded to cover both of the currently active short term releases. We were late getting on the ball with Groovy Gorilla (20.10) and it is already nearing the end of its short lifespan but if you are using it, SILE packages are available. To make up for the tardyness we’re early with Hirsute Hippo (21.04) support and SILE packages are available for it now — even ahead of it’s official release in April.</p>
+<p>Usage is the same as before for all distros:</p>
+<pre data-lang="sh" style="background-color:#2b303b;color:#c0c5ce;" class="language-sh "><code class="language-sh" data-lang="sh"><span style="color:#bf616a;">sudo</span><span> add-apt-repository ppa:sile-typesetter/sile
+</span><span style="color:#bf616a;">sudo</span><span> apt-get update
+</span><span style="color:#bf616a;">sudo</span><span> apt-get install sile
+</span></code></pre>
+<p>The two latest distros Groovy and Hirsute should support Lua 5.4 as well. If you encounter any trouble with any of these packages feel free to open a <a href="https://github.com/sile-typesetter/sile/issues/new">new issue report</a> on our GitHub tracker.</p>
+<p>Lastly if anybody knows their way around Launchpad and Ubuntu package devoplement and is interested in helping automate and maintain the packaging, we’re willing to accept help. Maintaining packaging for distros we don’t use personally is quite a bit of mental overhead.</p>
+
+  </div>
+
+</div>
+</div>
+
+
+
+    </div>
+    <script src="/scripts/responsive.js" type="text/javascript"></script>
+  </body>
+</html>

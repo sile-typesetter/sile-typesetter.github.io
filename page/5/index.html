@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>SILE – Home</title>
+      <meta name="viewport" content="width=device-width">
+      
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+      
+
+      <!-- Custom CSS -->
+      <link rel="stylesheet" href="/main.css">
+
+      <!-- Responsive CSS -->
+      <link rel="stylesheet" href="/css/responsive.css">
+
+      <!-- Fonts -->
+      <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400;1,600&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+      <link rel='stylesheet' href='//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack-subset.css'>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-63500-7', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </head>
+  <body>
+    <div id="site">
+      <div id="sidebar">
+        <div id="header">
+          <h1 class="title"><a href="https://sile-typesetter.org"><img id="logo" src="/images/logo.png"></a></h1>
+          <span class="tagline">The SILE Typesetter</span>
+        </div>
+
+        <ul>
+  <li> <a href="/">Home</a></li>
+  <li> <a href="/what-is-sile/">What is SILE?</a></li>
+  <li> <a href="/examples/">Examples</a>
+    <ul>
+      <li><a href="/examples/global/">Global Scripts</a></li>
+      <li><a href="/examples/packages/">Packages</a></li>
+    </ul>
+  </li>
+  <li> <a href="/manual/sile-0.15.9.pdf">Manual (PDF)</a></li>
+  <li> <a href="/lua-api">Lua API</a></li>
+  <li> <a href="/rust-api/sile">Rust API</a></li>
+  <li> <a href="/sil-grammar/">SIL Grammar</a></li>
+  <li> <a href="https://github.com/sile-typesetter/sile/releases"><strong>Download</strong></a></li>
+</ul>
+
+
+        <div class="footer">
+          <span id="footer-links">
+            <a href="https://github.com/sile-typesetter/sile" class="footer-link">GitHub</a>
+          </span>
+        </div>
+      </div>
+
+        
+<div id="content">
+<div id="home">
+  <div class="post-info">
+    <div class="cover-photo-container">
+      <img class="cover-photo" src="/images/cover.jpg">
+    </div>
+  </div>
+
+
+      <div class="post-info">
+    <div class="info-container">
+      <h1 class="title">SILE v0.14.7 Is Released</h1>
+      <div class="meta">
+        
+          <span class="date"><a href="&#x2F;blog&#x2F;release-v0.14.7&#x2F;">30 Dec 2022</a></span>
+        
+        
+          — <span class="author">Caleb Maclennan</span>
+        
+      </div>
+  </div>
+
+  <div class="post">
+    <p>Version v0.14.7 of SILE has been released and is <a href="https://github.com/sile-typesetter/sile/releases/tag/v0.14.7">available for download</a>!
+See the included <a href="https://github.com/sile-typesetter/sile/blob/master/CHANGELOG.md">CHANGELOG.md</a> or review the <a href="https://github.com/sile-typesetter/sile/compare/v0.14.6...v0.14.7">commit history</a> for more explicit details.</p>
+<h3 id="Summary_of_Improvements">Summary of Improvements</h3>
+<p>Some of the changes that came out in v0.14.6 were … less than optimal.
+The build system changes were for a good purpose, but made life a bit difficult for some distro packagers.
+I also managed to introduce a parsing regression.
+It also came to light that a previous API deprecation didn't come with the usual warning and shim for transitional support.</p>
+<p>This release is notable for distribution packagers for two reasons.
+First, there is now an easier way to skip the font dependency check at build time.
+Second, this release is the first time using LuaJIT is at 100% parity with regular Lua.
+If your distro has LuaJIT available there is now little reason not to make the switch.¹
+The speed increase is substantial, especially for large documents.²</p>
+<p>While I was tinkering with smoothing out the build and fixing regressions a couple other fixes landed.
+<a href="https://github.com/khaledhosny">Khaled Hosny</a> tackled a long standing issue with the font loader.
+The <code>opsz</code> axis can now be used as expected so fonts with OpentType FeatureVariations are usable in SILE.
+<a href="https://github.com/raphCode">raphCode</a> also spotted and fixed some outdated code in the manual.</p>
+<p><sub>¹:
+As far as SILE core and all its Lua dependencies are concerned there is no downside.
+Previously some of the debug and tracing features did not give as much useful information when using LuaJIT.
+Now the only caveat is related to end users and their documents.
+If people write custom Lua code in their projects and/or use other 3rd party Lua libraries they will need to consider interpreter support.
+</sub></p>
+<p><sub>²:
+As a rough comparison on my desktop machine, rendering the 115 page SILE manual takes about 48 seconds with Lua 5.4, 22 seconds with LuaJIT, and 17 seconds with OpenResty.
+</sub></p>
+<h3 id="Features">Features</h3>
+<ul>
+<li><strong>build:</strong> Allow easy skip of font checks with FCMATCH=true (<a href="https://github.com/sile-typesetter/sile/commit/5c0cef6bc11d0ac353e92557212aa16842f3de68">5c0cef6</a>)</li>
+</ul>
+<h3 id="Bug_Fixes">Bug Fixes</h3>
+<ul>
+<li>
+<p><strong>build:</strong> Only check tooling to bulid manual if really needed (<a href="https://github.com/sile-typesetter/sile/commit/e166e0063b0b6c49040cc5c3759cd0a68162ef15">e166e00</a>)</p>
+</li>
+<li>
+<p><strong>inputters:</strong> Rework SIL input to handle both junk outside of document tag and fragments (<a href="https://github.com/sile-typesetter/sile/commit/4c51c557034dd618ad1e68799f9de1db76c4f262">4c51c55</a>)</p>
+</li>
+<li>
+<p><strong>outputters:</strong> Patch up error message when failing to load font (<a href="https://github.com/sile-typesetter/sile/issues/1671">#1671</a>) (<a href="https://github.com/sile-typesetter/sile/commit/771d87f24fa0f4599655fba23bcade15a7a5e7cb">771d87f</a>)</p>
+</li>
+<li>
+<p><strong>shaper:</strong> Correct font-variants using opsz axis (<a href="https://github.com/sile-typesetter/sile/issues/1666">#1666</a>) (<a href="https://github.com/sile-typesetter/sile/commit/a9295838e2639dee9fde71d29717957deaf650d5">a929583</a>)</p>
+</li>
+<li>
+<p><strong>shaper:</strong> Respect variations when shaping (<a href="https://github.com/sile-typesetter/sile/issues/1265">#1265</a>) (<a href="https://github.com/sile-typesetter/sile/issues/1662">#1662</a>) (<a href="https://github.com/sile-typesetter/sile/commit/f50ae77d37003349936b3236de95c410155f6209">f50ae77</a>)</p>
+</li>
+<li>
+<p><strong>tooling:</strong> Keep all Lua packages in same env for Nix (<a href="https://github.com/sile-typesetter/sile/commit/8fc867013db91cfbe591ab6815cf4ee5768c8982">8fc8670</a>)</p>
+</li>
+<li>
+<p><strong>utilities:</strong> Tweak breadcrumbs to work under LuaJIT limitations (<a href="https://github.com/sile-typesetter/sile/commit/32f744c5c493fa258498458e46e54c549ac61da8">32f744c</a>)</p>
+</li>
+</ul>
+
+  </div>
+
+
+      <div class="post-info">
+    <div class="info-container">
+      <h1 class="title">SILE v0.14.6 Is Released</h1>
+      <div class="meta">
+        
+          <span class="date"><a href="&#x2F;blog&#x2F;release-v0.14.6&#x2F;">14 Dec 2022</a></span>
+        
+        
+          — <span class="author">Caleb Maclennan</span>
+        
+      </div>
+  </div>
+
+  <div class="post">
+    <p>Version v0.14.6 of SILE has been released and is <a href="https://github.com/sile-typesetter/sile/releases/tag/v0.14.6">available for download</a>!
+See the included <a href="https://github.com/sile-typesetter/sile/blob/master/CHANGELOG.md">CHANGELOG.md</a> or review the <a href="https://github.com/sile-typesetter/sile/compare/v0.14.5...v0.14.6">commit history</a> for more explicit details.</p>
+<h3 id="Summary_of_Improvements">Summary of Improvements</h3>
+<p>This release has tons of fixes and even a few features, but perhaps the most interesting bit to end users might just be the documentation.
+Thanks to <a href="https://github.com/hegjon">Jonny Heggheim</a>, official SILE packages are in the works for Fedora.
+The procedure for installing them via COPR is documented and will be updated when they land in default repositories.
+Also <a href="https://github.com/ctrlcctrlv">Fredrick Brennan</a> added some useful notes about installing 3rd-party packages.
+This is really important because very useful actions like typesetting Markdown are best accomplished with external packages.</p>
+<p>Anyone working with the source code for SILE itself should note the build system has been split so only run time dependencies are checked at configure time by default.
+This means no-change is needed for distro packagers and end users that are just wishing to install and move on.
+However checking for dependencies needed in order to develop SILE itself (including running tests) now requires different configuration.
+Using <code>--enable-developer</code> should be added as a go-to configure option for anyone hacking or wishing to contribute the to SILE sources.
+Also of interest to developers, using <code>nix develop</code> should now be a lot more seamless as far as providing a ready-to-use environment.</p>
+<p><a href="https://github.com/Omikhleia">Didier Willis</a> has rebuilt the <code>formatNumber()</code> utility function using ICU.
+This increases language support from a handful of manually implemented ones to almost complete CLDR coverage.
+In the process a new utility function <code>collatedSort()</code> was added to sort Lua data with locale aware collation.
+He also fixed a number of little typsetter bugs and overhauled some more documentation.</p>
+<p>First-time contributer <a href="https://github.com/raphCode">raphCode</a> submitted a fix for calling citation keys in the bibtex package.</p>
+<p>Debug output is now both faster and more robust since it can't crass the typesetter.
+When errors are encountered, location reports for where in the document an error was triggered are more accurate.
+Bundled in this release are also a batch of other small bug fixes to the typesetter, page builder, and shaper.</p>
+<h3 id="Features">Features</h3>
+<ul>
+<li><strong>build:</strong> Add ./configure --enable-developer to ease setup for SILE developers (<a href="https://github.com/sile-typesetter/sile/commit/e8a56aef39eff4601490a8ccfc6bffba107b18ca">e8a56ae</a>)</li>
+<li><strong>core:</strong> Add SU.collatedSort for language-dependent table sorting with collation (<a href="https://github.com/sile-typesetter/sile/commit/ea7446d29117884b89eaaba96f19a7687161857e">ea7446d</a>)</li>
+<li><strong>core:</strong> SU.formatNumber has more options and language support (<a href="https://github.com/sile-typesetter/sile/commit/ed0db293fd17bffec95db931150ac3bb2df3903c">ed0db29</a>)</li>
+<li><strong>packages:</strong> Add package loaded that can later be used to track package dependencies (<a href="https://github.com/sile-typesetter/sile/commit/d48633af4b2f7957af420676e5fac0fe126558da">d48633a</a>)</li>
+<li><strong>packages:</strong> Code block environment and raw handler for autodoc (<a href="https://github.com/sile-typesetter/sile/commit/7661330372654978a41139c7da1974efb7aa6107">7661330</a>)</li>
+</ul>
+<h3 id="Bug_Fixes">Bug Fixes</h3>
+<ul>
+<li>
+<p><strong>classes:</strong> Apply page/framebreak in hmode but warn the user (<a href="https://github.com/sile-typesetter/sile/commit/809cbba95c7b4a4577981efb749ecff844a01d8d">809cbba</a>)</p>
+</li>
+<li>
+<p><strong>cli:</strong> Deduplicate Lua module loading paths when adding segments (<a href="https://github.com/sile-typesetter/sile/commit/e0f75b11be7ef40fcaed06002407d061a411b257">e0f75b1</a>)</p>
+</li>
+<li>
+<p><strong>cli:</strong> Escape possible path character in replacement (<a href="https://github.com/sile-typesetter/sile/commit/0161f9afea6329a14fd511038c6d42c6c948fcb9">0161f9a</a>)</p>
+</li>
+<li>
+<p><strong>cli:</strong> Make user system root not added to resource search path (<a href="https://github.com/sile-typesetter/sile/commit/43058502c206babc330cf5efe1f22540d3529b69">4305850</a>)</p>
+</li>
+<li>
+<p><strong>debug:</strong> Correct filename in debug info after includes (<a href="https://github.com/sile-typesetter/sile/issues/1652">#1652</a>) (<a href="https://github.com/sile-typesetter/sile/commit/4990ecc42eae8b6fb981cfa7facc0c3c9300da68">4990ecc</a>)</p>
+</li>
+<li>
+<p><strong>debug:</strong> Fix pagebuilder debug functions in absence of luastd (<a href="https://github.com/sile-typesetter/sile/commit/ab46bf7c435cdfe8eada1d80363df04a3e148f45">ab46bf7</a>)</p>
+</li>
+<li>
+<p><strong>debug:</strong> Fix typesetter:debugState() in absence of luastd (<a href="https://github.com/sile-typesetter/sile/commit/42f6b0b7cf5d1b3d94020d0bcf851b4dd0265b39">42f6b0b</a>)</p>
+</li>
+<li>
+<p><strong>inputters:</strong> Correct Lua inputter AST expectations to match others (<a href="https://github.com/sile-typesetter/sile/commit/6177b0b10fafdaca2dd605f17049b70ac09ee39d">6177b0b</a>)</p>
+</li>
+<li>
+<p><strong>inputters:</strong> Work around SIL parser returning tags as part of content (<a href="https://github.com/sile-typesetter/sile/commit/ef4efb7a4ec007cfb4e72de1b47633a42a228f4e">ef4efb7</a>)</p>
+</li>
+<li>
+<p><strong>languages:</strong> Replace custom EN/TR ordinals with ICU (<a href="https://github.com/sile-typesetter/sile/commit/82b67094f329ca2e57d88d992e200a9502fd2b91">82b6709</a>)</p>
+</li>
+<li>
+<p><strong>nodes:</strong> Ignore empty node properties when debugging breaks (<a href="https://github.com/sile-typesetter/sile/commit/f034e05c2a37206c78e29f31fd9a6dab000d9e9a">f034e05</a>)</p>
+</li>
+<li>
+<p><strong>packages:</strong> Correct content position reporting in inputfilter (<a href="https://github.com/sile-typesetter/sile/commit/bb53d77709fc94b798c70d2d0bf268d02ce4536d">bb53d77</a>)</p>
+</li>
+<li>
+<p><strong>packages:</strong> Don't discard grid makup vboxes at top of new pages (<a href="https://github.com/sile-typesetter/sile/commit/22b899c389dbd94a446f4600a8cb8c225d8afa5f">22b899c</a>)</p>
+</li>
+<li>
+<p><strong>packages:</strong> Fix \cite{key} in bibtex package (<a href="https://github.com/sile-typesetter/sile/issues/1655">#1655</a>) (<a href="https://github.com/sile-typesetter/sile/commit/648bb5d2702f5b19e0d71903808ffe0ecceae020">648bb5d</a>)</p>
+</li>
+<li>
+<p><strong>packages:</strong> Use casting to restore shaper state after fallbacks (<a href="https://github.com/sile-typesetter/sile/commit/351fc681a19cd30d397e7b10cdcfeb9fe5edb243">351fc68</a>)</p>
+</li>
+<li>
+<p><strong>shapers:</strong> Apply tracking settings even in font-fallback shaper (<a href="https://github.com/sile-typesetter/sile/commit/55f0c9cd94b2ed624146b7b9da64c351ad0f7a98">55f0c9c</a>)</p>
+</li>
+<li>
+<p><strong>tooling:</strong> Exempt LuaJIT from external bit32 library requirement (<a href="https://github.com/sile-typesetter/sile/issues/1654">#1654</a>) (<a href="https://github.com/sile-typesetter/sile/commit/d094f1b3529d25481205eb90326a9d53da44e820">d094f1b</a>)</p>
+</li>
+<li>
+<p><strong>typesetter:</strong> Ensure being in horizontal mode after pushback (<a href="https://github.com/sile-typesetter/sile/commit/a82b60448f639dafeb03bd8faf99584c32e56aad">a82b604</a>)</p>
+</li>
+<li>
+<p><strong>utilities:</strong> Correct logic in AST debugging output, also protect (<a href="https://github.com/sile-typesetter/sile/commit/97c82f0c22c4f5bc77aa5d381ab7afd2e8dd2952">97c82f0</a>)</p>
+</li>
+<li>
+<p><strong>utilities:</strong> Protect debug functions so they can't crash SILE (<a href="https://github.com/sile-typesetter/sile/commit/319b96a43c976fb1a50dad03baada2052fade67c">319b96a</a>)</p>
+</li>
+</ul>
+
+  </div>
+
+
+      <div class="post-info">
+    <div class="info-container">
+      <h1 class="title">SILE v0.14.5 Is Released</h1>
+      <div class="meta">
+        
+          <span class="date"><a href="&#x2F;blog&#x2F;release-v0.14.5&#x2F;">19 Nov 2022</a></span>
+        
+        
+          — <span class="author">Caleb Maclennan</span>
+        
+      </div>
+  </div>
+
+  <div class="post">
+    <p>Version v0.14.5 of SILE has been released and is <a href="https://github.com/sile-typesetter/sile/releases/tag/v0.14.5">available for download</a>!
+See the included <a href="https://github.com/sile-typesetter/sile/blob/master/CHANGELOG.md">CHANGELOG.md</a> or review the <a href="https://github.com/sile-typesetter/sile/compare/v0.14.4...v0.14.5">commit history</a> for more explicit details.</p>
+<h3 id="Summary_of_Improvements">Summary of Improvements</h3>
+<p>We're just squishing bugs today and making the manual a little neater.
+Working with STDIN streams should be a bit more robust now as the content type detection isn't so picky about whitespace and isn't so prone to false positive detections.
+Document file restrictions have been relaxed a little too allowing comments and whitespace before the leading document tag.
+Package developers should have a little bit easier time with in the event their package is loaded twice.
+Also a number of small typesetting issues in the user manual were cleaned up by <a href="https://github.com/Omikhleia">Didier Willis</a>.</p>
+<h3 id="Bug_Fixes">Bug Fixes</h3>
+<ul>
+<li>
+<p><strong>inputters:</strong> Correct false positive detection of STDIN as Lua content (<a href="https://github.com/sile-typesetter/sile/commit/d54946bba643b9cf4fc68f21df4442c82238fedf">d54946b</a>)</p>
+</li>
+<li>
+<p><strong>inputters:</strong> Don't duplicate passthrough content in AST (<a href="https://github.com/sile-typesetter/sile/commit/07c8e874550a7ef5924bae2047f98c33fbda6453">07c8e87</a>)</p>
+</li>
+<li>
+<p><strong>inputters:</strong> Permit content outside of the document note, e.g. comments or blanks (<a href="https://github.com/sile-typesetter/sile/issues/1596">#1596</a>) (<a href="https://github.com/sile-typesetter/sile/commit/f1a508a6c61d64623f40d5274eee3bdbb6353d28">f1a508a</a>)</p>
+</li>
+<li>
+<p><strong>inputters:</strong> Relax SIL format sniffing to allow valid syntax (<a href="https://github.com/sile-typesetter/sile/commit/43fc4bca58da9288dda0dc001b647ed45e5267d5">43fc4bc</a>)</p>
+</li>
+<li>
+<p><strong>languages:</strong> Remove superfluous line (<a href="https://github.com/sile-typesetter/sile/commit/848b91f5ab66f90e4c1d5ed2ca8f6e20acb9fcdf">848b91f</a>)</p>
+</li>
+<li>
+<p><strong>languages:</strong> Tidy up variable scope in languages/unicode.lua (<a href="https://github.com/sile-typesetter/sile/commit/78b453d58a92c2ff34a80bf610d2c1c120eedc38">78b453d</a>), closes <a href="https://github.com/sile-typesetter/sile/issues/699">#699</a></p>
+</li>
+<li>
+<p><strong>measurements:</strong> Allow redefinition of existing units (<a href="https://github.com/sile-typesetter/sile/issues/1608">#1608</a>) (<a href="https://github.com/sile-typesetter/sile/commit/8d810182c25799fd134133611f3c29e90a60f7c8">8d81018</a>)</p>
+</li>
+<li>
+<p><strong>packages:</strong> Ensure a page switch does not break boustrophedon (<a href="https://github.com/sile-typesetter/sile/issues/1615">#1615</a>) (<a href="https://github.com/sile-typesetter/sile/commit/64abaf9c2511ea1241efc04722daf9f0ed7589b1">64abaf9</a>)</p>
+</li>
+</ul>
+
+  </div>
+
+
+      <div class="post-info">
+    <div class="info-container">
+      <h1 class="title">SILE v0.14.4 Is Released</h1>
+      <div class="meta">
+        
+          <span class="date"><a href="&#x2F;blog&#x2F;release-v0.14.4&#x2F;">05 Nov 2022</a></span>
+        
+        
+          — <span class="author">Caleb Maclennan</span>
+        
+      </div>
+  </div>
+
+  <div class="post">
+    <p>Version v0.14.4 of SILE has been released and is <a href="https://github.com/sile-typesetter/sile/releases/tag/v0.14.4">available for download</a>!
+See the included <a href="https://github.com/sile-typesetter/sile/blob/master/CHANGELOG.md">CHANGELOG.md</a> or review the <a href="https://github.com/sile-typesetter/sile/compare/v0.14.3...v0.14.4">commit history</a> for more explicit details.</p>
+<h3 id="Summary_of_Improvements">Summary of Improvements</h3>
+<p>Today we have a small rollup of fixes and improvements.
+<a href="https://github.com/Omikhleia">Didier Willis</a> overhauled the counters packages as well as fixed up bugs in several other packages.
+The default center of rotation has been changed to give a more expected result.
+Text casing functions are accessible again from the Lua side of things, changing masters during a page output doesn't break page breaking, and using the twoside package doesn't force the use of mirroring.
+<a href="https://github.com/OlivierNicole">Olivier Nicole</a> also stepped in to fixup some math bugs.
+Also thanks to <a href="https://github.com/ThatGeoGuy">Jeremy Steward</a> and <a href="https://github.com/snan">Sandra Snan</a> for pointing out and fixing small issues in our documentation.</p>
+<h3 id="Features">Features</h3>
+<ul>
+<li><strong>packages:</strong> Add boolean noleadingzeros option to counter formatter (<a href="https://github.com/sile-typesetter/sile/commit/e4f813333e935ce0e42727eba407db2f7273391d">e4f8133</a>)</li>
+<li><strong>packages:</strong> Add new command \set-multilevel-counter (<a href="https://github.com/sile-typesetter/sile/commit/11578a81b4abde4652baefe969e4e79905ff7639">11578a8</a>)</li>
+</ul>
+<h3 id="Bug_Fixes">Bug Fixes</h3>
+<ul>
+<li><strong>classes:</strong> Always break out of hmode before processing \chapter headings (<a href="https://github.com/sile-typesetter/sile/commit/0c44d8ea4b39998011bdfd08bb9106dbd993b347">0c44d8e</a>)</li>
+<li><strong>core:</strong> A typo in a variable prevents using -u with a class (<a href="https://github.com/sile-typesetter/sile/commit/b8f5c407869bc338117acefe1e4fc5c0f484f803">b8f5c40</a>), closes <a href="https://github.com/sile-typesetter/sile/issues/1569">#1569</a></li>
+<li><strong>languages:</strong> Make 'und' an exception to language name canonicalization (<a href="https://github.com/sile-typesetter/sile/commit/52e9b79ca89da98947afae82742c2648a52a1cfa">52e9b79</a>)</li>
+<li><strong>math:</strong> Fix insertion order of MathML children (<a href="https://github.com/sile-typesetter/sile/commit/738e9e6fb40ea5e21f182c74af4f584d0190313d">738e9e6</a>)</li>
+<li><strong>packages:</strong> Account for depth when calculating rotation center (<a href="https://github.com/sile-typesetter/sile/commit/289dd2a4e3c54502d68b06f5126d52f9e3098ca0">289dd2a</a>)</li>
+<li><strong>packages:</strong> Avoid forcing mirrored masters in twoside package (<a href="https://github.com/sile-typesetter/sile/issues/1562">#1562</a>) (<a href="https://github.com/sile-typesetter/sile/commit/8cdf6ede2361fae948723fbada7563d44d39901d">8cdf6ed</a>)</li>
+<li><strong>packages:</strong> Combine <code>\unichar</code>'ed chars with same font only (<a href="https://github.com/sile-typesetter/sile/commit/91a8d4091cc320bed714f51f2e32824d80b2a2f7">91a8d40</a>)</li>
+<li><strong>packages:</strong> Correct rotation origin calculation back to pre v0.10.0 (<a href="https://github.com/sile-typesetter/sile/commit/35219360e0e5ad54f3363624148181eb619715c7">3521936</a>)</li>
+<li><strong>packages:</strong> Don't inhibit page breaking after switching masters mid-page (<a href="https://github.com/sile-typesetter/sile/commit/6b20f7310c9c482352a4e401462519c32092a04f">6b20f73</a>)</li>
+<li><strong>packages:</strong> Make sure PDF initialized before rotate package directly calls it (<a href="https://github.com/sile-typesetter/sile/commit/449b2a6cf417ab36ceaa95ccc499557bd81a84c1">449b2a6</a>)</li>
+<li><strong>packages:</strong> Rework simple and multilevel counters (<a href="https://github.com/sile-typesetter/sile/commit/1e6e91ad0154c8f8399b9271dcc27c48f2fd1b78">1e6e91a</a>)</li>
+<li><strong>packages:</strong> Textcase package name typo preventing using methods from code (<a href="https://github.com/sile-typesetter/sile/commit/7f68766b8a6aeb7111462a1557b4715b6c9b5855">7f68766</a>), closes <a href="https://github.com/sile-typesetter/sile/issues/1568">#1568</a></li>
+</ul>
+<h3 id="Reverts">Reverts</h3>
+<ul>
+<li>
+<p>Revert "docs(packages): Fixup unichar documentation, work around known bug (#1549)" (<a href="https://github.com/sile-typesetter/sile/commit/03d1b1168c7d55251fb631286394ade8c46104ae">03d1b11</a>), closes <a href="https://github.com/sile-typesetter/sile/issues/1549">#1549</a></p>
+</li>
+</ul>
+
+  </div>
+
+
+      <div class="post-info">
+    <div class="info-container">
+      <h1 class="title">SILE v0.14.3 Is Released</h1>
+      <div class="meta">
+        
+          <span class="date"><a href="&#x2F;blog&#x2F;release-v0.14.3&#x2F;">01 Sep 2022</a></span>
+        
+        
+          — <span class="author">Caleb Maclennan</span>
+        
+      </div>
+  </div>
+
+  <div class="post">
+    <p>Version v0.14.3 of SILE has been released and is <a href="https://github.com/sile-typesetter/sile/releases/tag/v0.14.3">available for download</a>!
+See the included <a href="https://github.com/sile-typesetter/sile/blob/master/CHANGELOG.md">CHANGELOG.md</a> or review the <a href="https://github.com/sile-typesetter/sile/compare/v0.14.2...v0.14.3">commit history</a> for more explicit details.</p>
+<h3 id="Summary_of_Improvements">Summary of Improvements</h3>
+<p>This release addresses a few pain points discovered using the v0.14 series in production.</p>
+<p>For 3rd party package developers, it's now easier to <em>find</em> non-Lua resources you installed along with your package.
+Among several contributions from <a href="http://github.com/Omikhleia">Didier Willis</a>, the output backend now returns useful information about images it embeds directly.
+The same work also allows specific pages of PDFs to to be emdeded as images, not just the first page.
+He also helped refactor existing interfaces to make them easier to extend, such as the table of contents package.
+A long standing issue with Turkish hyphenation has been addressed, eliminating the need for preprocessing or other workarounds.
+More long standing issues with the book class and chapter opening spreads have been addressed.
+Some priority and interactions between new CLI flags has been worked out.
+A few more misc bugs were also squished and relevant tests added.</p>
+<h3 id="Features">Features</h3>
+<ul>
+<li><strong>languages:</strong> Handle hyphenation of inter-word apostrophes in Turkish (<a href="https://github.com/sile-typesetter/sile/commit/50ae9368b29bfcb9f7d2274235c0398500d7665e">50ae936</a>)</li>
+<li><strong>packages:</strong> Add \open-spread function with more features than \open-double-page (<a href="https://github.com/sile-typesetter/sile/commit/c2ba579a56a79fea82e8ec83b95321af438793e4">c2ba579</a>)</li>
+<li><strong>packages:</strong> Add ability to select a page in PDF images (<a href="https://github.com/sile-typesetter/sile/commit/a477d94f9831bdd31d4925bd44660f1f24d4e290">a477d94</a>)</li>
+<li><strong>packages:</strong> Allow for customized content on otherwise blank filler pages (<a href="https://github.com/sile-typesetter/sile/commit/5ae97bffba3192df8e1c8bf7c74c459ac137af56">5ae97bf</a>)</li>
+<li><strong>packages:</strong> Provide base directory to packages (<a href="https://github.com/sile-typesetter/sile/issues/1529">#1529</a>) (<a href="https://github.com/sile-typesetter/sile/commit/f9ae99499ea8fada36abd849c95e2afd7f1e4030">f9ae994</a>)</li>
+<li><strong>utilities:</strong> Return image resolution with libtexpdf backend (<a href="https://github.com/sile-typesetter/sile/commit/a9c11d319cf83d38b72d09430a65cfb62e013494">a9c11d3</a>)</li>
+</ul>
+<h3 id="Bug_Fixes">Bug Fixes</h3>
+<ul>
+<li><strong>cli:</strong> Actually apply cli provided class options (<a href="https://github.com/sile-typesetter/sile/commit/505919e4c07638e7bf6da9ebc4af12e2355a2460">505919e</a>)</li>
+<li><strong>cli:</strong> Allow CLI option to override document specified class (<a href="https://github.com/sile-typesetter/sile/commit/5232ce8dd42fae9005c36c4e04ad988d4afedb77">5232ce8</a>)</li>
+<li><strong>nodes:</strong> Correct calculating width of postbreak discretionaries (<a href="https://github.com/sile-typesetter/sile/commit/ea7912cf0c1951f68b04b7d2dfef2057115ef77d">ea7912c</a>)</li>
+<li><strong>nodes:</strong> Work around discressionaries being output when not wanted (<a href="https://github.com/sile-typesetter/sile/commit/c7dc439456ad741fe644a88e6476596b8ec2a72f">c7dc439</a>)</li>
+<li><strong>packages:</strong> Fix over-aggressive eject in \open-double-page (<a href="https://github.com/sile-typesetter/sile/commit/562055681c1ccf3b47857864d9363fb985ed7fac">5620556</a>)</li>
+<li><strong>packages:</strong> Homogenize image width and height as measurements (<a href="https://github.com/sile-typesetter/sile/commit/b91cfbb9e80e4330be5b9dc307d721513bbd462a">b91cfbb</a>), closes <a href="https://github.com/sile-typesetter/sile/issues/1506">#1506</a></li>
+<li><strong>packages:</strong> Make sure PDF initialized before PDF package does anything (<a href="https://github.com/sile-typesetter/sile/issues/1550">#1550</a>) (<a href="https://github.com/sile-typesetter/sile/commit/ebc3748e00df700002622a7f3b8ad1e2cd5bfb65">ebc3748</a>)</li>
+<li><strong>packages:</strong> Resolve src= relative to document for SVG images (<a href="https://github.com/sile-typesetter/sile/commit/b55fc98e728ee69fc983be58e7331864617547b8">b55fc98</a>), closes <a href="https://github.com/sile-typesetter/sile/issues/1532">#1532</a></li>
+</ul>
+<h3 id="Reverts">Reverts</h3>
+<ul>
+<li>
+<p>Revert "chore(cli): Output header before doing anything that might throw warnings" (<a href="https://github.com/sile-typesetter/sile/commit/58da8ad5b824fa9ccc97d0ddfbea44e3a5c39c8e">58da8ad</a>)</p>
+</li>
+</ul>
+
+  </div>
+
+
+
+<div class="pagination">
+  
+    <a href="&#x2F;page&#x2F;4&#x2F;">&laquo; Prev</a>
+  
+
+  
+    
+      <a href="/">1</a>
+    
+  
+    
+      <a href="/page/2/">2</a>
+    
+  
+    
+      <a href="/page/3/">3</a>
+    
+  
+    
+      <a href="/page/4/">4</a>
+    
+  
+    
+      <em>5</em>
+    
+  
+    
+      <a href="/page/6/">6</a>
+    
+  
+    
+      <a href="/page/7/">7</a>
+    
+  
+    
+      <a href="/page/8/">8</a>
+    
+  
+    
+      <a href="/page/9/">9</a>
+    
+  
+    
+      <a href="/page/10/">10</a>
+    
+  
+    
+      <a href="/page/11/">11</a>
+    
+  
+    
+      <a href="/page/12/">12</a>
+    
+  
+    
+      <a href="/page/13/">13</a>
+    
+  
+    
+      <a href="/page/14/">14</a>
+    
+  
+
+  
+    <a href="&#x2F;page&#x2F;6&#x2F;">Next &raquo;</a>
+  
+</div>
+</div>
+</div>
+
+
+    </div>
+    <script src="/scripts/responsive.js" type="text/javascript"></script>
+  </body>
+</html>

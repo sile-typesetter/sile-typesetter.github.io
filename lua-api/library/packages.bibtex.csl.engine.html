@@ -1,0 +1,272 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>SILE</h1>
+
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+</ul>
+
+
+<h2>Library</h2>
+<ul class="nowrap">
+  <li><a href="../library/SILE.html">SILE</a></li>
+  <li><a href="../library/SILE.font.html">SILE.font</a></li>
+  <li><a href="../library/SU.html">SU</a></li>
+  <li><a href="../library/SU.ast.html">SU.ast</a></li>
+  <li><a href="../library/SU.numbers.html">SU.numbers</a></li>
+  <li><a href="../library/SU.sorting.html">SU.sorting</a></li>
+  <li><a href="../library/globals.html">globals</a></li>
+  <li><strong>packages.bibtex.csl.engine</strong></li>
+  <li><a href="../library/packages.bibtex.csl.locale.html">packages.bibtex.csl.locale</a></li>
+  <li><a href="../library/packages.bibtex.csl.style.html">packages.bibtex.csl.style</a></li>
+  <li><a href="../library/packages.bibtex.csl.utils.casing.html">packages.bibtex.csl.utils.casing</a></li>
+  <li><a href="../library/packages.bibtex.csl.utils.superfolding.html">packages.bibtex.csl.utils.superfolding</a></li>
+  <li><a href="../library/packages.bibtex.csl.utils.xmlparser.html">packages.bibtex.csl.utils.xmlparser</a></li>
+  <li><a href="../library/packages.bibtex.support.bib2csl.html">packages.bibtex.support.bib2csl</a></li>
+  <li><a href="../library/packages.bibtex.support.isodatetime.html">packages.bibtex.support.isodatetime</a></li>
+  <li><a href="../library/packages.bibtex.support.locators.html">packages.bibtex.support.locators</a></li>
+  <li><a href="../library/packages.math.mathml-entities.html">packages.math.mathml-entities</a></li>
+  <li><a href="../library/packages.math.unicode-symbols.html">packages.math.unicode-symbols</a></li>
+</ul>
+<h2>Interfaces</h2>
+<ul class="nowrap">
+  <li><a href="../interfaces/classes.html">classes</a></li>
+  <li><a href="../interfaces/inputters.html">inputters</a></li>
+  <li><a href="../interfaces/languages.html">languages</a></li>
+  <li><a href="../interfaces/outputters.html">outputters</a></li>
+  <li><a href="../interfaces/packages.html">packages</a></li>
+  <li><a href="../interfaces/pagebuilders.html">pagebuilders</a></li>
+  <li><a href="../interfaces/shapers.html">shapers</a></li>
+  <li><a href="../interfaces/typesetters.html">typesetters</a></li>
+</ul>
+<h2>Types</h2>
+<ul class="nowrap">
+  <li><a href="../types/color.html">color</a></li>
+  <li><a href="../types/length.html">length</a></li>
+  <li><a href="../types/measurement.html">measurement</a></li>
+  <li><a href="../types/node.html">node</a></li>
+  <li><a href="../types/unit.html">unit</a></li>
+</ul>
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/classes.bible.html">classes.bible</a></li>
+  <li><a href="../modules/classes.book.html">classes.book</a></li>
+  <li><a href="../modules/classes.diglot.html">classes.diglot</a></li>
+  <li><a href="../modules/classes.docbook.html">classes.docbook</a></li>
+  <li><a href="../modules/classes.jbook.html">classes.jbook</a></li>
+  <li><a href="../modules/classes.jplain.html">classes.jplain</a></li>
+  <li><a href="../modules/classes.letter.html">classes.letter</a></li>
+  <li><a href="../modules/classes.plain.html">classes.plain</a></li>
+  <li><a href="../modules/classes.tbook.html">classes.tbook</a></li>
+  <li><a href="../modules/classes.tbook.html">classes.tbook</a></li>
+  <li><a href="../modules/classes.tplain.html">classes.tplain</a></li>
+  <li><a href="../modules/classes.triglot.html">classes.triglot</a></li>
+  <li><a href="../modules/packages.pdf.html">packages.pdf</a></li>
+</ul>
+<h2>Topics</h2>
+<ul class="">
+  <li><a href="../topics/README.md.html">README</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>packages.bibtex.csl.engine</code></h1>
+<p>A rendering engine for CSL 1.0.2</p>
+<p>
+
+</p>
+    <h3>Info:</h3>
+    <ul>
+        <li><strong>Copyright</strong>:  License: MIT (c) 2024 Omikhleia</p>
+
+<p> Public API:
+  - (constructor) CslEngine(style, locale) -> CslEngine
+  - CslEngine:cite(entries) -> string
+  - CslEngine:reference(entries) -> string</p>
+
+<p> The expected internal representation of a CSL entry is similar to CSL-JSON
+ but with some differences:</p>
+
+<pre>
+Date fields are structured <span class="function-name">tables</span> (<span class="keyword">not</span> an array of numbers as <span class="keyword">in</span> CSL-JSON).
+citation-<span class="function-name">number</span> (mandatory) is supposed to have been added by the citation processor.
+<span class="function-name">locator</span> (optional, also possibly added by the citation processor) is a <span class="global">table</span> with label <span class="keyword">and</span> value fields.
+names are parsed,
+    as personal <span class="function-name">names</span> (ex. <span class="backtick"><code>{ given = &quot;George&quot;, family = &quot;Smith&quot; ... }</code></span>),
+    <span class="keyword">or</span> are literal <span class="function-name">strings</span> (ex. <span class="backtick"><code>{ literal = &quot;T.C.B.S&quot; }</code></span>).
+</pre>
+
+<p> Important: while some consistency checks are performed, this engine is not
+ intended to handle errors in the locale, style or input data. It is assumed
+ that they are all valid.</p>
+
+<p> THINGS NOT DONE
+  - disambiguation logic (not done at all)
+  - collapse logic in citations (not done at all)
+  - other FIXME in the code on quite specific features</p>
+
+<p> luacheck: no unused args</li>
+    </ul>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#CslEngine:_init">CslEngine:_init(style, locale, extras)</a></td>
+	<td class="summary">(Constructor) Create a new CSL engine.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#CslEngine:cite">CslEngine:cite(entries)</a></td>
+	<td class="summary">Generate a citation string.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#CslEngine:reference">CslEngine:reference(entries)</a></td>
+	<td class="summary">Generate a reference string.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "CslEngine:_init"></a>
+    <strong>CslEngine:_init(style, locale, extras)</strong>
+    </dt>
+    <dd>
+    (Constructor) Create a new CSL engine.
+ The optional extras table is for features not part of CSL 1.0.2.
+ Currently:
+   localizedPunctuation: boolean (default false) - use localized punctuation
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">style</span>
+            <span class="types"><span class="type">CslStyle</span></span>
+         CSL style
+        </li>
+        <li><span class="parameter">locale</span>
+            <span class="types"><span class="type">CslLocale</span></span>
+         CSL locale
+        </li>
+        <li><span class="parameter">extras</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         Additional data to pass to the engine
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">CslEngine</span></span>
+
+
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "CslEngine:cite"></a>
+    <strong>CslEngine:cite(entries)</strong>
+    </dt>
+    <dd>
+    Generate a citation string.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">entries</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         List of CSL entries
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+        The XML citation string
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "CslEngine:reference"></a>
+    <strong>CslEngine:reference(entries)</strong>
+    </dt>
+    <dd>
+    Generate a reference string.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">entries</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         List of CSL entries
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+        The XML reference string
+    </ol>
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/lunarmodules/LDoc">LDoc 1.5.0</a></i>
+<i style="float:right;">Last updated 1980-01-01 00:00:00 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

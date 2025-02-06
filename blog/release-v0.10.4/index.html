@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>SILE – SILE v0.10.4 Is Released</title>
+      <meta name="viewport" content="width=device-width">
+      
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+      
+
+      <!-- Custom CSS -->
+      <link rel="stylesheet" href="/main.css">
+
+      <!-- Responsive CSS -->
+      <link rel="stylesheet" href="/css/responsive.css">
+
+      <!-- Fonts -->
+      <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400;1,600&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+      <link rel='stylesheet' href='//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack-subset.css'>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-63500-7', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </head>
+  <body>
+    <div id="site">
+      <div id="sidebar">
+        <div id="header">
+          <h1 class="title"><a href="https://sile-typesetter.org"><img id="logo" src="/images/logo.png"></a></h1>
+          <span class="tagline">The SILE Typesetter</span>
+        </div>
+
+        <ul>
+  <li> <a href="/">Home</a></li>
+  <li> <a href="/what-is-sile/">What is SILE?</a></li>
+  <li> <a href="/examples/">Examples</a>
+    <ul>
+      <li><a href="/examples/global/">Global Scripts</a></li>
+      <li><a href="/examples/packages/">Packages</a></li>
+    </ul>
+  </li>
+  <li> <a href="/manual/sile-0.15.9.pdf">Manual (PDF)</a></li>
+  <li> <a href="/lua-api">Lua API</a></li>
+  <li> <a href="/rust-api/sile">Rust API</a></li>
+  <li> <a href="/sil-grammar/">SIL Grammar</a></li>
+  <li> <a href="https://github.com/sile-typesetter/sile/releases"><strong>Download</strong></a></li>
+</ul>
+
+
+        <div class="footer">
+          <span id="footer-links">
+            <a href="https://github.com/sile-typesetter/sile" class="footer-link">GitHub</a>
+          </span>
+        </div>
+      </div>
+
+        
+<div id="content">
+<div id="home">
+    <div class="post-info">
+    <div class="cover-photo-container">
+      <img class="cover-photo" src="/images/cover.jpg">
+    </div>
+  </div>
+
+    <div class="post-info">
+    <div class="info-container">
+      <h1 class="title">SILE v0.10.4 Is Released</h1>
+      <div class="meta">
+        
+          <span class="date"><a href="&#x2F;blog&#x2F;release-v0.10.4&#x2F;">21 Apr 2020</a></span>
+        
+        
+          — <span class="author">Caleb Maclennan</span>
+        
+      </div>
+  </div>
+
+  <div class="post">
+    <p>Version v0.10.4 of SILE has been released and is <a href="https://github.com/sile-typesetter/sile/releases/tag/v0.10.4">available for download</a>!
+See the included <a href="https://github.com/sile-typesetter/sile/blob/master/CHANGELOG.md">CHANGELOG.md</a> or review the <a href="https://github.com/sile-typesetter/sile/compare/v0.10.3...v0.10.4">commit history</a> for more explicit details.</p>
+<h3 id="Summary_of_Improvements">Summary of Improvements</h3>
+<p>Most of the changes in this release are either related to the tooling to build and package it smoothly or minor. Some English users might appreciate that their Table of Contents headers for otherwise English books aren’t localized in Turkish, and Japanese users will have an easier time with their Tate layouts because they cooperate with the new measurement systems introduced in v0.10.</p>
+<p>Not properly mentioned in the ChangeLog is a tweak that allows <em>Glues</em> to be cast to <em>Lengths</em>. This makes it much easier to create measurements based on existing nodes as references.</p>
+<h3 id="Notable_Bug_Fixes">Notable Bug Fixes</h3>
+<ul>
+<li>
+<p><strong>build:</strong> Fix version detection in sparse git checkouts (<a href="https://github.com/sile-typesetter/sile/issues/803">#803</a>) (<a href="https://github.com/sile-typesetter/sile/issues/818">#818</a>) (<a href="https://github.com/sile-typesetter/sile/commit/dcd00236f20a70e2610319441b4bb4c10b96cc02">dcd0023</a>)</p>
+</li>
+<li>
+<p><strong>core:</strong> Return correct length from icu.bidi_runs with surrogate pairs (<a href="https://github.com/sile-typesetter/sile/commit/000515fccd68f7467ee199c064634d4ce25bfc18">000515f</a>), closes <a href="https://github.com/sile-typesetter/sile/issues/839">#839</a></p>
+</li>
+<li>
+<p><strong>docker:</strong> Work around fresh GNU coreutils bombing Docker Hub (<a href="https://github.com/sile-typesetter/sile/issues/851">#851</a>) (<a href="https://github.com/sile-typesetter/sile/commit/ed49fbbf1128c03f3e4358d89086f16cbd786be6">ed49fbb</a>)</p>
+</li>
+<li>
+<p><strong>languages:</strong> Localize TOC title functions (<a href="https://github.com/sile-typesetter/sile/issues/849">#849</a>) (<a href="https://github.com/sile-typesetter/sile/commit/1ab434582aa3f555212f021cc47ad5d354a570b8">1ab4345</a>)</p>
+</li>
+<li>
+<p><strong>packages:</strong> Update PDF package to use correct measurement types (<a href="https://github.com/sile-typesetter/sile/commit/79e24ca71bef1f3d5b2f9e978bbef1bb8a5a5b03">79e24ca</a>)</p>
+</li>
+<li>
+<p><strong>packages:</strong> Update Tate package to use correct measurement types (<a href="https://github.com/sile-typesetter/sile/commit/180024f29c3002317a27df042139ae97b79907ad">180024f</a>)</p>
+</li>
+<li>
+<p><strong>tooling:</strong> Add missing lua-cosmo dependency for Markdown class (<a href="https://github.com/sile-typesetter/sile/issues/822">#822</a>) (<a href="https://github.com/sile-typesetter/sile/commit/ea815984d27d15770613a57f019284136fbf3bbd">ea81598</a>)</p>
+</li>
+<li>
+<p><strong>typesetter:</strong> Make <code>typesetter.breakwidth</code> a measurement (<a href="https://github.com/sile-typesetter/sile/commit/721280dde51d834ab170efb75eba73771f5cda59">721280d</a>)</p>
+</li>
+</ul>
+
+  </div>
+
+</div>
+</div>
+
+
+
+    </div>
+    <script src="/scripts/responsive.js" type="text/javascript"></script>
+  </body>
+</html>

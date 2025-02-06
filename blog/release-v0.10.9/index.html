@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>SILE – SILE v0.10.9 Is Released</title>
+      <meta name="viewport" content="width=device-width">
+      
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+      
+
+      <!-- Custom CSS -->
+      <link rel="stylesheet" href="/main.css">
+
+      <!-- Responsive CSS -->
+      <link rel="stylesheet" href="/css/responsive.css">
+
+      <!-- Fonts -->
+      <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400;1,600&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+      <link rel='stylesheet' href='//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack-subset.css'>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-63500-7', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </head>
+  <body>
+    <div id="site">
+      <div id="sidebar">
+        <div id="header">
+          <h1 class="title"><a href="https://sile-typesetter.org"><img id="logo" src="/images/logo.png"></a></h1>
+          <span class="tagline">The SILE Typesetter</span>
+        </div>
+
+        <ul>
+  <li> <a href="/">Home</a></li>
+  <li> <a href="/what-is-sile/">What is SILE?</a></li>
+  <li> <a href="/examples/">Examples</a>
+    <ul>
+      <li><a href="/examples/global/">Global Scripts</a></li>
+      <li><a href="/examples/packages/">Packages</a></li>
+    </ul>
+  </li>
+  <li> <a href="/manual/sile-0.15.9.pdf">Manual (PDF)</a></li>
+  <li> <a href="/lua-api">Lua API</a></li>
+  <li> <a href="/rust-api/sile">Rust API</a></li>
+  <li> <a href="/sil-grammar/">SIL Grammar</a></li>
+  <li> <a href="https://github.com/sile-typesetter/sile/releases"><strong>Download</strong></a></li>
+</ul>
+
+
+        <div class="footer">
+          <span id="footer-links">
+            <a href="https://github.com/sile-typesetter/sile" class="footer-link">GitHub</a>
+          </span>
+        </div>
+      </div>
+
+        
+<div id="content">
+<div id="home">
+    <div class="post-info">
+    <div class="cover-photo-container">
+      <img class="cover-photo" src="/images/cover.jpg">
+    </div>
+  </div>
+
+    <div class="post-info">
+    <div class="info-container">
+      <h1 class="title">SILE v0.10.9 Is Released</h1>
+      <div class="meta">
+        
+          <span class="date"><a href="&#x2F;blog&#x2F;release-v0.10.9&#x2F;">24 Jul 2020</a></span>
+        
+        
+          — <span class="author">Caleb Maclennan</span>
+        
+      </div>
+  </div>
+
+  <div class="post">
+    <p>Version v0.10.9 of SILE has been released and is <a href="https://github.com/sile-typesetter/sile/releases/tag/v0.10.9">available for download</a>!
+See the included <a href="https://github.com/sile-typesetter/sile/blob/master/CHANGELOG.md">CHANGELOG.md</a> or review the <a href="https://github.com/sile-typesetter/sile/compare/v0.10.8...v0.10.9">commit history</a> for more explicit details.</p>
+<h3 id="Summary_of_Improvements">Summary of Improvements</h3>
+<p>This is the first version of SILE to officially support <a href="https://www.lua.org/versions.html#5.4">Lua 5.4</a>! If your OS or distro is migrating to the latest Lua, this release is for you. The changes in this Lua release are not very significant in relation to SILE, but it took a bit of time and effort for all the modules we use to be compatible. Additionally in this release how we handle bundling LuaRocks modules has changed. We no longer include the full source and prebuilt rocks in the source packages. For most platforms and installations this will not change anything at all, using <code>--with-system-luarocks</code> still skips anything to do with bundling and just requires the dependencies be available on the host system. This is used by all platforms to date that have SILE packages. For people building from source using the default configuration of <code>--without-system-luarocks</code> the bundling still happens using Luarocks to download and build all the required dependencies when you run <code>make</code>. Previously it copied the sources for your version of Lua out of the source package, but with 4 supported versions of Lua and many variation in how different platforms build them this was getting too cumbersome. LuaRocks does this job already, we just leverage it.</p>
+<p>Still on the topic of packaging, a minor change is that <code>make install</code> will not install the PDF manual and examples by default, but if you add <code>--with-manual</code> and/or <code>--with-examples</code> it will not only install them, but it will install them to your platform’s default location for PDF documentation (previously they were just stuffed in alongside the SILE code, wherever that was). The PDF documentation directory is the same as for other documentation on most platforms, but it does go to the right place for those system that have special handling for PDF documentation.</p>
+<p>As for the typesetter itself, if you ever used <code>inputfilter()</code> functions and your content randomly came out in the wrong order, we fixed that non-determinism. Additionally Unicode combining diacritic marks can be now be added with <code>\unichar{}</code>. If you’re trying to figure out what is what on a page, <code>--debug hboxes</code> also works again after being broken some time back.</p>
+<p>For developers, adding multiple debug flags from the CLI is easier than ever, and fewer things need to be rebuilt from scratch every time you touch something in SILE’s source code.</p>
+<h3 id="Features">Features</h3>
+<ul>
+<li><strong>build:</strong> Install manual to $(pdfdir) if configure --with-manual (<a href="https://github.com/sile-typesetter/sile/commit/ee33ff71c2d978c637c01433663ccd7baf7e8fcc">ee33ff7</a>)</li>
+<li><strong>core:</strong> Allow adding --debug flag multiple times (<a href="https://github.com/sile-typesetter/sile/commit/9ac28382beb226785f574f89353f7acb720fb949">9ac2838</a>)</li>
+</ul>
+<h3 id="Bug_Fixes">Bug Fixes</h3>
+<ul>
+<li>
+<p><strong>build:</strong> Correct typo in dependencies for building docs (<a href="https://github.com/sile-typesetter/sile/commit/ad548a5e0c32ef5bd99f951594a9e49161aa5941">ad548a5</a>)</p>
+</li>
+<li>
+<p><strong>build:</strong> Ship blank lua_modules install list in source packages (<a href="https://github.com/sile-typesetter/sile/commit/7939970397414554c45dcfe486dc736b8fb2e4fe">7939970</a>)</p>
+</li>
+<li>
+<p><strong>build:</strong> Touch Makefile.in to avoid automake errors (<a href="https://github.com/sile-typesetter/sile/commit/e7f4627a8cf8e6498b7c1c22b633579644a1d72a">e7f4627</a>)</p>
+</li>
+<li>
+<p><strong>build:</strong> Work around src/libtexpdf subdirs using side-effects (<a href="https://github.com/sile-typesetter/sile/commit/26d6769a32c3985d18d314cf0281663d5545e650">26d6769</a>)</p>
+</li>
+<li>
+<p><strong>core:</strong> Iterate on sequential data with ipairs() or SU.sortedpairs() (<a href="https://github.com/sile-typesetter/sile/commit/9db0a28d5c64caf9d64200d359f477bd375469eb">9db0a28</a>)</p>
+</li>
+<li>
+<p><strong>debug:</strong> Fix math in hbox debugging (<a href="https://github.com/sile-typesetter/sile/commit/6c0029df469e89ce809ff833a3fa631eee14f77e">6c0029d</a>)</p>
+</li>
+<li>
+<p><strong>packages:</strong> Combine unichar output with existing unshaped node (<a href="https://github.com/sile-typesetter/sile/commit/712bc925dfc1601111922d4bd9089ad161867020">712bc92</a>)</p>
+</li>
+<li>
+<p><strong>packages:</strong> Use sortedpairs to avoid non-determinism (<a href="https://github.com/sile-typesetter/sile/commit/a28ef06b2aa1265018078e258280fc2f9a7dc348">a28ef06</a>)</p>
+</li>
+<li>
+<p><strong>utilities:</strong> Add sorted pairs function (<a href="https://github.com/sile-typesetter/sile/commit/5aad3975cc92b2641337bd65e2919ee198fe8669">5aad397</a>)</p>
+</li>
+</ul>
+
+  </div>
+
+</div>
+</div>
+
+
+
+    </div>
+    <script src="/scripts/responsive.js" type="text/javascript"></script>
+  </body>
+</html>

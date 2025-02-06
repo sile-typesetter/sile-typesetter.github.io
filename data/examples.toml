@@ -88,11 +88,11 @@ fn = "thai-udhr"
 source = "thai-udhr.sil"
 title = "Thai"
 
-# TODO https://github.com/sile-typesetter/sile/issues/1228
-# [[global]]
-# fn = "uyghur"
-# source = "uyghur.sil"
-# title = "Uyghur hyphenation"
+[[global]]
+devel = true
+fn = "uyghur"
+source = "uyghur.sil"
+title = "Uyghur hyphenation"
 
 [[global]]
 fn = "armenian"

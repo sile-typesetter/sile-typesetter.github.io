@@ -105,8 +105,9 @@ notobase = $(shell sed -e 's/-.*//' <<< $(notdir $1))
 .sources/Libertinus-%.tar.xz: | .sources
 	curl -fsSL https://github.com/alerque/libertinus/releases/download/v$*/$(notdir $@) -o $@
 
+.sources/NAU5_005.zip: IA = https://web.archive.org/web/20190702052058/
 .sources/NAU5_005.zip: | .sources
-	curl -fsSL https://classicalstudies.org/sites/default/files/userfiles/files/$(notdir $@) -o $@
+	curl -fsSL $(IA)https://classicalstudies.org/sites/default/files/userfiles/files/$(notdir $@) -o $@
 
 .sources/Padauk-5.000.zip: | .sources
 	curl -fsSL https://software.sil.org/downloads/r/padauk/$(notdir $@) -o $@

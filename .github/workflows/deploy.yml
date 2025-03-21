@@ -14,10 +14,10 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Cache example fonts
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: |
             .fonts
@@ -25,14 +25,14 @@ jobs:
           key: fonts-${{ hashFiles('Makefile-fonts') }}
 
       - name: Cache example artifacts
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: |
             static/examples
           key: examples-${{ hashFiles('Makefile', 'data/examples.toml', 'content/examples/*.sil', 'content/examples/*.xml', 'content/examples/*.lua') }}
 
       - name: Install Nix
-        uses: cachix/install-nix-action@v17
+        uses: cachix/install-nix-action@v31
         with:
           nix_path: nixpkgs=channel:nixpkgs-unstable
           extra_nix_config: |
@@ -59,7 +59,7 @@ jobs:
           nix-shell --run 'make public/CNAME'
 
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         if: ${{ github.ref == 'refs/heads/master' }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

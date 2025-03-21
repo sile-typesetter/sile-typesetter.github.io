@@ -1,0 +1,37 @@
+\begin[papersize=a5]{document}
+\nofolios
+\neverindent
+\use[module=packages.features]
+\font[family=EB Garamond,size=20pt]
+Affluent fishing
+\bigskip
+
+\add-font-feature[Letters=SmallCaps]
+I don't know about you, but I could murder a curry.
+\remove-font-feature[Letters=SmallCaps]
+\bigskip
+
+\add-font-feature[Ligatures=Rare]
+\add-font-feature[Ligatures=Historic]
+Historical ligatures
+\bigskip
+
+\begin{raggedright}
+\font[family=Junicode]
+Stylistic sets\break
+\add-font-feature[StylisticSet=1]Stylistic sets\remove-font-feature[StylisticSet=1]\break
+\add-font-feature[StylisticSet=2]Stylistic sets\remove-font-feature[StylisticSet=2]\break
+\add-font-feature[StylisticSet=3]Stylistic sets\remove-font-feature[StylisticSet=3]\break
+\add-font-feature[StylisticSet=4]Stylistic sets\remove-font-feature[StylisticSet=4]\break
+\add-font-feature[StylisticSet=5]Stylistic sets\remove-font-feature[StylisticSet=5]\break
+\add-font-feature[StylisticSet=6]Stylistic sets\remove-font-feature[StylisticSet=6]
+\end{raggedright}
+\bigskip
+
+\font[family=Noto Sans]
+1/2 \quad 1/4 \quad 5/6 \quad 13579/24680 \par
+\add-font-feature[Fractions=On]
+1/2 \quad 1/4 \quad 5/6 \quad 13579/24680 \par
+% \add-font-feature[Fractions=Alternate] % TODO
+% 1/2 \quad 1/4 \quad 5/6 \quad 13579/24680
+\end{document}

@@ -1,0 +1,19 @@
+\begin[papersize=a5]{document}
+\nofolios
+\use[module=packages.linespacing]
+\set[parameter=linespacing.method,value=fixed]
+\set[parameter=linespacing.fixed.baselinedistance,value=1.6em]
+\use[module=packages.url]
+Have you tried \href[src="http://sile-typesetter.org/"]{The SILE Typesetter} yet?
+
+By default, links are typeset without any border.
+SILE provides several options for customizing border characteristics of PDF link annotations:
+
+• \href[src="http://sile-typesetter.org/", borderwidth=0.3pt]{The SILE Typesetter}.
+
+• \href[src=http://www.sile-typesetter.org/, borderwidth=0.3pt, bordercolor=red, borderstyle=underline]{The SILE Typesetter}.
+
+• \href[src=http://www.sile-typesetter.org/, borderwidth=0.7pt, bordercolor=#7c5ea8, borderstyle=dashed]{The SILE Typesetter}.
+
+Note that PDF renderers may vary on how they honor these border styling features on link annotations.
+\end{document}

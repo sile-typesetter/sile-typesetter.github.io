@@ -14,7 +14,7 @@ See the included [CHANGELOG.md][changelog] or review the [commit history][commit
 
 This release isn't ground breaking, but it is line breaking.
 A major bug in our hyphenation algorithm went undetected for a long time because (by a virtue of a bug canceling out a bug) it didn't happen to affect English or Turkish—far and away the most utilized languages in SILE's history.
-But it did affect Fresh, where [Didier Willis](http://github.com/Omikhleia) found and squashed it.
+But it did affect French, where [Didier Willis](http://github.com/Omikhleia) found and squashed it.
 Hyphenation minima settings should be properly set for many other languages now and follow the current language.
 Several languages also got hyphenation pattern updates.
 

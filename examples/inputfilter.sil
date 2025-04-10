@@ -1,0 +1,24 @@
+\begin[class=plain,papersize=a5]{document}
+\nofolios
+\neverindent
+\use[module=packages.color]
+\use[module=packages.inputfilter]
+
+\begin{lua}
+
+SILE.registerCommand("uppercase", function(options, content)
+  local class = SILE.documentState.documentClass
+  SILE.process(class.packages.inputfilter:transformContent(content, string.upper))
+end, "Typeset the enclosed text as uppercase")
+
+\end{lua}
+
+This is a normal paragraph of text.
+
+\begin{uppercase}
+This text will be converted to upper case.
+\color[color=#000090]{blue},
+\color[color=#900000]{red},
+\color[color=#009000]{green}.
+\end{uppercase}
+\end{document}

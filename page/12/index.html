@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>SILE – Home</title>
+      <meta name="viewport" content="width=device-width">
+      
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+      
+
+      <!-- Custom CSS -->
+      <link rel="stylesheet" href="/main.css">
+
+      <!-- Responsive CSS -->
+      <link rel="stylesheet" href="/css/responsive.css">
+
+      <!-- Fonts -->
+      <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400;1,600&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+      <link rel='stylesheet' href='//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack-subset.css'>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-63500-7', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </head>
+  <body>
+    <div id="site">
+      <div id="sidebar">
+        <div id="header">
+          <h1 class="title"><a href="https://sile-typesetter.org"><img id="logo" src="/images/logo.png"></a></h1>
+          <span class="tagline">The SILE Typesetter</span>
+        </div>
+
+        <ul>
+  <li> <a href="/">Home</a></li>
+  <li> <a href="/what-is-sile/">What is SILE?</a></li>
+  <li> <a href="/examples/">Examples</a>
+    <ul>
+      <li><a href="/examples/global/">Global Scripts</a></li>
+      <li><a href="/examples/packages/">Packages</a></li>
+    </ul>
+  </li>
+  <li> <a href="/manual/sile-0.15.12.pdf">Manual (PDF)</a></li>
+  <li> <a href="/lua-api">Lua API</a></li>
+  <li> <a href="/rust-api/sile">Rust API</a></li>
+  <li> <a href="/sil-grammar/">SIL Grammar</a></li>
+  <li> <a href="https://github.com/sile-typesetter/sile/releases"><strong>Download</strong></a></li>
+</ul>
+
+
+        <div class="footer">
+          <span id="footer-links">
+            <a href="https://github.com/sile-typesetter/sile" class="footer-link">GitHub</a>
+          </span>
+        </div>
+      </div>
+
+        
+<div id="content">
+<div id="home">
+  <div class="post-info">
+    <div class="cover-photo-container">
+      <img class="cover-photo" src="/images/cover.jpg">
+    </div>
+  </div>
+
+
+      <div class="post-info">
+    <div class="info-container">
+      <h1 class="title">Ubuntu PPA Status Update</h1>
+      <div class="meta">
+        
+          <span class="date"><a href="&#x2F;blog&#x2F;ubuntu-ppa-status-update&#x2F;">25 May 2020</a></span>
+        
+        
+          — <span class="author">Caleb Maclennan</span>
+        
+      </div>
+  </div>
+
+  <div class="post">
+    <p>Beginning with the release of SILE <a href="/blog/release-v0.10.2/">v0.10.2</a> we started building native packages for Ubuntu and distributing them in an official <a href="https://launchpad.net/~sile-typesetter/+archive/ubuntu/sile">PPA</a>. Initially, builds were only available for Ubuntu 18.04 (Bionic Beaver). Packages for SILE <a href="/blog/release-v0.10.4/">v0.10.4</a> are now available for Ubuntu 20.04 (Focal Fossa) as well.</p>
+<p>Usage is the same as before:</p>
+<pre data-lang="sh" style="background-color:#2b303b;color:#c0c5ce;" class="language-sh "><code class="language-sh" data-lang="sh"><span style="color:#bf616a;">sudo</span><span> add-apt-repository ppa:sile-typesetter/sile
+</span><span style="color:#bf616a;">sudo</span><span> apt-get update
+</span><span style="color:#bf616a;">sudo</span><span> apt-get install sile
+</span></code></pre>
+<p>It would be possible to support other currently supported <a href="https://wiki.ubuntu.com/Releases">Ubuntu releases</a> including older LTS releases 14.04 (Trusty Tahir) and 16.04 (Xenias Xerus) and the most recent interim release 19.10 (Eoan Ermine) if there is a demand. I don’t personally use any of these and –as the LTS versions are now quite old (with two more recent LTS series supported) and the interim release is immanently being marked as end-of-life in just two months– I figured there might not be any need to go to the trouble. If you have a use case for any of these please feel free to request builds in a <a href="https://github.com/sile-typesetter/sile/issues/new">new issue report</a>.</p>
+
+  </div>
+
+
+      <div class="post-info">
+    <div class="info-container">
+      <h1 class="title">SILE v0.10.4 Is Released</h1>
+      <div class="meta">
+        
+          <span class="date"><a href="&#x2F;blog&#x2F;release-v0.10.4&#x2F;">21 Apr 2020</a></span>
+        
+        
+          — <span class="author">Caleb Maclennan</span>
+        
+      </div>
+  </div>
+
+  <div class="post">
+    <p>Version v0.10.4 of SILE has been released and is <a href="https://github.com/sile-typesetter/sile/releases/tag/v0.10.4">available for download</a>!
+See the included <a href="https://github.com/sile-typesetter/sile/blob/master/CHANGELOG.md">CHANGELOG.md</a> or review the <a href="https://github.com/sile-typesetter/sile/compare/v0.10.3...v0.10.4">commit history</a> for more explicit details.</p>
+<h3 id="Summary_of_Improvements">Summary of Improvements</h3>
+<p>Most of the changes in this release are either related to the tooling to build and package it smoothly or minor. Some English users might appreciate that their Table of Contents headers for otherwise English books aren’t localized in Turkish, and Japanese users will have an easier time with their Tate layouts because they cooperate with the new measurement systems introduced in v0.10.</p>
+<p>Not properly mentioned in the ChangeLog is a tweak that allows <em>Glues</em> to be cast to <em>Lengths</em>. This makes it much easier to create measurements based on existing nodes as references.</p>
+<h3 id="Notable_Bug_Fixes">Notable Bug Fixes</h3>
+<ul>
+<li>
+<p><strong>build:</strong> Fix version detection in sparse git checkouts (<a href="https://github.com/sile-typesetter/sile/issues/803">#803</a>) (<a href="https://github.com/sile-typesetter/sile/issues/818">#818</a>) (<a href="https://github.com/sile-typesetter/sile/commit/dcd00236f20a70e2610319441b4bb4c10b96cc02">dcd0023</a>)</p>
+</li>
+<li>
+<p><strong>core:</strong> Return correct length from icu.bidi_runs with surrogate pairs (<a href="https://github.com/sile-typesetter/sile/commit/000515fccd68f7467ee199c064634d4ce25bfc18">000515f</a>), closes <a href="https://github.com/sile-typesetter/sile/issues/839">#839</a></p>
+</li>
+<li>
+<p><strong>docker:</strong> Work around fresh GNU coreutils bombing Docker Hub (<a href="https://github.com/sile-typesetter/sile/issues/851">#851</a>) (<a href="https://github.com/sile-typesetter/sile/commit/ed49fbbf1128c03f3e4358d89086f16cbd786be6">ed49fbb</a>)</p>
+</li>
+<li>
+<p><strong>languages:</strong> Localize TOC title functions (<a href="https://github.com/sile-typesetter/sile/issues/849">#849</a>) (<a href="https://github.com/sile-typesetter/sile/commit/1ab434582aa3f555212f021cc47ad5d354a570b8">1ab4345</a>)</p>
+</li>
+<li>
+<p><strong>packages:</strong> Update PDF package to use correct measurement types (<a href="https://github.com/sile-typesetter/sile/commit/79e24ca71bef1f3d5b2f9e978bbef1bb8a5a5b03">79e24ca</a>)</p>
+</li>
+<li>
+<p><strong>packages:</strong> Update Tate package to use correct measurement types (<a href="https://github.com/sile-typesetter/sile/commit/180024f29c3002317a27df042139ae97b79907ad">180024f</a>)</p>
+</li>
+<li>
+<p><strong>tooling:</strong> Add missing lua-cosmo dependency for Markdown class (<a href="https://github.com/sile-typesetter/sile/issues/822">#822</a>) (<a href="https://github.com/sile-typesetter/sile/commit/ea815984d27d15770613a57f019284136fbf3bbd">ea81598</a>)</p>
+</li>
+<li>
+<p><strong>typesetter:</strong> Make <code>typesetter.breakwidth</code> a measurement (<a href="https://github.com/sile-typesetter/sile/commit/721280dde51d834ab170efb75eba73771f5cda59">721280d</a>)</p>
+</li>
+</ul>
+
+  </div>
+
+
+      <div class="post-info">
+    <div class="info-container">
+      <h1 class="title">SILE v0.10.3 Is Released</h1>
+      <div class="meta">
+        
+          <span class="date"><a href="&#x2F;blog&#x2F;release-v0.10.3&#x2F;">04 Feb 2020</a></span>
+        
+        
+          — <span class="author">Caleb Maclennan</span>
+        
+      </div>
+  </div>
+
+  <div class="post">
+    <p>Version v0.10.3 of SILE has been released and is <a href="https://github.com/sile-typesetter/sile/releases/tag/v0.10.3">available for download</a>!
+See the included <a href="https://github.com/sile-typesetter/sile/blob/master/CHANGELOG.md">CHANGELOG.md</a> or review the <a href="https://github.com/sile-typesetter/sile/compare/v0.10.2...v0.10.3">commit history</a> for more explicit details.</p>
+<h3 id="Summary_of_Improvements">Summary of Improvements</h3>
+<p>This release is essentially the same as v0.10.2, but with all the Lua module dependencies bundled again.
+The previous release would only build either with system provided Lua dependencies or with internet access to download them via luarocks; it was not fully self contained and hence could not be built on some systems.</p>
+<h3 id="Notable_Bug_Fixes">Notable Bug Fixes</h3>
+<ul>
+<li>
+<p><strong>tooling:</strong> Make sure Lua modules get included in source tarball (<a href="https://github.com/sile-typesetter/sile/commit/ef5bb53e73204bed18edf89aa3aac67ef15846a2">ef5bb53</a>)</p>
+</li>
+<li>
+<p><strong>tooling:</strong> Unblock standard-version release number bumping (<a href="https://github.com/sile-typesetter/sile/commit/7b18cd5decbc94879fd752c601cc73e25e41e8d6">7b18cd5</a>), closes <a href="https://github.com/sile-typesetter/sile/issues/816">#816</a></p>
+</li>
+</ul>
+
+  </div>
+
+
+      <div class="post-info">
+    <div class="info-container">
+      <h1 class="title">SILE v0.10.2 Is Released</h1>
+      <div class="meta">
+        
+          <span class="date"><a href="&#x2F;blog&#x2F;release-v0.10.2&#x2F;">03 Feb 2020</a></span>
+        
+        
+          — <span class="author">Caleb Maclennan</span>
+        
+      </div>
+  </div>
+
+  <div class="post">
+    <p>Version v0.10.2 of SILE has been released and is <a href="https://github.com/sile-typesetter/sile/releases/tag/v0.10.2">available for download</a>!
+See the included <a href="https://github.com/sile-typesetter/sile/blob/master/CHANGELOG.md">CHANGELOG.md</a> or review the <a href="https://github.com/sile-typesetter/sile/compare/v0.10.1...v0.10.2">commit history</a> for more explicit details.</p>
+<h3 id="Summary_of_Improvements">Summary of Improvements</h3>
+<p>This release primarily fixes minor packaging issues. The biggest change is this will be the first release with an officially supported <a href="https://launchpad.net/~sile-typesetter/+archive/ubuntu/sile">Ubuntu PPA</a>! In addition to the previously available installation methods Ubuntu users will be able to install sile with:</p>
+<pre data-lang="sh" style="background-color:#2b303b;color:#c0c5ce;" class="language-sh "><code class="language-sh" data-lang="sh"><span style="color:#bf616a;">sudo</span><span> add-apt-repository ppa:sile-typesetter/sile
+</span><span style="color:#bf616a;">sudo</span><span> apt-get update
+</span><span style="color:#bf616a;">sudo</span><span> apt-get install sile
+</span></code></pre>
+<h3 id="Notable_Bug_Fixes">Notable Bug Fixes</h3>
+<ul>
+<li>
+<p><strong>build:</strong> Don't include build *.so modules in dist (<a href="https://github.com/sile-typesetter/sile/commit/4eb2a731b131bab0c1f86ac12b112e2b9035cb15">4eb2a73</a>)</p>
+</li>
+<li>
+<p><strong>build:</strong> Fix version detection in sparse git checkouts (<a href="https://github.com/sile-typesetter/sile/issues/803">#803</a>) (<a href="https://github.com/sile-typesetter/sile/commit/e46091f7f9051b6daed07bfc76d05ab550adde2b">e46091f</a>)</p>
+</li>
+<li>
+<p><strong>build:</strong> Include modules for all supported Lua versions in dist (<a href="https://github.com/sile-typesetter/sile/commit/a4e9f0380243684737f884a2111615f391170324">a4e9f03</a>)</p>
+</li>
+<li>
+<p><strong>build:</strong> Look for Lua 5.3 executables with the version in their name (<a href="https://github.com/sile-typesetter/sile/commit/3952bf8de762723ec6dff950bc9a498fe6e991d3">3952bf8</a>)</p>
+</li>
+</ul>
+
+  </div>
+
+
+      <div class="post-info">
+    <div class="info-container">
+      <h1 class="title">SILE v0.10.1 Is Released</h1>
+      <div class="meta">
+        
+          <span class="date"><a href="&#x2F;blog&#x2F;release-v0.10.1&#x2F;">24 Jan 2020</a></span>
+        
+        
+          — <span class="author">Caleb Maclennan</span>
+        
+      </div>
+  </div>
+
+  <div class="post">
+    <p>Version v0.10.1 of SILE has been released and is <a href="https://github.com/sile-typesetter/sile/releases/tag/v0.10.1">available for download</a>!
+See the included <a href="https://github.com/sile-typesetter/sile/blob/master/CHANGELOG.md">CHANGELOG.md</a> or review the <a href="https://github.com/sile-typesetter/sile/compare/v0.10.0...v0.10.1">commit history</a> for more explicit details.</p>
+<h3 id="Summary_of_Improvements">Summary of Improvements</h3>
+<p>This is a small follow up to the <a href="/blog/release-v0.10.0/">v0.10.0</a> release last week to fix a regression that cropped up and add deprecation warning messages. The last release went out with several major changes, particularly to the node and length APIs. Compatibility shims are in place so that old code still works for now, but this adds warning messages to make it easier to find and track down things that need updating.</p>
+<p>Additionally since the last release cycle Docker images have been made available, and now support mapping system fonts into the Docker image.</p>
+<h3 id="Notable_Bug_Fixes">Notable Bug Fixes</h3>
+<ul>
+<li><strong>backends:</strong> Implement cursor tracking to roughly simulate glues (<a href="https://github.com/sile-typesetter/sile/commit/26afcec76912f88cc25bbeb70a6cc8850d999516">26afcec</a>)</li>
+<li><strong>core:</strong> Actually deprecate old nodefactory instantiators (<a href="https://github.com/sile-typesetter/sile/commit/774f0fce2c3ac6519f9fb98d91f71daa5aa88d8e">774f0fc</a>)</li>
+<li><strong>measurements:</strong> Actually deprecate old constructors (<a href="https://github.com/sile-typesetter/sile/commit/bfdb1b86986968e3f9d132fae1e4cb01b9623d9d">bfdb1b8</a>)</li>
+<li><strong>nodes:</strong> Fix pushHbox() regression, recognize zerohoxes (<a href="https://github.com/sile-typesetter/sile/issues/789">#789</a>) (<a href="https://github.com/sile-typesetter/sile/commit/dae51f1d8d993647220a61dbdde59caa670d10ba">dae51f1</a>)</li>
+</ul>
+<h3 id="New_Features">New Features</h3>
+<ul>
+<li>
+<p><strong>backends:</strong> Approximate space and break in text output to PDF (<a href="https://github.com/sile-typesetter/sile/commit/9577ae4610a2a70f50078b7f0789bf842ab8ef1d">9577ae4</a>)</p>
+</li>
+<li>
+<p><strong>docker:</strong> Add dockerfile and setup to build an image (<a href="https://github.com/sile-typesetter/sile/commit/4424d4469905edf43815464d74229184b4710aad">4424d44</a>)</p>
+</li>
+<li>
+<p><strong>docker:</strong> Add method to inject fonts into Docker container (<a href="https://github.com/sile-typesetter/sile/commit/104124a1d9019399561c7c64e9590a3175de6ce3">104124a</a>)</p>
+</li>
+</ul>
+
+  </div>
+
+
+
+<div class="pagination">
+  
+    <a href="&#x2F;page&#x2F;11&#x2F;">&laquo; Prev</a>
+  
+
+  
+    
+      <a href="/">1</a>
+    
+  
+    
+      <a href="/page/2/">2</a>
+    
+  
+    
+      <a href="/page/3/">3</a>
+    
+  
+    
+      <a href="/page/4/">4</a>
+    
+  
+    
+      <a href="/page/5/">5</a>
+    
+  
+    
+      <a href="/page/6/">6</a>
+    
+  
+    
+      <a href="/page/7/">7</a>
+    
+  
+    
+      <a href="/page/8/">8</a>
+    
+  
+    
+      <a href="/page/9/">9</a>
+    
+  
+    
+      <a href="/page/10/">10</a>
+    
+  
+    
+      <a href="/page/11/">11</a>
+    
+  
+    
+      <em>12</em>
+    
+  
+    
+      <a href="/page/13/">13</a>
+    
+  
+    
+      <a href="/page/14/">14</a>
+    
+  
+    
+      <a href="/page/15/">15</a>
+    
+  
+
+  
+    <a href="&#x2F;page&#x2F;13&#x2F;">Next &raquo;</a>
+  
+</div>
+</div>
+</div>
+
+
+    </div>
+    <script src="/scripts/responsive.js" type="text/javascript"></script>
+  </body>
+</html>

@@ -1,0 +1,411 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>SILE</h1>
+
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Class_settings">Class settings </a></li>
+</ul>
+
+
+<h2>Library</h2>
+<ul class="nowrap">
+  <li><a href="../library/SILE.html">SILE</a></li>
+  <li><a href="../library/SILE.font.html">SILE.font</a></li>
+  <li><strong>SILE.settings</strong></li>
+  <li><a href="../library/SILE.types.node.html">SILE.types.node</a></li>
+  <li><a href="../library/SU.html">SU</a></li>
+  <li><a href="../library/SU.ast.html">SU.ast</a></li>
+  <li><a href="../library/SU.numbers.html">SU.numbers</a></li>
+  <li><a href="../library/SU.sorting.html">SU.sorting</a></li>
+  <li><a href="../library/globals.html">globals</a></li>
+  <li><a href="../library/loaders.html">loaders</a></li>
+  <li><a href="../library/packages.bibtex.csl.engine.html">packages.bibtex.csl.engine</a></li>
+  <li><a href="../library/packages.bibtex.csl.locale.html">packages.bibtex.csl.locale</a></li>
+  <li><a href="../library/packages.bibtex.csl.style.html">packages.bibtex.csl.style</a></li>
+  <li><a href="../library/packages.bibtex.csl.utils.casing.html">packages.bibtex.csl.utils.casing</a></li>
+  <li><a href="../library/packages.bibtex.csl.utils.superfolding.html">packages.bibtex.csl.utils.superfolding</a></li>
+  <li><a href="../library/packages.bibtex.csl.utils.xmlparser.html">packages.bibtex.csl.utils.xmlparser</a></li>
+  <li><a href="../library/packages.bibtex.support.bib2csl.html">packages.bibtex.support.bib2csl</a></li>
+  <li><a href="../library/packages.bibtex.support.isodatetime.html">packages.bibtex.support.isodatetime</a></li>
+  <li><a href="../library/packages.bibtex.support.locators.html">packages.bibtex.support.locators</a></li>
+  <li><a href="../library/packages.math.mathml-entities.html">packages.math.mathml-entities</a></li>
+  <li><a href="../library/packages.math.unicode-symbols.html">packages.math.unicode-symbols</a></li>
+</ul>
+<h2>Interfaces</h2>
+<ul class="nowrap">
+  <li><a href="../interfaces/classes.html">classes</a></li>
+  <li><a href="../interfaces/inputters.html">inputters</a></li>
+  <li><a href="../interfaces/languages.html">languages</a></li>
+  <li><a href="../interfaces/outputters.html">outputters</a></li>
+  <li><a href="../interfaces/packages.html">packages</a></li>
+  <li><a href="../interfaces/pagebuilders.html">pagebuilders</a></li>
+  <li><a href="../interfaces/shapers.html">shapers</a></li>
+  <li><a href="../interfaces/typesetters.html">typesetters</a></li>
+</ul>
+<h2>Types</h2>
+<ul class="nowrap">
+  <li><a href="../types/color.html">color</a></li>
+  <li><a href="../types/length.html">length</a></li>
+  <li><a href="../types/measurement.html">measurement</a></li>
+  <li><a href="../types/unit.html">unit</a></li>
+</ul>
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/classes.bible.html">classes.bible</a></li>
+  <li><a href="../modules/classes.book.html">classes.book</a></li>
+  <li><a href="../modules/classes.diglot.html">classes.diglot</a></li>
+  <li><a href="../modules/classes.docbook.html">classes.docbook</a></li>
+  <li><a href="../modules/classes.jbook.html">classes.jbook</a></li>
+  <li><a href="../modules/classes.jplain.html">classes.jplain</a></li>
+  <li><a href="../modules/classes.letter.html">classes.letter</a></li>
+  <li><a href="../modules/classes.plain.html">classes.plain</a></li>
+  <li><a href="../modules/classes.tbook.html">classes.tbook</a></li>
+  <li><a href="../modules/classes.tbook.html">classes.tbook</a></li>
+  <li><a href="../modules/classes.tplain.html">classes.tplain</a></li>
+  <li><a href="../modules/classes.triglot.html">classes.triglot</a></li>
+  <li><a href="../modules/packages.pdf.html">packages.pdf</a></li>
+</ul>
+<h2>Topics</h2>
+<ul class="">
+  <li><a href="../topics/README.md.html">README</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>SILE.settings</code></h1>
+<p>core settings instance</p>
+<p>
+
+</p>
+
+
+<h2><a href="#Class_settings">Class settings </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#settings:pushState">settings:pushState()</a></td>
+	<td class="summary">Stash the current values of all settings in a stack to be returned to later</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#settings:popState">settings:popState()</a></td>
+	<td class="summary">Return the most recently pushed set of values in the setting stack</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#settings:declare">settings:declare(specs)</a></td>
+	<td class="summary">Declare a new setting</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#settings:reset">settings:reset()</a></td>
+	<td class="summary">Reset all settings to their registered default values.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#settings:toplevelState">settings:toplevelState()</a></td>
+	<td class="summary">Restore all settings to the value they had in the top-level state,
+ that is at the tap of the settings stack (normally the document level).</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#settings:get">settings:get(parameter)</a></td>
+	<td class="summary">Get the value of a setting</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#settings:set">settings:set(parameter, value[, makedefault=false[, reset=false]])</a></td>
+	<td class="summary">Set the value of a setting</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#settings:registerHook">settings:registerHook(parameter, func)</a></td>
+	<td class="summary">Register a callback hook to be run when a setting changes.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#settings:runHooks">settings:runHooks(parameter, value)</a></td>
+	<td class="summary">Trigger execution of callback hooks for a given setting.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#settings:temporarily">settings:temporarily(func)</a></td>
+	<td class="summary">Isolate a block of processing so that setting changes made during the block don't last past the block.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#settings:wrap">settings:wrap()</a></td>
+	<td class="summary">Create a settings wrapper function that applies current settings to later content processing.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Class_settings"></a>Class settings </h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "settings:pushState"></a>
+    <strong>settings:pushState()</strong>
+    </dt>
+    <dd>
+    Stash the current values of all settings in a stack to be returned to later
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "settings:popState"></a>
+    <strong>settings:popState()</strong>
+    </dt>
+    <dd>
+    Return the most recently pushed set of values in the setting stack
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "settings:declare"></a>
+    <strong>settings:declare(specs)</strong>
+    </dt>
+    <dd>
+    Declare a new setting
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">specs</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         { parameter, type, default, help, hook, ... } declaration specification
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "settings:reset"></a>
+    <strong>settings:reset()</strong>
+    </dt>
+    <dd>
+    Reset all settings to their registered default values.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "settings:toplevelState"></a>
+    <strong>settings:toplevelState()</strong>
+    </dt>
+    <dd>
+    Restore all settings to the value they had in the top-level state,
+ that is at the tap of the settings stack (normally the document level).
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "settings:get"></a>
+    <strong>settings:get(parameter)</strong>
+    </dt>
+    <dd>
+    Get the value of a setting
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">parameter</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         The full name of the setting to fetch.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        Value of setting
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "settings:set"></a>
+    <strong>settings:set(parameter, value[, makedefault=false[, reset=false]])</strong>
+    </dt>
+    <dd>
+    Set the value of a setting
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">parameter</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         The full name of the setting to change.
+        </li>
+        <li><span class="parameter">value</span>
+         The new value to change it to.
+        </li>
+        <li><span class="parameter">makedefault</span>
+            <span class="types"><span class="type">boolean</span></span>
+         Whether to make this the new default value.
+         (<em>default</em> false)
+        </li>
+        <li><span class="parameter">reset</span>
+            <span class="types"><span class="type">boolean</span></span>
+         Whether to reset the value to the current default value.
+         (<em>default</em> false)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "settings:registerHook"></a>
+    <strong>settings:registerHook(parameter, func)</strong>
+    </dt>
+    <dd>
+    Register a callback hook to be run when a setting changes.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">parameter</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         Name of the setting to add a hook to.
+        </li>
+        <li><span class="parameter">func</span>
+            <span class="types"><span class="type">function</span></span>
+         Callback function accepting one argument (the new value).
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "settings:runHooks"></a>
+    <strong>settings:runHooks(parameter, value)</strong>
+    </dt>
+    <dd>
+    Trigger execution of callback hooks for a given setting.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">parameter</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         The name of the parameter changes.
+        </li>
+        <li><span class="parameter">value</span>
+         The new value of the setting, passed as the first argument to the hook function.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "settings:temporarily"></a>
+    <strong>settings:temporarily(func)</strong>
+    </dt>
+    <dd>
+    Isolate a block of processing so that setting changes made during the block don't last past the block.
+ (Under the hood this just uses <code>:pushState()</code>, the processes the function, then runs <code>:popState()</code>)
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">func</span>
+            <span class="types"><span class="type">function</span></span>
+         A function wrapping the actions to take without affecting settings for future use.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "settings:wrap"></a>
+    <strong>settings:wrap()</strong>
+    </dt>
+    <dd>
+    Create a settings wrapper function that applies current settings to later content processing.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">function</span></span>
+        a closure function accepting one argument (content) to process using
+ typesetter settings as they are at the time of closure creation.
+    </ol>
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/lunarmodules/LDoc">LDoc 1.5.0</a></i>
+<i style="float:right;">Last updated 1980-01-01 00:00:00 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

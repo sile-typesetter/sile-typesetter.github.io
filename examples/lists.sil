@@ -1,0 +1,53 @@
+\begin[papersize=a5,class=plain]{document}
+\neverindent
+\nofolios
+\use[module=packages.lists]
+\language[main=en]
+\font[family=Libertinus Serif, size=14]
+
+\center{\font[weight=700]{The Enumerated Nation}}
+
+\center{\em{The Great Tale of Enumerations and Bullet Lists}}
+
+\bigskip
+\begin{enumerate}
+  \item{In the beginning, all Items were equal under the List}
+  \item{A war began between two of their tribes}
+  \begin{itemize}
+    \item{Those who rebelled against the Order of the List}
+    \begin{enumerate}
+      \item{They started firing bullets at their enemies.}
+      \item{They took many shapes}
+      \begin{itemize}
+        \item{They had no rank beyond their Level}
+        \item{They took symbols as their emblems}
+        \item{Their Levels had great leaders}
+        \begin{enumerate}
+          \item{Black Bullet}
+          \item{Circle Bullet}
+          \item{Dash}
+        \end{enumerate}
+      \end{itemize}
+    \end{enumerate}
+    \item{Those who were Followers of the Order}
+    \begin{enumerate}
+      \item{They frowned at being outnumbered}
+      \item{They had recognizable shapes}
+      \begin{itemize}
+        \item{They kept their ranks at their Level}
+        \item{Their Levels had famous members}
+        \begin{enumerate}
+          \item{The Arabic Numbers}
+          \item{The Roman Numbers}
+          \item{The Letters}
+          \begin{itemize}
+            \item{Also called the Alphas}
+            \item{Probably the same as the Latins}
+          \end{itemize}
+        \end{enumerate}
+      \end{itemize}
+    \end{enumerate}
+  \end{itemize}
+  \item{When the war ended, all Items nested in the List according to their Level}
+\end{enumerate}
+\end{document}

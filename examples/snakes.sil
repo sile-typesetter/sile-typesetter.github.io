@@ -1,0 +1,34 @@
+\begin[class=book,papersize=a5]{document}
+\nofolios
+\use[module=packages.url]
+\begin{lua}
+local snakeGlue = SILE.types.node.glue()
+local snake = "snake.png"
+local snakeimg = SILE.resolveFile(snake)
+snakeGlue.width = SILE.types.length("0pt plus 100000pt")
+function snakeGlue:outputYourself (typesetter, line)
+  local scaledWidth = self.width.length
+  if line.ratio and line.ratio < 0 and self.width.shrink:tonumber() > 0 then
+    scaledWidth = scaledWidth + self.width.shrink * line.ratio
+  elseif line.ratio and line.ratio > 0 and self.width.stretch:tonumber() > 0 then
+    scaledWidth = scaledWidth + self.width.stretch * line.ratio
+  end
+  if scaledWidth:tonumber() <= 12 then return end
+  SILE.outputter:drawImage(snakeimg, typesetter.frame.state.cursorX, typesetter.frame.state.cursorY - 12, scaledWidth, 12);
+  typesetter.frame:advanceWritingDirection(scaledWidth)
+end
+SILE.settings:set("typesetter.parfillskip", SILE.types.node.glue())
+SILE.settings:set("document.parindent", SILE.types.node.glue())
+SILE.settings:set("document.spaceskip", SILE.types.length("1spc"))
+SILE.settings:set("document.rskip", snakeGlue)
+\end{lua}
+\font[size=20pt]
+
+To Sherlock Holmes she is always \em{the woman}.%
+\footnote{This example is a proof of concept for \url{https://xkcd.com/1676/}}
+I have seldom heard him mention her under any other name.
+In his eyes she eclipses and predominates the whole of her sex.
+It was not that he felt any emotion akin to love for Irene Adler.
+All emotions, and that one particularly, were abhorrent to his cold, precise but admirably balanced mind.
+He was, I take it, the most perfect reasoning and observing machine that the world has seen, but as a lover he would have placed himself in a false position.
+\end{document}

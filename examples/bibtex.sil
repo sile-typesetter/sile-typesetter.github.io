@@ -1,0 +1,27 @@
+\begin[class=book,papersize=a5]{document}
+\nofolios
+\use[module=packages.bibtex]
+\loadbibliography[file=sample.bib]
+
+Of course, when it comes to digital typesetting, \csl:cite{knuth1986} is often one of the first references that comes to mind.
+
+But there are many other interesting resources on the subject.
+Have you checked them all?
+Here is a suggested reading list, with references in Chicago author-date style.
+
+\bigskip
+
+\printbibliography[cited=false]
+
+\bigskip
+
+Plain TeX might not be used as much as it used to be, but LaTeX is still very popular \csl:cite{lamport1994}.
+There are always lessons to be learned from these mighty predecessors, which kept evolving over the years \csl:cite{mittelbach2004}.
+
+In the 1990s, Jeffrey Kingston imagined the Lout typesetting system.
+Once hyped as a potential successor to TeX, it failed to attract traction, but it is still an interesting read \csl:cite{kingston2023b}.
+
+Simon did a great job at introducing SILE in a seminal article published in \em{TUGboat} \csl:cite{cozens2017}.
+Lots of things have happened since then, and the project has evolved a lot since the early days \csl:cite{sile}.
+
+\end{document}

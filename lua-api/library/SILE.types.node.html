@@ -1,0 +1,1373 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>SILE</h1>
+
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Class_box">Class box </a></li>
+<li><a href="#Class_hbox">Class hbox </a></li>
+<li><a href="#Class_nnode">Class nnode </a></li>
+<li><a href="#Class_unshaped">Class unshaped </a></li>
+<li><a href="#Class_discretionary">Class discretionary </a></li>
+<li><a href="#Class_glue">Class glue </a></li>
+<li><a href="#Class_hfillglue">Class hfillglue </a></li>
+<li><a href="#Class_hssglue">Class hssglue </a></li>
+<li><a href="#Class_vglue">Class vglue </a></li>
+<li><a href="#Class_penalty">Class penalty </a></li>
+<li><a href="#Class_vbox">Class vbox </a></li>
+</ul>
+
+
+<h2>Library</h2>
+<ul class="nowrap">
+  <li><a href="../library/SILE.html">SILE</a></li>
+  <li><a href="../library/SILE.font.html">SILE.font</a></li>
+  <li><a href="../library/SILE.settings.html">SILE.settings</a></li>
+  <li><strong>SILE.types.node</strong></li>
+  <li><a href="../library/SU.html">SU</a></li>
+  <li><a href="../library/SU.ast.html">SU.ast</a></li>
+  <li><a href="../library/SU.numbers.html">SU.numbers</a></li>
+  <li><a href="../library/SU.sorting.html">SU.sorting</a></li>
+  <li><a href="../library/globals.html">globals</a></li>
+  <li><a href="../library/loaders.html">loaders</a></li>
+  <li><a href="../library/packages.bibtex.csl.engine.html">packages.bibtex.csl.engine</a></li>
+  <li><a href="../library/packages.bibtex.csl.locale.html">packages.bibtex.csl.locale</a></li>
+  <li><a href="../library/packages.bibtex.csl.style.html">packages.bibtex.csl.style</a></li>
+  <li><a href="../library/packages.bibtex.csl.utils.casing.html">packages.bibtex.csl.utils.casing</a></li>
+  <li><a href="../library/packages.bibtex.csl.utils.superfolding.html">packages.bibtex.csl.utils.superfolding</a></li>
+  <li><a href="../library/packages.bibtex.csl.utils.xmlparser.html">packages.bibtex.csl.utils.xmlparser</a></li>
+  <li><a href="../library/packages.bibtex.support.bib2csl.html">packages.bibtex.support.bib2csl</a></li>
+  <li><a href="../library/packages.bibtex.support.isodatetime.html">packages.bibtex.support.isodatetime</a></li>
+  <li><a href="../library/packages.bibtex.support.locators.html">packages.bibtex.support.locators</a></li>
+  <li><a href="../library/packages.math.mathml-entities.html">packages.math.mathml-entities</a></li>
+  <li><a href="../library/packages.math.unicode-symbols.html">packages.math.unicode-symbols</a></li>
+</ul>
+<h2>Interfaces</h2>
+<ul class="nowrap">
+  <li><a href="../interfaces/classes.html">classes</a></li>
+  <li><a href="../interfaces/inputters.html">inputters</a></li>
+  <li><a href="../interfaces/languages.html">languages</a></li>
+  <li><a href="../interfaces/outputters.html">outputters</a></li>
+  <li><a href="../interfaces/packages.html">packages</a></li>
+  <li><a href="../interfaces/pagebuilders.html">pagebuilders</a></li>
+  <li><a href="../interfaces/shapers.html">shapers</a></li>
+  <li><a href="../interfaces/typesetters.html">typesetters</a></li>
+</ul>
+<h2>Types</h2>
+<ul class="nowrap">
+  <li><a href="../types/color.html">color</a></li>
+  <li><a href="../types/length.html">length</a></li>
+  <li><a href="../types/measurement.html">measurement</a></li>
+  <li><a href="../types/unit.html">unit</a></li>
+</ul>
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/classes.bible.html">classes.bible</a></li>
+  <li><a href="../modules/classes.book.html">classes.book</a></li>
+  <li><a href="../modules/classes.diglot.html">classes.diglot</a></li>
+  <li><a href="../modules/classes.docbook.html">classes.docbook</a></li>
+  <li><a href="../modules/classes.jbook.html">classes.jbook</a></li>
+  <li><a href="../modules/classes.jplain.html">classes.jplain</a></li>
+  <li><a href="../modules/classes.letter.html">classes.letter</a></li>
+  <li><a href="../modules/classes.plain.html">classes.plain</a></li>
+  <li><a href="../modules/classes.tbook.html">classes.tbook</a></li>
+  <li><a href="../modules/classes.tbook.html">classes.tbook</a></li>
+  <li><a href="../modules/classes.tplain.html">classes.tplain</a></li>
+  <li><a href="../modules/classes.triglot.html">classes.triglot</a></li>
+  <li><a href="../modules/packages.pdf.html">packages.pdf</a></li>
+</ul>
+<h2>Topics</h2>
+<ul class="">
+  <li><a href="../topics/README.md.html">README</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>SILE.types.node</code></h1>
+<p>This module defines the standard node classes used in SILE.</p>
+<p> Some packages or other modules may define their own node classes for specific purposes,
+ but this does not have to be covered here.</p>
+
+
+<h2><a href="#Class_box">Class box </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#box:_init">box:_init(spec)</a></td>
+	<td class="summary">Constructor</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#box:absolute">box:absolute()</a></td>
+	<td class="summary">Create an absolute version of the box.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#box:lineContribution">box:lineContribution()</a></td>
+	<td class="summary">Returns either the width or the height of the box.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#box:outputYourself">box:outputYourself(_, _)</a></td>
+	<td class="summary">Output routine for a box.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#box:toText">box:toText()</a></td>
+	<td class="summary">Returns a text description of the box for debugging purposes.</td>
+	</tr>
+</table>
+<h2><a href="#Class_hbox">Class hbox </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#hbox:_init">hbox:_init(spec)</a></td>
+	<td class="summary">Constructor</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#hbox:scaledWidth">hbox:scaledWidth(line)</a></td>
+	<td class="summary">Returns the width of the hbox, scaled by the line ratio.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#hbox:outputYourself">hbox:outputYourself(typesetter, line)</a></td>
+	<td class="summary">ôutput routine for a hbox.</td>
+	</tr>
+</table>
+<h2><a href="#Class_nnode">Class nnode </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#nnode:_init">nnode:_init(spec)</a></td>
+	<td class="summary">Constructor</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#nnode:absolute">nnode:absolute()</a></td>
+	<td class="summary">Create an absolute version of the box.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#nnode:outputYourself">nnode:outputYourself(typesetter, line)</a></td>
+	<td class="summary">Output routine for a nnode.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#nnode:toText">nnode:toText()</a></td>
+	<td class="summary">Returns the text content of the nnode.</td>
+	</tr>
+</table>
+<h2><a href="#Class_unshaped">Class unshaped </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#unshaped:_init">unshaped:_init(spec)</a></td>
+	<td class="summary">Constructor</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#unshaped:shape">unshaped:shape()</a></td>
+	<td class="summary">Shapes the text of the unshaped node.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#unshaped:outputYourself">unshaped:outputYourself(_, _)</a></td>
+	<td class="summary">Output routine for an unshaped node.</td>
+	</tr>
+</table>
+<h2><a href="#Class_discretionary">Class discretionary </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#discretionary:toText">discretionary:toText()</a></td>
+	<td class="summary">Returns a text representation of the discretionary node.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#discretionary:markAsPrebreak">discretionary:markAsPrebreak()</a></td>
+	<td class="summary">Mark the discretionary node as used in prebreak context.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#discretionary:cloneAsPostbreak">discretionary:cloneAsPostbreak()</a></td>
+	<td class="summary">Clone the discretionary node for postbreak use.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#discretionary:outputYourself">discretionary:outputYourself(typesetter, line)</a></td>
+	<td class="summary">Output routine for a discretionary node.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#discretionary:prebreakWidth">discretionary:prebreakWidth()</a></td>
+	<td class="summary">Returns the width of the prebreak nodes.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#discretionary:postbreakWidth">discretionary:postbreakWidth()</a></td>
+	<td class="summary">Returns the width of the postbreak nodes.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#discretionary:replacementWidth">discretionary:replacementWidth()</a></td>
+	<td class="summary">Returns the width of the replacement nodes.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#discretionary:prebreakHeight">discretionary:prebreakHeight()</a></td>
+	<td class="summary">Returns the height of the prebreak nodes.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#discretionary:postbreakHeight">discretionary:postbreakHeight()</a></td>
+	<td class="summary">Returns the height of the postbreak nodes.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#discretionary:replacementHeight">discretionary:replacementHeight()</a></td>
+	<td class="summary">Returns the height of the replacement nodes.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#discretionary:replacementDepth">discretionary:replacementDepth()</a></td>
+	<td class="summary">Returns the depth of the prebreak nodes.</td>
+	</tr>
+</table>
+<h2><a href="#Class_glue">Class glue </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#glue:outputYourself">glue:outputYourself(typesetter, line)</a></td>
+	<td class="summary">Output routine for a glue node.</td>
+	</tr>
+</table>
+<h2><a href="#Class_hfillglue">Class hfillglue </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#hfillglue:_init">hfillglue:_init(spec)</a></td>
+	<td class="summary">Constructor</td>
+	</tr>
+</table>
+<h2><a href="#Class_hssglue">Class hssglue </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#hssglue:_init">hssglue:_init(spec)</a></td>
+	<td class="summary">Constructor</td>
+	</tr>
+</table>
+<h2><a href="#Class_vglue">Class vglue </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#vglue:_init">vglue:_init(spec)</a></td>
+	<td class="summary">Constructor</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#vglue:adjustGlue">vglue:adjustGlue(adjustment)</a></td>
+	<td class="summary">Adjust the vglue by a certain amount.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#vglue:outputYourself">vglue:outputYourself(typesetter, line)</a></td>
+	<td class="summary">Output routine for a vglue.</td>
+	</tr>
+</table>
+<h2><a href="#Class_penalty">Class penalty </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#penalty:_init">penalty:_init(spec)</a></td>
+	<td class="summary">Constructor</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#penalty:outputYourself">penalty:outputYourself(_, _)</a></td>
+	<td class="summary">Output routine for a penalty.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#penalty:toText">penalty:toText()</a></td>
+	<td class="summary">Returns a text representation of the penalty node.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#penalty:unbox">penalty:unbox()</a></td>
+	<td class="summary">Unbox a penalty.</td>
+	</tr>
+</table>
+<h2><a href="#Class_vbox">Class vbox </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#vbox:_init">vbox:_init(spec)</a></td>
+	<td class="summary">Constructor</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#vbox:toText">vbox:toText()</a></td>
+	<td class="summary">Returns a text representation of the vbox.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#vbox:outputYourself">vbox:outputYourself(typesetter, line)</a></td>
+	<td class="summary">Output routine for a vbox.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#vbox:unbox">vbox:unbox()</a></td>
+	<td class="summary">Unbox a vbox.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#vbox:append">vbox:append(box)</a></td>
+	<td class="summary">Added a box or several to the current vbox.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header has-description"><a name="Class_box"></a>Class box </h2>
+
+          <div class="section-description">
+          Base abstract box class used by the other box types. </p>
+
+<p> Other node classes derive from it, adding or overriding properties and methods.
+ It should not be used directly.
+          </div>
+    <dl class="function">
+    <dt>
+    <a name = "box:_init"></a>
+    <strong>box:_init(spec)</strong>
+    </dt>
+    <dd>
+    Constructor
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">spec</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         A table with the properties of the box.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "box:absolute"></a>
+    <strong>box:absolute()</strong>
+    </dt>
+    <dd>
+    Create an absolute version of the box.
+ All Dimensions are based absolute (i.e. in points)
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../library/SILE.types.node.html#box">box</a></span>
+        A new box with the same properties as the original, but with absolute dimensions.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "box:lineContribution"></a>
+    <strong>box:lineContribution()</strong>
+    </dt>
+    <dd>
+    Returns either the width or the height of the box.
+ Regardless of the orientations, "width" is always in the writingDirection,
+ and "height" is always in the "pageDirection"
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">SILE.types.length</span></span>
+        The width or height of the box, depending on the orientation.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "box:outputYourself"></a>
+    <strong>box:outputYourself(_, _)</strong>
+    </dt>
+    <dd>
+    Output routine for a box.
+ This is an abstract method that must be overridden by subclasses.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">_</span>
+
+
+
+        </li>
+        <li><span class="parameter">_</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "box:toText"></a>
+    <strong>box:toText()</strong>
+    </dt>
+    <dd>
+    Returns a text description of the box for debugging purposes.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+        A string representation of the box.
+    </ol>
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header has-description"><a name="Class_hbox"></a>Class hbox </h2>
+
+          <div class="section-description">
+          A hbox is a box node used in horizontal mode. </p>
+
+<p> Derived from <a href="../library/SILE.types.node.html#box">box</a>.</p>
+
+<p> Properties is<em>hbox and is</em>box are true.
+          </div>
+    <dl class="function">
+    <dt>
+    <a name = "hbox:_init"></a>
+    <strong>hbox:_init(spec)</strong>
+    </dt>
+    <dd>
+    Constructor
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">spec</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         A table with the properties of the hbox.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "hbox:scaledWidth"></a>
+    <strong>hbox:scaledWidth(line)</strong>
+    </dt>
+    <dd>
+    Returns the width of the hbox, scaled by the line ratio.
+ This is used to determine the width of the hbox when it is output.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">line</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         The line properties (notably ratio)
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">SILE.types.length</span></span>
+        The scaled width of the hbox.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "hbox:outputYourself"></a>
+    <strong>hbox:outputYourself(typesetter, line)</strong>
+    </dt>
+    <dd>
+    ôutput routine for a hbox.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">typesetter</span>
+            <span class="types"><span class="type">SILE.typesetters.base</span></span>
+         The typesetter object (only used for the frame).
+        </li>
+        <li><span class="parameter">line</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         Line properties (notably ratio)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header has-description"><a name="Class_nnode"></a>Class nnode </h2>
+
+          <div class="section-description">
+          A nnode is a node representing text content. </p>
+
+<p> Derived from <a href="../library/SILE.types.node.html#hbox">hbox</a>.</p>
+
+<p> Properties is<em>nnode and is</em>box are true.
+          </div>
+    <dl class="function">
+    <dt>
+    <a name = "nnode:_init"></a>
+    <strong>nnode:_init(spec)</strong>
+    </dt>
+    <dd>
+    Constructor
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">spec</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         A table with the properties of the nnode.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "nnode:absolute"></a>
+    <strong>nnode:absolute()</strong>
+    </dt>
+    <dd>
+    Create an absolute version of the box.
+ This overrides the base class method as nnode content is assumed to in points already.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../library/SILE.types.node.html#box">box</a></span>
+        The box itself.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "nnode:outputYourself"></a>
+    <strong>nnode:outputYourself(typesetter, line)</strong>
+    </dt>
+    <dd>
+    Output routine for a nnode.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">typesetter</span>
+            <span class="types"><span class="type">SILE.typesetters.base</span></span>
+         The typesetter object (only used for the frame).
+        </li>
+        <li><span class="parameter">line</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         Line properties (notably ratio)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "nnode:toText"></a>
+    <strong>nnode:toText()</strong>
+    </dt>
+    <dd>
+    Returns the text content of the nnode.
+ Contrary to the parent class, this is the actual text content of the node,
+ not a text representation of the node.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+        The text content of the nnode.
+    </ol>
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header has-description"><a name="Class_unshaped"></a>Class unshaped </h2>
+
+          <div class="section-description">
+          An unshaped node is a text node that has not been shaped yet. </p>
+
+<p> Derived from <a href="../library/SILE.types.node.html#nnode">nnode</a>.</p>
+
+<p> Properties is<em>unshaped is true.
+ Note that is</em>nnode is NOT true, as an unshaped node is not a representable node yet.
+          </div>
+    <dl class="function">
+    <dt>
+    <a name = "unshaped:_init"></a>
+    <strong>unshaped:_init(spec)</strong>
+    </dt>
+    <dd>
+    Constructor
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">spec</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         A table with the properties of the unshaped node.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "unshaped:shape"></a>
+    <strong>unshaped:shape()</strong>
+    </dt>
+    <dd>
+    Shapes the text of the unshaped node.
+ This is done by calling the current shaper with the text and options of the node.
+ The result is a list of nnodes inheriting the parent of the unshaped node.
+ The notion of parent is used by the hyphenation logic and discretionaries.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+        A list of nnodes representing the shaped text.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "unshaped:outputYourself"></a>
+    <strong>unshaped:outputYourself(_, _)</strong>
+    </dt>
+    <dd>
+    Output routine for an unshaped node.
+ Unshaped nodes are not supposed to make it to the output, so this method raises an error.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">_</span>
+
+
+
+        </li>
+        <li><span class="parameter">_</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header has-description"><a name="Class_discretionary"></a>Class discretionary </h2>
+
+          <div class="section-description">
+          A discretionary node is a node that can be broken at a certain point.
+ It has optional replacement, prebreak and postbreak nodes, which must be <a href="../library/SILE.types.node.html#nnode">nnode</a> nodes.</p>
+
+<p> Derived from <a href="../library/SILE.types.node.html#hbox">hbox</a>.</p>
+
+<p> Properties is_discretionary is true.
+          </div>
+            <h3>Usage:</h3>
+            <pre class="example">SILE.types.node.<span class="function-name">discretionary</span>({ replacement = ..., prebreak =  ..., postbreak = ...})</pre>
+    <dl class="function">
+    <dt>
+    <a name = "discretionary:toText"></a>
+    <strong>discretionary:toText()</strong>
+    </dt>
+    <dd>
+    Returns a text representation of the discretionary node.
+ This is used for debugging purposes, returning '-' for a used discretionary and '_' otherwise.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+        A string representation of the discretionary node ('-' or '_').
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "discretionary:markAsPrebreak"></a>
+    <strong>discretionary:markAsPrebreak()</strong>
+    </dt>
+    <dd>
+    Mark the discretionary node as used in prebreak context.
+ This is used to indicate that the discretionary node is used (i.e. the parent is hyphenated)
+ and the prebreak nodes should be output (typically at the end of a broken line).
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "discretionary:cloneAsPostbreak"></a>
+    <strong>discretionary:cloneAsPostbreak()</strong>
+    </dt>
+    <dd>
+    Clone the discretionary node for postbreak use.
+ This is used to create a new discretionary node that is used in postbreak context.
+ The discretionary must previously have been marked as used.</p>
+
+<p> When breaking compound words, some languages expect the hyphen (prebreak) to be
+ repeated in the postbreak context, typically at the beginning of the next line.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../library/SILE.types.node.html#discretionary">SILE.types.node.discretionary</a></span>
+        A new discretionary node with the same properties as the original, but marked for use in postbreak context.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "discretionary:outputYourself"></a>
+    <strong>discretionary:outputYourself(typesetter, line)</strong>
+    </dt>
+    <dd>
+    Output routine for a discretionary node.
+ Depending on how the node was marked, it will output either the prebreak, postbreak or replacement nodes.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">typesetter</span>
+            <span class="types"><span class="type">SILE.typesetters.base</span></span>
+         The typesetter object (only used for the frame).
+        </li>
+        <li><span class="parameter">line</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         Line properties (notably ratio)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "discretionary:prebreakWidth"></a>
+    <strong>discretionary:prebreakWidth()</strong>
+    </dt>
+    <dd>
+    Returns the width of the prebreak nodes.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">SILE.types.length</span></span>
+        The total width of the prebreak nodes.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "discretionary:postbreakWidth"></a>
+    <strong>discretionary:postbreakWidth()</strong>
+    </dt>
+    <dd>
+    Returns the width of the postbreak nodes.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">SILE.types.length</span></span>
+        The total width of the postbreak nodes.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "discretionary:replacementWidth"></a>
+    <strong>discretionary:replacementWidth()</strong>
+    </dt>
+    <dd>
+    Returns the width of the replacement nodes.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">SILE.types.length</span></span>
+        The total width of the replacement nodes.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "discretionary:prebreakHeight"></a>
+    <strong>discretionary:prebreakHeight()</strong>
+    </dt>
+    <dd>
+    Returns the height of the prebreak nodes.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">SILE.types.length</span></span>
+        The total height of the prebreak nodes.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "discretionary:postbreakHeight"></a>
+    <strong>discretionary:postbreakHeight()</strong>
+    </dt>
+    <dd>
+    Returns the height of the postbreak nodes.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">SILE.types.length</span></span>
+        The total height of the postbreak nodes.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "discretionary:replacementHeight"></a>
+    <strong>discretionary:replacementHeight()</strong>
+    </dt>
+    <dd>
+    Returns the height of the replacement nodes.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">SILE.types.length</span></span>
+        The total height of the replacement nodes.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "discretionary:replacementDepth"></a>
+    <strong>discretionary:replacementDepth()</strong>
+    </dt>
+    <dd>
+    Returns the depth of the prebreak nodes.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">SILE.types.length</span></span>
+        The total depth of the prebreak nodes.
+    </ol>
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header has-description"><a name="Class_glue"></a>Class glue </h2>
+
+          <div class="section-description">
+          A glue node is a node that can stretch or shrink to fill horizontal space. </p>
+
+<p> Derived from <a href="../library/SILE.types.node.html#box">box</a>.</p>
+
+<p> Properties is_glue is true
+          </div>
+    <dl class="function">
+    <dt>
+    <a name = "glue:outputYourself"></a>
+    <strong>glue:outputYourself(typesetter, line)</strong>
+    </dt>
+    <dd>
+    Output routine for a glue node.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">typesetter</span>
+            <span class="types"><span class="type">SILE.typesetters.base</span></span>
+         The typesetter object (only used for the frame).
+        </li>
+        <li><span class="parameter">line</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         Line properties (notably ratio)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header has-description"><a name="Class_hfillglue"></a>Class hfillglue </h2>
+
+          <div class="section-description">
+          A hfillglue is just a standard glue with infinite stretch.
+ (Convenience subclass so callers do not have to know what infinity is.)</p>
+
+<p> Derived from <a href="../library/SILE.types.node.html#glue">glue</a>.
+          </div>
+    <dl class="function">
+    <dt>
+    <a name = "hfillglue:_init"></a>
+    <strong>hfillglue:_init(spec)</strong>
+    </dt>
+    <dd>
+    Constructor
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">spec</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         A table with the properties of the glue.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header has-description"><a name="Class_hssglue"></a>Class hssglue </h2>
+
+          <div class="section-description">
+          A hssglue is just a standard glue with infinite stretch and shrink.
+ (Convenience subclass so callers do not have to know what infinity is.)</p>
+
+<p> Derived from <a href="../library/SILE.types.node.html#glue">glue</a>.
+          </div>
+    <dl class="function">
+    <dt>
+    <a name = "hssglue:_init"></a>
+    <strong>hssglue:_init(spec)</strong>
+    </dt>
+    <dd>
+    Constructor
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">spec</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         A table with the properties of the glue.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header has-description"><a name="Class_vglue"></a>Class vglue </h2>
+
+          <div class="section-description">
+          A vglue node is a node that can stretch or shrink to fill vertical space. </p>
+
+<p> Derived from <a href="../library/SILE.types.node.html#box">box</a>.</p>
+
+<p> Property is_vglue is true.
+          </div>
+    <dl class="function">
+    <dt>
+    <a name = "vglue:_init"></a>
+    <strong>vglue:_init(spec)</strong>
+    </dt>
+    <dd>
+    Constructor
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">spec</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         A table with the properties of the vglue.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "vglue:adjustGlue"></a>
+    <strong>vglue:adjustGlue(adjustment)</strong>
+    </dt>
+    <dd>
+    Adjust the vglue by a certain amount.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">adjustment</span>
+            <span class="types"><span class="type">SILE.types.length</span></span>
+         The amount to adjust the vglue by.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "vglue:outputYourself"></a>
+    <strong>vglue:outputYourself(typesetter, line)</strong>
+    </dt>
+    <dd>
+    Output routine for a vglue.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">typesetter</span>
+            <span class="types"><span class="type">SILE.typesetters.base</span></span>
+         The typesetter object (only used for the frame).
+        </li>
+        <li><span class="parameter">line</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         Line properties (notably height and depth)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header has-description"><a name="Class_penalty"></a>Class penalty </h2>
+
+          <div class="section-description">
+          A penalty node has a value which is used by the line breaking algorithm (in horizontal mode)
+ or the page breaking algorithm (in vertical mode), to determine where to break.
+ The value is expected to be a number between -10000 and 10000.
+ The higher the value, the less desirable it is to break at that point.
+ The extreme values (-10000 and 10000) are used to indicate that the break is forbidden or mandatory,
+ i.e. in certain way represent an infinite penalty.</p>
+
+<p> Derived from <a href="../library/SILE.types.node.html#box">box</a>.</p>
+
+<p> Property is_penalty is true.
+          </div>
+    <dl class="function">
+    <dt>
+    <a name = "penalty:_init"></a>
+    <strong>penalty:_init(spec)</strong>
+    </dt>
+    <dd>
+    Constructor
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">spec</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         A table with the properties of the penalty.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "penalty:outputYourself"></a>
+    <strong>penalty:outputYourself(_, _)</strong>
+    </dt>
+    <dd>
+    Output routine for a penalty.
+ If found in the output, penalties have no representation, so this method does nothing.
+ (Overriding it on some penalties may be useful for debugging purposes.)
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">_</span>
+
+
+
+        </li>
+        <li><span class="parameter">_</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "penalty:toText"></a>
+    <strong>penalty:toText()</strong>
+    </dt>
+    <dd>
+    Returns a text representation of the penalty node.
+ This is used for debugging purposes, returning '(!)' for a penalty.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+        A string representation of the penalty node ('(!)').
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "penalty:unbox"></a>
+    <strong>penalty:unbox()</strong>
+    </dt>
+    <dd>
+    Unbox a penalty.
+ This method exists consistency with vbox-derived classes, for a penalty used in vertical mode.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+        A table with the penalty node.
+    </ol>
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header has-description"><a name="Class_vbox"></a>Class vbox </h2>
+
+          <div class="section-description">
+          A vbox is a box node used in vertical mode. </p>
+
+<p> Derived from <a href="../library/SILE.types.node.html#box">box</a>.</p>
+
+<p> Properties is<em>vbox and is</em>box are true.
+          </div>
+    <dl class="function">
+    <dt>
+    <a name = "vbox:_init"></a>
+    <strong>vbox:_init(spec)</strong>
+    </dt>
+    <dd>
+    Constructor
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">spec</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         A table with the properties of the vbox.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "vbox:toText"></a>
+    <strong>vbox:toText()</strong>
+    </dt>
+    <dd>
+    Returns a text representation of the vbox.
+ This is used for debugging purposes, returning a string representation of the vbox and its content.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+        A string representation of the vbox.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "vbox:outputYourself"></a>
+    <strong>vbox:outputYourself(typesetter, line)</strong>
+    </dt>
+    <dd>
+    Output routine for a vbox.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">typesetter</span>
+            <span class="types"><span class="type">SILE.typesetters.base</span></span>
+         The typesetter object (only used for the frame).
+        </li>
+        <li><span class="parameter">line</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         Line properties (notably ratio)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "vbox:unbox"></a>
+    <strong>vbox:unbox()</strong>
+    </dt>
+    <dd>
+    Unbox a vbox.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+        A table with the nodes inside the vbox.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "vbox:append"></a>
+    <strong>vbox:append(box)</strong>
+    </dt>
+    <dd>
+    Added a box or several to the current vbox.
+ The box height is the height is the total height of the content, minus the depth of the last box.
+ The depth of the vbox is the depth of the last box.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">box</span>
+            <span class="types"><a class="type" href="../library/SILE.types.node.html#box">box</a> or <a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         A box or a list of boxes to add to the vbox.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/lunarmodules/LDoc">LDoc 1.5.0</a></i>
+<i style="float:right;">Last updated 1980-01-01 00:00:00 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

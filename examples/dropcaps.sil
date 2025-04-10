@@ -1,0 +1,40 @@
+\begin[papersize=a5,class=book]{document}
+\nofolios
+\use[module=packages.dropcaps]
+\set[parameter=document.parskip,value=4ex]
+
+\dropcap[lines=2]{T}his paragraph has a pretty plain initial or drop cap.
+It uses the default document font.
+You didn’t really expect more detail with such a generic font choice, right?
+This may be exactly what you want, especially with modern typesetting styles which tend towards the minimalist.
+
+\dropcap[lines=2,shift=-1pt,raise=-1pt,size=8ex,family=Acorn Initials]{T}%
+his paragraph has a much fancier initial provided by the Acorn Initials font.
+The size of glyphs in Acorn tends to run a a little big, but we have exagerated this example by specifying a size.
+We've also tweaked the location down and to the left ever so slightly from where it would have naturally been.
+
+\dropcap[lines=3,family=Zallman Caps,scale=0.7]{H}%
+\font[features=+smcp]{ere is an even bigger initial}, this time provided by the Zallman Caps font.
+Since Zallman is a bit larger than our body font, we've scaled it down by a factor of .7.
+Additionally we typeset the first clause after the dropcap in smallcaps.
+This traditional treatment is not related to the dropcaps feature, we just wanted to demonstrate how it could work in a real context.
+
+\dropcap[lines=4,join=true,family=Zallman Caps,standoff=1.5spc]{T}%
+his paragraph shows the effect of the joining option that you can use when the initial belongs to the first word in a sentence.
+The first line of text will be flush against the drop cap.
+Each additional line spanned with be indented with an extra space.
+In old-style typography, this was often preferred to the bare rectangular box most modern word-processing software render.
+With SILE, the choice is all yours!
+
+\language[main=tr]
+\dropcap[lines=2,join=true,style=Italic,weight=800,color=#444444]{2.} gösterebileceğimiz nokta, dropcap fonksiyonun birden fazlı karakter içerebilmesi.
+İşte su paragrafın başında bulunduğu gibi bazı metinde nokta da dahil olması gerekebilir.
+Ayrıcı \em{Italic} stil kullanıldı ve karakterin ağırlığını dengelemek için \color[color=#444444]{gri rengi} uygulandı.
+
+\language[main=en]
+\dropcap[lines=2,join=true]{\kern[width=-0.8en]“N}\font[features=+smcp]{ever say never,}” the saying goes.
+But someday your dropcap may include leading punctuation \em{and} a hanging indent.
+No worries.
+Insert a negative width kern as part of the initial content.
+This does double duty: the measured width of the initial will be smaller and we'll back up by that value at the outset.
+\end{document}

@@ -1,0 +1,58 @@
+\begin[papersize=a5,class=plain]{document}
+\neverindent
+\use[module=packages.math]
+\font[family=Libertinus Serif,size=14]
+\set[parameter=math.font.family,value=Libertinus Math]
+\set[parameter=math.font.size,value=14]
+\define[command=bold]{\font[weight=800]{\process}}
+\define[command=bold]{\font[weight=800]{\process}}
+\define[command=theorem]{\bold{Theorem}\enspace}
+
+\theorem For all \math{
+  \def{dsi}{\mi[mathvariant=double-struck]{#1}}
+  \def{NN}{\dsi{N}}
+  n \in \NN}:
+
+\begin[mode=display]{math}
+  \sum_{i=0}^n i = \frac{n(n+1)}{2}
+\end{math}
+\bigskip
+
+\theorem For all \math{n \in \NN}:
+
+\begin[mode=display]{math}
+  \sum_{i=0}^n i^2 = \frac{n(n+1)(2n+1)}{6}
+\end{math}
+\bigskip
+
+\bold{Theorem} (Divergence theorem)\enspace For any volume \math{V} and
+continuously differentiable vector field \math{
+  \def{vec}{\mi[mathvariant=bold]{#1}}
+  \vec{F}
+}:
+
+\begin[mode=display]{math}
+  \iiint_V \vec{\nabla} \cdot \vec{F} \mspace[width=1pt] \mo{d}\mi{V}
+  =
+  \oiint_{\partial V} \vec{F} \cdot \mo{d}\vec{S}
+\end{math}
+where \math{\partial V} is the border of \math{V}.
+\bigskip
+
+\bold{Definition} (Fibonacci sequence)\enspace Let \math{u_n} be the sequence
+defined by:
+\begin[mode=display]{math}
+  \{
+  \table[columnalign=left center left]{
+    u_0 &=& 1 \\
+    u_1 &=& 1 \\
+    u_{n+2} &=& u_{n+1} + u_n,\mspace[width=3pt] \forall n \in \NN \\
+  }
+\end{math}
+
+\theorem For all \math{n \in \NN}:
+\begin[mode=display]{math}
+  u_n = \frac{\phi^n - \psi^n}{\phi - \psi}
+\end{math}
+where \math{\phi} and \math{\psi} are the roots of \math{x^2 - x - 1}.
+\end{document}

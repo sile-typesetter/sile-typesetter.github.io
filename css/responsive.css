@@ -1,0 +1,27 @@
+@media (max-width:640px) {
+  #logo {
+    width: 75px;
+  }
+
+  #sidebar {
+    position: relative;
+    left: 0;
+    width: 100%;
+    padding-left: 1.75em;
+  }
+
+  #sidebar ul li {
+    float: left;
+    margin-right: 2em;
+  }
+
+  .footer {
+    position: relative;
+    top: 2em;
+    clear: both;
+  }
+
+  #content {
+    margin: 0;
+  }
+}

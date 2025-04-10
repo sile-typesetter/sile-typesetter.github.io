@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>SILE – SILE v0.15.11 Is Released</title>
+      <meta name="viewport" content="width=device-width">
+      
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+      
+
+      <!-- Custom CSS -->
+      <link rel="stylesheet" href="/main.css">
+
+      <!-- Responsive CSS -->
+      <link rel="stylesheet" href="/css/responsive.css">
+
+      <!-- Fonts -->
+      <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400;1,600&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+      <link rel='stylesheet' href='//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack-subset.css'>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-63500-7', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </head>
+  <body>
+    <div id="site">
+      <div id="sidebar">
+        <div id="header">
+          <h1 class="title"><a href="https://sile-typesetter.org"><img id="logo" src="/images/logo.png"></a></h1>
+          <span class="tagline">The SILE Typesetter</span>
+        </div>
+
+        <ul>
+  <li> <a href="/">Home</a></li>
+  <li> <a href="/what-is-sile/">What is SILE?</a></li>
+  <li> <a href="/examples/">Examples</a>
+    <ul>
+      <li><a href="/examples/global/">Global Scripts</a></li>
+      <li><a href="/examples/packages/">Packages</a></li>
+    </ul>
+  </li>
+  <li> <a href="/manual/sile-0.15.12.pdf">Manual (PDF)</a></li>
+  <li> <a href="/lua-api">Lua API</a></li>
+  <li> <a href="/rust-api/sile">Rust API</a></li>
+  <li> <a href="/sil-grammar/">SIL Grammar</a></li>
+  <li> <a href="https://github.com/sile-typesetter/sile/releases"><strong>Download</strong></a></li>
+</ul>
+
+
+        <div class="footer">
+          <span id="footer-links">
+            <a href="https://github.com/sile-typesetter/sile" class="footer-link">GitHub</a>
+          </span>
+        </div>
+      </div>
+
+        
+<div id="content">
+<div id="home">
+    <div class="post-info">
+    <div class="cover-photo-container">
+      <img class="cover-photo" src="/images/cover.jpg">
+    </div>
+  </div>
+
+    <div class="post-info">
+    <div class="info-container">
+      <h1 class="title">SILE v0.15.11 Is Released</h1>
+      <div class="meta">
+        
+          <span class="date"><a href="&#x2F;blog&#x2F;release-v0.15.11&#x2F;">10 Apr 2025</a></span>
+        
+        
+          — <span class="author">Caleb Maclennan</span>
+        
+      </div>
+  </div>
+
+  <div class="post">
+    <p>Version v0.15.11 of SILE has been released and is <a href="https://github.com/sile-typesetter/sile/releases/tag/v0.15.11">available for download</a>!
+See the included <a href="https://github.com/sile-typesetter/sile/blob/master/CHANGELOG.md">CHANGELOG.md</a> or review the <a href="https://github.com/sile-typesetter/sile/compare/v0.15.10...v0.15.11">commit history</a> for more explicit details.</p>
+<h3 id="Summary_of_Improvements">Summary of Improvements</h3>
+<p>This release isn't ground breaking, but it is line breaking.
+A major bug in our hyphenation algorithm went undetected for a long time because (by a virtue of a bug canceling out a bug) it didn't happen to affect English or Turkish—far and away the most utilized languages in SILE's history.
+But it did affect French, where <a href="http://github.com/Omikhleia">Didier Willis</a> found and squashed it.
+Hyphenation minima settings should be properly set for many other languages now and follow the current language.
+Several languages also got hyphenation pattern updates.</p>
+<p>In other minor details, length and measurement types no longer silently 'succeeds' when asked to parse non-compliant input.
+Additionally disabling the (default on) <code>variablespaces</code> setting will actually take effect now and not continue to use any of the related settings in some contexts.</p>
+<h3 id="New_Features">New Features</h3>
+<ul>
+<li><strong>cli:</strong> Include deps file itself as output target so it gets remade (<a href="https://github.com/sile-typesetter/sile/commit/696aafe5fdd17eff296d869662126405d32373c2">696aafe</a>)</li>
+<li><strong>languages:</strong> Update hyphenation patterns for Bulgarian (<a href="https://github.com/sile-typesetter/sile/commit/e1bd96e03ed30b94a0086f1ec986e4e86cc31798">e1bd96e</a>)</li>
+<li><strong>languages:</strong> Update hyphenation patterns for el/grc (<a href="https://github.com/sile-typesetter/sile/commit/e5e30d60b60b9e92773e51ba39cccd912ed3245f">e5e30d6</a>)</li>
+<li><strong>languages:</strong> Update hyphenation patterns for Portuguese (<a href="https://github.com/sile-typesetter/sile/commit/1298af4aaa46355479b1a04d78cd29eb89d1bca5">1298af4</a>)</li>
+<li><strong>languages:</strong> Update hyphenation patterns for Spanish (<a href="https://github.com/sile-typesetter/sile/commit/cf289b6cd13b3873e0aa7b8674cb3d1fa9fbcba2">cf289b6</a>)</li>
+<li><strong>languages:</strong> Update hyphenation patterns for Thai (<a href="https://github.com/sile-typesetter/sile/commit/4abed66a516b47952fbf51366b381b4fade10836">4abed66</a>)</li>
+<li><strong>packages:</strong> Add revert for space handling bug fix to retrograde (<a href="https://github.com/sile-typesetter/sile/commit/951e47ea42db33cb24abf1d0633db028aaafd7e2">951e47e</a>)</li>
+</ul>
+<h3 id="Bug_Fixes">Bug Fixes</h3>
+<ul>
+<li>
+<p><strong>cli:</strong> Correctly output makedeps files from the Rust CLI the same as from Lua (<a href="https://github.com/sile-typesetter/sile/commit/42a879a0b5f4a4615926cc224f1dc71380117356">42a879a</a>)</p>
+</li>
+<li>
+<p><strong>cli:</strong> Pass current binary name of Rust wrapper through for errors and make-deps (<a href="https://github.com/sile-typesetter/sile/commit/62820cee998fd1538bb0365f3f1223b815975bb1">62820ce</a>)</p>
+</li>
+<li>
+<p><strong>core:</strong> Error on excess unparsable input on measurements and lengths (<a href="https://github.com/sile-typesetter/sile/issues/2260">#2260</a>) (<a href="https://github.com/sile-typesetter/sile/commit/4d333899f3c076d07a2863b56411026aa69ee0d5">4d33389</a>)</p>
+</li>
+<li>
+<p><strong>hyphenators:</strong> Correctly apply hyphenation minima, isolate per language (<a href="https://github.com/sile-typesetter/sile/commit/6143d54652ad5cdf82e4ca5d528de1c78a52e69c">6143d54</a>)</p>
+</li>
+<li>
+<p><strong>languages:</strong> Set proper hyphenation minima for Esperanto (<a href="https://github.com/sile-typesetter/sile/commit/a01435353c59bf9e4a450988df52981194cf5c35">a014353</a>)</p>
+</li>
+<li>
+<p><strong>outputters:</strong> Update cairo backend to work with current API (<a href="https://github.com/sile-typesetter/sile/commit/13bd9d48c2ea62073a13e7df33dd3c70553f7474">13bd9d4</a>)</p>
+</li>
+<li>
+<p><strong>shapers:</strong> Actually disable variablespaces if setting set to false (<a href="https://github.com/sile-typesetter/sile/commit/a6628b5f4234ed4e11af2623afc05127727eae69">a6628b5</a>)</p>
+</li>
+<li>
+<p><strong>shapers:</strong> Update pango shaper to work with current API (<a href="https://github.com/sile-typesetter/sile/commit/541cb8dae33f074a1e322c593303daeae91d9336">541cb8d</a>)</p>
+</li>
+</ul>
+
+  </div>
+
+</div>
+</div>
+
+
+
+    </div>
+    <script src="/scripts/responsive.js" type="text/javascript"></script>
+  </body>
+</html>
